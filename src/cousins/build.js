@@ -28,13 +28,13 @@ const meta=`<meta charset="utf-8">
 <link rel="icon" href="${icon}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
-.topbar{flex-basis:100%;display:flex;gap:10px;align-items:center;margin-bottom:8px}.topbar a{text-decoration:none}.sharebtn{margin-left:auto}#shared{font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-n);margin-left:auto}#shared+.sharebtn{margin-left:0}#shared[hidden]+.sharebtn{margin-left:auto}</style>
+.topbar{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:2px}.hero .topbar .kicker{flex-basis:auto}@media (max-width:520px){.hero .topbar .kicker{order:3;flex-basis:100%}}.topbar a{text-decoration:none}.sharebtn{margin-left:auto}#shared{font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-n);margin-left:auto}#shared+.sharebtn{margin-left:0}#shared[hidden]+.sharebtn{margin-left:auto}</style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHETPL7EV5"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZHETPL7EV5');</script>
 `;
 // share button in the kicker row
-body=body.replace('<span class="kicker">3,000 years · 36 regions · 9 communities</span>','<div class="topbar"><a class="txtbtn" href="../">&larr; All stories</a><span id="shared" hidden>Link copied</span><button type="button" class="txtbtn sharebtn" id="share">Share</button></div><span class="kicker">3,000 years · 36 regions · 9 communities</span>');
+body=body.replace('<span class="kicker">3,000 years · 36 regions · 9 communities</span>','<div class="topbar"><a class="txtbtn" href="../">&larr; All stories</a><span class="kicker">3,000 years · 36 regions · 9 communities</span><span id="shared" hidden>Link copied</span><button type="button" class="txtbtn sharebtn" id="share">Share</button></div>');
 if(!body.includes('id="share"'))throw new Error('share not injected');
 const shareJs=`<script>
 (function(){var b=document.getElementById('share'),n=document.getElementById('shared');if(!b)return;

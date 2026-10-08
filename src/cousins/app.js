@@ -63,7 +63,7 @@ const landPath=new Path2D(),borderPath=new Path2D();
 })();
 const cam={x:35,y:PY(32),k:20},kW={v:3};
 function fit(b){const x0=b[0],x1=b[1],y0=PY(b[3]),y1=PY(b[2]);const k=Math.min(W/(x1-x0),H/(y1-y0))*0.94;return{x:(x0+x1)/2,y:(y0+y1)/2,k}}
-function clampCam(){cam.k=Math.max(kW.v*0.85,Math.min(kW.v*60,cam.k));cam.x=Math.max(-170,Math.min(178,cam.x));cam.y=Math.max(PY(80),Math.min(PY(-56),cam.y))}
+function clampCam(){cam.k=Math.max(kW.v*0.85,Math.min(kW.v*14,cam.k));cam.x=Math.max(-170,Math.min(178,cam.x));cam.y=Math.max(PY(80),Math.min(PY(-56),cam.y))}
 let camGoal=null; // one-off goal from buttons
 function chapterAt(p){let i=0;for(let j=0;j<CH.length;j++)if(p>=CH[j].p0-1e-9)i=j;return i}
 function resize(){
@@ -78,7 +78,7 @@ function free(x,y,w,h){if(x<2||y<2||x+w>W-2||y+h>H-2)return false;for(const b of
 function hitsCircle(x,y,w,h,self){for(const r of REG){if(r===self||r.rad<9)continue;const cx=Math.max(x,Math.min(r.sx,x+w)),cy=Math.max(y,Math.min(r.sy,y+h));if(Math.hypot(cx-r.sx,cy-r.sy)<r.rad*0.85)return true}return false}
 function halo(text,x,y,fill){ctx.lineJoin='round';ctx.lineWidth=3.5;ctx.strokeStyle=C.sea;ctx.strokeText(text,x,y);ctx.fillStyle=fill;ctx.fillText(text,x,y)}
 function scr(o){return[(o.x-cam.x)*cam.k+W/2,(o.y-cam.y)*cam.k+H/2]}
-let order=REG.slice();
+let order=REG.slice(),inView=1,lostSince=0;
 function draw(now){
   const year=p2y(S.p);
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle=C.sea;ctx.fillRect(0,0,W,H);
@@ -113,8 +113,10 @@ function draw(now){
   }
 
   /* bubbles */
+  inView=0;
   for(const r of order){
     if(!r.rad||r.sx<-r.rad||r.sx>W+r.rad||r.sy<-r.rad||r.sy>H+r.rad)continue;
+    inView++;
     let a0=-Math.PI/2,parts=0;for(let i=0;i<NG;i++)if(r.v[i]>r.tot*0.004)parts++;
     ctx.globalAlpha=.9;
     for(let i=0;i<NG;i++){const v=r.v[i];if(v<=r.tot*0.004)continue;
@@ -203,6 +205,8 @@ function updatePanel(now){
   }
   const tw=$('tlwrap');tw.setAttribute('aria-valuenow',Math.round(year));tw.setAttribute('aria-valuetext',yearText(year));
   if(S.hover)showTip(S.hover);
+  const lost=!S.auto&&!camGoal&&inView===0&&tot>0;if(!lost)lostSince=0;else if(!lostSince)lostSince=now;
+  $('lost').hidden=!(lost&&now-lostSince>700);
 }
 
 /* ---------- chapters ---------- */
@@ -225,14 +229,15 @@ function setPlaying(on){
 $('play').addEventListener('click',()=>{if(!S.playing)S.stopAt=null;setPlaying(!S.playing)});
 $('speed').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S.speed=+b.dataset.s;[...$('speed').children].forEach(x=>x.setAttribute('aria-pressed',String(x===b)))});
 $('auto').addEventListener('click',()=>setAuto(!S.auto));
+$('lostbtn').addEventListener('click',()=>setAuto(true));
 $('arcs').addEventListener('click',()=>{S.arcs=!S.arcs;$('arcs').setAttribute('aria-pressed',String(S.arcs))});
 $('views').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;setAuto(false);camGoal=fit(b.dataset.v.split(',').map(Number))});
 $('zworld').addEventListener('click',()=>{setAuto(false);camGoal=fit(WORLD)});
 function zoomBy(f,px,py){setAuto(false);camGoal=null;const wx=(px-W/2)/cam.k+cam.x,wy=(py-H/2)/cam.k+cam.y;cam.k*=f;clampCam();cam.x=wx-(px-W/2)/cam.k;cam.y=wy-(py-H/2)/cam.k;clampCam()}
 $('zin').addEventListener('click',()=>zoomBy(1.6,W/2,H/2));
 $('zout').addEventListener('click',()=>zoomBy(1/1.6,W/2,H/2));
-cv.addEventListener('wheel',e=>{if(!(e.ctrlKey||e.metaKey))return;e.preventDefault();const r=cv.getBoundingClientRect();zoomBy(Math.exp(-e.deltaY*0.01),e.clientX-r.left,e.clientY-r.top)},{passive:false});
-cv.addEventListener('dblclick',e=>{const r=cv.getBoundingClientRect();zoomBy(1.8,e.clientX-r.left,e.clientY-r.top)});
+cv.addEventListener('wheel',e=>{if(!(e.ctrlKey||e.metaKey))return;e.preventDefault();const r=cv.getBoundingClientRect();zoomBy(Math.exp(Math.max(-30,Math.min(30,-e.deltaY))*0.008),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+cv.addEventListener('dblclick',e=>{const r=cv.getBoundingClientRect();zoomBy(1.6,e.clientX-r.left,e.clientY-r.top)});
 const ptrs=new Map();let pinch=0,moved=false;
 cv.addEventListener('pointerdown',e=>{ptrs.set(e.pointerId,[e.clientX,e.clientY]);moved=false;try{cv.setPointerCapture(e.pointerId)}catch(err){}if(ptrs.size===2){const a=[...ptrs.values()];pinch=Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])}});
 cv.addEventListener('pointermove',e=>{
