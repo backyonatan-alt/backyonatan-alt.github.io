@@ -183,6 +183,12 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 .nextup{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .nextup button{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--bg);border:0;cursor:pointer}
 
+/* story brief: the hook and background that opens every article */
+.brief{margin-top:40px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--gold);padding:22px 22px 20px;display:flex;flex-direction:column;gap:12px}
+.brief h2{font-size:clamp(28px,4.6vw,40px);font-weight:800}
+.brief p{font-size:17px}
+.brief .meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--line);padding-top:10px;margin-top:2px;max-width:none}
+
 .nextup a{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--bg);text-decoration:none}
 .nextup a.home{background:transparent;color:var(--ink);border:2px solid var(--ink);padding:10px 16px}
 [hidden]{display:none!important}
@@ -210,6 +216,15 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 </div></header>
 
 <main class="wrap">
+
+<section class="brief" id="soc-brief">
+  <div class="inn-tag">The story in brief</div>
+  <h2>Leicester City won the Premier League at 5,000 to 1. Skill, or luck?</h2>
+  <p>Soccer is a low-scoring game. A match has fewer than three goals on average, so one deflection can decide a result and a lucky run can decide a season. The league table mixes up the teams that played well with the teams that got the breaks.</p>
+  <p>Expected goals, or xG, was built to separate the two. It gives every shot a chance of scoring, based on where and how it was taken, and adds those chances up. A team that keeps creating good chances will usually win in the long run, even when the scoreboard says otherwise.</p>
+  <p>This page explains how xG works, tests whether it really predicts anything, and looks at the clubs that used it to beat richer rivals. It draws on 337,000 shots and 58,000 match results from Europe’s five big leagues.</p>
+  <p class="meta">Eight chapters · about 15 minutes · every chart is interactive</p>
+</section>
 
 <section class="inn" id="soc-c1">
   <div class="inn-head"><div class="inn-no">1</div><div><div class="inn-tag">The unfair game, again</div><h2>Money decides most of it</h2></div></div>

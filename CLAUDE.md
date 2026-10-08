@@ -16,6 +16,7 @@ Never hand-edit `cousins/index.html` or the three sports `index.html` files. The
 ## Rules for this site
 
 - Every article has a "← All stories" link back to `/`. Articles do not link to each other.
+- Every article opens with an abstract and a hook: a question or surprising fact, two or three short paragraphs of background for a reader who knows nothing about the subject, and what the page covers. The sports pages use the `.brief` block for this. New pages need one too.
 - Home page: one full-width row per article, all equal, no sections. Stacks image over text on phones.
 - Every page carries Google Analytics (`G-ZHETPL7EV5`). The build scripts add it. New pages need it too.
 - Every page needs Open Graph tags and a 1200x630 preview image (`preview.png` or `cousins-preview.png`) for link previews.

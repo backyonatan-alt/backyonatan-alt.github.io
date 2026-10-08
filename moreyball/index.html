@@ -183,6 +183,12 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 .nextup{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .nextup button{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--bg);border:0;cursor:pointer}
 
+/* story brief: the hook and background that opens every article */
+.brief{margin-top:40px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--gold);padding:22px 22px 20px;display:flex;flex-direction:column;gap:12px}
+.brief h2{font-size:clamp(28px,4.6vw,40px);font-weight:800}
+.brief p{font-size:17px}
+.brief .meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--line);padding-top:10px;margin-top:2px;max-width:none}
+
 .nextup a{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--bg);text-decoration:none}
 .nextup a.home{background:transparent;color:var(--ink);border:2px solid var(--ink);padding:10px 16px}
 [hidden]{display:none!important}
@@ -210,6 +216,15 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 </div></header>
 
 <main class="wrap">
+
+<section class="brief" id="nba-brief">
+  <div class="inn-tag">The story in brief</div>
+  <h2>Why did the mid-range jump shot almost disappear?</h2>
+  <p>Twenty years ago more than a third of all NBA shots were mid-range jumpers, the shot Michael Jordan and Kobe Bryant built careers on. Today it is one shot in ten. Threes went the other way, from under a fifth of shots to over two fifths.</p>
+  <p>The change is often called Moreyball, after Daryl Morey, who ran the Houston Rockets from 2007 to 2020. He built a team around a piece of arithmetic. A three-pointer is worth 50% more than a two, and a long two goes in barely more often than a three.</p>
+  <p>This page follows that arithmetic through 4.4 million shots: where the league shoots from, what actually wins games, the team that went first, and what happened when everyone else copied it.</p>
+  <p class="meta">Eight chapters · about 15 minutes · every chart is interactive</p>
+</section>
 
 <section class="inn" id="nba-c1">
   <div class="inn-head"><div class="inn-no">1</div><div><div class="inn-tag">Every shot, 22 seasons</div><h2>The map changed</h2></div></div>

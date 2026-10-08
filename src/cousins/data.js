@@ -8,7 +8,7 @@ const ATLAS = (function () {
     { id: 'yem', name: 'Yemenite', note: 'South Arabia, isolated for about 1,500 years', color: '#d55181' },
     { id: 'med', name: 'Greco-Roman diaspora', note: 'Hellenistic and Roman communities; today the Italkim and Romaniotes', color: '#199e70' },
     { id: 'sef', name: 'Sephardi', note: 'Iberia, then the Ottoman lands and the Atlantic ports', color: '#008300' },
-    { id: 'mag', name: 'Maghrebi', note: 'Morocco, Algeria, Tunisia, Libya', color: '#e66767' },
+    { id: 'mag', name: 'Moroccan / Algerian', note: 'North Africa: Morocco, Algeria, Tunisia, Libya', color: '#e66767' },
     { id: 'ash', name: 'Ashkenazi', note: 'The Rhineland, then Eastern Europe, then everywhere', color: '#3987e5' },
     { id: 'eth', name: 'Beta Israel', note: 'Ethiopia', color: '#9085e9' },
     { id: 'ind', name: 'Indian', note: 'Bene Israel and Cochin Jews', color: '#8a93a8' }

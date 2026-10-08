@@ -164,6 +164,12 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 [id$="t-table"] th:nth-child(2),[id$="t-table"] td:nth-child(2){text-align:left;font-family:var(--body)}[id$="t-table"] td:first-child{font-family:var(--mono);color:var(--muted)}
 .nextup{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .nextup button{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--bg);border:0;cursor:pointer}
+
+/* story brief: the hook and background that opens every article */
+.brief{margin-top:40px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--gold);padding:22px 22px 20px;display:flex;flex-direction:column;gap:12px}
+.brief h2{font-size:clamp(28px,4.6vw,40px);font-weight:800}
+.brief p{font-size:17px}
+.brief .meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--line);padding-top:10px;margin-top:2px;max-width:none}
 </style>
 <div id="tip" hidden></div>
 <div class="sport" data-sport="mlb" id="sport-mlb">
@@ -182,6 +188,15 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 </div></header>
 
 <main class="wrap">
+
+<section class="brief" id="mlb-brief">
+  <div class="inn-tag">The story in brief</div>
+  <h2>How did a team with a third of the Yankees’ payroll win just as many games?</h2>
+  <p>In 2002 the Oakland Athletics had the third-lowest payroll in baseball. They had just lost their stars Jason Giambi and Johnny Damon to richer clubs. They won 103 games anyway, exactly as many as the New York Yankees, who spent three times as much.</p>
+  <p>Michael Lewis told the story in the 2003 book <em>Moneyball</em>, and Brad Pitt played general manager Billy Beane in the 2011 film. The idea behind it was simple. Baseball was paying for the wrong statistics, so the skills that really win games were on sale.</p>
+  <p>This page checks that idea against the real numbers. It rebuilds the argument step by step from the season data, and it also looks at what the book and the film left out.</p>
+  <p class="meta">Nine chapters · about 15 minutes · every chart is interactive</p>
+</section>
 
 <section class="inn" id="mlb-i1">
   <div class="inn-head"><div class="inn-no">1</div><div><div class="inn-tag">First inning</div><h2>An unfair game</h2></div></div>
@@ -433,6 +448,15 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 
 <main class="wrap">
 
+<section class="brief" id="nba-brief">
+  <div class="inn-tag">The story in brief</div>
+  <h2>Why did the mid-range jump shot almost disappear?</h2>
+  <p>Twenty years ago more than a third of all NBA shots were mid-range jumpers, the shot Michael Jordan and Kobe Bryant built careers on. Today it is one shot in ten. Threes went the other way, from under a fifth of shots to over two fifths.</p>
+  <p>The change is often called Moreyball, after Daryl Morey, who ran the Houston Rockets from 2007 to 2020. He built a team around a piece of arithmetic. A three-pointer is worth 50% more than a two, and a long two goes in barely more often than a three.</p>
+  <p>This page follows that arithmetic through 4.4 million shots: where the league shoots from, what actually wins games, the team that went first, and what happened when everyone else copied it.</p>
+  <p class="meta">Eight chapters · about 15 minutes · every chart is interactive</p>
+</section>
+
 <section class="inn" id="nba-c1">
   <div class="inn-head"><div class="inn-no">1</div><div><div class="inn-tag">Every shot, 22 seasons</div><h2>The map changed</h2></div></div>
   <div class="prose">
@@ -678,6 +702,15 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 </div></header>
 
 <main class="wrap">
+
+<section class="brief" id="soc-brief">
+  <div class="inn-tag">The story in brief</div>
+  <h2>Leicester City won the Premier League at 5,000 to 1. Skill, or luck?</h2>
+  <p>Soccer is a low-scoring game. A match has fewer than three goals on average, so one deflection can decide a result and a lucky run can decide a season. The league table mixes up the teams that played well with the teams that got the breaks.</p>
+  <p>Expected goals, or xG, was built to separate the two. It gives every shot a chance of scoring, based on where and how it was taken, and adds those chances up. A team that keeps creating good chances will usually win in the long run, even when the scoreboard says otherwise.</p>
+  <p>This page explains how xG works, tests whether it really predicts anything, and looks at the clubs that used it to beat richer rivals. It draws on 337,000 shots and 58,000 match results from Europe’s five big leagues.</p>
+  <p class="meta">Eight chapters · about 15 minutes · every chart is interactive</p>
+</section>
 
 <section class="inn" id="soc-c1">
   <div class="inn-head"><div class="inn-no">1</div><div><div class="inn-tag">The unfair game, again</div><h2>Money decides most of it</h2></div></div>
