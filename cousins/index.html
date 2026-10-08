@@ -26,6 +26,7 @@
 <title>A Nation of Cousins</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@600;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
+:root{color-scheme:light}
 /* Layout: a night atlas. One dark stage holds the map, its clock and its controls; the reading column below is daylight. */
 :root{
   --bg:#edf0f4; --surface:#f8f9fb; --ink:#131a2e; --muted:#566079; --line:#cdd4e0; --gold:#9a6a00;
@@ -34,10 +35,8 @@
   --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#090e1c; --surface:#101930; --ink:#e6eaf4; --muted:#98a5c2; --line:#26324f; --gold:#e8b93e; color-scheme:dark } }
-:root[data-theme="dark"]{
-  --bg:#090e1c; --surface:#101930; --ink:#e6eaf4; --muted:#98a5c2; --line:#26324f; --gold:#e8b93e; color-scheme:dark }
+
+
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);margin:0}

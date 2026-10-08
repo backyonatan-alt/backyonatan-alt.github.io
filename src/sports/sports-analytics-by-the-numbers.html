@@ -3,6 +3,7 @@
 <title>Sports Analytics by the Numbers</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
+:root{color-scheme:light}
 /* Layout: a scorebook. Nine innings as chapters, a line score as the hero and the nav, one reading column with charts set into it. */
 :root{
   --bg:#f1f4ec; --surface:#fafcf6; --ink:#13231b; --muted:#56655c; --line:#d3dbcd; --field:#0b4a35; --on-field:#f3f6ee;
@@ -12,14 +13,8 @@
   --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0d1813; --surface:#14231c; --ink:#edf2e9; --muted:#9db0a5; --line:#293a31; --field:#0a3a2a; --on-field:#f3f6ee;
-  --gold:#efb21e; --gold-bright:#efb21e;
-  --s-a:#1fae7c; --s-b:#e0622f; --s-c:#4a93ea; --dot:#51635a; --dot-strong:#8ea096; color-scheme:dark } }
-:root[data-theme="dark"]{
-  --bg:#0d1813; --surface:#14231c; --ink:#edf2e9; --muted:#9db0a5; --line:#293a31; --field:#0a3a2a; --on-field:#f3f6ee;
-  --gold:#efb21e; --gold-bright:#efb21e;
-  --s-a:#1fae7c; --s-b:#e0622f; --s-c:#4a93ea; --dot:#51635a; --dot-strong:#8ea096; color-scheme:dark }
+
+
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
 .wrap{max-width:860px;margin:0 auto;padding-inline:20px}
@@ -151,11 +146,11 @@ select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--b
 .up{color:var(--s-c)} .dn{color:var(--s-b)}
 .board td:first-child{white-space:nowrap}
 [data-sport="nba"]{--bg:#f1f2f4;--surface:#fbfbfc;--ink:#16181d;--muted:#5a606b;--line:#d6d9de;--field:#16181d;--on-field:#f4f5f7;--gold:#b8470f;--gold-bright:#ff8a3d;--s-a:#d9551f;--s-b:#00875a;--s-c:#2a78d6;--s-d:#b07d00;--dot:#a6abb3;--dot-strong:#666c77}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) [data-sport="nba"]{--bg:#101216;--surface:#191c22;--ink:#eef0f3;--muted:#a0a7b3;--line:#2c3038;--field:#07080a;--on-field:#f4f5f7;--gold:#ff8a3d;--gold-bright:#ff8a3d;--s-a:#e0622f;--s-b:#1fae7c;--s-c:#4a93ea;--s-d:#c98500;--dot:#565c67;--dot-strong:#959ca8}}
-:root[data-theme="dark"] [data-sport="nba"]{--bg:#101216;--surface:#191c22;--ink:#eef0f3;--muted:#a0a7b3;--line:#2c3038;--field:#07080a;--on-field:#f4f5f7;--gold:#ff8a3d;--gold-bright:#ff8a3d;--s-a:#e0622f;--s-b:#1fae7c;--s-c:#4a93ea;--s-d:#c98500;--dot:#565c67;--dot-strong:#959ca8}
+
+
 [data-sport="soc"]{--bg:#f0f2f6;--surface:#fafbfd;--ink:#121a2e;--muted:#566079;--line:#d3d8e2;--field:#0e1b3d;--on-field:#f2f5fb;--gold:#3c6d00;--gold-bright:#b8f34a;--s-a:#2a78d6;--s-b:#d9551f;--s-c:#00875a;--s-d:#b07d00;--dot:#a3abbb;--dot-strong:#606b82}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) [data-sport="soc"]{--bg:#0b1120;--surface:#131b2e;--ink:#edf1f8;--muted:#9eaac2;--line:#273149;--field:#070d1f;--on-field:#f2f5fb;--gold:#b8f34a;--gold-bright:#b8f34a;--s-a:#4a93ea;--s-b:#e0622f;--s-c:#1fae7c;--s-d:#c98500;--dot:#4f5a73;--dot-strong:#8f9bb5}}
-:root[data-theme="dark"] [data-sport="soc"]{--bg:#0b1120;--surface:#131b2e;--ink:#edf1f8;--muted:#9eaac2;--line:#273149;--field:#070d1f;--on-field:#f2f5fb;--gold:#b8f34a;--gold-bright:#b8f34a;--s-a:#4a93ea;--s-b:#e0622f;--s-c:#1fae7c;--s-d:#c98500;--dot:#4f5a73;--dot-strong:#8f9bb5}
+
+
 .sport{background:var(--bg);color:var(--ink)}
 .series button{font:inherit;letter-spacing:inherit;text-transform:inherit;background:none;border:0;border-bottom:1px solid transparent;color:inherit;opacity:.75;padding:0 0 2px;cursor:pointer}
 .series button:hover{opacity:1;border-bottom-color:var(--gold-bright)}
