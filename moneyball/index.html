@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moneyball by the Numbers</title>
+<meta name="description" content="The 2002 Oakland Athletics rebuilt from the raw season data: every team, every salary, every game. Nine interactive chapters on how a poor team bought wins cheaply.">
+<link rel="canonical" href="https://backyonatan-alt.github.io/moneyball/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://backyonatan-alt.github.io/moneyball/">
+<meta property="og:title" content="Moneyball by the Numbers">
+<meta property="og:description" content="The 2002 Oakland Athletics rebuilt from the raw season data: every team, every salary, every game. Nine interactive chapters on how a poor team bought wins cheaply.">
+<meta property="og:image" content="https://backyonatan-alt.github.io/moneyball/preview.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Moneyball by the Numbers">
+<meta name="twitter:description" content="The 2002 Oakland Athletics rebuilt from the raw season data: every team, every salary, every game. Nine interactive chapters on how a poor team bought wins cheaply.">
+<meta name="twitter:image" content="https://backyonatan-alt.github.io/moneyball/preview.png">
+<meta name="theme-color" content="#0b4a35">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%230b4a35%22/%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228%22%20fill%3D%22%23efb21e%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: a scorebook. Nine innings as chapters, a line score as the hero and the nav, one reading column with charts set into it. */
+:root{
+  --bg:#f1f4ec; --surface:#fafcf6; --ink:#13231b; --muted:#56655c; --line:#d3dbcd; --field:#0b4a35; --on-field:#f3f6ee;
+  --gold:#a87600; --gold-bright:#efb21e;
+  --s-a:#00875a; --s-b:#d9551f; --s-c:#2a78d6; --dot:#9fada4; --dot-strong:#5f7067;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0d1813; --surface:#14231c; --ink:#edf2e9; --muted:#9db0a5; --line:#293a31; --field:#0a3a2a; --on-field:#f3f6ee;
+  --gold:#efb21e; --gold-bright:#efb21e;
+  --s-a:#1fae7c; --s-b:#e0622f; --s-c:#4a93ea; --dot:#51635a; --dot-strong:#8ea096; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0d1813; --surface:#14231c; --ink:#edf2e9; --muted:#9db0a5; --line:#293a31; --field:#0a3a2a; --on-field:#f3f6ee;
+  --gold:#efb21e; --gold-bright:#efb21e;
+  --s-a:#1fae7c; --s-b:#e0622f; --s-c:#4a93ea; --dot:#51635a; --dot-strong:#8ea096; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-inline:20px}
+a{color:inherit;text-decoration-color:var(--gold);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1;text-transform:uppercase;letter-spacing:.01em}
+p{margin:0;max-width:66ch}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* hero */
+.hero{background:var(--field);color:var(--on-field);padding-block:44px 36px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright)}
+.hero h1{font-size:clamp(52px,11vw,112px);font-weight:900;margin-top:10px}
+.hero h1 span{color:var(--gold-bright)}
+.hero .lede{font-size:19px;margin-top:18px;max-width:58ch;opacity:.92}
+.board{margin-top:30px;border:2px solid rgba(243,246,238,.28);overflow-x:auto}
+.board table{width:100%;border-collapse:collapse;font-family:var(--mono);font-variant-numeric:tabular-nums;min-width:430px}
+.board th,.board td{padding:10px 14px;text-align:right;border-bottom:1px solid rgba(243,246,238,.16)}
+.board th{font-size:11px;letter-spacing:.12em;font-weight:500;opacity:.75;text-transform:uppercase}
+.board td{font-size:clamp(18px,3.4vw,26px);font-weight:600}
+.board td:first-child,.board th:first-child{text-align:left}
+.board tr:last-child td{border-bottom:0;font-weight:400;opacity:.75}
+.board .oak td{color:var(--gold-bright)}
+.innings{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px;font-family:var(--mono);font-size:13px}
+.innings a{border:1px solid rgba(243,246,238,.3);padding:6px 10px;text-decoration:none;display:flex;gap:8px;align-items:baseline}
+.innings a:hover{background:rgba(243,246,238,.12)}
+.innings b{color:var(--gold-bright)}
+
+/* chapters */
+section.inn{padding-block:56px 8px}
+.inn-head{display:flex;gap:18px;align-items:flex-end;border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:22px}
+.inn-no{font-family:var(--display);font-weight:900;font-size:76px;line-height:.8;color:var(--gold)}
+.inn-tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.inn h2{font-size:clamp(34px,6vw,52px);font-weight:800;margin-top:4px}
+.prose{display:flex;flex-direction:column;gap:16px}
+.prose strong{font-weight:600}
+h3{font-size:24px;font-weight:800;margin-top:14px}
+.formula{font-family:var(--mono);font-size:15px;background:var(--surface);border-left:4px solid var(--gold);padding:12px 16px;overflow-x:auto;white-space:nowrap}
+.fig{background:var(--surface);border:1px solid var(--line);padding:18px 16px 12px;margin-block:10px}
+.fig-title{font-weight:600;font-size:16px;line-height:1.3}
+.fig-sub{color:var(--muted);font-size:14px;margin-top:2px}
+.fig-note{color:var(--muted);font-size:12.5px;margin-top:8px;font-family:var(--mono);line-height:1.5}
+.chart{margin-top:12px;width:100%;min-width:0}
+.chart svg{display:block;touch-action:pan-y}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:baseline}
+.controls{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.controls button{font-family:var(--mono);font-size:13px;padding:6px 11px;background:transparent;color:var(--ink);border:1px solid var(--line);cursor:pointer}
+.controls button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.controls button:hover{border-color:var(--ink)}
+input[type=search]{font-family:var(--mono);font-size:14px;padding:7px 10px;background:var(--bg);color:var(--ink);border:1px solid var(--line);min-width:0;width:300px;max-width:100%}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-block:8px}
+.stat{background:var(--surface);padding:14px}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:40px;line-height:1}
+.stat span{font-size:13px;color:var(--muted);display:block;margin-top:6px;line-height:1.35}
+.sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 24px;margin-top:14px}
+.sliders label{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;font-family:var(--mono)}
+.sliders label b{color:var(--ink);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--s-a)}
+.readout{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:14px;align-items:baseline}
+.readout .big{font-family:var(--display);font-weight:900;font-size:56px;line-height:1}
+.readout small{display:block;font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+table.data{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+table.data th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:right;padding:6px 8px;border-bottom:1px solid var(--ink)}
+table.data td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--line);font-family:var(--mono)}
+table.data th:first-child,table.data td:first-child{text-align:left;font-family:var(--body)}
+.scroll{overflow-x:auto}
+.tagp{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--s-a);color:var(--ink);padding:1px 5px;margin-left:6px;white-space:nowrap}
+.bar{height:10px;background:var(--s-a);border-radius:0 4px 4px 0;min-width:2px}
+.bar.b{background:var(--s-b)} .bar.n{background:var(--dot-strong)}
+.barrow{display:grid;grid-template-columns:minmax(120px,230px) 1fr 44px;gap:10px;align-items:center;padding:5px 0;border-bottom:1px solid var(--line);font-size:14px}
+.barrow .v{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.swap{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;margin-top:12px}
+.swap h4{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px;color:var(--muted);font-weight:500}
+.swap .avg{font-family:var(--mono);font-size:14px;margin-top:8px;font-weight:600}
+/* diamond */
+.re{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:22px;margin-top:12px;align-items:start}
+@media(max-width:620px){.re{grid-template-columns:1fr}}
+.re svg{width:100%;height:auto;display:block}
+.base{fill:var(--bg);stroke:var(--ink);stroke-width:2;cursor:pointer}
+.base.on{fill:var(--gold-bright)}
+.re-out{display:flex;flex-direction:column;gap:10px;min-width:0}
+.play{border-top:1px solid var(--line);padding-top:10px;font-size:14.5px}
+.play b.neg{color:var(--s-b)} .play b.pos{color:var(--s-a)}
+.heat td.cell{cursor:pointer}
+.heat td.sel{outline:2px solid var(--gold);outline-offset:-2px}
+/* streak strip */
+.strip{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-top:12px}
+@media(max-width:620px){.strip{grid-template-columns:repeat(5,1fr)}}
+.g{background:var(--field);color:var(--on-field);padding:7px 6px;font-family:var(--mono);font-size:11px;line-height:1.35}
+.g b{display:block;font-size:16px;color:var(--gold-bright)}
+.ul{display:flex;flex-direction:column;gap:10px;padding-left:20px;margin:0;max-width:66ch}
+.src{font-size:14px;color:var(--muted)}
+footer{padding-block:40px 60px;margin-top:40px;border-top:3px solid var(--ink)}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;line-height:1.45;padding:8px 10px;max-width:240px;z-index:10;font-family:var(--mono)}
+#tip b{font-family:var(--body);font-size:13.5px}
+/* svg */
+.ax text{fill:var(--muted);font-family:var(--mono);font-size:11px}
+.ax line{stroke:var(--line)} .ax .base0{stroke:var(--dot-strong)}
+.axl{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.pt{fill:var(--dot);stroke:var(--surface);stroke-width:1}
+.pt.po{fill:var(--dot-strong)} .pt.hi{fill:var(--s-a);stroke-width:2} .pt.alt{fill:var(--s-b);stroke-width:2} .pt.c{fill:var(--s-c);stroke-width:2}
+.lab{fill:var(--ink);font-family:var(--body);font-size:12px;font-weight:600;paint-order:stroke;stroke:var(--surface);stroke-width:3px}
+.fit{stroke:var(--ink);stroke-width:1.5;stroke-dasharray:5 4;fill:none}
+.ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.ln.a{stroke:var(--s-a)} .ln.b{stroke:var(--s-b)} .ln.c{stroke:var(--s-c)} .ln.n{stroke:var(--dot-strong)}
+.fa{fill:var(--s-a)} .fb{fill:var(--s-b)} .fc{fill:var(--s-c)} .fn{fill:var(--dot-strong)}
+.band{fill:var(--gold-bright);opacity:.22}
+.cross{stroke:var(--dot-strong);stroke-width:1}
+.ring{fill:none;stroke:var(--ink);stroke-width:2}
+.err{stroke-width:1.5;opacity:.55}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+.series{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:26px;align-items:baseline}
+.series span{opacity:.6}
+.series a{text-decoration:none;opacity:.75;border-bottom:1px solid transparent;padding-bottom:2px}
+.series a:hover{opacity:1;border-bottom-color:var(--gold-bright)}
+.series a[aria-current="page"]{opacity:1;color:var(--gold-bright);border-bottom-color:var(--gold-bright)}
+.fd{fill:var(--s-d)} .ln.d{stroke:var(--s-d)}
+.two{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px;align-items:start;margin-top:12px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.kv{display:grid;grid-template-columns:1fr auto;gap:6px 14px;font-size:14px;align-items:baseline}
+.kv b{font-family:var(--mono);font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.kv span{color:var(--muted)}
+.court line,.court path,.court rect.cl,.court circle.cl{fill:none;stroke:var(--dot-strong);stroke-width:1.5}
+select{font-family:var(--mono);font-size:14px;padding:6px 8px;background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:12px}
+.row label{font-size:13px;color:var(--muted);font-family:var(--mono)}
+.up{color:var(--s-c)} .dn{color:var(--s-b)}
+.board td:first-child{white-space:nowrap}
+[data-sport="nba"]{--bg:#f1f2f4;--surface:#fbfbfc;--ink:#16181d;--muted:#5a606b;--line:#d6d9de;--field:#16181d;--on-field:#f4f5f7;--gold:#b8470f;--gold-bright:#ff8a3d;--s-a:#d9551f;--s-b:#00875a;--s-c:#2a78d6;--s-d:#b07d00;--dot:#a6abb3;--dot-strong:#666c77}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) [data-sport="nba"]{--bg:#101216;--surface:#191c22;--ink:#eef0f3;--muted:#a0a7b3;--line:#2c3038;--field:#07080a;--on-field:#f4f5f7;--gold:#ff8a3d;--gold-bright:#ff8a3d;--s-a:#e0622f;--s-b:#1fae7c;--s-c:#4a93ea;--s-d:#c98500;--dot:#565c67;--dot-strong:#959ca8}}
+:root[data-theme="dark"] [data-sport="nba"]{--bg:#101216;--surface:#191c22;--ink:#eef0f3;--muted:#a0a7b3;--line:#2c3038;--field:#07080a;--on-field:#f4f5f7;--gold:#ff8a3d;--gold-bright:#ff8a3d;--s-a:#e0622f;--s-b:#1fae7c;--s-c:#4a93ea;--s-d:#c98500;--dot:#565c67;--dot-strong:#959ca8}
+[data-sport="soc"]{--bg:#f0f2f6;--surface:#fafbfd;--ink:#121a2e;--muted:#566079;--line:#d3d8e2;--field:#0e1b3d;--on-field:#f2f5fb;--gold:#3c6d00;--gold-bright:#b8f34a;--s-a:#2a78d6;--s-b:#d9551f;--s-c:#00875a;--s-d:#b07d00;--dot:#a3abbb;--dot-strong:#606b82}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) [data-sport="soc"]{--bg:#0b1120;--surface:#131b2e;--ink:#edf1f8;--muted:#9eaac2;--line:#273149;--field:#070d1f;--on-field:#f2f5fb;--gold:#b8f34a;--gold-bright:#b8f34a;--s-a:#4a93ea;--s-b:#e0622f;--s-c:#1fae7c;--s-d:#c98500;--dot:#4f5a73;--dot-strong:#8f9bb5}}
+:root[data-theme="dark"] [data-sport="soc"]{--bg:#0b1120;--surface:#131b2e;--ink:#edf1f8;--muted:#9eaac2;--line:#273149;--field:#070d1f;--on-field:#f2f5fb;--gold:#b8f34a;--gold-bright:#b8f34a;--s-a:#4a93ea;--s-b:#e0622f;--s-c:#1fae7c;--s-d:#c98500;--dot:#4f5a73;--dot-strong:#8f9bb5}
+.sport{background:var(--bg);color:var(--ink)}
+.series button{font:inherit;letter-spacing:inherit;text-transform:inherit;background:none;border:0;border-bottom:1px solid transparent;color:inherit;opacity:.75;padding:0 0 2px;cursor:pointer}
+.series button:hover{opacity:1;border-bottom-color:var(--gold-bright)}
+.series button[aria-current="page"]{opacity:1;color:var(--gold-bright);border-bottom-color:var(--gold-bright)}
+.pbtn{font-family:var(--mono);font-size:13px;padding:7px 14px;background:var(--ink);color:var(--bg);border:0;cursor:pointer;min-width:72px}
+[id$="t-table"] th:nth-child(2),[id$="t-table"] td:nth-child(2){text-align:left;font-family:var(--body)}[id$="t-table"] td:first-child{font-family:var(--mono);color:var(--muted)}
+.nextup{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.nextup button{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--bg);border:0;cursor:pointer}
+
+.nextup a{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--bg);text-decoration:none}
+.nextup a.home{background:transparent;color:var(--ink);border:2px solid var(--ink);padding:10px 16px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body style="margin:0">
+<div id="tip" hidden></div>
+<div class="sport" data-sport="mlb" id="sport-mlb">
+<header class="hero"><div class="wrap">
+  <nav class="series" aria-label="Sport"><span>By the numbers</span><a href="../moneyball/" aria-current="page">Baseball</a><a href="../moreyball/">Basketball</a><a href="../expected-goals/">Soccer</a></nav>
+  <div class="kicker">Oakland Athletics, 2002 season. A data investigation</div>
+  <h1>Money<span>ball</span><br>by the numbers</h1>
+  <p class="lede">The book and the film tell it as a story about a stubborn general manager. Underneath, it is a statistics problem with a clean answer. This page rebuilds that answer from the raw season data: every team, every salary, every game of 2002.</p>
+  <div class="board"><table>
+    <thead><tr><th>2002</th><th>Payroll</th><th>Wins</th><th>Cost per win</th></tr></thead>
+    <tbody id="mlb-board"></tbody>
+  </table></div>
+  <nav class="innings" aria-label="Chapters">
+    <a href="#mlb-i1"><b>1</b>The problem</a><a href="#mlb-i2"><b>2</b>The target</a><a href="#mlb-i3"><b>3</b>What makes runs</a><a href="#mlb-i4"><b>4</b>Outs</a><a href="#mlb-i5"><b>5</b>Replacing Giambi</a><a href="#mlb-i6"><b>6</b>The market</a><a href="#mlb-i7"><b>7</b>The streak</a><a href="#mlb-i8"><b>8</b>What the film left out</a><a href="#mlb-i9"><b>9</b>Aftermath</a><a href="#mlb-x"><b>+</b>Dig in yourself</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<section class="inn" id="mlb-i1">
+  <div class="inn-head"><div class="inn-no">1</div><div><div class="inn-tag">First inning</div><h2>An unfair game</h2></div></div>
+  <div class="prose">
+    <p>In 2002 the New York Yankees spent $125.9 million on players. Oakland spent $40.0 million, 28th of 30 teams. Both won 103 games.</p>
+    <p>Money did matter that year. Across the league, payroll and wins had a correlation of 0.44. Rich teams bought wins on average, and the bottom left of the chart is crowded with cheap teams that lost. Oakland sits alone in the top left corner. The question Michael Lewis asked is the right one: how does a team end up there, and do it three years running?</p>
+    <div class="fig">
+      <div class="fig-title">Payroll against wins, all 30 teams, 2002</div>
+      <div class="fig-sub">Hover or tap a dot for the team.</div>
+      <div class="legend"><span><i style="background:var(--s-a)"></i>Oakland</span><span><i style="background:var(--s-b)"></i>NY Yankees</span><span><i style="background:var(--dot-strong)"></i>Other playoff teams</span><span><i style="background:var(--dot)"></i>Missed playoffs</span></div>
+      <div class="chart" id="mlb-c-pay"></div>
+      <div class="fig-note">Dashed line: least-squares fit. Payroll is the sum of player salaries in the Lahman database.</div>
+    </div>
+    <div class="stats" id="mlb-s1"></div>
+    <p>Beane's A's could not win an auction for a star. So the job was to find wins the auction was pricing wrongly. That needs two things: a model of what actually produces wins, and proof that the market pays for something else. The next five innings build both.</p>
+  </div>
+</section>
+
+<section class="inn" id="mlb-i2">
+  <div class="inn-head"><div class="inn-no">2</div><div><div class="inn-tag">Second inning</div><h2>Set the target in runs</h2></div></div>
+  <div class="prose">
+    <p>Paul DePodesta (Peter Brand in the film) started from the end. In the book he works out that a team needs about <strong>95 wins</strong> to make the playoffs, that 95 wins takes outscoring opponents by about <strong>135 runs</strong>, and that the 2002 roster should score 800 to 820 and allow 650 to 670.</p>
+    <p>The tool behind this is Bill James's Pythagorean expectation. Wins are hard to predict directly. Runs are not, and runs convert to wins at a steady rate.</p>
+    <div class="formula">Win% ≈ RS² / (RS² + RA²)</div>
+    <p>I checked it on 1,038 team seasons from 1962 to 2002. The formula predicts a team's final win total with a typical error of 4.0 wins. A plain linear version works just as well: every extra <strong>9.6 runs</strong> of run differential is worth one win. Plug in DePodesta's +135 and you get 81 + 135 / 9.6 = 95.1 wins. His arithmetic holds exactly.</p>
+    <div class="fig">
+      <div class="fig-title">Run differential against wins, every team season 1990 to 2002</div>
+      <div class="fig-sub">Wins scaled to a 162 game season. The 2002 A's and DePodesta's pre-season target are marked.</div>
+      <div class="chart" id="mlb-c-pyth"></div>
+      <div class="fig-note">Dashed line: wins = 81 + run differential / 9.56, fitted on 1962 to 2001.</div>
+    </div>
+    <p>The actual 2002 A's scored <strong>800</strong> and allowed <strong>654</strong>. Both inside the predicted range. That differential is worth 97 wins. They won 103, so about six wins came from sequencing and luck, including a 20 game streak with several one-run finishes.</p>
+    <div class="fig">
+      <div class="fig-title">Try it: the Pythagorean calculator</div>
+      <div class="controls" id="mlb-py-presets"></div>
+      <div class="sliders">
+        <div><label for="mlb-rs">Runs scored <b id="mlb-rs-v"></b></label><input type="range" id="mlb-rs" min="500" max="1000" step="1" value="800"></div>
+        <div><label for="mlb-ra">Runs allowed <b id="mlb-ra-v"></b></label><input type="range" id="mlb-ra" min="500" max="1000" step="1" value="654"></div>
+      </div>
+      <div class="readout" id="mlb-py-out"></div>
+    </div>
+  </div>
+</section>
+
+<section class="inn" id="mlb-i3">
+  <div class="inn-head"><div class="inn-no">3</div><div><div class="inn-tag">Third inning</div><h2>What actually makes runs</h2></div></div>
+  <div class="prose">
+    <p>If the target is 800 runs, the next question is which hitting statistic best predicts runs. Baseball had paid for batting average for a century. Switch between the statistics below and watch how tightly each one tracks scoring.</p>
+    <div class="fig">
+      <div class="fig-title">Team statistic against runs scored per game, 1990 to 2002</div>
+      <div class="controls" id="mlb-era-ctl"></div>
+      <div class="chart" id="mlb-c-era"></div>
+      <div class="readout" id="mlb-era-out"></div>
+    </div>
+    <p>Over the full 1962 to 2001 sample (1,008 team seasons, everything a front office could have known before 2002), the correlations with runs per game are: batting average <span class="mono">.84</span>, on-base percentage <span class="mono">.90</span>, slugging <span class="mono">.93</span>, OBP plus slugging <span class="mono">.96</span>, stolen bases <span class="mono">.14</span>. Stolen bases, the thing scouts called "speed", tell you almost nothing about scoring.</p>
+    <p>Put on-base and slugging in one regression and you get a working run model:</p>
+    <div class="formula">Runs per game = −4.82 + 16.03 × OBP + 10.16 × SLG &nbsp; (R² = 0.93)</div>
+    <p>So a point of on-base percentage is worth about <strong>1.6 times</strong> a point of slugging. In the book DePodesta argues for three times. My regression on public data does not get that high, but the direction is the same and it is the part the market missed: OBP counts for more than slugging, and both beat batting average.</p>
+    <div class="fig">
+      <div class="fig-title">Try it: build an offense</div>
+      <div class="fig-sub">The run model above, applied over 162 games. Wins assume Oakland's 654 runs allowed.</div>
+      <div class="sliders">
+        <div><label for="mlb-obp">Team OBP <b id="mlb-obp-v"></b></label><input type="range" id="mlb-obp" min="290" max="380" step="1" value="339"></div>
+        <div><label for="mlb-slg">Team SLG <b id="mlb-slg-v"></b></label><input type="range" id="mlb-slg" min="350" max="500" step="1" value="432"></div>
+      </div>
+      <div class="readout" id="mlb-off-out"></div>
+      <div class="fig-note">Start position is the real 2002 A's (.339 / .432). The model says 810 runs. They scored 800.</div>
+    </div>
+  </div>
+</section>
+
+<section class="inn" id="mlb-i4">
+  <div class="inn-head"><div class="inn-no">4</div><div><div class="inn-tag">Fourth inning</div><h2>Outs are the currency</h2></div></div>
+  <div class="prose">
+    <p>Why does on-base percentage matter so much? Because an inning ends after three outs and nothing else. OBP is simply the share of plate appearances that do not make an out. This is also why the A's almost never bunted or stole: both risk or spend outs.</p>
+    <p>The run expectancy table makes this concrete. It gives the average number of runs a team scored from each situation to the end of the inning, measured over every MLB game from 1999 to 2002. Click the bases and set the outs.</p>
+    <div class="fig">
+      <div class="fig-title">Run expectancy explorer</div>
+      <div class="re">
+        <div>
+          <svg viewBox="0 0 240 220" aria-label="Baseball diamond. Click a base to put a runner on it.">
+            <path d="M120 200 L30 110 L120 20 L210 110 Z" fill="none" stroke="var(--dot-strong)" stroke-width="2"/>
+            <rect class="base" data-b="2" x="106" y="6" width="28" height="28" transform="rotate(45 120 20)" tabindex="0" role="button" aria-label="Second base"/>
+            <rect class="base" data-b="4" x="16" y="96" width="28" height="28" transform="rotate(45 30 110)" tabindex="0" role="button" aria-label="Third base"/>
+            <rect class="base" data-b="1" x="196" y="96" width="28" height="28" transform="rotate(45 210 110)" tabindex="0" role="button" aria-label="First base"/>
+            <path d="M108 192 h24 v10 l-12 10 l-12 -10 z" fill="var(--bg)" stroke="var(--ink)" stroke-width="2"/>
+          </svg>
+          <div class="controls" id="mlb-outs" style="justify-content:center"></div>
+        </div>
+        <div class="re-out">
+          <div class="readout" style="margin-top:0"><div><small id="mlb-re-state"></small><div class="big" id="mlb-re-val"></div><small>expected runs, rest of inning</small></div></div>
+          <div class="play" id="mlb-re-bunt"></div>
+          <div class="play" id="mlb-re-steal"></div>
+        </div>
+      </div>
+      <div class="scroll" style="margin-top:14px"><table class="data heat" id="mlb-re-table"></table></div>
+      <div class="fig-note">Source: Tom Tango's run expectancy matrix, 1999 to 2002. League averages, so a weak hitter bunting loses a little less than shown.</div>
+    </div>
+    <p>With a runner on first and nobody out, a team expects 0.953 runs. A successful sacrifice bunt moves it to a runner on second with one out: 0.725. The "productive" play costs a quarter of a run. A steal of second has to succeed about 74% of the time just to break even. The 2002 A's stole <strong>46 bases</strong>, the fewest in baseball, and drew 609 walks, sixth most.</p>
+  </div>
+</section>
+
+<section class="inn" id="mlb-i5">
+  <div class="inn-head"><div class="inn-no">5</div><div><div class="inn-tag">Fifth inning</div><h2>Replacing Giambi in the aggregate</h2></div></div>
+  <div class="prose">
+    <p>After 2001 Oakland lost Jason Giambi (to the Yankees for seven years and $120 million), Johnny Damon and closer Jason Isringhausen. No single affordable player could replace Giambi's .477 on-base percentage. The move in the book and the film: stop trying. Replace the <em>average</em> of three lineup spots instead.</p>
+    <div class="fig">
+      <div class="fig-title">Three lineup spots, before and after</div>
+      <div class="fig-sub">On-base percentage, from the season batting lines. Bars start at zero.</div>
+      <div class="swap" id="mlb-swap"></div>
+      <div class="fig-note">Jeremy Giambi was traded to Philadelphia for John Mabry in late May 2002 (Mabry: .322 OBP, .523 SLG in 211 PA). Justice's $7.0M is his listed salary; per the book the Yankees were covering half of it.</div>
+    </div>
+    <p>The three outgoing spots averaged a .364 OBP, exactly the figure quoted in the book. The three replacements averaged .380. Hatteberg, a catcher who could no longer throw, was taught first base and got on base at a .374 clip for $900,000. Giambi earned $10.4 million in New York that year.</p>
+    <p>The bullpen got the same treatment. Isringhausen's 34 saves left; Billy Koch arrived by trade and saved 44. Chad Bradford, the submarine pitcher nobody wanted because of how he looked, threw 75 games with a 3.11 ERA for $235,000.</p>
+  </div>
+</section>
+
+<section class="inn" id="mlb-i6">
+  <div class="inn-head"><div class="inn-no">6</div><div><div class="inn-tag">Sixth inning</div><h2>The market had the price wrong</h2></div></div>
+  <div class="prose">
+    <p>A model is only an edge if everyone else is pricing by a different one. Here is every 2002 hitter with at least 350 plate appearances: what he produced, and what he was paid. Find the cheap dots on the right.</p>
+    <div class="fig">
+      <div class="fig-title">2002 hitters: production against salary</div>
+      <div class="controls" id="mlb-hit-ctl"></div>
+      <div style="margin-top:10px"><label for="mlb-q" class="src" style="display:block;margin-bottom:4px">Find a player</label><input type="search" id="mlb-q" placeholder="e.g. Bonds, Jeter, Hatteberg" autocomplete="off"></div>
+      <div class="legend"><span><i style="background:var(--s-a)"></i>Oakland</span><span><i style="background:var(--s-b)"></i>Search match</span><span><i style="background:var(--dot)"></i>Everyone else (235 hitters)</span></div>
+      <div class="chart" id="mlb-c-hit"></div>
+      <div class="fig-note">Salary on a log scale. Much of the spread is service time: players in their first three years earn near the minimum whatever they hit.</div>
+    </div>
+    <p>To test the pricing properly I ran the regression economists Jahn Hakes and Raymond Sauer made famous: explain each hitter's salary from his previous season's on-base percentage and slugging, controlling for playing time and contract status. The coefficient is what the market paid for each skill.</p>
+    <div class="fig">
+      <div class="fig-title">What teams paid for on-base percentage and for slugging, by season</div>
+      <div class="fig-sub">Salary increase associated with 10 extra points of the statistic. Vertical bars show one standard error.</div>
+      <div class="legend"><span><i style="background:var(--s-a)"></i>On-base percentage</span><span><i style="background:var(--s-b)"></i>Slugging</span></div>
+      <div class="chart" id="mlb-c-hs"></div>
+      <div class="fig-note">My replication on Lahman salaries, about 350 hitters a year with 130+ PA. The shaded span is after the book came out in 2003. Estimates are noisy; 2000 is an outlier.</div>
+    </div>
+    <p>In four of the five seasons before the book, the market paid close to nothing for on-base percentage once slugging was accounted for, even though OBP is the more valuable skill. From 2003 to 2006 the price of OBP was three to four percent of salary per 10 points, every year. Hakes and Sauer's published study found the same correction and concluded the inefficiency was real and that it closed once the knowledge spread. Beane was buying a dollar for fifty cents, and then the sale ended.</p>
+  </div>
+</section>
+
+<section class="inn" id="mlb-i7">
+  <div class="inn-head"><div class="inn-no">7</div><div><div class="inn-tag">Seventh inning</div><h2>The season and the streak</h2></div></div>
+  <div class="prose">
+    <p>The film's low point is real. On May 23 the A's were <strong>20 and 26</strong>. From there they went <strong>83 and 33</strong>, a .716 pace. The streak ran from August 13 to September 4: 20 straight wins, an American League record at the time, outscoring opponents 141 to 65.</p>
+    <div class="fig">
+      <div class="fig-title">Games above .500 through the 2002 season, AL West contenders</div>
+      <div class="fig-sub">Every game from the Retrosheet game logs. The gold band is the 20 game streak.</div>
+      <div class="legend"><span><i style="background:var(--s-a)"></i>Oakland</span><span><i style="background:var(--s-b)"></i>Anaheim</span><span><i style="background:var(--s-c)"></i>Seattle</span></div>
+      <div class="chart" id="mlb-c-season"></div>
+    </div>
+    <div class="fig">
+      <div class="fig-title">The 20 wins, game by game</div>
+      <div class="strip" id="mlb-strip"></div>
+      <div class="fig-note">Game 20: Oakland led Kansas City 11 to 0, gave all of it back, and won 12 to 11 on Scott Hatteberg's pinch-hit home run in the ninth.</div>
+    </div>
+    <p>One caution the numbers themselves offer. A 97 win team by run differential will occasionally win 20 in a row and finish with 103. The streak is the most cinematic part of the season and the least analytical. The method shows up in the 800 and the 654, which landed where DePodesta said they would.</p>
+  </div>
+</section>
+
+<section class="inn" id="mlb-i8">
+  <div class="inn-head"><div class="inn-no">8</div><div><div class="inn-tag">Eighth inning</div><h2>What the film left out</h2></div></div>
+  <div class="prose">
+    <p>The movie gives you Hatteberg, Justice and Bradford. It barely mentions the players who produced most of the value. Oakland allowed the sixth fewest runs in baseball, and three young starters did most of that for almost no money.</p>
+    <div class="stats" id="mlb-s8"></div>
+    <div class="fig">
+      <div class="fig-title">2002 A's pitchers</div>
+      <div class="scroll"><table class="data" id="mlb-t-pit"></table></div>
+    </div>
+    <div class="fig">
+      <div class="fig-title">2002 A's hitters by Runs Created</div>
+      <div class="fig-sub">Bill James's basic formula: (H + BB) × TB / (AB + BB).</div>
+      <div id="mlb-rc"></div>
+      <div class="fig-note">Tagged players are the bargain pickups featured in the book. Tejada was the AL MVP; Zito won the Cy Young Award.</div>
+    </div>
+    <p>Miguel Tejada and Eric Chavez created 220 runs between them for $5.75 million. Zito, Hudson and Mulder went 57 and 21 across 675 innings for $1.97 million combined. All five were developed by the club and were still years from free agency, so their pay was capped by the league's rules.</p>
+    <p>That is the honest reading of the data. The biggest inefficiency Oakland exploited was cheap pre-free-agency talent, much of it drafted and developed with traditional scouting. The OBP bargains were real, and they were the margin on top.</p>
+  </div>
+</section>
+
+<section class="inn" id="mlb-i9">
+  <div class="inn-head"><div class="inn-no">9</div><div><div class="inn-tag">Ninth inning</div><h2>Aftermath</h2></div></div>
+  <div class="prose">
+    <p>Oakland lost the 2002 Division Series to Minnesota in five games. It was the third of four straight years they lost a first-round series three games to two. That looks like a flaw in the method until you do the arithmetic: a team that wins 55% of its games against a given opponent wins a best-of-five only 59% of the time. Short series are close to coin flips, and 162 games are not.</p>
+    <div class="fig">
+      <div class="fig-title">Cost per win: Oakland against the league average</div>
+      <div class="fig-sub">Payroll divided by wins, 1995 to 2016.</div>
+      <div class="legend"><span><i style="background:var(--s-a)"></i>Oakland</span><span><i style="background:var(--dot-strong)"></i>MLB average</span></div>
+      <div class="chart" id="mlb-c-cpw"></div>
+    </div>
+    <div class="fig">
+      <div class="fig-title">Oakland, season by season</div>
+      <div class="scroll"><table class="data" id="mlb-t-years"></table></div>
+    </div>
+    <p>From 2000 to 2003 the A's averaged 98 wins while ranking 23rd to 29th in payroll, paying about half the league rate per win. Then the edge was copied. Boston hired Bill James in November 2002, tried to hire Beane, hired Theo Epstein instead, and won the 2004 World Series with a large payroll and the same ideas. By 2007 Oakland was paying the league rate per win.</p>
+    <p>The lasting lesson is the procedure. Define the outcome (wins). Find what drives it (runs, then outs). Measure what the market pays for instead. Buy the difference, and expect the difference to close.</p>
+  </div>
+</section>
+
+<section class="inn" id="mlb-x">
+  <div class="inn-head"><div class="inn-no">+</div><div><div class="inn-tag">Extra innings</div><h2>Dig in yourself</h2></div></div>
+  <div class="prose">
+    <h3>The formulas</h3>
+    <div class="formula">OBP = (H + BB + HBP) / (AB + BB + HBP + SF)</div>
+    <div class="formula">SLG = Total bases / AB &nbsp;&nbsp; OPS = OBP + SLG</div>
+    <div class="formula">Pythagorean Win% = RS² / (RS² + RA²) &nbsp;&nbsp; (best fit exponent on 1962–2002: 1.85)</div>
+    <div class="formula">Runs Created = (H + BB) × TB / (AB + BB)</div>
+    <h3>Five things to test</h3>
+    <ol class="ul">
+      <li>Redo the third inning for the last ten seasons. Does OBP still beat batting average by the same margin now that strikeouts and home runs dominate?</li>
+      <li>Find the 2002 teams that beat or missed their Pythagorean record by the most (Minnesota +7, Boston −8). Check their record in one-run games.</li>
+      <li>Rebuild the run expectancy table for a recent season and recompute the steal break-even rate. The 2023 rule changes moved it.</li>
+      <li>Look up the 2002 draft, the one in the book. Nick Swisher played 1,527 MLB games and Joe Blanton won 101. Jeremy Brown, the catcher the scouts laughed at, played 5.</li>
+      <li>Pick any current low-payroll winner and ask what the market underprices today. Defense, pitch framing and pitch design have all had their turn.</li>
+    </ol>
+    <h3>Where the data lives</h3>
+    <ul class="ul">
+      <li><a href="https://www.baseball-reference.com/teams/OAK/2002.shtml" target="_blank" rel="noopener">Baseball-Reference: 2002 Oakland A's</a>. Every player, game and split for the season.</li>
+      <li><a href="https://sabr.org/lahman-database/" target="_blank" rel="noopener">Lahman Baseball Database</a>. Free season tables back to 1871. The team, batting, pitching and salary numbers here come from it.</li>
+      <li><a href="https://www.retrosheet.org/gamelogs/index.html" target="_blank" rel="noopener">Retrosheet game logs</a>. One row per game. The source of the seventh inning.</li>
+      <li><a href="https://tangotiger.net/RE9902.html" target="_blank" rel="noopener">Tom Tango's run expectancy matrix, 1999 to 2002</a>.</li>
+      <li><a href="https://www.fangraphs.com/" target="_blank" rel="noopener">FanGraphs</a> and <a href="https://baseballsavant.mlb.com/" target="_blank" rel="noopener">Baseball Savant</a>. Modern leaderboards, wOBA, WAR and pitch tracking.</li>
+      <li><a href="https://econpapers.repec.org/RePEc:aea:jecper:v:20:y:2006:i:3:p:173-186" target="_blank" rel="noopener">Hakes and Sauer (2006), "An Economic Evaluation of the Moneyball Hypothesis"</a>. The academic test of the book.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p class="src">Method: all figures computed from the Lahman database (teams, batting, pitching, salaries) and the Retrosheet 2002 game log. Correlations and regressions are ordinary least squares on team seasons 1962 to 2001 unless a chart says otherwise. Salary totals cover players listed in the Lahman salary table and can differ slightly from other payroll sources. Retrosheet data is used under its terms: the information used here was obtained free of charge from and is copyrighted by Retrosheet, www.retrosheet.org.</p>
+</footer>
+</main>
+
+
+<div class="wrap" style="padding-bottom:50px"><div class="inn-tag">Keep reading</div><div class="nextup"><a href="../moreyball/">Basketball →</a><a href="../expected-goals/">Soccer →</a><a class="home" href="../">All stories</a></div></div></div>
+<script>
+const $=(s,e=document)=>e.querySelector(s);
+const NS='http://www.w3.org/2000/svg';
+const S=(t,a,p,txt)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;if(p)p.appendChild(e);return e};
+const money=v=>v>=1e6?'$'+(v/1e6).toFixed(v>=1e7?1:2)+'M':'$'+Math.round(v/1e3)+'K';
+const f3=v=>v.toFixed(3).replace(/^0/,'');
+const ABBR={NYA:'NYY',SFN:'SF',SLN:'STL',LAN:'LAD',NYN:'NYM',CHA:'CWS',CHN:'CHC',KCA:'KC',SDN:'SD',TBA:'TB',FLO:'FLA',ANA:'ANA'};
+const ab=t=>ABBR[t]||t;
+const tip=$('#tip');
+function showTip(html,x,y){tip.innerHTML=html;tip.hidden=false;const w=tip.offsetWidth,h=tip.offsetHeight;let l=x+14,t=y-h-10;if(l+w>innerWidth-8)l=x-w-14;if(l<8)l=8;if(t<8)t=y+16;tip.style.left=l+'px';tip.style.top=t+'px'}
+const hideTip=()=>{tip.hidden=true};
+function ticks(a,b,n){const raw=(b-a)/n,p=Math.pow(10,Math.floor(Math.log10(raw))),r=raw/p,st=(r<1.5?1:r<3?2:r<7?5:10)*p,out=[];for(let v=Math.ceil(a/st-1e-9)*st;v<=b+1e-9;v+=st)out.push(+v.toFixed(10));return out}
+function ols(xs,ys){const n=xs.length,mx=xs.reduce((a,b)=>a+b)/n,my=ys.reduce((a,b)=>a+b)/n;let sxy=0,sxx=0,syy=0;for(let i=0;i<n;i++){sxy+=(xs[i]-mx)*(ys[i]-my);sxx+=(xs[i]-mx)**2;syy+=(ys[i]-my)**2}const b=sxy/sxx;return{a:my-b*mx,b,r:sxy/Math.sqrt(sxx*syy)}}
+const charts=[];
+function mount(el,draw){let w=0;const go=()=>{const nw=el.clientWidth;if(nw&&nw!==w){w=nw;draw(nw)}};charts.push(go);go();el._redraw=()=>{w=0;go()}}
+addEventListener('resize',()=>charts.forEach(f=>f()));
+
+/* generic frame: axes + scales */
+function frame(el,W,o){
+  const H=o.h||Math.round(Math.min(440,Math.max(290,W*0.6))),m={l:o.ml||50,r:o.mr||18,t:30,b:44};
+  el.innerHTML='';
+  const svg=S('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':o.aria||''},el);
+  const tx=o.xlog?Math.log10:(v=>v),ty=o.ylog?Math.log10:(v=>v);
+  const [x0,x1]=o.xdom.map(tx),[y0,y1]=o.ydom.map(ty);
+  const X=v=>m.l+(tx(v)-x0)/(x1-x0)*(W-m.l-m.r),Y=v=>H-m.b-(ty(v)-y0)/(y1-y0)*(H-m.t-m.b);
+  const g=S('g',{class:'ax'},svg);
+  const xt=o.xticks||ticks(o.xdom[0],o.xdom[1],W<480?4:7),yt=o.yticks||ticks(o.ydom[0],o.ydom[1],5);
+  yt.forEach(v=>{S('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),class:v===0&&o.zero?'base0':''},g);S('text',{x:m.l-7,y:Y(v)+4,'text-anchor':'end'},g,(o.yfmt||String)(v))});
+  xt.forEach(v=>{S('text',{x:X(v),y:H-m.b+16,'text-anchor':'middle'},g,(o.xfmt||String)(v))});
+  S('line',{x1:m.l,x2:W-m.r,y1:H-m.b,y2:H-m.b,class:'base0'},g);
+  if(o.xlab)S('text',{x:(m.l+W-m.r)/2,y:H-6,'text-anchor':'middle',class:'axl'},svg,o.xlab);
+  if(o.ylab)S('text',{x:m.l-42,y:12,class:'axl'},svg,o.ylab);
+  const cid='cp'+Math.random().toString(36).slice(2);
+  const cp=S('clipPath',{id:cid},svg);S('rect',{x:m.l,y:m.t,width:W-m.l-m.r,height:H-m.t-m.b},cp);
+  return{svg,X,Y,W,H,m,cid}
+}
+function pos(svg,e){const r=svg.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]}
+
+function scatter(el,get){mount(el,W=>{
+  const o=get(),f=frame(el,W,o),{svg,X,Y}=f;
+  if(o.band)o.band(f);
+  if(o.fit||o.fitfn){const [a,b]=o.xdom,fy=o.fitfn||(x=>o.fit.a+o.fit.b*x);S('line',{x1:X(a),y1:Y(fy(a)),x2:X(b),y2:Y(fy(b)),class:'fit','clip-path':`url(#${f.cid})`},svg)}
+  (o.paths||[]).forEach(p=>S('path',{d:p.pts.map((q,i)=>(i?'L':'M')+X(q[0]).toFixed(1)+' '+Y(q[1]).toFixed(1)).join(''),class:'ln '+p.cls,'clip-path':`url(#${f.cid})`},svg));
+  const order=[...o.pts].sort((p,q)=>(p.z||0)-(q.z||0));
+  order.forEach(p=>{p._x=X(p.x);p._y=Y(p.y);S('circle',{cx:p._x,cy:p._y,r:p.r||(p.cls&&p.cls!=='po'?6:4),class:'pt '+(p.cls||'')},svg)});
+  order.filter(p=>p.lab).forEach(p=>{const s=p.side||'r',dx=s==='r'?9:s==='l'?-9:0,dy=s==='t'?-10:s==='b'?18:4;
+    let an=s==='r'?'start':s==='l'?'end':'middle';S('text',{x:p._x+dx,y:p._y+dy,'text-anchor':an,class:'lab'},svg,p.lab)});
+  const ring=S('circle',{r:8,class:'ring',visibility:'hidden'},svg);
+  const mv=e=>{const [mx,my]=pos(svg,e);let best=null,bd=1600;o.pts.forEach(p=>{const d=(p._x-mx)**2+(p._y-my)**2;if(d<bd){bd=d;best=p}});
+    if(best){ring.setAttribute('cx',best._x);ring.setAttribute('cy',best._y);ring.setAttribute('visibility','visible');showTip(best.tip,e.clientX,e.clientY)}else{ring.setAttribute('visibility','hidden');hideTip()}};
+  svg.addEventListener('pointermove',mv);svg.addEventListener('pointerdown',mv);svg.addEventListener('pointerleave',()=>{ring.setAttribute('visibility','hidden');hideTip()});
+})}
+
+function lines(el,get){mount(el,W=>{
+  const o=get(),f=frame(el,W,o),{svg,X,Y,H,m}=f;
+  if(o.band)S('rect',{x:X(o.band[0]),y:m.t,width:X(o.band[1])-X(o.band[0]),height:H-m.t-m.b,class:'band'},svg);
+  o.series.forEach(s=>{
+    if(s.err)s.pts.forEach(p=>S('line',{x1:X(p[0]),x2:X(p[0]),y1:Y(p[1]-p[2]),y2:Y(p[1]+p[2]),class:'ln err '+s.cls},svg));
+    S('path',{d:s.pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(''),class:'ln '+s.cls},svg);
+    if(s.dots)s.pts.forEach(p=>S('circle',{cx:X(p[0]),cy:Y(p[1]),r:4,class:'pt f'+s.cls,style:'stroke-width:2'},svg));
+    const L=s.pts[s.pts.length-1];if(s.end)S('text',{x:X(L[0])+6,y:Y(L[1])+4,class:'lab'},svg,s.end)});
+  (o.notes||[]).forEach(n=>S('text',{x:X(n.x),y:Y(n.y),class:'lab','text-anchor':n.anchor||'middle'},svg,n.t));
+  const cr=S('line',{y1:m.t,y2:H-m.b,class:'cross',visibility:'hidden'},svg);
+  const xs=o.series[0].pts.map(p=>p[0]);
+  const mv=e=>{const [mx]=pos(svg,e);let bi=0,bd=1e9;xs.forEach((x,i)=>{const d=Math.abs(X(x)-mx);if(d<bd){bd=d;bi=i}});
+    cr.setAttribute('x1',X(xs[bi]));cr.setAttribute('x2',X(xs[bi]));cr.setAttribute('visibility','visible');showTip(o.tip(bi,xs[bi]),e.clientX,e.clientY)};
+  svg.addEventListener('pointermove',mv);svg.addEventListener('pointerdown',mv);svg.addEventListener('pointerleave',()=>{cr.setAttribute('visibility','hidden');hideTip()});
+})}
+function pills(el,opts,cur,on){el.innerHTML='';opts.forEach(([k,l])=>{const b=document.createElement('button');b.type='button';b.textContent=l;b.setAttribute('aria-pressed',k===cur);b.onclick=()=>{[...el.children].forEach(c=>c.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');on(k)};el.appendChild(b)})}
+
+function bars(el,get){mount(el,W=>{
+  const o=get(),n=o.cats.length,step=o.every||(W<480?Math.ceil(n/6):Math.ceil(n/14));
+  const f=frame(el,W,Object.assign({},o,{xdom:[0,n],xticks:o.cats.map((_,i)=>i+.5).filter((_,i)=>i%step===0),xfmt:v=>o.cats[v-.5]})),{svg,X,Y,H,m}=f;
+  const k=o.series.length,bw=(X(1)-X(0)),gw=Math.max(2,bw*0.8/k),y0=Y(o.ydom[0]);
+  o.series.forEach((s,j)=>s.vals.forEach((v,i)=>{if(v==null)return;const x=X(i)+bw*0.1+j*gw,y=Y(v);S('rect',{x:x+1,y:Math.min(y,y0),width:Math.max(1,gw-2),height:Math.abs(y0-y),rx:Math.min(3,gw/3),class:'f'+s.cls},svg)}));
+  (o.lines||[]).forEach(s=>{S('path',{d:s.vals.map((v,i)=>(i?'L':'M')+(X(i+.5)).toFixed(1)+' '+Y(v).toFixed(1)).join(''),class:'ln '+s.cls},svg);s.vals.forEach((v,i)=>S('circle',{cx:X(i+.5),cy:Y(v),r:3.5,class:'pt f'+s.cls,style:'stroke-width:2'},svg))});
+  const mv=e=>{const [mx]=pos(svg,e);const i=Math.max(0,Math.min(n-1,Math.floor((mx-m.l)/bw)));showTip(o.tip(i),e.clientX,e.clientY)};
+  svg.addEventListener('pointermove',mv);svg.addEventListener('pointerdown',mv);svg.addEventListener('pointerleave',hideTip);
+})}
+const pct=(v,d=0)=>(v*100).toFixed(d)+'%';
+const cssv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function hex2rgb(h){h=h.replace('#','');if(h.length===3)h=[...h].map(c=>c+c).join('');return[0,2,4].map(i=>parseInt(h.slice(i,i+2),16))}
+function mixc(a,b,t){const A=hex2rgb(a),B=hex2rgb(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')'}
+
+(function(){const root=document.getElementById("sport-mlb"),$=(s,e=root)=>e.querySelector(s.replace(/#/g,"#mlb-")),cssv=n=>getComputedStyle(root).getPropertyValue(n).trim();
+const D={"teams":[{"t":"ANA","n":"Anaheim Angels","lg":"AL","W":99,"L":63,"R":851,"RA":644,"pay":61721667,"AVG":0.282,"OBP":0.341,"SLG":0.433,"BB":462,"SB":117,"HR":152,"ERA":3.69,"po":true,"pythW":103.0},{"t":"ARI","n":"Arizona Diamondbacks","lg":"NL","W":98,"L":64,"R":819,"RA":674,"pay":102819999,"AVG":0.267,"OBP":0.346,"SLG":0.423,"BB":643,"SB":92,"HR":165,"ERA":3.92,"po":true,"pythW":96.6},{"t":"ATL","n":"Atlanta Braves","lg":"NL","W":101,"L":59,"R":708,"RA":565,"pay":92870367,"AVG":0.26,"OBP":0.331,"SLG":0.409,"BB":558,"SB":76,"HR":164,"ERA":3.13,"po":true,"pythW":97.7},{"t":"BAL","n":"Baltimore Orioles","lg":"AL","W":67,"L":95,"R":667,"RA":773,"pay":60493487,"AVG":0.246,"OBP":0.309,"SLG":0.403,"BB":452,"SB":110,"HR":165,"ERA":4.46,"po":false,"pythW":69.1},{"t":"BOS","n":"Boston Red Sox","lg":"AL","W":93,"L":69,"R":859,"RA":665,"pay":108366060,"AVG":0.277,"OBP":0.345,"SLG":0.444,"BB":545,"SB":80,"HR":177,"ERA":3.75,"po":false,"pythW":101.3},{"t":"CHA","n":"Chicago White Sox","lg":"AL","W":81,"L":81,"R":856,"RA":798,"pay":57052833,"AVG":0.268,"OBP":0.338,"SLG":0.449,"BB":555,"SB":75,"HR":217,"ERA":4.53,"po":false,"pythW":86.7},{"t":"CHN","n":"Chicago Cubs","lg":"NL","W":67,"L":95,"R":706,"RA":759,"pay":75690833,"AVG":0.246,"OBP":0.321,"SLG":0.413,"BB":585,"SB":63,"HR":200,"ERA":4.29,"po":false,"pythW":75.1},{"t":"CIN","n":"Cincinnati Reds","lg":"NL","W":78,"L":84,"R":709,"RA":774,"pay":45050390,"AVG":0.253,"OBP":0.33,"SLG":0.408,"BB":583,"SB":116,"HR":169,"ERA":4.27,"po":false,"pythW":73.9},{"t":"CLE","n":"Cleveland Indians","lg":"AL","W":74,"L":88,"R":739,"RA":837,"pay":78909449,"AVG":0.249,"OBP":0.321,"SLG":0.412,"BB":542,"SB":52,"HR":192,"ERA":4.91,"po":false,"pythW":71.0},{"t":"COL","n":"Colorado Rockies","lg":"NL","W":73,"L":89,"R":778,"RA":898,"pay":56851043,"AVG":0.274,"OBP":0.337,"SLG":0.423,"BB":497,"SB":103,"HR":152,"ERA":5.2,"po":false,"pythW":69.5},{"t":"DET","n":"Detroit Tigers","lg":"AL","W":55,"L":106,"R":575,"RA":864,"pay":55048000,"AVG":0.248,"OBP":0.3,"SLG":0.379,"BB":363,"SB":65,"HR":124,"ERA":4.92,"po":false,"pythW":49.4},{"t":"FLO","n":"Florida Marlins","lg":"NL","W":79,"L":83,"R":699,"RA":763,"pay":41979917,"AVG":0.261,"OBP":0.337,"SLG":0.403,"BB":595,"SB":177,"HR":146,"ERA":4.36,"po":false,"pythW":73.9},{"t":"HOU","n":"Houston Astros","lg":"NL","W":84,"L":78,"R":749,"RA":695,"pay":63448417,"AVG":0.262,"OBP":0.338,"SLG":0.417,"BB":589,"SB":71,"HR":167,"ERA":4.0,"po":false,"pythW":87.0},{"t":"KCA","n":"Kansas City Royals","lg":"AL","W":62,"L":100,"R":737,"RA":891,"pay":47257000,"AVG":0.256,"OBP":0.323,"SLG":0.398,"BB":524,"SB":140,"HR":140,"ERA":5.21,"po":false,"pythW":65.8},{"t":"LAN","n":"Los Angeles Dodgers","lg":"NL","W":92,"L":70,"R":713,"RA":643,"pay":94850953,"AVG":0.264,"OBP":0.32,"SLG":0.409,"BB":428,"SB":96,"HR":155,"ERA":3.69,"po":false,"pythW":89.3},{"t":"MIL","n":"Milwaukee Brewers","lg":"NL","W":56,"L":106,"R":627,"RA":821,"pay":50287833,"AVG":0.253,"OBP":0.32,"SLG":0.39,"BB":500,"SB":94,"HR":139,"ERA":4.73,"po":false,"pythW":59.7},{"t":"MIN","n":"Minnesota Twins","lg":"AL","W":94,"L":67,"R":768,"RA":712,"pay":40425000,"AVG":0.272,"OBP":0.332,"SLG":0.437,"BB":472,"SB":79,"HR":167,"ERA":4.12,"po":true,"pythW":86.6},{"t":"MON","n":"Montreal Expos","lg":"NL","W":83,"L":79,"R":735,"RA":718,"pay":38670500,"AVG":0.261,"OBP":0.334,"SLG":0.418,"BB":575,"SB":118,"HR":162,"ERA":3.97,"po":false,"pythW":82.9},{"t":"NYA","n":"New York Yankees","lg":"AL","W":103,"L":58,"R":897,"RA":697,"pay":125928583,"AVG":0.275,"OBP":0.354,"SLG":0.455,"BB":640,"SB":100,"HR":223,"ERA":3.87,"po":true,"pythW":100.4},{"t":"NYN","n":"New York Mets","lg":"NL","W":75,"L":86,"R":690,"RA":703,"pay":94633593,"AVG":0.256,"OBP":0.322,"SLG":0.395,"BB":486,"SB":87,"HR":160,"ERA":3.89,"po":false,"pythW":79.0},{"t":"OAK","n":"Oakland Athletics","lg":"AL","W":103,"L":59,"R":800,"RA":654,"pay":40004167,"AVG":0.261,"OBP":0.339,"SLG":0.432,"BB":609,"SB":46,"HR":205,"ERA":3.68,"po":true,"pythW":97.1},{"t":"PHI","n":"Philadelphia Phillies","lg":"NL","W":80,"L":81,"R":710,"RA":724,"pay":57954999,"AVG":0.259,"OBP":0.339,"SLG":0.422,"BB":640,"SB":104,"HR":165,"ERA":4.17,"po":false,"pythW":78.9},{"t":"PIT","n":"Pittsburgh Pirates","lg":"NL","W":72,"L":89,"R":641,"RA":730,"pay":42323599,"AVG":0.244,"OBP":0.319,"SLG":0.381,"BB":537,"SB":86,"HR":142,"ERA":4.23,"po":false,"pythW":70.1},{"t":"SDN","n":"San Diego Padres","lg":"NL","W":66,"L":96,"R":662,"RA":815,"pay":41425000,"AVG":0.253,"OBP":0.321,"SLG":0.381,"BB":547,"SB":71,"HR":136,"ERA":4.62,"po":false,"pythW":64.4},{"t":"SEA","n":"Seattle Mariners","lg":"AL","W":93,"L":69,"R":814,"RA":699,"pay":80282668,"AVG":0.275,"OBP":0.35,"SLG":0.419,"BB":629,"SB":137,"HR":152,"ERA":4.07,"po":false,"pythW":93.2},{"t":"SFN","n":"San Francisco Giants","lg":"NL","W":95,"L":66,"R":783,"RA":616,"pay":78299835,"AVG":0.267,"OBP":0.344,"SLG":0.442,"BB":616,"SB":74,"HR":198,"ERA":3.54,"po":true,"pythW":99.4},{"t":"SLN","n":"St. Louis Cardinals","lg":"NL","W":97,"L":65,"R":787,"RA":648,"pay":74660875,"AVG":0.268,"OBP":0.338,"SLG":0.425,"BB":542,"SB":86,"HR":175,"ERA":3.7,"po":true,"pythW":96.5},{"t":"TBA","n":"Tampa Bay Devil Rays","lg":"AL","W":55,"L":106,"R":673,"RA":918,"pay":34380000,"AVG":0.253,"OBP":0.314,"SLG":0.39,"BB":456,"SB":102,"HR":133,"ERA":5.29,"po":false,"pythW":56.3},{"t":"TEX","n":"Texas Rangers","lg":"AL","W":72,"L":90,"R":843,"RA":882,"pay":105526122,"AVG":0.269,"OBP":0.338,"SLG":0.455,"BB":554,"SB":62,"HR":230,"ERA":5.15,"po":false,"pythW":77.3},{"t":"TOR","n":"Toronto Blue Jays","lg":"AL","W":78,"L":84,"R":813,"RA":828,"pay":76864333,"AVG":0.261,"OBP":0.327,"SLG":0.43,"BB":522,"SB":71,"HR":187,"ERA":4.8,"po":false,"pythW":79.5}],"era":[[1990,"ATL",0.25,0.311,0.396,0.568,1.0,4.21,65,97,682,821],[1990,"BAL",0.245,0.33,0.37,0.584,0.82,4.155,76,85,669,698],[1990,"BOS",0.272,0.344,0.395,0.327,0.654,4.315,88,74,699,664],[1990,"CAL",0.26,0.329,0.391,0.426,0.907,4.259,80,82,690,706],[1990,"CHA",0.258,0.32,0.38,0.864,0.654,4.21,94,68,682,633],[1990,"CHN",0.263,0.314,0.392,0.932,0.84,4.259,77,85,690,774],[1990,"CIN",0.265,0.325,0.399,1.025,0.772,4.278,91,71,693,597],[1990,"CLE",0.267,0.324,0.391,0.66,0.679,4.519,77,85,732,737],[1990,"DET",0.259,0.337,0.409,0.506,1.062,4.63,79,83,750,754],[1990,"HOU",0.242,0.313,0.345,1.105,0.58,3.537,75,87,573,656],[1990,"KCA",0.267,0.328,0.395,0.665,0.621,4.391,75,86,707,709],[1990,"LAN",0.262,0.328,0.382,0.87,0.796,4.494,86,76,728,685],[1990,"MIN",0.265,0.324,0.385,0.593,0.617,4.111,74,88,666,729],[1990,"ML4",0.256,0.32,0.384,1.012,0.79,4.519,74,88,732,760],[1990,"MON",0.25,0.322,0.37,1.451,0.704,4.086,85,77,662,598],[1990,"NYA",0.241,0.3,0.366,0.735,0.907,3.722,67,95,603,749],[1990,"NYN",0.256,0.323,0.408,0.679,1.062,4.784,91,71,775,613],[1990,"OAK",0.254,0.336,0.391,0.87,1.012,4.525,103,59,733,570],[1990,"PHI",0.255,0.327,0.363,0.667,0.636,3.988,77,85,646,729],[1990,"PIT",0.259,0.33,0.405,0.846,0.852,4.525,95,67,733,619],[1990,"SDN",0.257,0.32,0.38,0.852,0.759,4.154,75,87,673,673],[1990,"SEA",0.259,0.333,0.373,0.648,0.66,3.951,77,85,640,680],[1990,"SFN",0.262,0.323,0.396,0.673,0.938,4.438,85,77,719,710],[1990,"SLN",0.256,0.32,0.358,1.364,0.451,3.698,70,92,599,698],[1990,"TEX",0.259,0.331,0.376,0.71,0.679,4.173,83,79,676,696],[1990,"TOR",0.265,0.328,0.419,0.685,1.031,4.735,86,76,767,661],[1991,"ATL",0.258,0.328,0.393,1.019,0.87,4.623,94,68,749,644],[1991,"BAL",0.254,0.319,0.401,0.309,1.049,4.235,67,95,686,796],[1991,"BOS",0.269,0.34,0.401,0.364,0.778,4.512,84,78,731,712],[1991,"CAL",0.255,0.314,0.374,0.58,0.71,4.031,81,81,653,649],[1991,"CHA",0.262,0.336,0.391,0.827,0.858,4.679,87,75,758,681],[1991,"CHN",0.253,0.309,0.39,0.769,0.994,4.344,77,83,695,734],[1991,"CIN",0.258,0.32,0.403,0.765,1.012,4.253,74,88,689,691],[1991,"CLE",0.254,0.313,0.35,0.519,0.488,3.556,57,105,576,759],[1991,"DET",0.247,0.333,0.416,0.673,1.29,5.043,84,78,817,794],[1991,"HOU",0.244,0.309,0.347,0.772,0.488,3.735,65,97,605,717],[1991,"KCA",0.264,0.329,0.394,0.735,0.722,4.488,82,80,727,722],[1991,"LAN",0.253,0.326,0.358,0.778,0.667,4.105,93,69,665,565],[1991,"MIN",0.28,0.344,0.419,0.66,0.864,4.79,95,67,776,652],[1991,"ML4",0.271,0.336,0.396,0.654,0.716,4.932,83,79,799,744],[1991,"MON",0.246,0.308,0.357,1.373,0.59,3.596,71,90,579,655],[1991,"NYA",0.256,0.316,0.387,0.673,0.907,4.16,71,91,674,777],[1991,"NYN",0.243,0.318,0.365,0.95,0.727,3.975,77,84,640,646],[1991,"OAK",0.248,0.331,0.389,0.932,0.981,4.691,84,78,760,776],[1991,"PHI",0.241,0.303,0.358,0.568,0.685,3.883,78,84,629,680],[1991,"PIT",0.263,0.338,0.398,0.765,0.778,4.741,98,64,768,632],[1991,"SDN",0.244,0.31,0.362,0.623,0.747,3.926,84,78,636,646],[1991,"SEA",0.255,0.328,0.383,0.599,0.778,4.333,83,79,702,674],[1991,"SFN",0.246,0.309,0.381,0.586,0.87,4.006,75,87,649,697],[1991,"SLN",0.255,0.322,0.357,1.247,0.42,4.019,84,78,651,648],[1991,"TEX",0.27,0.341,0.424,0.63,1.093,5.117,85,77,829,814],[1991,"TOR",0.257,0.322,0.4,0.914,0.821,4.222,91,71,684,622],[1992,"ATL",0.254,0.316,0.388,0.778,0.852,4.21,98,64,682,569],[1992,"BAL",0.259,0.34,0.398,0.549,0.914,4.352,89,73,705,656],[1992,"BOS",0.246,0.321,0.347,0.272,0.519,3.698,73,89,599,669],[1992,"CAL",0.243,0.301,0.338,0.988,0.543,3.574,72,90,579,671],[1992,"CHA",0.261,0.336,0.383,0.988,0.679,4.556,86,76,738,690],[1992,"CHN",0.254,0.307,0.364,0.475,0.642,3.66,78,84,593,624],[1992,"CIN",0.26,0.328,0.382,0.772,0.611,4.074,90,72,660,609],[1992,"CLE",0.266,0.323,0.383,0.889,0.784,4.16,76,86,674,746],[1992,"DET",0.256,0.337,0.407,0.407,1.123,4.883,75,87,791,794],[1992,"HOU",0.246,0.314,0.359,0.858,0.593,3.753,81,81,608,668],[1992,"KCA",0.257,0.315,0.364,0.809,0.463,3.765,72,90,610,667],[1992,"LAN",0.248,0.313,0.339,0.877,0.444,3.383,63,99,548,636],[1992,"MIN",0.277,0.341,0.391,0.759,0.642,4.611,90,72,747,653],[1992,"ML4",0.268,0.33,0.375,1.58,0.506,4.568,92,70,740,604],[1992,"MON",0.252,0.312,0.369,1.21,0.63,4.0,87,75,648,581],[1992,"NYA",0.261,0.328,0.406,0.481,1.006,4.525,76,86,733,746],[1992,"NYN",0.235,0.31,0.342,0.796,0.574,3.698,72,90,599,653],[1992,"OAK",0.258,0.346,0.387,0.883,0.877,4.599,96,66,745,672],[1992,"PHI",0.253,0.32,0.377,0.784,0.728,4.235,70,92,686,717],[1992,"PIT",0.255,0.324,0.381,0.679,0.654,4.278,96,66,693,595],[1992,"SDN",0.255,0.313,0.386,0.426,0.833,3.809,82,80,617,636],[1992,"SEA",0.264,0.323,0.402,0.617,0.92,4.191,64,98,679,799],[1992,"SFN",0.244,0.302,0.355,0.691,0.648,3.543,72,90,574,647],[1992,"SLN",0.262,0.323,0.375,1.284,0.58,3.895,83,79,631,604],[1992,"TEX",0.251,0.321,0.393,0.5,0.981,4.21,77,85,682,753],[1992,"TOR",0.263,0.333,0.414,0.796,1.006,4.815,96,66,780,682],[1993,"ATL",0.262,0.331,0.408,0.772,1.043,4.735,104,58,767,559],[1993,"BAL",0.267,0.346,0.413,0.451,0.969,4.852,85,77,786,745],[1993,"BOS",0.264,0.331,0.395,0.451,0.704,4.235,80,82,686,698],[1993,"CAL",0.26,0.331,0.38,1.043,0.704,4.222,71,91,684,770],[1993,"CHA",0.265,0.338,0.411,0.654,1.0,4.79,94,68,776,664],[1993,"CHN",0.27,0.325,0.413,0.613,0.988,4.528,84,78,738,739],[1993,"CIN",0.264,0.324,0.396,0.877,0.846,4.457,73,89,722,785],[1993,"CLE",0.275,0.335,0.409,0.981,0.87,4.877,76,86,790,813],[1993,"COL",0.273,0.323,0.422,0.901,0.877,4.679,67,95,758,967],[1993,"DET",0.275,0.362,0.434,0.642,1.099,5.549,85,77,899,837],[1993,"FLO",0.248,0.314,0.346,0.722,0.58,3.586,64,98,581,724],[1993,"HOU",0.267,0.33,0.409,0.636,0.852,4.42,85,77,716,630],[1993,"KCA",0.264,0.32,0.397,0.617,0.772,4.167,84,78,675,694],[1993,"LAN",0.261,0.321,0.383,0.778,0.802,4.167,81,81,675,662],[1993,"MIN",0.264,0.327,0.385,0.512,0.747,4.278,71,91,693,830],[1993,"ML4",0.258,0.328,0.379,0.852,0.772,4.525,69,93,733,792],[1993,"MON",0.257,0.326,0.386,1.399,0.748,4.491,94,68,732,682],[1993,"NYA",0.279,0.353,0.435,0.241,1.099,5.068,88,74,821,761],[1993,"NYN",0.248,0.305,0.39,0.488,0.975,4.148,59,103,672,744],[1993,"OAK",0.254,0.33,0.394,0.809,0.975,4.414,68,94,715,846],[1993,"PHI",0.274,0.351,0.426,0.562,0.963,5.414,97,65,877,740],[1993,"PIT",0.267,0.335,0.393,0.568,0.679,4.364,75,87,707,806],[1993,"SDN",0.252,0.312,0.389,0.568,0.944,4.191,61,101,679,772],[1993,"SEA",0.26,0.339,0.406,0.562,0.994,4.531,82,80,734,731],[1993,"SFN",0.276,0.34,0.427,0.741,1.037,4.988,103,59,808,636],[1993,"SLN",0.272,0.341,0.395,0.944,0.728,4.679,87,75,758,744],[1993,"TEX",0.267,0.329,0.431,0.698,1.117,5.154,86,76,835,751],[1993,"TOR",0.279,0.35,0.436,1.049,0.981,5.228,95,67,847,742],[1994,"ATL",0.267,0.333,0.434,0.421,1.202,4.754,68,46,542,448],[1994,"BAL",0.272,0.349,0.438,0.616,1.241,5.259,63,49,589,497],[1994,"BOS",0.264,0.334,0.421,0.704,1.043,4.8,54,61,552,621],[1994,"CAL",0.264,0.334,0.409,0.565,1.043,4.722,47,68,543,660],[1994,"CHA",0.287,0.366,0.444,0.681,1.071,5.602,67,46,633,498],[1994,"CHN",0.259,0.325,0.404,0.611,0.965,4.425,49,64,500,549],[1994,"CIN",0.286,0.35,0.449,1.035,1.078,5.296,66,48,609,490],[1994,"CLE",0.29,0.351,0.484,1.159,1.478,6.009,66,47,679,562],[1994,"COL",0.274,0.337,0.439,0.778,1.068,4.897,53,64,573,638],[1994,"DET",0.265,0.351,0.454,0.4,1.4,5.67,53,62,652,671],[1994,"FLO",0.266,0.33,0.396,0.565,0.817,4.07,51,64,468,576],[1994,"HOU",0.278,0.347,0.445,1.078,1.043,5.235,66,49,602,503],[1994,"KCA",0.269,0.335,0.419,1.217,0.87,4.991,64,51,574,532],[1994,"LAN",0.27,0.333,0.414,0.649,1.009,4.667,58,56,532,509],[1994,"MIN",0.276,0.34,0.427,0.832,0.912,5.257,53,60,594,688],[1994,"ML4",0.263,0.335,0.408,0.513,0.861,4.757,53,62,547,586],[1994,"MON",0.278,0.343,0.435,1.202,0.947,5.132,74,40,585,454],[1994,"NYA",0.29,0.374,0.462,0.487,1.23,5.929,70,43,670,534],[1994,"NYN",0.25,0.316,0.394,0.221,1.035,4.478,55,58,506,526],[1994,"OAK",0.26,0.33,0.4,0.798,0.991,4.816,51,63,549,589],[1994,"PHI",0.262,0.332,0.39,0.583,0.696,4.53,54,61,521,497],[1994,"PIT",0.259,0.322,0.384,0.465,0.702,4.088,53,61,466,580],[1994,"SDN",0.275,0.33,0.401,0.675,0.786,4.094,47,70,479,531],[1994,"SEA",0.269,0.335,0.451,0.429,1.366,5.08,49,63,569,616],[1994,"SFN",0.249,0.318,0.402,0.991,1.07,4.383,55,60,504,500],[1994,"SLN",0.263,0.339,0.414,0.661,0.939,4.652,53,61,535,621],[1994,"TEX",0.28,0.353,0.436,0.719,1.088,5.377,52,62,613,697],[1994,"TOR",0.269,0.336,0.424,0.687,1.0,4.922,55,60,566,579],[1995,"ATL",0.25,0.326,0.409,0.507,1.167,4.479,90,54,645,540],[1995,"BAL",0.262,0.342,0.428,0.639,1.201,4.889,71,73,704,640],[1995,"BOS",0.28,0.357,0.455,0.688,1.215,5.493,86,58,791,698],[1995,"CAL",0.277,0.352,0.448,0.4,1.283,5.524,78,67,801,697],[1995,"CHA",0.28,0.354,0.431,0.759,1.007,5.207,68,76,755,758],[1995,"CHN",0.265,0.327,0.43,0.729,1.097,4.812,73,71,693,671],[1995,"CIN",0.27,0.342,0.44,1.319,1.118,5.188,85,59,747,623],[1995,"CLE",0.291,0.36,0.479,0.917,1.438,5.833,100,44,840,607],[1995,"COL",0.281,0.35,0.471,0.868,1.389,5.451,77,67,785,783],[1995,"DET",0.247,0.327,0.404,0.507,1.104,4.542,60,84,654,844],[1995,"FLO",0.262,0.335,0.406,0.916,1.007,4.706,67,76,673,673],[1995,"HOU",0.275,0.353,0.399,1.222,0.757,5.188,76,68,747,674],[1995,"KCA",0.26,0.328,0.396,0.833,0.826,4.368,70,74,629,691],[1995,"LAN",0.264,0.329,0.4,0.882,0.972,4.403,78,66,634,609],[1995,"MIN",0.279,0.346,0.419,0.729,0.833,4.882,56,88,703,889],[1995,"ML4",0.266,0.336,0.409,0.729,0.889,5.139,65,79,740,747],[1995,"MON",0.259,0.32,0.395,0.833,0.819,4.312,66,78,621,638],[1995,"NYA",0.276,0.357,0.42,0.345,0.841,5.166,79,65,749,688],[1995,"NYN",0.267,0.33,0.4,0.403,0.868,4.562,69,75,657,618],[1995,"OAK",0.264,0.341,0.42,0.778,1.174,5.069,67,77,730,761],[1995,"PHI",0.262,0.332,0.384,0.5,0.653,4.271,69,75,615,658],[1995,"PIT",0.26,0.323,0.396,0.583,0.868,4.368,58,86,629,736],[1995,"SDN",0.272,0.334,0.397,0.861,0.806,4.639,70,74,668,672],[1995,"SEA",0.276,0.35,0.448,0.759,1.255,5.49,79,66,796,708],[1995,"SFN",0.253,0.323,0.404,0.958,1.056,4.528,67,77,652,776],[1995,"SLN",0.247,0.314,0.374,0.552,0.748,3.937,62,81,563,658],[1995,"TEX",0.265,0.338,0.41,0.625,0.958,4.799,74,70,691,720],[1995,"TOR",0.26,0.329,0.409,0.521,0.972,4.458,56,88,642,777],[1996,"ATL",0.27,0.333,0.432,0.512,1.216,4.772,96,66,773,648],[1996,"BAL",0.274,0.35,0.472,0.466,1.577,5.822,88,74,949,903],[1996,"BOS",0.283,0.359,0.457,0.562,1.29,5.728,85,77,928,921],[1996,"CAL",0.276,0.339,0.431,0.329,1.193,4.733,70,91,762,943],[1996,"CHA",0.281,0.36,0.447,0.648,1.204,5.543,85,77,898,794],[1996,"CHN",0.251,0.32,0.401,0.667,1.08,4.765,76,86,772,771],[1996,"CIN",0.256,0.332,0.422,1.056,1.179,4.802,81,81,778,773],[1996,"CLE",0.293,0.369,0.475,0.994,1.354,5.913,99,62,952,769],[1996,"COL",0.287,0.354,0.472,1.241,1.364,5.932,83,79,961,964],[1996,"DET",0.256,0.323,0.42,0.537,1.259,4.833,53,109,783,1103],[1996,"FLO",0.257,0.329,0.393,0.611,0.926,4.247,80,82,688,703],[1996,"HOU",0.262,0.336,0.397,1.111,0.796,4.648,82,80,753,792],[1996,"KCA",0.267,0.333,0.398,1.211,0.764,4.634,75,86,746,786],[1996,"LAN",0.252,0.317,0.384,0.765,0.926,4.34,90,72,703,652],[1996,"MIN",0.288,0.357,0.425,0.883,0.728,5.414,78,84,877,900],[1996,"ML4",0.279,0.353,0.441,0.623,1.099,5.519,80,82,894,899],[1996,"MON",0.262,0.327,0.406,0.667,0.914,4.574,88,74,741,668],[1996,"NYA",0.288,0.36,0.436,0.593,1.0,5.377,92,70,871,787],[1996,"NYN",0.27,0.324,0.412,0.599,0.907,4.605,71,91,746,779],[1996,"OAK",0.265,0.344,0.452,0.358,1.5,5.315,78,84,861,900],[1996,"PHI",0.256,0.325,0.387,0.722,0.815,4.012,67,95,650,790],[1996,"PIT",0.266,0.329,0.407,0.778,0.852,4.79,73,89,776,833],[1996,"SDN",0.265,0.338,0.402,0.673,0.907,4.759,91,71,771,682],[1996,"SEA",0.287,0.366,0.484,0.559,1.522,6.168,85,76,993,895],[1996,"SFN",0.253,0.331,0.388,0.698,0.944,4.642,68,94,752,862],[1996,"SLN",0.267,0.33,0.407,0.92,0.877,4.685,88,74,759,706],[1996,"TEX",0.284,0.358,0.469,0.509,1.356,5.693,90,72,928,799],[1996,"TOR",0.259,0.331,0.42,0.716,1.093,4.728,74,88,766,809],[1997,"ANA",0.272,0.345,0.416,0.778,0.994,5.117,84,78,829,794],[1997,"ATL",0.27,0.343,0.426,0.667,1.074,4.883,101,61,791,581],[1997,"BAL",0.268,0.341,0.429,0.389,1.21,5.012,98,64,812,681],[1997,"BOS",0.291,0.352,0.463,0.42,1.142,5.253,78,84,851,857],[1997,"CHA",0.273,0.341,0.417,0.658,0.981,4.839,80,81,779,833],[1997,"CHN",0.263,0.321,0.396,0.716,0.784,4.241,68,94,687,759],[1997,"CIN",0.253,0.321,0.389,1.173,0.877,4.019,76,86,651,764],[1997,"CLE",0.286,0.358,0.467,0.733,1.366,5.391,86,75,868,815],[1997,"COL",0.287,0.357,0.478,0.846,1.475,5.698,83,79,923,908],[1997,"DET",0.258,0.332,0.415,0.994,1.086,4.84,79,83,784,790],[1997,"FLO",0.259,0.346,0.395,0.71,0.84,4.568,92,70,740,669],[1997,"HOU",0.259,0.344,0.404,1.056,0.821,4.796,84,78,777,660],[1997,"KCA",0.264,0.333,0.407,0.807,0.981,4.64,67,94,747,820],[1997,"LAN",0.268,0.33,0.418,0.809,1.074,4.58,88,74,742,645],[1997,"MIN",0.27,0.333,0.409,0.932,0.815,4.765,68,94,772,861],[1997,"ML4",0.26,0.325,0.398,0.64,0.839,4.23,78,83,681,742],[1997,"MON",0.258,0.316,0.424,0.463,1.062,4.265,78,84,691,740],[1997,"NYA",0.286,0.362,0.436,0.611,0.994,5.5,96,66,891,688],[1997,"NYN",0.262,0.332,0.405,0.599,0.944,4.796,88,74,777,709],[1997,"OAK",0.26,0.339,0.423,0.438,1.216,4.716,65,97,764,946],[1997,"PHI",0.255,0.322,0.385,0.568,0.716,4.123,68,94,668,840],[1997,"PIT",0.262,0.329,0.404,0.988,0.796,4.475,79,83,725,760],[1997,"SDN",0.271,0.342,0.407,0.864,0.938,4.907,76,86,795,891],[1997,"SEA",0.28,0.355,0.484,0.549,1.63,5.71,90,72,925,833],[1997,"SFN",0.258,0.338,0.414,0.747,1.062,4.84,90,72,784,793],[1997,"SLN",0.255,0.324,0.396,1.012,0.889,4.253,73,89,689,708],[1997,"TEX",0.274,0.334,0.438,0.444,1.154,4.981,77,85,807,823],[1997,"TOR",0.244,0.309,0.389,0.827,0.907,4.037,76,86,654,694],[1998,"ANA",0.272,0.335,0.415,0.574,0.907,4.858,85,77,787,783],[1998,"ARI",0.246,0.314,0.393,0.451,0.981,4.105,65,97,665,812],[1998,"ATL",0.272,0.342,0.453,0.605,1.327,5.099,106,56,826,581],[1998,"BAL",0.273,0.347,0.447,0.531,1.321,5.043,79,83,817,785],[1998,"BOS",0.28,0.348,0.463,0.444,1.265,5.407,92,70,876,729],[1998,"CHA",0.271,0.339,0.444,0.779,1.215,5.282,80,82,861,931],[1998,"CHN",0.265,0.337,0.433,0.399,1.301,5.098,90,73,831,792],[1998,"CIN",0.262,0.337,0.402,0.586,0.852,4.63,77,85,750,760],[1998,"CLE",0.272,0.347,0.448,0.883,1.222,5.247,89,73,850,779],[1998,"COL",0.291,0.347,0.461,0.414,1.13,5.099,77,85,826,855],[1998,"DET",0.264,0.323,0.415,0.753,1.019,4.457,65,97,722,863],[1998,"FLO",0.248,0.317,0.373,0.71,0.704,4.117,54,108,667,923],[1998,"HOU",0.28,0.356,0.436,0.957,1.025,5.395,102,60,874,620],[1998,"KCA",0.263,0.324,0.399,0.839,0.832,4.435,72,89,714,899],[1998,"LAN",0.252,0.31,0.387,0.846,0.981,4.13,83,79,669,678],[1998,"MIL",0.26,0.33,0.396,0.5,0.938,4.364,74,88,707,812],[1998,"MIN",0.266,0.328,0.389,0.691,0.71,4.531,70,92,734,818],[1998,"MON",0.249,0.31,0.394,0.562,0.907,3.975,65,97,644,783],[1998,"NYA",0.288,0.364,0.46,0.944,1.278,5.957,114,48,965,656],[1998,"NYN",0.259,0.33,0.394,0.383,0.84,4.358,88,74,706,645],[1998,"OAK",0.257,0.338,0.397,0.809,0.92,4.963,74,88,804,866],[1998,"PHI",0.264,0.326,0.395,0.599,0.778,4.401,75,87,713,808],[1998,"PIT",0.254,0.311,0.374,0.975,0.656,3.988,69,93,650,718],[1998,"SDN",0.253,0.33,0.409,0.488,1.031,4.623,98,64,749,635],[1998,"SEA",0.276,0.345,0.468,0.714,1.453,5.335,76,85,859,855],[1998,"SFN",0.274,0.353,0.421,0.626,0.988,5.184,89,74,845,739],[1998,"SLN",0.258,0.341,0.441,0.816,1.368,4.969,83,79,810,782],[1998,"TBA",0.261,0.321,0.385,0.741,0.685,3.827,63,99,620,751],[1998,"TEX",0.289,0.357,0.462,0.506,1.241,5.802,88,74,940,871],[1998,"TOR",0.266,0.34,0.448,1.129,1.356,5.006,88,74,816,768],[1999,"ANA",0.256,0.322,0.395,0.438,0.975,4.389,70,92,711,826],[1999,"ARI",0.277,0.347,0.459,0.846,1.333,5.605,100,62,908,676],[1999,"ATL",0.266,0.341,0.436,0.914,1.216,5.185,103,59,840,661],[1999,"BAL",0.279,0.353,0.447,0.66,1.253,5.253,78,84,851,815],[1999,"BOS",0.278,0.35,0.448,0.414,1.086,5.16,94,68,836,718],[1999,"CHA",0.277,0.337,0.429,0.679,1.0,4.796,75,86,777,870],[1999,"CHN",0.257,0.329,0.42,0.37,1.167,4.611,67,95,747,920],[1999,"CIN",0.272,0.341,0.451,1.006,1.282,5.307,96,67,865,711],[1999,"CLE",0.289,0.373,0.467,0.907,1.29,6.228,97,65,1009,860],[1999,"COL",0.288,0.348,0.472,0.432,1.377,5.593,72,90,906,1028],[1999,"DET",0.261,0.326,0.443,0.671,1.317,4.64,69,92,747,882],[1999,"FLO",0.263,0.325,0.395,0.568,0.79,4.265,64,98,691,852],[1999,"HOU",0.267,0.355,0.42,1.025,1.037,5.08,97,65,823,675],[1999,"KCA",0.282,0.348,0.433,0.789,0.938,5.317,64,97,856,921],[1999,"LAN",0.266,0.339,0.42,1.031,1.154,4.895,77,85,793,787],[1999,"MIL",0.273,0.352,0.426,0.503,1.025,5.062,74,87,815,886],[1999,"MIN",0.264,0.328,0.384,0.733,0.652,4.261,63,97,686,845],[1999,"MON",0.265,0.323,0.427,0.432,1.006,4.432,68,94,718,853],[1999,"NYA",0.282,0.366,0.453,0.642,1.191,5.556,98,64,900,731],[1999,"NYN",0.279,0.363,0.434,0.92,1.11,5.233,97,66,853,711],[1999,"OAK",0.259,0.355,0.446,0.432,1.451,5.512,87,75,893,846],[1999,"PHI",0.275,0.351,0.431,0.772,0.994,5.191,77,85,841,846],[1999,"PIT",0.259,0.334,0.419,0.696,1.062,4.814,78,83,775,782],[1999,"SDN",0.252,0.332,0.393,1.074,0.944,4.383,74,88,710,781],[1999,"SEA",0.269,0.343,0.455,0.802,1.506,5.302,79,83,859,905],[1999,"SFN",0.271,0.356,0.434,0.673,1.16,5.383,86,76,872,831],[1999,"SLN",0.262,0.339,0.426,0.832,1.205,5.025,75,86,809,838],[1999,"TBA",0.274,0.343,0.411,0.451,0.895,4.765,69,93,772,913],[1999,"TEX",0.292,0.361,0.479,0.685,1.42,5.833,95,67,945,859],[1999,"TOR",0.28,0.352,0.458,0.735,1.309,5.451,84,78,883,862],[2000,"ANA",0.28,0.352,0.472,0.574,1.457,5.333,82,80,864,869],[2000,"ARI",0.265,0.333,0.429,0.599,1.105,4.889,85,77,792,754],[2000,"ATL",0.272,0.346,0.429,0.914,1.105,5.0,95,67,810,714],[2000,"BAL",0.272,0.341,0.435,0.778,1.136,4.901,74,88,794,913],[2000,"BOS",0.267,0.341,0.423,0.265,1.031,4.889,85,77,792,745],[2000,"CHA",0.286,0.356,0.47,0.735,1.333,6.037,95,67,978,839],[2000,"CHN",0.256,0.335,0.411,0.574,1.13,4.716,65,97,764,904],[2000,"CIN",0.274,0.343,0.447,0.613,1.227,5.061,85,77,825,765],[2000,"CLE",0.288,0.367,0.47,0.698,1.364,5.864,90,72,950,816],[2000,"COL",0.294,0.362,0.455,0.809,0.994,5.975,82,80,968,897],[2000,"DET",0.275,0.343,0.438,0.512,1.093,5.08,79,83,823,827],[2000,"FLO",0.262,0.331,0.409,1.043,0.994,4.54,79,82,731,797],[2000,"HOU",0.278,0.361,0.477,0.704,1.537,5.79,72,90,938,944],[2000,"KCA",0.288,0.348,0.425,0.747,0.926,5.426,77,85,879,930],[2000,"LAN",0.257,0.341,0.431,0.586,1.302,4.926,86,76,798,729],[2000,"MIL",0.246,0.325,0.403,0.442,1.086,4.54,73,89,740,826],[2000,"MIN",0.27,0.337,0.407,0.556,0.716,4.617,69,93,748,880],[2000,"MON",0.267,0.326,0.432,0.358,1.099,4.556,67,95,738,902],[2000,"NYA",0.277,0.354,0.45,0.615,1.273,5.41,87,74,871,814],[2000,"NYN",0.263,0.346,0.43,0.407,1.222,4.981,94,68,807,738],[2000,"OAK",0.27,0.359,0.458,0.248,1.484,5.882,91,70,947,813],[2000,"PHI",0.252,0.329,0.4,0.63,0.889,4.37,65,97,708,830],[2000,"PIT",0.267,0.339,0.424,0.531,1.037,4.895,69,93,793,888],[2000,"SDN",0.254,0.33,0.402,0.809,0.969,4.642,76,86,752,815],[2000,"SEA",0.269,0.361,0.442,0.753,1.222,5.599,91,71,907,780],[2000,"SFN",0.278,0.362,0.472,0.488,1.395,5.71,97,65,925,747],[2000,"SLN",0.27,0.356,0.456,0.537,1.451,5.475,95,67,887,771],[2000,"TBA",0.257,0.329,0.399,0.559,1.006,4.553,69,92,733,842],[2000,"TEX",0.283,0.351,0.446,0.426,1.068,5.235,71,91,848,974],[2000,"TOR",0.275,0.341,0.469,0.549,1.506,5.315,83,79,861,908],[2001,"ANA",0.261,0.327,0.405,0.716,0.975,4.265,75,87,691,730],[2001,"ARI",0.267,0.341,0.442,0.438,1.284,5.049,92,70,818,677],[2001,"ATL",0.261,0.324,0.412,0.525,1.074,4.5,88,74,729,643],[2001,"BAL",0.248,0.319,0.38,0.821,0.84,4.241,63,98,687,829],[2001,"BOS",0.266,0.334,0.439,0.286,1.23,4.795,82,79,772,745],[2001,"CHA",0.268,0.334,0.451,0.759,1.321,4.926,83,79,798,795],[2001,"CHN",0.261,0.336,0.43,0.414,1.198,4.796,88,74,777,701],[2001,"CIN",0.262,0.324,0.419,0.636,1.086,4.537,66,96,735,850],[2001,"CLE",0.278,0.35,0.458,0.488,1.309,5.537,91,71,897,821],[2001,"COL",0.292,0.354,0.483,0.815,1.315,5.698,73,89,923,906],[2001,"DET",0.26,0.321,0.409,0.821,0.858,4.469,66,96,724,876],[2001,"FLO",0.264,0.326,0.423,0.549,1.025,4.58,76,86,742,744],[2001,"HOU",0.271,0.347,0.451,0.395,1.284,5.228,93,69,847,769],[2001,"KCA",0.266,0.318,0.409,0.617,0.938,4.5,65,97,729,858],[2001,"LAN",0.255,0.323,0.425,0.549,1.272,4.679,86,76,758,744],[2001,"MIL",0.251,0.319,0.426,0.407,1.29,4.568,68,94,740,806],[2001,"MIN",0.272,0.337,0.433,0.901,1.012,4.759,85,77,771,766],[2001,"MON",0.253,0.319,0.396,0.623,0.809,4.136,68,94,670,812],[2001,"NYA",0.267,0.334,0.435,1.0,1.261,4.994,95,65,804,713],[2001,"NYN",0.249,0.323,0.387,0.407,0.907,3.963,82,80,642,713],[2001,"OAK",0.264,0.345,0.439,0.42,1.228,5.457,102,60,884,645],[2001,"PHI",0.26,0.329,0.414,0.944,1.012,4.605,86,76,746,719],[2001,"PIT",0.247,0.313,0.393,0.574,0.994,4.056,62,100,657,858],[2001,"SDN",0.252,0.336,0.399,0.796,0.994,4.87,79,83,789,812],[2001,"SEA",0.288,0.36,0.445,1.074,1.043,5.722,116,46,927,627],[2001,"SFN",0.266,0.342,0.46,0.352,1.451,4.932,90,72,799,748],[2001,"SLN",0.27,0.339,0.441,0.562,1.228,5.025,93,69,814,684],[2001,"TBA",0.258,0.32,0.388,0.71,0.747,4.148,62,100,672,887],[2001,"TEX",0.276,0.344,0.471,0.599,1.519,5.494,73,89,890,968],[2001,"TOR",0.263,0.325,0.43,0.963,1.204,4.735,80,82,767,753],[2002,"ANA",0.282,0.341,0.432,0.722,0.938,5.253,99,63,851,644],[2002,"ARI",0.267,0.346,0.423,0.568,1.019,5.056,98,64,819,674],[2002,"ATL",0.26,0.331,0.409,0.472,1.019,4.398,101,59,708,565],[2002,"BAL",0.246,0.309,0.403,0.679,1.019,4.117,67,95,667,773],[2002,"BOS",0.277,0.345,0.444,0.494,1.093,5.302,93,69,859,665],[2002,"CHA",0.268,0.338,0.45,0.463,1.34,5.284,81,81,856,798],[2002,"CHN",0.246,0.321,0.413,0.389,1.235,4.358,67,95,706,759],[2002,"CIN",0.253,0.33,0.408,0.716,1.043,4.377,78,84,709,774],[2002,"CLE",0.249,0.321,0.412,0.321,1.185,4.562,74,88,739,837],[2002,"COL",0.274,0.337,0.422,0.636,0.938,4.802,73,89,778,898],[2002,"DET",0.248,0.3,0.379,0.404,0.77,3.571,55,106,575,864],[2002,"FLO",0.261,0.337,0.403,1.093,0.901,4.315,79,83,699,763],[2002,"HOU",0.262,0.338,0.417,0.438,1.031,4.623,84,78,749,695],[2002,"KCA",0.256,0.323,0.398,0.864,0.864,4.549,62,100,737,891],[2002,"LAN",0.264,0.32,0.409,0.593,0.957,4.401,92,70,713,643],[2002,"MIL",0.253,0.321,0.39,0.58,0.858,3.87,56,106,627,821],[2002,"MIN",0.272,0.332,0.437,0.491,1.037,4.77,94,67,768,712],[2002,"MON",0.261,0.334,0.418,0.728,1.0,4.537,83,79,735,718],[2002,"NYA",0.275,0.354,0.455,0.621,1.385,5.571,103,58,897,697],[2002,"NYN",0.256,0.322,0.395,0.54,0.994,4.286,75,86,690,703],[2002,"OAK",0.261,0.339,0.432,0.284,1.265,4.938,103,59,800,654],[2002,"PHI",0.259,0.339,0.422,0.646,1.025,4.41,80,81,710,724],[2002,"PIT",0.244,0.319,0.381,0.534,0.882,3.981,72,89,641,730],[2002,"SDN",0.253,0.321,0.381,0.438,0.84,4.086,66,96,662,815],[2002,"SEA",0.275,0.35,0.419,0.846,0.938,5.025,93,69,814,699],[2002,"SFN",0.267,0.344,0.442,0.457,1.222,4.833,95,66,783,616],[2002,"SLN",0.268,0.338,0.424,0.531,1.08,4.858,97,65,787,648],[2002,"TBA",0.253,0.314,0.39,0.634,0.826,4.18,55,106,673,918],[2002,"TEX",0.269,0.338,0.455,0.383,1.42,5.204,72,90,843,882],[2002,"TOR",0.261,0.327,0.43,0.438,1.154,5.019,78,84,813,828]],"cor":{"AVG":0.837,"OBP":0.904,"SLG":0.931,"OPS":0.962,"SBG":0.137,"HRG":0.763},"years":[{"y":1995,"cor":0.327,"oakW":67,"oakL":77,"oakPay":37739225,"oakRank":9,"n":28,"med":34375642,"mx":50590000,"mxT":"TOR","cpw":563272,"lgcpw":471959,"oakPO":false},{"y":1996,"cor":0.55,"oakW":78,"oakL":84,"oakPay":21243000,"oakRank":26,"n":28,"med":33697750,"mx":54490315,"mxT":"BAL","cpw":272346,"lgcpw":422322,"oakPO":false},{"y":1997,"cor":0.443,"oakW":65,"oakL":97,"oakPay":24018500,"oakRank":24,"n":28,"med":41847997,"mx":62241545,"mxT":"NYA","cpw":369515,"lgcpw":497478,"oakPO":false},{"y":1998,"cor":0.66,"oakW":74,"oakL":88,"oakPay":21303000,"oakRank":28,"n":30,"med":42469917,"mx":72355634,"mxT":"BAL","cpw":287878,"lgcpw":526042,"oakPO":false},{"y":1999,"cor":0.562,"oakW":87,"oakL":75,"oakPay":24431833,"oakRank":27,"n":30,"med":49773187,"mx":86734359,"mxT":"NYA","cpw":280825,"lgcpw":615669,"oakPO":false},{"y":2000,"cor":0.329,"oakW":91,"oakL":70,"oakPay":31971333,"oakRank":25,"n":30,"med":56543083,"mx":92338260,"mxT":"NYA","cpw":351333,"lgcpw":686217,"oakPO":true},{"y":2001,"cor":0.328,"oakW":102,"oakL":60,"oakPay":33810750,"oakRank":29,"n":30,"med":63998000,"mx":112287143,"mxT":"NYA","cpw":331477,"lgcpw":807521,"oakPO":true},{"y":2002,"cor":0.444,"oakW":103,"oakL":59,"oakPay":40004167,"oakRank":28,"n":30,"med":61107577,"mx":125928583,"mxT":"NYA","cpw":388389,"lgcpw":834671,"oakPO":true},{"y":2003,"cor":0.421,"oakW":96,"oakL":66,"oakPay":50260834,"oakRank":23,"n":30,"med":68979833,"mx":152749814,"mxT":"NYA","cpw":523550,"lgcpw":876188,"oakPO":true},{"y":2004,"cor":0.538,"oakW":91,"oakL":71,"oakPay":59425667,"oakRank":16,"n":30,"med":62319083,"mx":184193950,"mxT":"NYA","cpw":653029,"lgcpw":852827,"oakPO":false},{"y":2005,"cor":0.491,"oakW":88,"oakL":74,"oakPay":55425762,"oakRank":22,"n":30,"med":66191416,"mx":208306817,"mxT":"NYA","cpw":629838,"lgcpw":900705,"oakPO":false},{"y":2006,"cor":0.538,"oakW":93,"oakL":69,"oakPay":62243079,"oakRank":21,"n":30,"med":71975291,"mx":194663079,"mxT":"NYA","cpw":669280,"lgcpw":955731,"oakPO":true},{"y":2007,"cor":0.496,"oakW":76,"oakL":86,"oakPay":79366940,"oakRank":17,"n":30,"med":84616816,"mx":189259045,"mxT":"NYA","cpw":1044301,"lgcpw":1018794,"oakPO":false},{"y":2008,"cor":0.323,"oakW":75,"oakL":86,"oakPay":47967126,"oakRank":28,"n":30,"med":79953782,"mx":207896789,"mxT":"NYA","cpw":639561,"lgcpw":1105790,"oakPO":false},{"y":2009,"cor":0.478,"oakW":75,"oakL":87,"oakPay":61910000,"oakRank":26,"n":30,"med":81058733,"mx":201449189,"mxT":"NYA","cpw":825466,"lgcpw":1096595,"oakPO":false},{"y":2010,"cor":0.369,"oakW":81,"oakL":81,"oakPay":55254900,"oakRank":27,"n":30,"med":84325333,"mx":206333389,"mxT":"NYA","cpw":682159,"lgcpw":1119901,"oakPO":false},{"y":2011,"cor":0.409,"oakW":74,"oakL":88,"oakPay":66536500,"oakRank":21,"n":30,"med":86556646,"mx":202275028,"mxT":"NYA","cpw":899141,"lgcpw":1146358,"oakPO":false},{"y":2012,"cor":0.19,"oakW":94,"oakL":68,"oakPay":55372500,"oakRank":29,"n":30,"med":85513487,"mx":196522289,"mxT":"NYA","cpw":589069,"lgcpw":1206889,"oakPO":true},{"y":2013,"cor":0.302,"oakW":96,"oakL":66,"oakPay":60132500,"oakRank":26,"n":30,"med":89001762,"mx":231978886,"mxT":"NYA","cpw":626380,"lgcpw":1248262,"oakPO":true},{"y":2014,"cor":0.322,"oakW":88,"oakL":74,"oakPay":72408400,"oakRank":27,"n":30,"med":97735250,"mx":217014600,"mxT":"LAN","cpw":822822,"lgcpw":1313710,"oakPO":true},{"y":2015,"cor":0.24,"oakW":68,"oakL":94,"oakPay":79053501,"oakRank":25,"n":30,"med":112683050,"mx":215792000,"mxT":"LAN","cpw":1162551,"lgcpw":1446744,"oakPO":false},{"y":2016,"cor":0.631,"oakW":69,"oakL":93,"oakPay":86806234,"oakRank":24,"n":30,"med":122242896,"mx":222997792,"mxT":"NYA","cpw":1258061,"lgcpw":1545174,"oakPO":false}],"bat02":[{"G":162,"PA":715,"AB":662,"H":204,"HR":34,"BB":38,"SO":84,"SB":7,"R":108,"RBI":131,"AVG":0.308,"OBP":0.354,"SLG":0.508,"RC":116.2,"id":"tejadmi01","n":"Miguel Tejada","sal":3625000},{"G":153,"PA":653,"AB":585,"H":161,"HR":34,"BB":65,"SO":119,"SB":8,"R":87,"RBI":109,"AVG":0.275,"OBP":0.348,"SLG":0.513,"RC":104.3,"id":"chaveer01","n":"Eric Chavez","sal":2125000},{"G":162,"PA":640,"AB":587,"H":141,"HR":16,"BB":48,"SO":96,"SB":3,"R":71,"RBI":67,"AVG":0.24,"OBP":0.298,"SLG":0.39,"RC":68.2,"id":"longte01","n":"Terrence Long","sal":675000},{"G":136,"PA":568,"AB":492,"H":138,"HR":15,"BB":68,"SO":56,"SB":0,"R":58,"RBI":61,"AVG":0.28,"OBP":0.374,"SLG":0.433,"RC":78.4,"id":"hattesc01","n":"Scott Hatteberg","sal":900000},{"G":131,"PA":555,"AB":488,"H":123,"HR":24,"BB":52,"SO":108,"SB":2,"R":74,"RBI":86,"AVG":0.252,"OBP":0.333,"SLG":0.459,"RC":72.6,"id":"dyeje01","n":"Jermaine Dye","sal":7166667},{"G":118,"PA":471,"AB":398,"H":106,"HR":11,"BB":70,"SO":66,"SB":4,"R":54,"RBI":49,"AVG":0.266,"OBP":0.376,"SLG":0.41,"RC":61.3,"id":"justida01","n":"David Justice","sal":7000000},{"G":136,"PA":457,"AB":403,"H":94,"HR":7,"BB":43,"SO":64,"SB":0,"R":51,"RBI":42,"AVG":0.233,"OBP":0.313,"SLG":0.335,"RC":41.5,"id":"hernara02","n":"Ramon Hernandez","sal":497500},{"G":98,"PA":404,"AB":345,"H":94,"HR":6,"BB":44,"SO":54,"SB":4,"R":58,"RBI":35,"AVG":0.272,"OBP":0.359,"SLG":0.394,"RC":48.2,"id":"ellisma01","n":"Mark Ellis","sal":null},{"G":54,"PA":248,"AB":219,"H":60,"HR":6,"BB":24,"SO":34,"SB":6,"R":43,"RBI":22,"AVG":0.274,"OBP":0.35,"SLG":0.457,"RC":34.6,"id":"durhara01","n":"Ray Durham","sal":6300000},{"G":89,"PA":211,"AB":193,"H":53,"HR":11,"BB":14,"SO":37,"SB":1,"R":27,"RBI":40,"AVG":0.275,"OBP":0.322,"SLG":0.523,"RC":32.7,"id":"mabryjo01","n":"John Mabry","sal":500000},{"G":42,"PA":187,"AB":157,"H":43,"HR":8,"BB":27,"SO":40,"SB":0,"R":26,"RBI":17,"AVG":0.274,"OBP":0.39,"SLG":0.471,"RC":28.2,"id":"giambje01","n":"Jeremy Giambi","sal":1065000},{"G":68,"PA":178,"AB":156,"H":43,"HR":6,"BB":13,"SO":31,"SB":1,"R":15,"RBI":18,"AVG":0.276,"OBP":0.354,"SLG":0.468,"RC":24.2,"id":"saenzol01","n":"Olmedo Saenz","sal":800000},{"G":65,"PA":170,"AB":144,"H":32,"HR":6,"BB":26,"SO":36,"SB":0,"R":15,"RBI":21,"AVG":0.222,"OBP":0.341,"SLG":0.382,"RC":18.8,"id":"myersgr01","n":"Greg Myers","sal":800000},{"G":56,"PA":155,"AB":133,"H":30,"HR":2,"BB":15,"SO":32,"SB":3,"R":22,"RBI":8,"AVG":0.226,"OBP":0.325,"SLG":0.331,"RC":13.4,"id":"velarra01","n":"Randy Velarde","sal":1000000},{"G":38,"PA":154,"AB":132,"H":27,"HR":3,"BB":20,"SO":32,"SB":0,"R":22,"RBI":15,"AVG":0.205,"OBP":0.312,"SLG":0.326,"RC":13.3,"id":"menecfr01","n":"Frank Menechino","sal":295000},{"G":55,"PA":152,"AB":137,"H":32,"HR":5,"BB":12,"SO":33,"SB":2,"R":18,"RBI":18,"AVG":0.234,"OBP":0.303,"SLG":0.401,"RC":16.2,"id":"piattad01","n":"Adam Piatt","sal":null},{"G":40,"PA":141,"AB":124,"H":27,"HR":7,"BB":15,"SO":38,"SB":0,"R":12,"RBI":16,"AVG":0.218,"OBP":0.305,"SLG":0.419,"RC":15.7,"id":"penaca01","n":"Carlos Pena","sal":202000},{"G":90,"PA":104,"AB":94,"H":23,"HR":3,"BB":4,"SO":17,"SB":3,"R":24,"RBI":11,"AVG":0.245,"OBP":0.291,"SLG":0.426,"RC":11.0,"id":"byrneer01","n":"Eric Byrnes","sal":null}],"pit02":[{"id":"hudsoti01","n":"Tim Hudson","W":15,"L":9,"G":34,"GS":34,"SV":0,"IP":238.3,"SO":152,"BB":62,"HR":19,"ERA":2.98,"sal":875000},{"id":"zitoba01","n":"Barry Zito","W":23,"L":5,"G":35,"GS":35,"SV":0,"IP":229.3,"SO":182,"BB":78,"HR":24,"ERA":2.75,"sal":295000},{"id":"muldema01","n":"Mark Mulder","W":19,"L":7,"G":30,"GS":30,"SV":0,"IP":207.3,"SO":159,"BB":55,"HR":21,"ERA":3.47,"sal":800000},{"id":"lidleco01","n":"Cory Lidle","W":8,"L":10,"G":31,"GS":30,"SV":0,"IP":192.0,"SO":111,"BB":39,"HR":17,"ERA":3.89,"sal":2550000},{"id":"kochbi01","n":"Billy Koch","W":11,"L":4,"G":84,"GS":0,"SV":44,"IP":93.7,"SO":93,"BB":46,"HR":7,"ERA":3.27,"sal":2433333},{"id":"haranaa01","n":"Aaron Harang","W":5,"L":4,"G":16,"GS":15,"SV":0,"IP":78.3,"SO":64,"BB":45,"HR":7,"ERA":4.83,"sal":null},{"id":"bradfch01","n":"Chad Bradford","W":4,"L":2,"G":75,"GS":0,"SV":2,"IP":75.3,"SO":56,"BB":14,"HR":2,"ERA":3.11,"sal":235000},{"id":"mecirji01","n":"Jim Mecir","W":6,"L":4,"G":61,"GS":0,"SV":1,"IP":67.7,"SO":53,"BB":29,"HR":5,"ERA":4.26,"sal":2366667},{"id":"fyhrimi01","n":"Mike Fyhrie","W":2,"L":4,"G":16,"GS":4,"SV":0,"IP":48.7,"SO":29,"BB":20,"HR":3,"ERA":4.44,"sal":null},{"id":"hiljuer01","n":"Erik Hiljus","W":3,"L":3,"G":9,"GS":9,"SV":0,"IP":45.7,"SO":29,"BB":21,"HR":11,"ERA":6.5,"sal":237500},{"id":"tamje01","n":"Jeff Tam","W":1,"L":2,"G":40,"GS":0,"SV":0,"IP":40.3,"SO":14,"BB":13,"HR":2,"ERA":5.13,"sal":700000},{"id":"venafmi01","n":"Mike Venafro","W":2,"L":2,"G":47,"GS":0,"SV":0,"IP":37.0,"SO":16,"BB":14,"HR":5,"ERA":4.62,"sal":812500}],"hit":[["Brent Abernathy","TBA",504,0.242,0.288,0.311,2,25,215000],["Bobby Abreu","PHI",685,0.308,0.413,0.521,20,104,6333333],["Edgardo Alfonzo","NYN",562,0.308,0.391,0.459,16,62,6200000],["Roberto Alomar","NYN",655,0.266,0.331,0.376,11,57,7939664],["Moises Alou","CHN",534,0.275,0.337,0.419,15,47,6000000],["Garret Anderson","ANA",678,0.306,0.332,0.539,29,30,5000000],["Marlon Anderson","PHI",592,0.258,0.315,0.38,8,42,400000],["Rich Aurilia","SFN",589,0.257,0.305,0.413,15,37,5250000],["Brad Ausmus","HOU",496,0.257,0.322,0.353,6,38,5000000],["Jeff Bagwell","HOU",691,0.291,0.401,0.518,31,101,11000000],["Michael Barrett","MON",428,0.263,0.332,0.418,12,40,1150000],["Tony Batista","BAL",682,0.244,0.309,0.457,31,50,4900000],["David Bell","SFN",628,0.261,0.333,0.429,20,54,1750000],["Mark Bellhorn","CHN",529,0.258,0.374,0.512,27,76,224000],["Adrian Beltre","LAN",635,0.257,0.303,0.426,21,37,2800000],["Carlos Beltran","KCA",722,0.273,0.346,0.501,29,71,3500000],["Dave Berg","TOR",414,0.27,0.322,0.382,4,26,450000],["Lance Berkman","HOU",692,0.292,0.405,0.578,42,107,500000],["Craig Biggio","HOU",655,0.253,0.33,0.404,15,50,8750000],["Geoff Blum","HOU",421,0.283,0.367,0.44,10,49,315000],["Barry Bonds","SFN",612,0.37,0.582,0.799,46,198,15000000],["Aaron Boone","CIN",685,0.241,0.314,0.439,26,56,2100000],["Bret Boone","SEA",675,0.278,0.339,0.462,24,53,8000000],["Mike Bordick","BAL",413,0.232,0.302,0.365,8,35,4873439],["Milton Bradley","CLE",358,0.249,0.317,0.406,9,32,221000],["Russell Branyan","CIN",435,0.228,0.32,0.458,24,51,251000],["Ellis Burks","CLE",570,0.301,0.362,0.541,32,44,6666667],["Jeromy Burnitz","NYN",550,0.215,0.311,0.365,19,58,7166667],["Pat Burrell","PHI",684,0.282,0.376,0.544,37,89,1905000],["Orlando Cabrera","MON",626,0.263,0.321,0.38,7,48,2400000],["Mike Cameron","SEA",640,0.239,0.34,0.442,25,79,4666667],["Sean Casey","CIN",476,0.261,0.334,0.362,6,43,4000000],["Luis Castillo","FLO",668,0.305,0.364,0.361,2,55,3325000],["Vinny Castilla","ATL",578,0.232,0.268,0.348,12,22,3000000],["Roger Cedeno","NYN",562,0.26,0.318,0.346,7,42,2375000],["Eric Chavez","OAK",653,0.275,0.348,0.513,34,65,2125000],["Jeff Cirillo","SEA",547,0.249,0.301,0.328,6,31,6375000],["Royce Clayton","CHA",376,0.251,0.295,0.365,7,20,4500000],["Jeff Conine","BAL",488,0.273,0.307,0.448,15,25,3500000],["Marty Cordova","BAL",513,0.253,0.325,0.434,18,47,2500000],["Craig Counsell","ARI",489,0.282,0.348,0.351,2,45,1516667],["Steve Cox","TBA",633,0.254,0.33,0.396,16,60,280000],["Deivi Cruz","SDN",547,0.263,0.294,0.366,7,22,600000],["Jose Cruz","TOR",522,0.245,0.317,0.438,18,51,3950000],["Johnny Damon","BOS",702,0.286,0.356,0.443,14,65,7250000],["Brian Daubach","BOS",506,0.266,0.348,0.464,20,51,2325000],["Carlos Delgado","TOR",628,0.277,0.406,0.549,33,102,19400000],["Einar Diaz","CLE",351,0.206,0.258,0.284,2,17,1087500],["J. D. Drew","SLN",496,0.252,0.349,0.429,18,57,3100000],["Adam Dunn","CIN",676,0.249,0.4,0.454,26,128,250000],["Ray Durham","CHA",659,0.289,0.374,0.45,15,73,6300000],["Jermaine Dye","OAK",555,0.252,0.333,0.459,24,52,7166667],["David Eckstein","ANA",702,0.293,0.363,0.388,8,45,280000],["Jim Edmonds","SLN",576,0.311,0.42,0.561,28,86,7333333],["Juan Encarnacion","CIN",644,0.271,0.324,0.449,24,46,1550000],["Darin Erstad","ANA",663,0.283,0.313,0.389,10,27,6250000],["Carl Everett","TEX",418,0.267,0.333,0.439,16,33,8666666],["Carlos Febles","KCA",404,0.245,0.336,0.348,4,41,775000],["Robert Fick","DET",614,0.27,0.331,0.433,17,46,1150000],["Steve Finley","ARI",577,0.287,0.37,0.499,25,65,5375000],["Cliff Floyd","FLO",609,0.288,0.388,0.533,28,76,6500000],["Andy Fox","FLO",502,0.251,0.338,0.333,4,49,700000],["Julio Franco","ATL",383,0.284,0.357,0.382,6,39,600000],["Travis Fryman","CLE",439,0.217,0.292,0.35,11,40,5825000],["Brad Fullmer","ANA",479,0.289,0.357,0.531,19,32,4000000],["Rafael Furcal","ATL",693,0.275,0.323,0.387,8,43,405000],["Ron Gant","SDN",353,0.262,0.338,0.489,18,36,500000],["Nomar Garciaparra","BOS",693,0.31,0.352,0.528,24,41,9000000],["Jason Giambi","NYA",689,0.314,0.435,0.598,41,109,10428571],["Jeremy Giambi","OAK",397,0.259,0.414,0.505,20,79,1065000],["Jay Gibbons","BAL",541,0.247,0.311,0.482,28,45,232500],["Brian Giles","PIT",644,0.298,0.45,0.622,38,135,8063003],["Geronimo Gil","BAL",450,0.232,0.27,0.363,12,21,200000],["Doug Glanville","PHI",460,0.249,0.292,0.344,6,25,4000000],["Troy Glaus","ANA",671,0.25,0.352,0.453,30,88,4000000],["Chris Gomez","TBA",498,0.265,0.305,0.41,10,21,1000000],["Alex Gonzalez","CHN",568,0.248,0.312,0.425,18,46,4250000],["Luis Gonzalez","ARI",633,0.288,0.4,0.496,28,97,4333333],["Shawn Green","LAN",685,0.285,0.385,0.558,42,93,13416667],["Ben Grieve","TBA",561,0.251,0.353,0.432,19,69,4000000],["Marquis Grissom","LAN",371,0.277,0.321,0.51,17,22,5000000],["Mark Grudzielanek","LAN",566,0.271,0.301,0.364,9,22,5000000],["Vladimir Guerrero","MON",709,0.336,0.417,0.593,39,84,8000000],["Carlos Guillen","SEA",528,0.261,0.326,0.394,9,46,1400000],["Ricky Gutierrez","CLE",384,0.275,0.325,0.346,4,20,2166667],["Cristian Guzman","MIN",656,0.273,0.292,0.385,9,17,1425000],["Jerry Hairston","BAL",479,0.268,0.329,0.376,5,34,300000],["Toby Hall","TBA",353,0.258,0.293,0.376,6,17,210000],["Shane Halter","DET",458,0.239,0.309,0.395,10,39,1500000],["Jeffrey Hammonds","MIL",510,0.257,0.332,0.397,9,52,7500000],["Scott Hatteberg","OAK",568,0.28,0.374,0.433,15,68,900000],["Todd Helton","COL",667,0.329,0.429,0.577,30,99,5000000],["Jose Hernandez","MIL",582,0.288,0.356,0.478,24,52,3333333],["Ramon Hernandez","OAK",457,0.233,0.313,0.335,7,43,497500],["Richard Hidalgo","HOU",439,0.235,0.319,0.415,15,43,5500000],["Bobby Higginson","DET",499,0.282,0.345,0.417,10,41,5850000],["Shea Hillenbrand","BOS",676,0.293,0.33,0.459,18,25,260000],["Eric Hinske","TOR",650,0.279,0.365,0.481,24,77,200000],["Todd Hollandsworth","COL",477,0.284,0.344,0.463,16,40,2750000],["Torii Hunter","MIN",604,0.289,0.334,0.524,29,35,2400000],["Raul Ibanez","KCA",544,0.294,0.346,0.537,24,40,800000],["Cesar Izturis","LAN",468,0.232,0.253,0.303,1,14,215000],["Derek Jeter","NYA",730,0.297,0.373,0.421,18,73,14600000],["D'Angelo Jimenez","SDN",482,0.252,0.33,0.347,4,50,240000],["Nick Johnson","NYA",441,0.243,0.347,0.402,15,48,220650],["Andruw Jones","ATL",659,0.264,0.366,0.512,35,83,10000000],["Chipper Jones","ATL",662,0.327,0.435,0.536,26,107,11333333],["Jacque Jones","MIN",626,0.3,0.341,0.511,27,37,312500],["Brian Jordan","LAN",515,0.285,0.338,0.469,18,34,6600000],["David Justice","OAK",471,0.266,0.376,0.41,11,70,7000000],["Eric Karros","LAN",573,0.271,0.323,0.399,13,37,6875000],["Jason Kendall","PIT",605,0.283,0.35,0.356,3,49,6571429],["Adam Kennedy","ANA",509,0.312,0.345,0.449,7,19,375000],["Jeff Kent","SFN",682,0.313,0.368,0.565,37,52,6000000],["Ryan Klesko","SDN",625,0.3,0.388,0.537,29,76,6000000],["Paul Konerko","CHA",630,0.304,0.359,0.498,27,44,3800000],["Corey Koskie","MIN",576,0.267,0.368,0.447,15,72,2150000],["Mark Kotsay","SDN",646,0.292,0.359,0.452,17,59,3050000],["Barry Larkin","CIN",567,0.245,0.305,0.367,7,44,9000000],["Jason LaRue","CIN",397,0.249,0.324,0.405,12,27,305000],["Matt Lawton","CLE",484,0.236,0.342,0.399,15,59,5250000],["Carlos Lee","CHA",576,0.264,0.359,0.484,26,75,2700000],["Derrek Lee","FLO",688,0.27,0.378,0.494,27,98,2700000],["Travis Lee","PHI",592,0.265,0.331,0.394,13,54,3000000],["Mike Lieberthal","PHI",530,0.279,0.349,0.443,15,38,7333333],["Paul Lo Duca","LAN",632,0.281,0.33,0.402,10,34,546667],["Kenny Lofton","CHA",611,0.261,0.35,0.414,11,72,1025000],["Terrence Long","OAK",640,0.24,0.298,0.39,16,48,675000],["Javy Lopez","ATL",385,0.233,0.299,0.372,11,26,6000000],["Mike Lowell","FLO",677,0.276,0.346,0.471,24,65,2300000],["Julio Lugo","HOU",358,0.261,0.322,0.388,8,28,325000],["Jose Macias","MON",373,0.249,0.293,0.379,7,21,375000],["Rob Mackowiak","PIT",439,0.244,0.328,0.426,16,42,227000],["Wendell Magee","DET",364,0.271,0.289,0.383,6,10,425000],["Eli Marrero","SLN",446,0.262,0.327,0.451,18,40,850000],["Edgar Martinez","SEA",407,0.277,0.403,0.485,15,67,7086668],["Tino Martinez","SLN",576,0.262,0.337,0.438,21,58,5750000],["Mike Matheny","SLN",363,0.244,0.313,0.317,3,32,2500000],["Gary Matthews","BAL",398,0.275,0.354,0.426,7,43,237500],["Brent Mayne","KCA",370,0.236,0.309,0.31,4,34,2500000],["Quinton McCracken","ARI",400,0.309,0.367,0.458,3,32,500000],["Fred McGriff","CHN",595,0.273,0.353,0.505,30,63,7250000],["Mark McLemore","SEA",407,0.27,0.38,0.395,7,61,3150000],["Doug Mientkiewicz","MIN",554,0.261,0.365,0.392,10,74,285000],["Kevin Millar","FLO",489,0.306,0.366,0.509,16,40,900000],["Dustan Mohr","MIN",417,0.269,0.325,0.433,12,31,200000],["Bengie Molina","ANA",459,0.245,0.274,0.322,5,15,350000],["Raul Mondesi","TOR",637,0.232,0.308,0.432,26,59,11000000],["Melvin Mora","BAL",652,0.233,0.338,0.404,19,70,350000],["Bill Mueller","CHN",427,0.262,0.35,0.393,7,52,3450000],["Phil Nevin","SDN",450,0.285,0.344,0.413,12,38,2600000],["Trot Nixon","BOS",612,0.256,0.338,0.47,24,65,2700000],["John Olerud","SEA",668,0.3,0.403,0.49,22,98,6950000],["Magglio Ordonez","CHA",653,0.32,0.381,0.597,38,53,6500000],["Rey Ordonez","NYN",499,0.254,0.292,0.324,1,24,6250000],["David Ortiz","MIN",466,0.272,0.339,0.5,20,43,950000],["Eric Owens","FLO",425,0.27,0.324,0.366,4,31,2166667],["Rafael Palmeiro","TEX",663,0.273,0.391,0.571,43,104,8712986],["Corey Patterson","CHN",628,0.253,0.284,0.392,14,19,227500],["Jay Payton","NYN",481,0.303,0.351,0.488,16,29,362500],["Carlos Pena","DET",443,0.242,0.316,0.448,19,41,202000],["Neifi Perez","KCA",585,0.236,0.26,0.303,3,20,4100000],["Herbert Perry","TEX",496,0.276,0.333,0.48,22,34,900000],["Mike Piazza","NYN",541,0.28,0.359,0.544,33,57,10571429],["Juan Pierre","COL",640,0.287,0.332,0.343,1,31,600000],["A. J. Pierzynski","MIN",469,0.3,0.334,0.439,6,13,250000],["Placido Polanco","SLN",595,0.288,0.33,0.403,9,26,1750000],["Jorge Posada","NYA",598,0.268,0.37,0.468,20,81,7000000],["Albert Pujols","SLN",675,0.314,0.394,0.561,34,72,600000],["Aramis Ramirez","PIT",570,0.234,0.279,0.387,18,29,500000],["Manny Ramirez","BOS",518,0.349,0.45,0.647,33,73,15462727],["Joe Randa","KCA",617,0.282,0.341,0.426,11,46,4000000],["Pokey Reese","PIT",475,0.264,0.33,0.352,4,41,1750000],["Desi Relaford","SEA",376,0.267,0.339,0.374,6,33,1275000],["Edgar Renteria","SLN",609,0.305,0.364,0.439,11,49,6000000],["Dave Roberts","LAN",479,0.277,0.353,0.365,3,48,217500],["Alex Rodriguez","TEX",725,0.3,0.392,0.623,57,87,22000000],["Ivan Rodriguez","TEX",440,0.314,0.353,0.542,19,25,9600000],["Scott Rolen","PHI",667,0.266,0.357,0.503,31,72,8600000],["Jimmy Rollins","PHI",705,0.245,0.306,0.38,11,54,355000],["Tim Salmon","ANA",568,0.286,0.38,0.503,22,71,9650000],["Alex Sanchez","MIL",435,0.289,0.343,0.358,1,31,202000],["Rey Sanchez","BOS",386,0.286,0.318,0.345,1,17,700000],["Reggie Sanders","SFN",571,0.25,0.324,0.455,23,47,1750000],["Benito Santiago","SFN",517,0.278,0.315,0.45,16,27,2044168],["Richie Sexson","MIL",652,0.279,0.363,0.504,29,70,3125000],["Gary Sheffield","ATL",579,0.307,0.404,0.512,25,72,9916667],["Tsuyoshi Shinjo","SFN",398,0.238,0.294,0.37,9,24,1350000],["Ruben Sierra","SEA",452,0.27,0.319,0.418,13,31,1900000],["Randall Simon","DET",506,0.301,0.32,0.459,19,13,290000],["Chris Singleton","BAL",502,0.262,0.296,0.41,9,21,1400000],["J. T. Snow","SFN",494,0.246,0.344,0.36,6,59,5900000],["Alfonso Soriano","NYA",741,0.3,0.332,0.547,39,23,630000],["Sammy Sosa","CHN",666,0.288,0.399,0.594,49,103,15000000],["Scott Spiezio","ANA",571,0.285,0.371,0.436,12,67,2275000],["Junior Spivey","ARI",626,0.301,0.389,0.476,16,65,215000],["Lee Stevens","MON",417,0.204,0.305,0.377,15,54,4000000],["Shannon Stewart","TOR",641,0.303,0.371,0.442,10,54,4250000],["Ichiro Suzuki","SEA",728,0.321,0.388,0.425,8,68,3696000],["Mike Sweeney","KCA",545,0.34,0.417,0.563,24,61,8000000],["Fernando Tatis","MON",430,0.228,0.303,0.399,15,35,4500000],["Miguel Tejada","OAK",715,0.308,0.354,0.508,34,38,3625000],["Frank Thomas","CHA",628,0.252,0.361,0.472,28,88,9927000],["Jim Thome","CLE",613,0.304,0.445,0.677,52,122,8000000],["Bubba Trammell","SDN",465,0.243,0.333,0.414,17,53,1500000],["Chris Truby","DET",404,0.215,0.238,0.314,4,10,270000],["Michael Tucker","KCA",543,0.248,0.33,0.406,12,56,2250000],["Juan Uribe","COL",618,0.24,0.286,0.341,6,34,222000],["Jose Valentin","CHA",527,0.249,0.311,0.479,25,43,5000000],["Jason Varitek","BOS",519,0.266,0.332,0.392,10,41,3500000],["Mo Vaughn","NYN",558,0.259,0.349,0.456,26,59,12166667],["Ramon Vazquez","SDN",474,0.274,0.344,0.362,2,45,205000],["Robin Ventura","NYA",562,0.247,0.368,0.458,27,90,8500000],["Jose Vidro","MON",681,0.315,0.378,0.49,19,60,4000000],["Fernando Vina","SLN",692,0.27,0.333,0.338,1,44,4333333],["Jose Vizcaino","HOU",438,0.303,0.342,0.397,5,24,1700000],["Omar Vizquel","CLE",663,0.275,0.341,0.418,14,56,4500000],["Larry Walker","COL",553,0.338,0.421,0.602,26,65,12666667],["Todd Walker","CIN",675,0.299,0.353,0.431,11,50,2050000],["Daryle Ward","HOU",491,0.276,0.324,0.424,12,33,375000],["Vernon Wells","TOR",648,0.275,0.305,0.457,23,27,221000],["Rondell White","NYA",494,0.24,0.288,0.378,14,25,4500000],["Brad Wilkerson","MON",603,0.266,0.37,0.469,20,81,206000],["Bernie Williams","NYA",699,0.333,0.415,0.493,19,83,12357143],["Craig Wilson","PIT",424,0.264,0.355,0.443,16,32,229000],["Dan Wilson","SEA",394,0.295,0.326,0.396,6,18,4500000],["Jack Wilson","PIT",586,0.252,0.306,0.332,4,37,232000],["Preston Wilson","FLO",582,0.243,0.329,0.429,23,58,3500000],["Randy Winn","TBA",674,0.298,0.36,0.461,14,55,960000],["Tony Womack","ARI",652,0.271,0.325,0.353,5,46,4500000],["Chris Woodward","TOR",350,0.276,0.33,0.468,13,26,235000],["Eric Young","MIL",553,0.28,0.338,0.369,3,39,2000000],["Kevin Young","PIT",525,0.246,0.322,0.408,16,50,5625000],["Michael Young","TEX",633,0.262,0.308,0.382,9,41,250000],["Todd Zeile","COL",580,0.273,0.353,0.425,18,66,6833333]],"hs":[{"y":1998,"n":353,"obp":0.37,"obp_se":1.08,"slg":2.68,"slg_se":0.57,"r2":0.736},{"y":1999,"n":358,"obp":0.56,"obp_se":1.09,"slg":2.32,"slg_se":0.53,"r2":0.744},{"y":2000,"n":352,"obp":3.58,"obp_se":1.21,"slg":1.89,"slg_se":0.61,"r2":0.668},{"y":2001,"n":370,"obp":0.6,"obp_se":1.22,"slg":2.82,"slg_se":0.58,"r2":0.708},{"y":2002,"n":357,"obp":0.78,"obp_se":1.55,"slg":2.67,"slg_se":0.72,"r2":0.649},{"y":2003,"n":352,"obp":3.08,"obp_se":1.54,"slg":1.08,"slg_se":0.82,"r2":0.642},{"y":2004,"n":347,"obp":3.56,"obp_se":1.54,"slg":2.55,"slg_se":0.78,"r2":0.617},{"y":2005,"n":347,"obp":3.53,"obp_se":1.5,"slg":2.55,"slg_se":0.78,"r2":0.633},{"y":2006,"n":342,"obp":3.65,"obp_se":1.54,"slg":1.5,"slg_se":0.79,"r2":0.618},{"y":2007,"n":350,"obp":1.62,"obp_se":1.53,"slg":2.79,"slg_se":0.73,"r2":0.641},{"y":2008,"n":351,"obp":1.09,"obp_se":1.57,"slg":0.97,"slg_se":0.81,"r2":0.643}],"log":{"OAK":[["20020401","TEX",1,8,3],["20020402","TEX",1,3,2],["20020403","TEX",1,9,6],["20020404","TEX",1,5,7],["20020405","SEA",0,1,7],["20020406","SEA",0,8,3],["20020407","SEA",0,6,5],["20020409","TEX",0,5,4],["20020410","TEX",0,2,4],["20020411","TEX",0,0,7],["20020412","ANA",0,5,1],["20020413","ANA",0,7,2],["20020414","ANA",0,1,4],["20020416","SEA",1,2,6],["20020417","SEA",1,4,7],["20020418","ANA",1,4,2],["20020419","ANA",1,7,9],["20020420","ANA",1,8,7],["20020421","ANA",1,6,5],["20020423","NYA",1,1,2],["20020424","NYA",1,5,8],["20020425","NYA",1,6,2],["20020426","CHA",1,6,4],["20020427","CHA",1,16,1],["20020428","CHA",1,10,0],["20020430","NYA",0,2,8],["20020501","NYA",0,4,1],["20020502","NYA",0,2,9],["20020503","CHA",0,1,6],["20020504","CHA",0,2,10],["20020505","CHA",0,3,2],["20020507","BOS",1,7,9],["20020508","BOS",1,6,12],["20020509","BOS",1,1,5],["20020510","TOR",1,2,6],["20020511","TOR",1,7,4],["20020512","TOR",1,4,11],["20020514","BOS",0,2,6],["20020515","BOS",0,2,8],["20020516","BOS",0,5,0],["20020517","TOR",0,1,7],["20020518","TOR",0,3,6],["20020519","TOR",0,0,11],["20020521","BAL",1,4,6],["20020522","BAL",1,7,6],["20020523","BAL",1,3,11],["20020524","TBA",1,9,8],["20020525","TBA",1,6,0],["20020526","TBA",1,7,0],["20020528","BAL",0,5,2],["20020529","BAL",0,5,10],["20020530","TBA",0,3,4],["20020531","TBA",0,13,9],["20020601","TBA",0,8,3],["20020602","TBA",0,4,2],["20020603","SEA",1,1,4],["20020604","SEA",1,3,2],["20020605","SEA",1,0,5],["20020606","SEA",1,10,4],["20020607","HOU",1,5,3],["20020608","HOU",1,5,1],["20020609","HOU",1,7,6],["20020610","MIL",1,8,6],["20020611","MIL",1,11,2],["20020612","MIL",1,8,0],["20020614","SFN",0,3,2],["20020615","SFN",0,2,6],["20020616","SFN",0,2,1],["20020618","PIT",0,4,2],["20020619","PIT",0,3,2],["20020620","PIT",0,5,3],["20020621","CIN",0,5,3],["20020622","CIN",0,10,3],["20020623","CIN",0,5,1],["20020624","SEA",0,13,2],["20020625","SEA",0,1,7],["20020626","SEA",0,0,1],["20020627","SEA",0,4,7],["20020628","SFN",1,10,6],["20020629","SFN",1,3,5],["20020630","SFN",1,7,0],["20020701","MIN",1,4,5],["20020702","MIN",1,4,3],["20020703","MIN",1,1,2],["20020704","KCA",1,3,2],["20020705","KCA",1,4,3],["20020706","KCA",1,3,4],["20020707","KCA",1,3,2],["20020711","BAL",0,4,1],["20020712","BAL",0,1,0],["20020713","BAL",0,6,0],["20020714","BAL",0,3,6],["20020715","TBA",0,4,0],["20020716","TBA",0,2,1],["20020717","ANA",1,4,10],["20020718","ANA",1,2,0],["20020719","TEX",1,10,0],["20020720","TEX",1,6,5],["20020721","TEX",1,3,7],["20020723","ANA",0,2,1],["20020724","ANA",0,1,5],["20020725","ANA",0,4,5],["20020726","TEX",0,4,12],["20020727","TEX",0,6,10],["20020728","TEX",0,12,2],["20020729","CLE",1,6,8],["20020730","CLE",1,4,5],["20020731","CLE",1,6,4],["20020801","DET",1,5,3],["20020802","DET",1,1,3],["20020803","DET",1,8,4],["20020804","DET",1,4,0],["20020806","BOS",0,9,1],["20020807","BOS",0,3,2],["20020808","BOS",0,2,4],["20020809","NYA",0,3,2],["20020810","NYA",0,8,0],["20020811","NYA",0,5,8],["20020812","TOR",1,1,2],["20020813","TOR",1,5,4],["20020814","TOR",1,4,2],["20020816","CHA",1,1,0],["20020817","CHA",1,9,2],["20020818","CHA",1,7,4],["20020819","CLE",0,8,1],["20020820","CLE",0,6,3],["20020821","CLE",0,6,0],["20020822","CLE",0,9,3],["20020823","DET",0,9,1],["20020824","DET",0,12,3],["20020825","DET",0,10,7],["20020826","KCA",0,6,3],["20020827","KCA",0,6,4],["20020828","KCA",0,7,1],["20020830","MIN",1,4,2],["20020831","MIN",1,6,3],["20020901","MIN",1,7,5],["20020902","KCA",1,7,6],["20020904","KCA",1,12,11],["20020906","MIN",0,0,6],["20020907","MIN",0,2,0],["20020908","MIN",0,6,0],["20020909","ANA",0,2,1],["20020910","ANA",0,2,5],["20020911","ANA",0,5,6],["20020912","ANA",0,6,7],["20020913","SEA",1,5,0],["20020914","SEA",1,1,0],["20020915","SEA",1,3,6],["20020916","ANA",1,4,3],["20020917","ANA",1,0,1],["20020918","ANA",1,7,4],["20020919","ANA",1,5,3],["20020920","TEX",1,4,2],["20020921","TEX",1,6,3],["20020922","TEX",1,7,5],["20020924","SEA",0,7,8],["20020925","SEA",0,2,3],["20020926","SEA",0,5,3],["20020927","TEX",0,3,2],["20020928","TEX",0,10,8],["20020929","TEX",0,8,7]],"ANA":[["20020331","CLE",1,0,6],["20020402","CLE",1,7,5],["20020403","CLE",1,5,6],["20020405","TEX",0,3,1],["20020406","TEX",0,6,3],["20020408","SEA",1,4,5],["20020409","SEA",1,1,5],["20020410","SEA",1,1,8],["20020411","SEA",1,4,8],["20020412","OAK",1,1,5],["20020413","OAK",1,2,7],["20020414","OAK",1,4,1],["20020416","TEX",1,6,5],["20020417","TEX",1,1,4],["20020418","OAK",0,2,4],["20020419","OAK",0,9,7],["20020420","OAK",0,7,8],["20020421","OAK",0,5,6],["20020422","SEA",0,5,16],["20020423","SEA",0,0,1],["20020424","SEA",0,10,6],["20020426","TOR",1,4,0],["20020427","TOR",1,11,4],["20020428","TOR",1,8,5],["20020430","CLE",0,21,2],["20020501","CLE",0,7,2],["20020502","CLE",0,8,0],["20020503","TOR",0,6,4],["20020504","TOR",0,1,4],["20020505","TOR",0,8,2],["20020507","DET",1,0,3],["20020508","DET",1,3,2],["20020509","DET",1,7,6],["20020510","CHA",1,19,0],["20020511","CHA",1,6,3],["20020512","CHA",1,5,4],["20020514","DET",0,9,2],["20020515","DET",0,10,1],["20020517","CHA",0,8,4],["20020518","CHA",0,4,10],["20020519","CHA",0,6,1],["20020520","KCA",1,6,3],["20020521","KCA",1,5,1],["20020522","KCA",1,7,6],["20020524","MIN",1,1,5],["20020525","MIN",1,4,3],["20020526","MIN",1,2,5],["20020528","KCA",0,4,7],["20020529","KCA",0,12,2],["20020530","MIN",0,6,7],["20020531","MIN",0,11,3],["20020601","MIN",0,2,4],["20020602","MIN",0,5,4],["20020603","TEX",1,5,2],["20020604","TEX",1,3,0],["20020605","TEX",1,7,5],["20020606","TEX",1,8,9],["20020607","CIN",1,4,3],["20020608","CIN",1,3,4],["20020609","CIN",1,7,4],["20020610","PIT",1,4,3],["20020611","PIT",1,3,7],["20020612","PIT",1,8,5],["20020614","LAN",0,8,4],["20020615","LAN",0,5,10],["20020616","LAN",0,4,5],["20020618","SLN",0,2,7],["20020619","SLN",0,2,6],["20020620","SLN",0,3,2],["20020621","MIL",0,11,4],["20020622","MIL",0,8,2],["20020623","MIL",0,5,2],["20020624","TEX",0,5,8],["20020624","TEX",0,2,3],["20020625","TEX",0,5,11],["20020626","TEX",0,7,6],["20020627","TEX",0,6,3],["20020628","LAN",1,5,7],["20020629","LAN",1,7,0],["20020630","LAN",1,5,1],["20020702","BAL",1,0,3],["20020703","BAL",1,1,0],["20020704","BAL",1,2,7],["20020705","TBA",1,6,5],["20020706","TBA",1,4,3],["20020707","TBA",1,2,1],["20020711","KCA",0,1,0],["20020712","KCA",0,11,3],["20020713","KCA",0,0,4],["20020714","KCA",0,3,12],["20020715","MIN",0,8,10],["20020716","MIN",0,4,2],["20020717","OAK",0,10,4],["20020718","OAK",0,0,2],["20020719","SEA",1,15,3],["20020720","SEA",1,7,6],["20020721","SEA",1,7,5],["20020723","OAK",1,1,2],["20020724","OAK",1,5,1],["20020725","OAK",1,5,4],["20020726","SEA",0,8,0],["20020727","SEA",0,1,3],["20020728","SEA",0,1,0],["20020729","BOS",1,5,4],["20020730","BOS",1,0,6],["20020731","BOS",1,1,2],["20020801","NYA",1,2,1],["20020802","NYA",1,0,4],["20020803","NYA",1,5,4],["20020804","NYA",1,5,7],["20020805","DET",0,6,3],["20020806","CHA",0,11,2],["20020807","CHA",0,6,7],["20020808","CHA",0,2,3],["20020809","TOR",0,4,5],["20020810","TOR",0,11,4],["20020811","TOR",0,1,0],["20020812","DET",1,7,0],["20020813","DET",1,7,6],["20020814","DET",1,5,4],["20020816","CLE",1,5,4],["20020817","CLE",1,4,9],["20020818","CLE",1,4,1],["20020820","NYA",0,5,7],["20020821","NYA",0,5,1],["20020822","NYA",0,2,4],["20020823","BOS",0,1,4],["20020824","BOS",0,2,0],["20020825","BOS",0,8,3],["20020826","BOS",0,9,10],["20020827","TBA",1,7,3],["20020828","TBA",1,5,8],["20020829","TBA",1,6,1],["20020830","BAL",1,6,2],["20020831","BAL",1,9,0],["20020901","BAL",1,9,3],["20020903","TBA",0,10,2],["20020904","TBA",0,4,2],["20020905","TBA",0,10,1],["20020906","BAL",0,6,3],["20020907","BAL",0,4,2],["20020908","BAL",0,6,2],["20020909","OAK",1,1,2],["20020910","OAK",1,5,2],["20020911","OAK",1,6,5],["20020912","OAK",1,7,6],["20020913","TEX",1,3,2],["20020914","TEX",1,8,6],["20020915","TEX",1,13,4],["20020916","OAK",0,3,4],["20020917","OAK",0,1,0],["20020918","OAK",0,4,7],["20020919","OAK",0,3,5],["20020920","SEA",0,8,1],["20020921","SEA",0,4,6],["20020922","SEA",0,2,3],["20020924","TEX",0,1,2],["20020925","TEX",0,3,4],["20020926","TEX",0,10,5],["20020927","SEA",1,6,7],["20020928","SEA",1,8,4],["20020929","SEA",1,7,6]],"SEA":[["20020401","CHA",1,5,6],["20020402","CHA",1,7,4],["20020403","CHA",1,7,6],["20020405","OAK",1,7,1],["20020406","OAK",1,3,8],["20020407","OAK",1,5,6],["20020408","ANA",0,5,4],["20020409","ANA",0,5,1],["20020410","ANA",0,8,1],["20020411","ANA",0,8,4],["20020412","TEX",0,7,3],["20020413","TEX",0,9,4],["20020414","TEX",0,9,7],["20020415","TEX",0,13,11],["20020416","OAK",0,6,2],["20020417","OAK",0,7,4],["20020419","TEX",1,0,9],["20020420","TEX",1,3,2],["20020421","TEX",1,5,3],["20020422","ANA",1,16,5],["20020423","ANA",1,1,0],["20020424","ANA",1,6,10],["20020426","NYA",1,1,7],["20020427","NYA",1,1,0],["20020428","NYA",1,3,4],["20020430","CHA",0,4,8],["20020501","CHA",0,2,9],["20020502","CHA",0,15,4],["20020503","NYA",0,6,2],["20020504","NYA",0,9,5],["20020505","NYA",0,10,6],["20020507","TOR",1,1,4],["20020508","TOR",1,5,4],["20020509","TOR",1,8,7],["20020510","BOS",1,7,2],["20020511","BOS",1,3,1],["20020512","BOS",1,4,10],["20020514","TOR",0,3,6],["20020515","TOR",0,8,6],["20020516","TOR",0,15,2],["20020517","BOS",0,6,3],["20020518","BOS",0,1,4],["20020519","BOS",0,2,3],["20020521","TBA",1,0,1],["20020522","TBA",1,2,3],["20020523","TBA",1,7,3],["20020524","BAL",1,6,2],["20020525","BAL",1,2,3],["20020526","BAL",1,8,1],["20020528","TBA",0,1,5],["20020529","TBA",0,5,2],["20020530","BAL",0,5,4],["20020531","BAL",0,7,8],["20020601","BAL",0,3,4],["20020602","BAL",0,11,8],["20020603","OAK",0,4,1],["20020604","OAK",0,2,3],["20020605","OAK",0,5,0],["20020606","OAK",0,4,10],["20020607","CHN",1,0,2],["20020608","CHN",1,4,2],["20020609","CHN",1,1,5],["20020610","SLN",1,10,0],["20020611","SLN",1,4,7],["20020612","SLN",1,5,0],["20020614","SDN",0,6,3],["20020615","SDN",0,1,3],["20020616","SDN",0,3,5],["20020618","CIN",0,8,1],["20020619","CIN",0,2,0],["20020620","CIN",0,3,2],["20020621","HOU",0,8,0],["20020622","HOU",0,2,3],["20020623","HOU",0,10,5],["20020624","OAK",1,2,13],["20020625","OAK",1,7,1],["20020626","OAK",1,1,0],["20020627","OAK",1,7,4],["20020628","COL",1,6,2],["20020629","COL",1,8,1],["20020630","COL",1,3,4],["20020701","KCA",1,7,0],["20020702","KCA",1,5,7],["20020703","KCA",1,3,0],["20020704","MIN",1,2,1],["20020705","MIN",1,4,8],["20020706","MIN",1,2,7],["20020707","MIN",1,8,2],["20020711","TBA",0,4,0],["20020712","TBA",0,2,1],["20020713","TBA",0,3,4],["20020714","TBA",0,7,6],["20020715","BAL",0,5,6],["20020716","BAL",0,1,6],["20020717","TEX",0,6,3],["20020718","TEX",0,5,3],["20020719","ANA",0,3,15],["20020720","ANA",0,6,7],["20020721","ANA",0,5,7],["20020723","TEX",1,4,1],["20020724","TEX",1,3,4],["20020725","TEX",1,7,2],["20020726","ANA",1,0,8],["20020727","ANA",1,3,1],["20020728","ANA",1,0,1],["20020729","DET",1,4,3],["20020730","DET",1,5,4],["20020731","DET",1,5,2],["20020801","CLE",1,10,6],["20020802","CLE",1,3,1],["20020803","CLE",1,12,4],["20020804","CLE",1,8,10],["20020806","TOR",0,12,14],["20020807","TOR",0,5,4],["20020808","TOR",0,3,1],["20020809","CHA",0,2,10],["20020810","CHA",0,7,3],["20020811","CHA",0,5,6],["20020813","BOS",1,10,3],["20020814","BOS",1,5,12],["20020815","BOS",1,4,3],["20020816","NYA",1,3,9],["20020817","NYA",1,3,8],["20020818","NYA",1,5,2],["20020819","DET",0,3,4],["20020820","DET",0,3,6],["20020821","DET",0,8,2],["20020822","DET",0,4,2],["20020823","CLE",0,2,4],["20020824","CLE",0,3,5],["20020825","CLE",0,12,4],["20020827","MIN",0,2,5],["20020828","MIN",0,1,2],["20020829","MIN",0,2,0],["20020830","KCA",1,1,5],["20020831","KCA",1,2,4],["20020901","KCA",1,9,4],["20020902","MIN",1,5,2],["20020904","MIN",1,2,3],["20020906","KCA",0,14,7],["20020907","KCA",0,9,2],["20020908","KCA",0,16,9],["20020909","TEX",0,7,12],["20020910","TEX",0,2,3],["20020911","TEX",0,3,4],["20020912","TEX",0,3,7],["20020913","OAK",0,0,5],["20020914","OAK",0,0,1],["20020915","OAK",0,6,3],["20020916","TEX",1,6,5],["20020917","TEX",1,3,2],["20020918","TEX",1,3,2],["20020919","TEX",1,7,12],["20020920","ANA",1,1,8],["20020921","ANA",1,6,4],["20020922","ANA",1,3,2],["20020924","OAK",1,8,7],["20020925","OAK",1,3,2],["20020926","OAK",1,3,5],["20020927","ANA",0,7,6],["20020928","ANA",0,4,8],["20020929","ANA",0,6,7]]}};
+/* ---------- hero + inning 1 ---------- */
+const T=D.teams,oak=T.find(t=>t.t==='OAK'),nyy=T.find(t=>t.t==='NYA');
+const totPay=T.reduce((a,t)=>a+t.pay,0),totW=T.reduce((a,t)=>a+t.W,0);
+$('#board').innerHTML=`<tr class="oak"><td>OAK</td><td>${money(oak.pay)}</td><td>${oak.W}</td><td>${money(oak.pay/oak.W)}</td></tr>
+<tr><td>NYY</td><td>${money(nyy.pay)}</td><td>${nyy.W}</td><td>${money(nyy.pay/nyy.W)}</td></tr>
+<tr><td>MLB avg</td><td>${money(totPay/30)}</td><td>${(totW/30).toFixed(0)}</td><td>${money(totPay/totW)}</td></tr>`;
+const payFit=ols(T.map(t=>t.pay/1e6),T.map(t=>t.W));
+const LABS={OAK:'r',NYA:'l',MIN:'r',TBA:'r',TEX:'b',ANA:'t',ATL:'t',BOS:'r',DET:'r',NYN:'b'};
+scatter($('#c-pay'),()=>({xdom:[25,135],ydom:[50,108],xlab:'Payroll, $ millions',ylab:'Wins',xfmt:v=>'$'+v,fit:payFit,aria:'Scatter of 2002 payroll against wins for 30 teams',
+  pts:T.map(t=>({x:t.pay/1e6,y:t.W,cls:t.t==='OAK'?'hi':t.t==='NYA'?'alt':t.po?'po':'',z:t.t==='OAK'?3:t.t==='NYA'?2:0,lab:LABS[t.t]?(t.t==='OAK'?'Oakland':ab(t.t)):null,side:LABS[t.t],
+    tip:`<b>${t.n}</b><br>${t.W}-${t.L}${t.po?' · playoffs':''}<br>Payroll ${money(t.pay)}<br>${money(t.pay/t.W)} per win`}))}));
+$('#s1').innerHTML=`<div class="stat"><b>${money(oak.pay/oak.W)}</b><span>Oakland's payroll per win</span></div>
+<div class="stat"><b>${money(totPay/totW)}</b><span>League average per win</span></div>
+<div class="stat"><b>${money(nyy.pay/nyy.W)}</b><span>Yankees per win, for the same 103</span></div>
+<div class="stat"><b>${payFit.r.toFixed(2)}</b><span>Correlation of payroll and wins in 2002</span></div>`;
+
+/* ---------- inning 2 ---------- */
+const E=D.era.map(r=>({y:r[0],t:r[1],AVG:r[2],OBP:r[3],SLG:r[4],OPS:+(r[3]+r[4]).toFixed(3),SBG:r[5],HRG:r[6],RG:r[7],W:r[8],L:r[9],R:r[10],RA:r[11]}));
+scatter($('#c-pyth'),()=>({xdom:[-360,320],ydom:[40,120],xlab:'Run differential per 162 games',ylab:'Wins',fit:{a:81,b:0.10462},aria:'Run differential against wins',
+  xfmt:v=>(v>0?'+':'')+v,
+  pts:E.map(e=>{const g=e.W+e.L,rd=(e.R-e.RA)/g*162,w=e.W/g*162,o=e.t==='OAK'&&e.y===2002;return{x:rd,y:w,cls:o?'hi':'',z:o?3:0,r:o?6:3,lab:o?'2002 A\'s':null,side:'l',
+    tip:`<b>${e.y} ${ab(e.t)}</b><br>${e.W}-${e.L}<br>Scored ${e.R}, allowed ${e.RA}<br>Differential ${e.R-e.RA>0?'+':''}${e.R-e.RA}`}})
+   .concat([{x:135,y:95,cls:'alt',z:2,lab:'Target: +135, 95 W',side:'r',tip:'<b>DePodesta\'s target</b><br>+135 runs for 95 wins'}])}));
+const rs=$('#rs'),ra=$('#ra');
+function py(){const a=+rs.value,b=+ra.value,p=a*a/(a*a+b*b),lin=81+(a-b)*0.10462;$('#rs-v').textContent=a;$('#ra-v').textContent=b;
+  $('#py-out').innerHTML=`<div><small>Pythagorean wins</small><div class="big">${(p*162).toFixed(1)}</div></div><div><small>Win pct</small><div class="big">${f3(p)}</div></div><div><small>Run differential</small><div class="big">${a-b>0?'+':''}${a-b}</div></div><div><small>Linear rule (9.6 runs a win)</small><div class="big">${lin.toFixed(1)}</div></div>`}
+rs.oninput=ra.oninput=py;
+const PRE=[["2002 A's",800,654],['DePodesta projection',810,660],['2002 Yankees',897,697],['2002 Angels',851,644],['2002 Tigers',575,864]];
+const pp=$('#py-presets');PRE.forEach(p=>{const b=document.createElement('button');b.type='button';b.textContent=p[0];b.onclick=()=>{rs.value=p[1];ra.value=p[2];py()};pp.appendChild(b)});py();
+
+/* ---------- inning 3 ---------- */
+const STATS={AVG:['Batting average',f3],OBP:['On-base percentage',f3],SLG:['Slugging',f3],OPS:['OBP + slugging',f3],HRG:['Home runs per game',v=>v.toFixed(2)],SBG:['Stolen bases per game',v=>v.toFixed(2)]};
+let stat='AVG';
+const eraGet=()=>{const xs=E.map(e=>e[stat]),ys=E.map(e=>e.RG),fit=ols(xs,ys),lo=Math.min(...xs),hi=Math.max(...xs),pad=(hi-lo)*.05;
+  $('#era-out').innerHTML=`<div><small>Correlation with runs (r)</small><div class="big">${fit.r.toFixed(2)}</div></div><div><small>Share of scoring explained (r²)</small><div class="big">${Math.round(fit.r*fit.r*100)}%</div></div>`;
+  return{xdom:[lo-pad,hi+pad],ydom:[3,6.6],xlab:STATS[stat][0],ylab:'Runs / game',xfmt:STATS[stat][1],yfmt:v=>v.toFixed(1),fit,aria:STATS[stat][0]+' against runs per game',
+   pts:E.map(e=>{const o=e.t==='OAK'&&e.y===2002;return{x:e[stat],y:e.RG,r:o?6:3,cls:o?'hi':'',z:o?3:0,lab:o?'2002 A\'s':null,side:'t',
+    tip:`<b>${e.y} ${ab(e.t)}</b><br>${STATS[stat][0]}: ${STATS[stat][1](e[stat])}<br>${e.RG.toFixed(2)} runs per game<br>AVG/OBP/SLG ${f3(e.AVG)}/${f3(e.OBP)}/${f3(e.SLG)}`}})}};
+scatter($('#c-era'),eraGet);
+pills($('#era-ctl'),[['AVG','Batting avg'],['OBP','On-base %'],['SLG','Slugging'],['OPS','OPS'],['HRG','Home runs'],['SBG','Stolen bases']],stat,k=>{stat=k;$('#c-era')._redraw()});
+const obp=$('#obp'),slg=$('#slg');
+function off(){const a=obp.value/1000,b=slg.value/1000,r=(-4.823+16.032*a+10.155*b)*162,w=81+(r-654)*0.10462,base=(-4.823+16.032*.339+10.155*.432)*162;
+  $('#obp-v').textContent=f3(a);$('#slg-v').textContent=f3(b);
+  $('#off-out').innerHTML=`<div><small>Runs scored</small><div class="big">${Math.round(r)}</div></div><div><small>Against real A's model</small><div class="big">${r-base>=0?'+':''}${Math.round(r-base)}</div></div><div><small>Expected wins</small><div class="big">${w.toFixed(1)}</div></div>`}
+obp.oninput=slg.oninput=off;off();
+
+/* ---------- inning 4 ---------- */
+const RE=[[.555,.297,.117],[.953,.573,.251],[1.189,.725,.344],[1.573,.971,.466],[1.482,.983,.387],[1.904,1.243,.538],[2.052,1.467,.634],[2.417,1.650,.815]];
+const BN=['Bases empty','Runner on 1st','Runner on 2nd','Runners on 1st and 2nd','Runner on 3rd','Runners on 1st and 3rd','Runners on 2nd and 3rd','Bases loaded'];
+const ORDER=[0,1,2,4,3,5,6,7];let bases=1,outs=0;
+function reDraw(){
+  root.querySelectorAll('.base').forEach(b=>b.classList.toggle('on',!!(bases&+b.dataset.b)));
+  const v=RE[bases][outs];$('#re-state').textContent=`${BN[bases]}, ${outs} out`;$('#re-val').textContent=v.toFixed(3);
+  const sg=(d)=>`<b class="${d<0?'neg':'pos'}">${d>0?'+':''}${d.toFixed(3)} runs</b>`;
+  let bh='<strong>Sacrifice bunt.</strong> ';
+  if(bases&&!(bases&4)&&outs<2){const nb=bases<<1,nv=RE[nb][outs+1];bh+=`Runners move up, one out made: ${BN[nb].toLowerCase()}, ${outs+1} out = ${nv.toFixed(3)}. Change: ${sg(nv-v)}.`}
+  else bh+='<span class="src">Set a runner on 1st or 2nd (none on 3rd) with fewer than 2 outs.</span>';
+  $('#re-bunt').innerHTML=bh;
+  let sh='<strong>Steal of second.</strong> ';
+  if((bases&1)&&!(bases&2)){const ok=RE[(bases&~1)|2][outs],bad=outs<2?RE[bases&~1][outs+1]:0,be=(v-bad)/(ok-bad);
+    sh+=`Safe: ${ok.toFixed(3)} (${sg(ok-v)}). Caught: ${bad.toFixed(3)} (${sg(bad-v)}). Break-even success rate: <b>${Math.round(be*100)}%</b>.`}
+  else sh+='<span class="src">Needs a runner on 1st with 2nd open.</span>';
+  $('#re-steal').innerHTML=sh;
+  $('#re-table').innerHTML='<thead><tr><th>Bases</th><th>0 out</th><th>1 out</th><th>2 out</th></tr></thead><tbody>'+ORDER.map(b=>`<tr><td>${BN[b]}</td>`+[0,1,2].map(o=>`<td class="cell${b===bases&&o===outs?' sel':''}" data-b="${b}" data-o="${o}" style="background:color-mix(in srgb,var(--s-a) ${Math.round(RE[b][o]/2.417*55)}%,transparent)">${RE[b][o].toFixed(3)}</td>`).join('')+'</tr>').join('')+'</tbody>';
+  [...$('#outs').children].forEach((c,i)=>c.setAttribute('aria-pressed',i===outs));
+}
+root.querySelectorAll('.base').forEach(b=>{const t=()=>{bases^=+b.dataset.b;reDraw()};b.addEventListener('click',t);b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}})});
+pills($('#outs'),[[0,'0 out'],[1,'1 out'],[2,'2 out']],0,k=>{outs=k;reDraw()});
+$('#re-table').addEventListener('click',e=>{const c=e.target.closest('.cell');if(c){bases=+c.dataset.b;outs=+c.dataset.o;reDraw()}});
+reDraw();
+
+/* ---------- inning 5 ---------- */
+const OUT=[['Jason Giambi','1B, to Yankees',.477,'$4.1M'],['Johnny Damon','CF, to Red Sox',.324,'$7.1M'],['Olmedo Saenz','DH, the weak spot',.291,'$0.3M']];
+const IN=[['Scott Hatteberg','1B, from Red Sox',.374,'$0.9M'],['David Justice','OF/DH, from Yankees',.376,'$7.0M'],['Jeremy Giambi','OF/DH, 187 PA',.390,'$1.1M']];
+const sw=(title,rows,cls)=>`<div><h4>${title}</h4>`+rows.map(r=>`<div class="barrow" style="grid-template-columns:minmax(120px,170px) 1fr 50px"><div><strong>${r[0]}</strong><div class="src" style="font-size:12px">${r[1]} · ${r[3]}</div></div><div><div class="bar ${cls}" style="width:${r[2]/.5*100}%"></div></div><div class="v">${f3(r[2])}</div></div>`).join('')+`<div class="avg">Average OBP ${f3(rows.reduce((a,r)=>a+r[2],0)/3)}</div></div>`;
+$('#swap').innerHTML=sw('Out: 2001 lines',OUT,'n')+sw('In: 2002 lines',IN,'');
+
+/* ---------- inning 6 ---------- */
+const HIT=D.hit.map(r=>({n:r[0],t:r[1],PA:r[2],AVG:r[3],OBP:r[4],SLG:r[5],HR:r[6],BB:r[7],sal:r[8]}));
+let hstat='OBP',q='';
+const HL={'Scott Hatteberg':'b','David Justice':'t','Miguel Tejada':'t','Eric Chavez':'b'};
+scatter($('#c-hit'),()=>{const xs=HIT.map(h=>h[hstat]),lo=Math.min(...xs),hi=Math.max(...xs),pad=(hi-lo)*.04;
+  return{xdom:[lo-pad,hi+pad],ydom:[180000,26000000],ylog:true,yticks:[200000,500000,1e6,2e6,5e6,1e7,2e7],yfmt:v=>v>=1e6?'$'+v/1e6+'M':'$'+v/1e3+'K',ml:56,xfmt:f3,xlab:STATS[hstat][0],ylab:'2002 salary',aria:'Hitter production against salary',
+   pts:HIT.map(h=>{const o=h.t==='OAK',m=q&&h.n.toLowerCase().includes(q);return{x:h[hstat],y:h.sal,cls:m?'alt':o?'hi':'',z:m?4:o?3:0,r:m?7:o?5:3,lab:m?h.n:(o&&HL[h.n]&&!q?h.n.split(' ').slice(1).join(' '):null),side:m?'t':HL[h.n],
+    tip:`<b>${h.n}</b> · ${ab(h.t)}<br>${money(h.sal)}<br>AVG/OBP/SLG ${f3(h.AVG)}/${f3(h.OBP)}/${f3(h.SLG)}<br>${h.HR} HR, ${h.BB} BB, ${h.PA} PA`}})}});
+pills($('#hit-ctl'),[['OBP','On-base %'],['AVG','Batting avg'],['SLG','Slugging']],hstat,k=>{hstat=k;$('#c-hit')._redraw()});
+$('#q').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();$('#c-hit')._redraw()});
+lines($('#c-hs'),()=>({xdom:[1997.5,2008.5],ydom:[-2,6],zero:true,xticks:innerWidth<480?[1998,2002,2006]:D.hs.map(h=>h.y),yfmt:v=>(v>0?'+':'')+v+'%',band:[2002.5,2008.5],ylab:'Salary change',
+  series:[{cls:'a',dots:1,err:1,pts:D.hs.map(h=>[h.y,h.obp,h.obp_se])},{cls:'b',dots:1,err:1,pts:D.hs.map(h=>[h.y,h.slg,h.slg_se])}],
+  tip:(i)=>{const h=D.hs[i];return `<b>${h.y} salaries</b><br>+10 pts OBP: ${h.obp>0?'+':''}${h.obp.toFixed(1)}% (±${h.obp_se.toFixed(1)})<br>+10 pts SLG: ${h.slg>0?'+':''}${h.slg.toFixed(1)}% (±${h.slg_se.toFixed(1)})<br>${h.n} hitters`}}));
+
+/* ---------- inning 7 ---------- */
+const cum=k=>{let v=0;return D.log[k].map((g,i)=>{v+=g[3]>g[4]?1:-1;return[i+1,v]})};
+const OL=D.log.OAK,si=OL.findIndex(g=>g[0]==='20020813'),ei=OL.findIndex(g=>g[0]==='20020904');
+const dt=s=>['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'][+s.slice(4,6)-1]+' '+(+s.slice(6));
+const SER={OAK:cum('OAK'),ANA:cum('ANA'),SEA:cum('SEA')};
+const rec=(k,i)=>{let w=0;for(let j=0;j<=i&&j<D.log[k].length;j++)if(D.log[k][j][3]>D.log[k][j][4])w++;const n=Math.min(i+1,D.log[k].length);return w+'-'+(n-w)};
+lines($('#c-season'),()=>({xdom:[1,162],ydom:[-10,48],zero:true,xticks:[1,40,80,120,162],xlab:'Game number',ylab:'Games over .500',mr:44,band:[si+.5,ei+1.5],yfmt:v=>(v>0?'+':'')+v,
+  series:[{cls:'c',pts:SER.SEA,end:'SEA'},{cls:'b',pts:SER.ANA,end:'ANA'},{cls:'a',pts:SER.OAK,end:'OAK'}],
+  notes:[{x:46,y:-9,t:'May 23: 20-26'}],
+  tip:(i)=>{const g=OL[i];return `<b>Game ${i+1} · ${dt(g[0])}</b><br>OAK ${g[3]>g[4]?'W':'L'} ${g[3]}-${g[4]} ${g[2]?'vs':'at'} ${ab(g[1])}<br>OAK ${rec('OAK',i)} · ANA ${rec('ANA',i)} · SEA ${rec('SEA',i)}`}}));
+$('#strip').innerHTML=OL.slice(si,ei+1).map((g,i)=>`<div class="g">#${i+1} ${dt(g[0])}<b>${g[3]}-${g[4]}</b>${g[2]?'vs':'at'} ${ab(g[1])}</div>`).join('');
+
+/* ---------- inning 8 ---------- */
+const big=D.pit02.slice(0,3),bw=big.reduce((a,p)=>a+p.W,0),bl=big.reduce((a,p)=>a+p.L,0),bs=big.reduce((a,p)=>a+p.sal,0);
+$('#s8').innerHTML=`<div class="stat"><b>${bw}-${bl}</b><span>Zito, Hudson and Mulder combined record</span></div><div class="stat"><b>${money(bs)}</b><span>Their combined 2002 salary</span></div><div class="stat"><b>3.68</b><span>Team ERA, third best in baseball</span></div><div class="stat"><b>${oak.RA}</b><span>Runs allowed, against a target of 650 to 670</span></div>`;
+$('#t-pit').innerHTML='<thead><tr><th>Pitcher</th><th>W-L</th><th>ERA</th><th>IP</th><th>SO</th><th>SV</th><th>Salary</th></tr></thead><tbody>'+D.pit02.slice(0,8).map(p=>`<tr><td>${p.n}${p.n==='Chad Bradford'?'<span class="tagp">Book pickup</span>':''}</td><td>${p.W}-${p.L}</td><td>${p.ERA.toFixed(2)}</td><td>${p.IP.toFixed(1)}</td><td>${p.SO}</td><td>${p.SV||''}</td><td>${p.sal?money(p.sal):'n/a'}</td></tr>`).join('')+'</tbody>';
+const PICK=['Scott Hatteberg','David Justice','Jeremy Giambi','John Mabry'];
+const rcs=[...D.bat02].sort((a,b)=>b.RC-a.RC).slice(0,12),rmax=rcs[0].RC;
+$('#rc').innerHTML=rcs.map(b=>`<div class="barrow"><div>${b.n}${PICK.includes(b.n)?'<span class="tagp">Book pickup</span>':''}<div class="src" style="font-size:12px;font-family:var(--mono)">${f3(b.AVG)}/${f3(b.OBP)}/${f3(b.SLG)} · ${b.sal?money(b.sal):'min.'}</div></div><div><div class="bar ${PICK.includes(b.n)?'':'n'}" style="width:${b.RC/rmax*100}%"></div></div><div class="v">${b.RC.toFixed(0)}</div></div>`).join('');
+
+/* ---------- inning 9 ---------- */
+const YR=D.years;
+lines($('#c-cpw'),()=>({xdom:[1995,2016],ydom:[0,1.7],xticks:innerWidth<480?[1995,2002,2009,2016]:[1995,1998,2002,2005,2008,2012,2016],yfmt:v=>'$'+v.toFixed(1)+'M',ml:54,mr:40,ylab:'$ per win',band:[1999.5,2003.5],
+  series:[{cls:'n',pts:YR.map(y=>[y.y,y.lgcpw/1e6]),end:'MLB'},{cls:'a',pts:YR.map(y=>[y.y,y.cpw/1e6]),end:'OAK'}],
+  notes:[{x:2001.5,y:1.55,t:'2000 to 2003'}],
+  tip:i=>{const y=YR[i];return `<b>${y.y}</b><br>OAK ${money(y.cpw)} per win<br>MLB ${money(y.lgcpw)} per win<br>A's: ${y.oakW}-${y.oakL}, payroll rank ${y.oakRank} of ${y.n}`}}));
+$('#t-years').innerHTML='<thead><tr><th>Season</th><th>Record</th><th>Payroll</th><th>Rank</th><th>$ / win</th><th>MLB $ / win</th><th>Playoffs</th></tr></thead><tbody>'+YR.filter(y=>y.y>=1998&&y.y<=2007).map(y=>`<tr><td>${y.y}</td><td>${y.oakW}-${y.oakL}</td><td>${money(y.oakPay)}</td><td>${y.oakRank} of ${y.n}</td><td>${money(y.cpw)}</td><td>${money(y.lgcpw)}</td><td>${y.oakPO?'Yes':''}</td></tr>`).join('')+'</tbody>';
+
+})();
+</script>
+</body>
+</html>
