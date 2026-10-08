@@ -20,7 +20,7 @@ main{max-width:980px;margin-inline:auto;padding-inline:20px;padding-block:48px 8
 h1{font:900 clamp(52px,10vw,104px)/.92 "Sofia Sans Extra Condensed","Arial Narrow",Impact,sans-serif;text-transform:uppercase;margin:10px 0 0;text-wrap:balance}
 p{margin:0;max-width:60ch}
 .card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);border:1px solid var(--line);color:inherit;text-decoration:none}
-.card img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:1200/630}
+.card img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:1200/630;min-width:0}
 .card div{padding:22px;display:flex;flex-direction:column;gap:10px;justify-content:center;min-width:0}
 .card h2{font:800 40px/.95 "Sofia Sans Extra Condensed","Arial Narrow",Impact,sans-serif;text-transform:uppercase;margin:0}
 .card span{color:var(--mut);font-size:15.5px}
@@ -29,7 +29,14 @@ p{margin:0;max-width:60ch}
 .row{display:flex;flex-direction:column;gap:16px}
 .row .card{grid-template-columns:minmax(0,340px) minmax(0,1fr)}
 .row .card h2{font-size:38px}
-@media (max-width:700px){.card{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px){
+  main{padding-block:28px 56px;gap:22px}
+  h1{font-size:clamp(46px,15vw,72px)}
+  .row .card{grid-template-columns:minmax(0,1fr)}
+  .card img{height:auto}
+  .card div{padding:16px 16px 18px;gap:8px}
+  .row .card h2{font-size:30px}
+}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHETPL7EV5"></script>

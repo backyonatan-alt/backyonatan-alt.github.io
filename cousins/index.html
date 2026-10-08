@@ -19,7 +19,10 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%230e1730%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2218%22%20r%3D%228%22%20fill%3D%22%233987e5%22%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%2212%22%20r%3D%225%22%20fill%3D%22%23e8b93e%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
-.sharebtn{margin-left:auto;align-self:center}#shared{font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-n);align-self:center}</style>
+.topbar{flex-basis:100%;display:flex;gap:10px;align-items:center;margin-bottom:8px}.topbar a{text-decoration:none}.sharebtn{margin-left:auto}#shared{font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-n);margin-left:auto}#shared+.sharebtn{margin-left:0}#shared[hidden]+.sharebtn{margin-left:auto}</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHETPL7EV5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZHETPL7EV5');</script>
 <title>A Nation of Cousins</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@600;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
@@ -143,8 +146,25 @@ details.colors summary{cursor:pointer;font:600 11px/1.2 var(--mono);letter-spaci
 }
 @media (max-width:520px){
   .side{grid-template-columns:minmax(0,1fr)}
-  .hero{padding-block:24px 12px}
-  .lede{font-size:17px}
+  .hero{padding-block:16px 10px}
+  .hero h1{font-size:clamp(30px,11.6vw,60px);white-space:nowrap}
+  .lede{font-size:15.5px;line-height:1.4}
+  .kicker{font-size:10.5px;letter-spacing:.1em}
+  .stage{grid-template-areas:'map' 'tl' 'ctl' 'chips' 'chap' 'side';gap:8px}
+  .tlwrap{height:72px}
+  .controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:0}
+  .play{min-width:0;justify-content:center;padding-block:11px 10px}
+  .g-views,.g-speed .lab{display:none}
+  .g-speed .seg{width:100%}
+  .g-speed .txtbtn{flex:1;padding-inline:0;padding-block:13px}
+  #auto,#arcs{padding-block:12px;text-align:center}
+  .chapter{padding-top:10px}
+  .chapter h2{font-size:30px}
+  .chapter p{font-size:16px}
+  .clock b{font-size:44px}
+  .zoom button{width:38px;height:38px}
+  main{gap:48px;padding-block:40px 30px}
+  .stat b{font-size:42px}
 }
 
 /* ---------- reading column ---------- */
@@ -202,14 +222,11 @@ th:first-child,td:first-child{text-align:left}
 footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;color:var(--muted)}
 </style>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHETPL7EV5"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZHETPL7EV5');</script>
 </head>
 <body>
 <div class="night">
 <header class="hero"><div class="wrap">
-  <div class="kicker" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="txtbtn" href="../" style="text-decoration:none">&larr; All stories</a><span>3,000 years · 36 regions · 9 communities</span><span id="shared" hidden>Link copied</span><button type="button" class="txtbtn sharebtn" id="share">Share</button></div>
+  <div class="topbar"><a class="txtbtn" href="../">&larr; All stories</a><span id="shared" hidden>Link copied</span><button type="button" class="txtbtn sharebtn" id="share">Share</button></div><span class="kicker">3,000 years · 36 regions · 9 communities</span>
   <h1>A Nation of <span>Cousins</span></h1>
   <p class="lede">Pick any two Ashkenazi Jews on earth and their DNA says they are about fourth or fifth cousins. This map shows how that happened: where the Jewish people lived, how many they were, and the few narrow doorways everyone alive today came through.</p>
 </div></header>
@@ -239,7 +256,7 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
 
   <div class="controls">
     <button type="button" class="play" id="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path id="playicon" d="M3 1.5v13l11-6.5z"/></svg><span id="playlab">Play</span></button>
-    <div class="grp"><span class="lab">Speed</span>
+    <div class="grp g-speed"><span class="lab">Speed</span>
       <div class="seg" id="speed">
         <button type="button" class="txtbtn" data-s="0.5" aria-pressed="false">&frac12;&times;</button>
         <button type="button" class="txtbtn" data-s="1" aria-pressed="true">1&times;</button>
@@ -248,7 +265,7 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
       </div>
     </div>
     <button type="button" class="txtbtn" id="auto" aria-pressed="true" title="The camera moves to wherever the story is">Auto zoom</button>
-    <div class="grp"><span class="lab">Look at</span>
+    <div class="grp g-views"><span class="lab">Look at</span>
       <div class="seg" id="views">
         <button type="button" class="txtbtn" data-v="29,58,12,42">Middle East</button>
         <button type="button" class="txtbtn" data-v="-12,46,34,60">Europe</button>
