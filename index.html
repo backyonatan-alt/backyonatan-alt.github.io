@@ -26,10 +26,9 @@ p{margin:0;max-width:60ch}
 .card span{color:var(--mut);font-size:15.5px}
 .card b{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .card:hover,.card:focus-visible{border-color:var(--on);outline:none}
-.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:18px}
-.row .card{grid-template-columns:minmax(0,1fr);align-content:start}
-.row .card h2{font-size:32px}
-.row .card div{justify-content:flex-start}
+.row{display:flex;flex-direction:column;gap:16px}
+.row .card{grid-template-columns:minmax(0,340px) minmax(0,1fr)}
+.row .card h2{font-size:38px}
 @media (max-width:700px){.card{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
