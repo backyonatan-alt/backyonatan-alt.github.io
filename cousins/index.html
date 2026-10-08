@@ -202,6 +202,9 @@ th:first-child,td:first-child{text-align:left}
 footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;color:var(--muted)}
 </style>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHETPL7EV5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZHETPL7EV5');</script>
 </head>
 <body>
 <div class="night">
@@ -1081,6 +1084,9 @@ b.addEventListener('click',function(){var u=location.href.split('#')[0],d={title
  function done(){n.hidden=false;setTimeout(function(){n.hidden=true},2200)}
  if(navigator.share&&matchMedia('(pointer:coarse)').matches){navigator.share(d).catch(function(){});return}
  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(done,function(){window.prompt('Copy this link',u)})}else window.prompt('Copy this link',u)})})();
+</script>
+<script>
+(function(){var b=document.getElementById('play'),sent=false;if(!b)return;b.addEventListener('click',function(){if(sent||typeof gtag!=='function')return;sent=true;gtag('event','map_play')})})();
 </script>
 </body>
 </html>
