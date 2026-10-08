@@ -332,7 +332,7 @@ function updatePanel(now){
 
 /* ---------- chapters ---------- */
 const chipBtns=[];
-(function buildChips(){const box=$('chips');
+(function buildChips(){const box=$('chips');box.style.gridTemplateColumns='repeat('+CH.length+',minmax(0,1fr))';
   CH.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.innerHTML='<b>'+esc(c.title)+'</b><span>'+yearText(c.y0)+'</span>';
     b.addEventListener('click',()=>goChapter(i));box.appendChild(b);chipBtns.push(b)});
 })();
