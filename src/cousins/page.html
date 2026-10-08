@@ -1,0 +1,372 @@
+<title>A Nation of Cousins</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@600;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a night atlas. One dark stage holds the map, its clock and its controls; the reading column below is daylight. */
+:root{
+  --bg:#edf0f4; --surface:#f8f9fb; --ink:#131a2e; --muted:#566079; --line:#cdd4e0; --gold:#9a6a00;
+  --sea:#0e1730; --land:#1d2a4a; --coast:#31416b; --panel:#131e3c; --on:#e9edf7; --on-muted:#98a5c2; --on-line:#2a3860; --gold-n:#e8b93e;
+  --display:"Sofia Sans Extra Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#090e1c; --surface:#101930; --ink:#e6eaf4; --muted:#98a5c2; --line:#26324f; --gold:#e8b93e; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#090e1c; --surface:#101930; --ink:#e6eaf4; --muted:#98a5c2; --line:#26324f; --gold:#e8b93e; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);margin:0}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:.95;text-transform:uppercase;letter-spacing:.01em}
+p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold-n);outline-offset:2px}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:20px}
+.col{max-width:860px;width:100%;margin-inline:auto;padding-inline:20px}
+.lab{font:600 11px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+
+/* ---------- night stage ---------- */
+.night{background:var(--sea);color:var(--on)}
+.hero{padding-block:26px 14px}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:flex-end;gap:6px 36px}
+.hero .kicker{flex-basis:100%}
+.kicker{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-n)}
+.hero h1{font-size:clamp(50px,7.4vw,96px);font-weight:900;margin-top:6px;white-space:nowrap;max-width:100%}
+.hero h1 span{color:var(--gold-n)}
+.lede{font-size:17.5px;line-height:1.45;max-width:60ch;color:var(--on);padding-bottom:6px;flex:1 1 380px;min-width:0}
+.atlas{padding-block:6px 30px}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-areas:'map side' 'ctl ctl' 'tl tl' 'chips chips' 'chap chap';gap:10px 14px;align-items:stretch}
+.mapbox{grid-area:map}.side{grid-area:side}.controls{grid-area:ctl}.tlwrap{grid-area:tl}.chips{grid-area:chips}.chapter{grid-area:chap}
+.mapbox{position:relative;aspect-ratio:16/9;max-width:100%;border:1px solid var(--on-line);background:var(--sea);overflow:hidden;min-width:0}
+#map{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
+#map.drag{cursor:grabbing}
+.clock{position:absolute;left:14px;top:10px;pointer-events:none;display:flex;flex-direction:column;gap:2px}
+.clock b{font:900 clamp(46px,7vw,84px)/.85 var(--display);letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.clock b small{font-size:.42em;font-weight:800;color:var(--gold-n);margin-left:.18em}
+.clock span{font:600 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--on-muted)}
+.zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
+.zoom button,.ibtn{width:34px;height:34px;display:grid;place-items:center;background:var(--panel);border:1px solid var(--on-line);color:var(--on);cursor:pointer;font:600 18px/1 var(--mono)}
+.zoom button:hover,.ibtn:hover{border-color:var(--on-muted)}
+#tip{position:absolute;pointer-events:none;background:#060b1a;border:1px solid var(--on-line);color:var(--on);padding:9px 11px;font-size:13px;line-height:1.4;min-width:170px;max-width:240px;z-index:3}
+#tip b{font-weight:600}
+#tip .row{display:flex;gap:8px;align-items:baseline;font:400 12px/1.5 var(--mono);color:var(--on)}
+#tip .row i{width:9px;height:9px;border-radius:50%;flex:none;align-self:center}
+#tip .row span{margin-left:auto;font-variant-numeric:tabular-nums}
+#tip .pk{color:var(--on-muted);font:400 11px/1.4 var(--mono);margin-top:5px}
+
+.side{background:var(--panel);border:1px solid var(--on-line);padding:14px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.side .lab{color:var(--on-muted)}
+.tot{display:flex;flex-direction:column;gap:4px}
+.tot b{font:900 54px/.9 var(--display);font-variant-numeric:tabular-nums}
+.sharebar{display:flex;height:12px;gap:2px;background:var(--panel)}
+.sharebar i{display:block;height:100%;min-width:0;transition:flex-grow .12s linear}
+.legend{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.legend button{display:grid;grid-template-columns:12px minmax(0,1fr) auto 42px;gap:8px;align-items:center;width:100%;background:transparent;border:0;padding:4px 2px;cursor:pointer;text-align:left;font-size:13.5px;color:var(--on)}
+.legend button:hover{background:rgba(255,255,255,.05)}
+.legend i{width:11px;height:11px;border-radius:50%}
+.legend .n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.legend .v,.legend .s{font:400 12px/1 var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.legend .s{color:var(--on-muted)}
+.legend button[aria-pressed="false"]{opacity:.38}
+.legend button.zero .v,.legend button.zero .s,.legend button.zero .n{color:var(--on-muted);opacity:.6}
+.legend button[aria-pressed="false"] i{background:transparent!important;box-shadow:inset 0 0 0 1.5px var(--on-muted)}
+.top{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;font-size:13.5px}
+.top li{display:grid;grid-template-columns:9px minmax(0,1fr) auto;gap:8px;align-items:center}
+.top i{width:9px;height:9px;border-radius:50%}
+.top span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top b{font:400 12px/1 var(--mono);font-variant-numeric:tabular-nums}
+details.colors{border-top:1px solid var(--on-line);padding-top:10px;font-size:13px}
+details.colors summary{cursor:pointer;font:600 11px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-muted)}
+.swgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.swgrid label{display:flex;flex-direction:column;gap:3px;font:400 10.5px/1.2 var(--mono);color:var(--on-muted);min-width:0}
+.swgrid input{width:100%;height:26px;padding:0;border:1px solid var(--on-line);background:transparent;cursor:pointer}
+.txtbtn{background:transparent;border:1px solid var(--on-line);color:var(--on);font:600 12px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;padding:9px 11px;cursor:pointer;white-space:nowrap}
+.txtbtn:hover{border-color:var(--on-muted)}
+.txtbtn[aria-pressed="true"]{background:var(--on);color:var(--sea);border-color:var(--on)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:2px;min-width:0}
+.play{display:flex;align-items:center;gap:8px;background:var(--gold-n);color:#1a1300;border:0;font:800 22px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;padding:9px 16px 8px 12px;cursor:pointer;min-width:112px}
+.play svg{width:16px;height:16px;fill:currentColor;flex:none}
+.seg{display:flex;gap:0}
+.seg .txtbtn{margin-left:-1px}
+.seg .txtbtn:first-child{margin-left:0}
+.grp{display:flex;align-items:center;gap:8px}
+.grp .lab{color:var(--on-muted)}
+.tlwrap{position:relative;height:86px;border:1px solid var(--on-line);background:var(--panel);cursor:ew-resize;touch-action:none}
+#tl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.chips{display:flex;gap:6px;overflow-x:auto;min-width:0;padding-bottom:6px;scrollbar-width:thin}
+.chips button{flex:none;background:transparent;border:1px solid var(--on-line);color:var(--on);padding:7px 10px 6px;cursor:pointer;display:flex;flex-direction:column;gap:3px;text-align:left}
+.chips button b{font:800 17px/1 var(--display);letter-spacing:.03em;text-transform:uppercase}
+.chips button span{font:400 10.5px/1 var(--mono);color:var(--on-muted)}
+.chips button[aria-current="true"]{background:var(--on);color:var(--sea);border-color:var(--on)}
+.chips button[aria-current="true"] span{color:#3b4662}
+.chapter{min-width:0;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:start;border-top:3px solid var(--on);padding-top:14px}
+.chapter .no{font:900 76px/.8 var(--display);color:var(--gold-n);font-variant-numeric:tabular-nums}
+.chapter h2{font-size:clamp(30px,4.6vw,44px);font-weight:800}
+.chapter .yrs{font:600 11px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-muted);margin-bottom:6px}
+.chapter p{max-width:74ch;margin-top:8px;color:var(--on);min-height:6.4em}
+.chapter .nav{display:flex;flex-direction:column;gap:6px;align-items:stretch}
+.chapter .nav div{display:flex;gap:6px}
+.chapter .nav .ibtn{flex:1}
+
+@media (max-width:900px){
+  .hero h1{white-space:normal}
+  .stage{grid-template-columns:minmax(0,1fr);grid-template-areas:'map' 'ctl' 'tl' 'chips' 'chap' 'side'}
+  .mapbox{aspect-ratio:1/1}
+  .side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 18px}
+  .side .tot,.side .sharebar,.side details{grid-column:1/-1}
+  .chapter{grid-template-columns:minmax(0,1fr)}
+  .chapter .no{display:none}
+  .chapter .nav{flex-direction:row;flex-wrap:wrap}
+  .chapter p{min-height:0}
+}
+@media (max-width:520px){
+  .side{grid-template-columns:minmax(0,1fr)}
+  .hero{padding-block:16px 10px}
+  .hero h1{font-size:clamp(30px,11.6vw,60px);white-space:nowrap}
+  .lede{font-size:15.5px;line-height:1.4}
+  .kicker{font-size:10.5px;letter-spacing:.1em}
+  .stage{grid-template-areas:'map' 'tl' 'ctl' 'chips' 'chap' 'side';gap:8px}
+  .tlwrap{height:72px}
+  .controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:0}
+  .play{min-width:0;justify-content:center;padding-block:11px 10px}
+  .g-views,.g-speed .lab{display:none}
+  .g-speed .seg{width:100%}
+  .g-speed .txtbtn{flex:1;padding-inline:0;padding-block:13px}
+  #auto,#arcs{padding-block:12px;text-align:center}
+  .chapter{padding-top:10px}
+  .chapter h2{font-size:30px}
+  .chapter p{font-size:16px}
+  .clock b{font-size:44px}
+  .zoom button{width:38px;height:38px}
+  main{gap:48px;padding-block:40px 30px}
+  .stat b{font-size:42px}
+}
+
+/* ---------- reading column ---------- */
+main{display:flex;flex-direction:column;gap:64px;padding-block:56px 40px}
+section.read{display:flex;flex-direction:column;gap:18px;min-width:0}
+.head{display:flex;flex-direction:column;gap:6px;border-top:3px solid var(--ink);padding-top:12px}
+.head .lab{color:var(--gold)}
+.head h2{font-size:clamp(36px,6vw,56px);font-weight:800}
+section.read p,section.read ul{max-width:66ch}
+section.read ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+section.read strong{font-weight:600}
+a{color:inherit;text-decoration-color:var(--gold);text-underline-offset:3px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--surface);padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.stat b{font:900 50px/.9 var(--display)}
+.stat span{font-size:13.5px;line-height:1.4;color:var(--muted)}
+.fig{background:var(--sea);color:var(--on);border:1px solid var(--on-line);padding:16px 16px 12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.fig-title{font-weight:600;font-size:16px;line-height:1.3}
+.fig-sub{color:var(--on-muted);font-size:14px}
+.fig-note{color:var(--on-muted);font:400 12px/1.5 var(--mono)}
+.fig svg{display:block;width:100%;height:auto;touch-action:pan-y}
+.fig svg text{font:400 11px var(--mono);fill:var(--on-muted)}
+.fig svg text.strong{fill:var(--on);font-weight:600}
+.keyrow{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--on)}
+.keyrow i{display:inline-block;width:14px;height:3px;margin-right:6px;vertical-align:middle}
+.figwrap{position:relative}
+#btip{position:absolute;pointer-events:none;background:#060b1a;border:1px solid var(--on-line);padding:7px 9px;font:400 12px/1.5 var(--mono);color:var(--on);white-space:nowrap;z-index:2}
+.ped{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 26px;align-items:start}
+@media (max-width:700px){.ped{grid-template-columns:minmax(0,1fr)}}
+.ped label{font:600 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--on-muted);display:flex;justify-content:space-between;gap:10px}
+.ped label b{color:var(--on)}
+.ped input[type=range]{width:100%;accent-color:var(--gold-n);margin-top:8px}
+.read3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.read3 div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.read3 b{font:900 34px/.95 var(--display);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.read3 span{font:400 11px/1.35 var(--mono);color:var(--on-muted)}
+.bars{display:flex;flex-direction:column;gap:10px}
+.bars .b{display:flex;flex-direction:column;gap:4px;font:400 12px/1.3 var(--mono);color:var(--on-muted)}
+.bars .t{height:14px;background:var(--panel);position:relative}
+.bars .t i{position:absolute;left:0;top:0;bottom:0;border-radius:0 4px 4px 0}
+.verdict{font-size:15px;line-height:1.5;border-left:4px solid var(--gold-n);padding:4px 0 4px 12px;color:var(--on)}
+.fixes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.fix{background:var(--surface);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.fix .lab{color:var(--muted)}
+.fix h3{font-size:27px;font-weight:800}
+.fix p{font-size:15.5px;max-width:none}
+.src{font-size:14.5px;color:var(--muted)}
+.src li{overflow-wrap:anywhere}
+details.tbl summary{cursor:pointer;font:600 12px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.scroll{overflow-x:auto;border:1px solid var(--line);margin-top:12px}
+table{border-collapse:collapse;width:100%;min-width:760px;background:var(--surface);font:400 12.5px/1.3 var(--mono);font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:600;color:var(--muted);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+th:first-child,td:first-child{text-align:left}
+footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;color:var(--muted)}
+</style>
+
+<div class="night">
+<header class="hero"><div class="wrap">
+  <span class="kicker">3,000 years · 36 regions · 9 communities</span>
+  <h1>A Nation of <span>Cousins</span></h1>
+  <p class="lede">Pick any two Ashkenazi Jews on earth and their DNA says they are about fourth or fifth cousins. This map shows how that happened: where the Jewish people lived, how many they were, and the few narrow doorways everyone alive today came through.</p>
+</div></header>
+
+<section class="atlas" aria-label="Animated population map"><div class="wrap">
+  <div class="stage">
+    <div class="mapbox" id="mapbox">
+      <canvas id="map" role="img" aria-label="World map with one circle per region, sized by Jewish population and colored by community"></canvas>
+      <div class="clock"><b id="yr">1000<small>BCE</small></b><span id="yrsub">Two small kingdoms</span></div>
+      <div class="zoom">
+        <button type="button" id="zin" aria-label="Zoom in">+</button>
+        <button type="button" id="zout" aria-label="Zoom out">&minus;</button>
+        <button type="button" id="zworld" aria-label="Show the whole world" title="Whole world"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6.2"/><path d="M1.8 8h12.4M8 1.8c2.4 2 2.4 10.4 0 12.4M8 1.8c-2.4 2-2.4 10.4 0 12.4"/></svg></button>
+      </div>
+      <div id="tip" hidden></div>
+    </div>
+    <aside class="side" aria-live="off">
+      <div class="tot"><span class="lab">Jews in the world</span><b id="tot">120K</b></div>
+      <div class="sharebar" id="sharebar" aria-hidden="true"></div>
+      <div><span class="lab">By community · tap to hide</span><ul class="legend" id="legend"></ul></div>
+      <div><span class="lab">Largest right now</span><ol class="top" id="top"></ol></div>
+      <details class="colors"><summary>Change colors</summary>
+        <div class="swgrid" id="swgrid"></div>
+        <button type="button" class="txtbtn" id="creset" style="margin-top:10px">Reset colors</button>
+      </details>
+    </aside>
+
+  <div class="controls">
+    <button type="button" class="play" id="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path id="playicon" d="M3 1.5v13l11-6.5z"/></svg><span id="playlab">Play</span></button>
+    <div class="grp g-speed"><span class="lab">Speed</span>
+      <div class="seg" id="speed">
+        <button type="button" class="txtbtn" data-s="0.5" aria-pressed="false">&frac12;&times;</button>
+        <button type="button" class="txtbtn" data-s="1" aria-pressed="true">1&times;</button>
+        <button type="button" class="txtbtn" data-s="2" aria-pressed="false">2&times;</button>
+        <button type="button" class="txtbtn" data-s="4" aria-pressed="false">4&times;</button>
+      </div>
+    </div>
+    <button type="button" class="txtbtn" id="auto" aria-pressed="true" title="The camera moves to wherever the story is">Auto zoom</button>
+    <div class="grp g-views"><span class="lab">Look at</span>
+      <div class="seg" id="views">
+        <button type="button" class="txtbtn" data-v="29,58,12,42">Middle East</button>
+        <button type="button" class="txtbtn" data-v="-12,46,34,60">Europe</button>
+        <button type="button" class="txtbtn" data-v="-125,-35,-40,55">Americas</button>
+      </div>
+    </div>
+    <button type="button" class="txtbtn" id="arcs" aria-pressed="true">Migration arcs</button>
+  </div>
+
+  <div class="tlwrap" id="tlwrap" role="slider" tabindex="0" aria-label="Year" aria-valuemin="-1000" aria-valuemax="2025" aria-valuenow="-1000" aria-valuetext="1000 BCE">
+    <canvas id="tl"></canvas>
+  </div>
+
+  <div class="chips" id="chips" aria-label="Chapters"></div>
+
+  <div class="chapter">
+    <div class="no" id="chno">1</div>
+    <div>
+      <div class="yrs" id="chyrs"></div>
+      <h2 id="chtitle"></h2>
+      <p id="chtext"></p>
+    </div>
+    <div class="nav">
+      <button type="button" class="txtbtn" id="chplay">Play this chapter</button>
+      <div><button type="button" class="ibtn" id="chprev" aria-label="Previous chapter">&larr;</button><button type="button" class="ibtn" id="chnext" aria-label="Next chapter">&rarr;</button></div>
+    </div>
+  </div>
+  </div>
+</div></section>
+</div>
+
+<main>
+<section class="read col" id="reading">
+  <div class="head"><span class="lab">Reading the map</span><h2>What the circles mean</h2></div>
+  <ul>
+    <li><strong>Area is people.</strong> A circle four times the area holds four times as many Jews. Circles grow a little when you zoom so small communities stay visible.</li>
+    <li><strong>Color is ancestry.</strong> Each color is one of the clusters that geneticists find when they compare Jewish communities. A circle with several colors is a place where they live side by side, as in Israel today.</li>
+    <li><strong>Old numbers are soft.</strong> After 1880 the figures follow censuses and the standard demographic series. Before 1500 they are scholarly estimates with wide error bars, and ancient figures are disputed by a factor of two or more.</li>
+    <li><strong>The timeline is stretched.</strong> The six years of the Shoah get as much room as six centuries of late antiquity, so playback slows down where the map changes fastest.</li>
+  </ul>
+</section>
+
+<section class="read col" id="bottleneck">
+  <div class="head"><span class="lab">The genetics</span><h2>The bottleneck up close</h2></div>
+  <p>In 2014 a team led by Shai Carmi sequenced 128 Ashkenazi genomes and found long stretches of DNA that are identical from person to person. Stretches that long only survive when a population has been very small very recently. Their model put the squeeze 25 to 32 generations back and its size at the genetic equivalent of about 350 people.</p>
+  <div class="stats">
+    <div class="stat"><b>~350</b><span>Effective size of the Ashkenazi founding population. The model's range is 250 to 420.</span></div>
+    <div class="stat"><b>25&ndash;32</b><span>Generations since the bottleneck: roughly 600 to 800 years.</span></div>
+    <div class="stat"><b>40%</b><span>Share of Ashkenazi Jews whose direct maternal line goes back to just four women.</span></div>
+    <div class="stat"><b>4th&ndash;5th</b><span>Cousin degree that matches the DNA two random members of one Jewish community share.</span></div>
+  </div>
+  <div class="fig">
+    <div class="fig-title">Ashkenazi Jews went from the smallest branch to nine in ten</div>
+    <div class="fig-sub">Estimated population, 900 to 2025. The vertical scale is logarithmic: each gridline is ten times the one below.</div>
+    <div class="keyrow"><span><i style="background:var(--g-ash)"></i>Ashkenazi</span><span><i style="background:var(--on-muted)"></i>All other Jewish communities</span></div>
+    <div class="figwrap"><svg id="bchart" viewBox="0 0 860 400" role="img" aria-label="Line chart of Ashkenazi population against all other Jewish communities, 900 to 2025"></svg><div id="btip" hidden></div></div>
+    <div class="fig-note">Headcounts from this page's dataset. The genetic figure of 350 is not a headcount. See the first correction below.</div>
+  </div>
+  <p>The second half of the story is the rebound. From about 1500 the Jews of Poland-Lithuania doubled roughly every two generations for four centuries. A small founding group followed by fast growth and marriage inside the community is exactly the recipe that makes everyone a relative. It is also why a handful of rare mutations, such as those behind Tay-Sachs and Gaucher disease and several BRCA variants, became common in one population.</p>
+</section>
+
+<section class="read col" id="cousins">
+  <div class="head"><span class="lab">Try it</span><h2>Why everyone is a cousin</h2></div>
+  <p>Your family tree doubles every generation: two parents, four grandparents, eight great-grandparents. Go back far enough and the tree needs more people than existed. The only way out is that the same ancestors fill many slots at once. Genealogists call this pedigree collapse. In a small, closed community it happens fast.</p>
+  <div class="fig">
+    <div class="fig-title">Slots in your tree against people who were alive</div>
+    <div class="fig-sub">Assumes 25 years per generation and a person born in 2000 whose ancestors are all Ashkenazi.</div>
+    <div class="ped">
+      <div>
+        <label for="gen">Generations back <b id="genv">30</b></label>
+        <input type="range" id="gen" min="1" max="40" step="1" value="30">
+        <div class="read3">
+          <div><b id="pyr">1250</b><span>about this year</span></div>
+          <div><b id="pslots">1.07B</b><span>ancestor slots in that generation</span></div>
+          <div><b id="ppop">25K</b><span id="ppoplab">Ashkenazi Jews alive</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div class="bars">
+          <div class="b"><span>Slots to fill</span><div class="t"><i id="bar1" style="background:var(--gold-n)"></i></div></div>
+          <div class="b"><span>People available</span><div class="t"><i id="bar2" style="background:var(--g-ash)"></i></div></div>
+          <span class="fig-note">Bars use a logarithmic scale from 1 to 1 trillion.</span>
+        </div>
+        <p class="verdict" id="pverdict"></p>
+      </div>
+    </div>
+  </div>
+  <p>This is why Columbia geneticist Itsik Pe'er could say that among Ashkenazi Jews &ldquo;everyone is a 30th cousin.&rdquo; On paper, any two share ancestors from the founding group. In the DNA, the overlap from all those shared ancestors adds up to about what two real fourth or fifth cousins share.</p>
+  <p>The same holds inside the other communities. A 2010 study of seven groups, from Iranian and Iraqi to Italian, Greek, Turkish, Syrian and Ashkenazi Jews, found that members of each share DNA like fourth or fifth cousins, about ten times more than two strangers on a New York street. It also found that Ashkenazi and Sephardi Jews are closer to each other than their thousand years apart would suggest.</p>
+</section>
+
+<section class="read col" id="fixes">
+  <div class="head"><span class="lab">Fact check</span><h2>Where the popular story slips</h2></div>
+  <p>The usual telling goes: the Black Death pogroms drove a few hundred survivors east to Poland, where clean hands and kosher kitchens let them multiply into millions. Parts of that hold up. Parts do not.</p>
+  <div class="fixes">
+    <div class="fix"><span class="lab">The number</span><h3>350 is not a headcount</h3><p>It is an effective population size: the size of an idealized population that would leave the same genetic trace. Real populations are always larger than their effective size, often several times larger. Nobody counted 350 people walking to Poland.</p></div>
+    <div class="fix"><span class="lab">The timing</span><h3>It came before the plague</h3><p>In 2022 researchers read DNA from 33 people buried in the medieval Jewish cemetery of Erfurt. They already carried the founder signature: a third shared one maternal lineage and eight carried disease variants known in Ashkenazi Jews today. The founder event predates the 14th century.</p></div>
+    <div class="fix"><span class="lab">The mothers</span><h3>Four women, 40 percent</h3><p>Four maternal lineages account for about 40% of Ashkenazi Jews, not most of them. Where those four women came from is disputed. The 2006 study that found them argued for the Near East. A 2013 study argued for prehistoric Europe, which would point to local women joining the community.</p></div>
+    <div class="fix"><span class="lab">The cousins</span><h3>Fourth cousins in DNA only</h3><p>Two random Ashkenazi Jews are not literally fourth cousins. They share as much DNA as fourth or fifth cousins would, spread over many distant shared ancestors. The founders themselves were mixed, roughly half Middle Eastern and half European in ancestry.</p></div>
+    <div class="fix"><span class="lab">The growth</span><h3>Hygiene is a guess</h3><p>Hand-washing, ritual baths and quick burial are a popular explanation for the boom in Poland. There is no demographic record that tests it. Historians give at least equal weight to early marriage, communal welfare and a protected economic role.</p></div>
+    <div class="fix"><span class="lab">The ancient peak</span><h3>Five million is the high end</h3><p>The first-century figures on this map follow Botticini and Eckstein, who use 5 to 5.5 million. Archaeologists who estimate from settlement remains argue Roman Judea could not have fed 2.5 million people. If they are right, the ancient circles should be much smaller and the later shrinking less dramatic.</p></div>
+  </div>
+</section>
+
+<section class="read col" id="method">
+  <div class="head"><span class="lab">Method</span><h2>How this was built</h2></div>
+  <p>The map holds 36 regions with fixed outlines. Poland, for example, always means its 1921 to 1939 borders, so its circle does not jump when frontiers move. Each region has a population figure at anchor years, split by community. Between anchors the page interpolates along a smooth growth curve.</p>
+  <p>World totals from 1880 onward match the series published by Sergio DellaPergola and the American Jewish Year Book to within about 2%. Regional figures before 1800 are a reconstruction from standard reference estimates, and should be read as orders of magnitude. Converts out of Judaism, including the conversos of Spain and Portugal, are not counted after they convert. The split of Israel's population by origin is rough, because a large and growing share of Israelis have parents from different communities.</p>
+  <details class="tbl"><summary>Show the numbers as a table</summary><div class="scroll"><table id="dtable"></table></div></details>
+  <ul class="src">
+    <li>Carmi et al., <a href="https://doi.org/10.1038/ncomms5835">Sequencing an Ashkenazi reference panel</a>, Nature Communications, 2014. The bottleneck of about 350, 25 to 32 generations ago.</li>
+    <li>Waldman et al., <a href="https://doi.org/10.1016/j.cell.2022.11.002">Genome-wide data from medieval German Jews</a>, Cell, 2022. The Erfurt cemetery.</li>
+    <li>Atzmon et al., <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3032072">Abraham's Children in the Genome Era</a>, American Journal of Human Genetics, 2010. Seven communities compared.</li>
+    <li>Behar et al., 2006, reported in <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1336798">The BMJ</a>. The four founding mothers.</li>
+    <li>Costa et al., <a href="https://link.springer.com/article/10.1038/ncomms3543">A substantial prehistoric European ancestry amongst Ashkenazi maternal lineages</a>, Nature Communications, 2013.</li>
+    <li>Botticini and Eckstein, <a href="https://econ.biu.ac.il/sites/econ/files/seminars/book_summary.pdf">The Chosen Few: How Education Shaped Jewish History, 70&ndash;1492</a>, Princeton, 2012. Population from 65 to 1490.</li>
+    <li>DellaPergola, <a href="https://www.cbs.gov.il/he/Documents/World%20DellaPergola%202024%20complete.pdf">World Jewish Population 2024</a>, American Jewish Year Book. Modern figures by country.</li>
+    <li>Jewish Virtual Library, <a href="https://www.jewishvirtuallibrary.org/jsource/Judaism/jewpop.html">Jewish Population of the World</a>. World totals, 1880 to today.</li>
+    <li>Coastlines and borders: Natural Earth. Borders shown are modern, for orientation only.</li>
+  </ul>
+</section>
+</main>
+<footer><div class="col">Estimates, not a census. Corrections welcome.</div></footer>
+
+<script>
+/*DATA*/
+const MAP=/*MAP*/;
+</script>
+<script>
+/*APP*/
+</script>
