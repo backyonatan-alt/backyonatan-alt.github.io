@@ -34,6 +34,7 @@ button{font:inherit;color:inherit}
 .lede{font-size:17.5px;line-height:1.45;max-width:60ch;color:var(--on);padding-bottom:6px;flex:1 1 380px;min-width:0}
 .atlas{padding-block:6px 30px}
 .stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-areas:'map side' 'ctl ctl' 'tl tl' 'chips chips' 'chap chap';gap:10px 14px;align-items:start;--mh:clamp(380px,calc(100vh - 385px),640px)}
+.stage.following{--mh:clamp(320px,calc(100vh - 489px),640px)}
 .mapbox{grid-area:map}.side{grid-area:side}.controls{grid-area:ctl}.tlwrap{grid-area:tl}.chips{grid-area:chips}.chapter{grid-area:chap}
 .mapbox{position:relative;height:var(--mh);max-width:100%;border:1px solid var(--on-line);background:var(--sea);overflow:hidden;min-width:0}
 #map{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
@@ -68,9 +69,14 @@ button{font:inherit;color:inherit}
 .legend .n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .legend .v,.legend .s{font:400 12px/1 var(--mono);font-variant-numeric:tabular-nums;text-align:right}
 .legend .s{color:var(--on-muted)}
-.legend button[aria-pressed="false"]{opacity:.38}
+.legend button[aria-pressed="true"]{background:rgba(255,255,255,.12);box-shadow:inset 3px 0 0 var(--gold-n)}
+.legend button.dim{opacity:.45}
+.legend .chev{font-style:normal;color:var(--on-muted);margin-left:6px;display:inline-block;transition:transform .12s}
+.legend button[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.subs{list-style:none;margin:0 0 4px;padding:0 0 0 14px;display:flex;flex-direction:column}
+.subs button{font-size:12.5px;padding-block:1.5px}
+.subs i{width:9px;height:9px}
 .legend button.zero .v,.legend button.zero .s,.legend button.zero .n{color:var(--on-muted);opacity:.6}
-.legend button[aria-pressed="false"] i{background:transparent!important;box-shadow:inset 0 0 0 1.5px var(--on-muted)}
 .top{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;font-size:13.5px;min-height:122px}
 .top li{height:22px;display:grid;grid-template-columns:9px minmax(0,1fr) auto;gap:8px;align-items:center}
 .top i{width:9px;height:9px;border-radius:50%}
@@ -93,6 +99,7 @@ details.colors summary{cursor:pointer;font:600 11px/1.2 var(--mono);letter-spaci
 .seg .txtbtn:first-child{margin-left:0}
 .grp{display:flex;align-items:center;gap:8px}
 .grp .lab{color:var(--on-muted)}
+.tlwrap.river{height:190px}
 .tlwrap{position:relative;height:86px;border:1px solid var(--on-line);background:var(--panel);cursor:ew-resize;touch-action:none}
 #tl{position:absolute;inset:0;width:100%;height:100%;display:block}
 .chips{display:flex;gap:6px;overflow-x:auto;min-width:0;padding-bottom:6px;scrollbar-width:thin}
@@ -131,6 +138,7 @@ details.colors summary{cursor:pointer;font:600 11px/1.2 var(--mono);letter-spaci
   .kicker{font-size:10.5px;letter-spacing:.1em}
   .stage{grid-template-areas:'map' 'tl' 'ctl' 'chips' 'chap' 'side';gap:8px}
   .tlwrap{height:72px}
+  .tlwrap.river{height:150px}
   .controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:0}
   .play{min-width:0;justify-content:center;padding-block:11px 10px}
   .g-views,.g-speed .lab{display:none}
@@ -203,7 +211,7 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
 
 <div class="night">
 <header class="hero"><div class="wrap">
-  <span class="kicker">3,000 years · 36 regions · 9 communities</span>
+  <span class="kicker">3,000 years · 36 regions · 29 communities</span>
   <h1>A Nation of <span>Cousins</span></h1>
   <p class="lede">Pick any two Ashkenazi Jews on earth and their DNA says they are about fourth or fifth cousins. This map shows how that happened: where the Jewish people lived, how many they were, and the few narrow doorways everyone alive today came through.</p>
 </div></header>
@@ -222,9 +230,9 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
       <div id="tip" hidden></div>
     </div>
     <aside class="side" aria-live="off">
-      <div class="tot"><span class="lab">Jews in the world</span><b id="tot">120K</b></div>
+      <div class="tot"><span class="lab" id="totlab">Jews in the world</span><b id="tot">120K</b></div>
       <div class="sharebar" id="sharebar" aria-hidden="true"></div>
-      <div><span class="lab">By community · tap to hide</span><ul class="legend" id="legend"></ul></div>
+      <div><span class="lab">By community · tap to follow its journey</span><ul class="legend" id="legend"></ul></div>
       <div><span class="lab">Largest right now</span><ol class="top" id="top"></ol></div>
       <details class="colors"><summary>Change colors</summary>
         <div class="swgrid" id="swgrid"></div>
@@ -267,6 +275,7 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
       <p id="chtext"></p>
     </div>
     <div class="nav">
+      <button type="button" class="txtbtn" id="exitfocus" hidden>&larr; Show everyone</button>
       <button type="button" class="txtbtn" id="chplay">Play this chapter</button>
       <div><button type="button" class="ibtn" id="chprev" aria-label="Previous chapter">&larr;</button><button type="button" class="ibtn" id="chnext" aria-label="Next chapter">&rarr;</button></div>
     </div>
@@ -280,7 +289,8 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
   <div class="head"><span class="lab">Reading the map</span><h2>What the circles mean</h2></div>
   <ul>
     <li><strong>Area is people.</strong> A circle four times the area holds four times as many Jews. Circles grow a little when you zoom so small communities stay visible.</li>
-    <li><strong>Color is ancestry.</strong> Each color is one of the clusters that geneticists find when they compare Jewish communities. A circle with several colors is a place where they live side by side, as in Israel today.</li>
+    <li><strong>Color is ancestry.</strong> Each color is one of the families that geneticists find when they compare Jewish communities. Shades of one color are the communities inside that family, such as Polish, Litvak and Hungarian within Ashkenazi. A circle with several colors is a place where they live side by side, as in Israel today.</li>
+    <li><strong>Follow one community.</strong> Tap any name in the list beside the map. The map then shows only that group, the camera follows it, and the timeline turns into a river. Each band of the river is a place, and its width is how many people lived there.</li>
     <li><strong>Old numbers are soft.</strong> After 1880 the figures follow censuses and the standard demographic series. Before 1500 they are scholarly estimates with wide error bars, and ancient figures are disputed by a factor of two or more.</li>
     <li><strong>The timeline is stretched.</strong> The six years of the Shoah get as much room as six centuries of late antiquity, so playback slows down where the map changes fastest.</li>
   </ul>
@@ -352,6 +362,7 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
   <div class="head"><span class="lab">Method</span><h2>How this was built</h2></div>
   <p>The map holds 36 regions with fixed outlines. Poland, for example, always means its 1921 to 1939 borders, so its circle does not jump when frontiers move. Each region has a population figure at anchor years, split by community. Between anchors the page interpolates along a smooth growth curve.</p>
   <p>World totals from 1880 onward match the series published by Sergio DellaPergola and the American Jewish Year Book to within about 2%. Regional figures before 1800 are a reconstruction from standard reference estimates, and should be read as orders of magnitude. Converts out of Judaism, including the conversos of Spain and Portugal, are not counted after they convert. The split of Israel's population by origin is rough, because a large and growing share of Israelis have parents from different communities.</p>
+  <p>The 29 communities are the names people use today. In their home countries the count is direct: the Jews of Poland are the Polish community. In countries built by immigration, such as the United States, Israel, France and Argentina, nobody counts Litvaks or Galicians separately. Those shares are estimated from where the immigrants came from, and are the softest numbers on the page. The sub-groups of one family are cultural and geographic. Genetically, Polish, Litvak and Hungarian Jews are nearly indistinguishable.</p>
   <details class="tbl"><summary>Show the numbers as a table</summary><div class="scroll"><table id="dtable"></table></div></details>
   <ul class="src">
     <li>Carmi et al., <a href="https://doi.org/10.1038/ncomms5835">Sequencing an Ashkenazi reference panel</a>, Nature Communications, 2014. The bottleneck of about 350, 25 to 32 generations ago.</li>

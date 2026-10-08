@@ -8,9 +8,9 @@ const ATLAS = (function () {
     { id: 'yem', name: 'Yemenite', note: 'South Arabia, isolated for about 1,500 years', color: '#d55181' },
     { id: 'med', name: 'Greco-Roman diaspora', note: 'Hellenistic and Roman communities; today the Italkim and Romaniotes', color: '#199e70' },
     { id: 'sef', name: 'Sephardi', note: 'Iberia, then the Ottoman lands and the Atlantic ports', color: '#008300' },
-    { id: 'mag', name: 'Moroccan / Algerian', note: 'North Africa: Morocco, Algeria, Tunisia, Libya', color: '#e66767' },
+    { id: 'mag', name: 'North African', note: 'Moroccan, Algerian, Tunisian, Libyan', color: '#e66767' },
     { id: 'ash', name: 'Ashkenazi', note: 'The Rhineland, then Eastern Europe, then everywhere', color: '#3987e5' },
-    { id: 'eth', name: 'Beta Israel', note: 'Ethiopia', color: '#9085e9' },
+    { id: 'eth', name: 'Ethiopian', note: 'Beta Israel', color: '#9085e9' },
     { id: 'ind', name: 'Indian', note: 'Bene Israel and Cochin Jews', color: '#8a93a8' }
   ];
 
@@ -32,6 +32,91 @@ const ATLAS = (function () {
     }
     return out;
   }
+
+
+  /* ---------- Communities: the names people use today, grouped under the color families above ---------- */
+  const COMMUNITIES = [
+    { id: 'jud', fam: 'isr', name: 'Judean / Levantine', bio: 'The people of the kingdoms of Israel and Judah, and the Jews who stayed in the Levant after the revolts against Rome. By the Middle Ages they were a small Arabic-speaking community, later absorbed by Sephardi arrivals.' },
+    { id: 'irq', fam: 'miz', name: 'Iraqi', bio: 'Descendants of the Judeans exiled to Babylon in 586 BCE. For about a thousand years this was the center of the Jewish world and the home of the Babylonian Talmud. Almost the whole community left for Israel in 1950 to 1952.' },
+    { id: 'kur', fam: 'miz', name: 'Kurdish', bio: 'Aramaic-speaking Jews of the mountains of northern Iraq. They are counted here as a share of the Iraq circle. Nearly all moved to Israel in the early 1950s.' },
+    { id: 'per', fam: 'miz', name: 'Persian', bio: 'Jews of Iran since the Persian Empire, the setting of the Book of Esther. Most left after the 1979 revolution, many for Los Angeles and Israel. About 9,000 remain.' },
+    { id: 'buk', fam: 'miz', name: 'Bukharan', bio: 'Persian-speaking Jews of Bukhara, Samarkand and Tashkent on the Silk Road. Almost all left when the Soviet Union fell, mainly for Israel and New York.' },
+    { id: 'geo', fam: 'miz', name: 'Georgian', bio: 'Jews of Georgia, by their own tradition there since the Babylonian exile. Most left for Israel in the 1970s and 1990s.' },
+    { id: 'mtn', fam: 'miz', name: 'Mountain Jews', bio: 'Jews of Dagestan and Azerbaijan in the eastern Caucasus, speakers of a Persian language called Judeo-Tat. Today most live in Israel, Russia and Azerbaijan.' },
+    { id: 'yem', fam: 'yem', name: 'Yemenite', bio: 'Jews of Yemen, present by the time of the Himyarite kingdom, whose kings adopted Judaism around 380 CE. Isolated for centuries, then flown to Israel in 1949 and 1950.' },
+    { id: 'hel', fam: 'med', name: 'Hellenistic', bio: 'Greek-speaking Jews of Alexandria, Cyrene and the eastern Mediterranean. This was the largest diaspora of antiquity. It was broken by the failed revolt of 115 to 117 CE.' },
+    { id: 'rmn', fam: 'med', name: 'Romaniote', bio: 'Greek-speaking Jews of the Byzantine world, in Greece and Asia Minor for about 2,000 years. Most were absorbed by Sephardi exiles after 1492, and the Holocaust destroyed most of the rest.' },
+    { id: 'ita', fam: 'med', name: 'Italian', bio: 'Italkim: Jews of Rome and Italy since the second century BCE, one of the oldest continuous communities in Europe. They are neither Ashkenazi nor Sephardi. Roman-era Jews of Spain, Gaul and the Rhine are counted with them.' },
+    { id: 'spa', fam: 'sef', name: 'Spanish-Portuguese', bio: 'Jews of Spain and Portugal, and after 1492 the exiles who kept that identity in Amsterdam, London, Livorno, North Africa and the Americas.' },
+    { id: 'tur', fam: 'sef', name: 'Turkish', bio: 'Sephardi exiles taken in by the Ottoman Empire after 1492. In Istanbul and Izmir they kept their Spanish, known as Ladino, for 500 years.' },
+    { id: 'bal', fam: 'sef', name: 'Greek & Balkan', bio: 'Sephardi Jews of Salonika, Sarajevo and Sofia. Salonika was for centuries a city where Jews were the largest group. Most of Greece’s Jews were murdered in the Holocaust. Bulgaria’s survived and left for Israel.' },
+    { id: 'syr', fam: 'sef', name: 'Syrian', bio: 'Jews of Aleppo and Damascus: an ancient local community joined by Sephardi exiles after 1492. Today they are centered in Brooklyn, Mexico City, Panama and Israel.' },
+    { id: 'egy', fam: 'sef', name: 'Egyptian', bio: 'A community rebuilt in the 19th century in Cairo and Alexandria by Jews from all around the Mediterranean. It left almost entirely between 1948 and 1967.' },
+    { id: 'mor', fam: 'mag', name: 'Moroccan', bio: 'The largest Jewish community of the Muslim world in the 20th century: old local communities joined by exiles from Spain. Most moved to Israel, France and Canada between 1948 and 1970.' },
+    { id: 'alg', fam: 'mag', name: 'Algerian', bio: 'Jews of Algeria became French citizens in 1870. At independence in 1962 almost all of them left for France within months.' },
+    { id: 'tun', fam: 'mag', name: 'Tunisian', bio: 'From Roman Carthage to the scholars of Kairouan and the island of Djerba, where a small community still lives. Most left for Israel and France after 1948.' },
+    { id: 'lib', fam: 'mag', name: 'Libyan', bio: 'Jews of Tripoli and Benghazi, successors to the ancient community of Cyrene. Most left for Israel between 1949 and 1951, and the last after 1967.' },
+    { id: 'ger', fam: 'ash', name: 'German (Yekke)', bio: 'The first Ashkenazim: Jews of the Rhineland and northern France from about the 10th century, and later the German-speaking Jews of Central Europe. On this map that means Germany, Alsace, the Low Countries, Bohemia and Austria.' },
+    { id: 'pol', fam: 'ash', name: 'Polish', bio: 'From a few thousand medieval migrants to 3.3 million in 1939, the largest Jewish community in Europe. Galicia is included. About nine in ten were murdered in the Holocaust.' },
+    { id: 'lit', fam: 'ash', name: 'Litvak', bio: 'Jews of Lithuania, Latvia and Belarus, known for their yeshivas and their own Yiddish dialect. Mass emigration took them to the United States, South Africa and Israel.' },
+    { id: 'ukr', fam: 'ash', name: 'Ukrainian', bio: 'Jews of Ukraine: the birthplace of Hasidism, the target of the pogroms of 1648, 1881 and 1919, and the source of a large part of American Jewry.' },
+    { id: 'hun', fam: 'ash', name: 'Hungarian', bio: 'Jews of Hungary and Slovakia. Most of those outside Budapest were deported to Auschwitz in the spring of 1944. Budapest still has one of the largest Jewish communities in Central Europe.' },
+    { id: 'rom', fam: 'ash', name: 'Romanian', bio: 'Jews of Romania, Bessarabia and Bukovina. About half survived the war, and most of the survivors left for Israel under communism.' },
+    { id: 'rus', fam: 'ash', name: 'Russian', bio: 'Before 1917 Jews were mostly barred from Russia proper. The community grew from migrants out of Belarus and Ukraine in Soviet times. About a million Soviet Jews left after 1989.' },
+    { id: 'eth', fam: 'eth', name: 'Ethiopian', bio: 'Beta Israel of the Ethiopian highlands. Their early history is debated, and the early numbers here are guesses. Most were flown to Israel in 1984 and 1991.' },
+    { id: 'ind', fam: 'ind', name: 'Indian', bio: 'Bene Israel of the Konkan coast and the Jews of Cochin, joined later by traders from Baghdad. Most moved to Israel after 1948.' }
+  ];
+  const FAMILY_BIO = {
+    ash: 'All the Ashkenazi communities together. Genetically they are almost one population, descended from the same small founding group. The split into Polish, Litvak, German and the rest is by country and culture.',
+    sef: 'The descendants of Iberian Jewry and the communities they joined after 1492, from Amsterdam to Aleppo.',
+    mag: 'The Jews of Morocco, Algeria, Tunisia and Libya. Geneticists find them a distinct cluster, related to the Sephardim who joined them after 1492.',
+    miz: 'The eastern line that begins with the exile to Babylon: Iraq, Kurdistan, Iran, Central Asia and the Caucasus.',
+    med: 'The Greek- and Latin-speaking diaspora of the ancient Mediterranean, and its two survivors: the Italian and Romaniote Jews.'
+  };
+
+  /* Which community a family's people in each region belong to.
+     A string means all of them. An object gives shares over time (any scale, normalised by the page). _home is the community that migration arcs from this region belong to.
+     The shares inside mixed countries (United States, Israel, France and others) are rough estimates from immigration records. */
+  const SPLIT = {
+    israel: { isr: 'jud', yem: 'yem', eth: 'eth', ind: 'ind',
+      ash: { lit: [[1500, 40], [1880, 35], [1914, 20], [1939, 10], [1951, 8], [1970, 8], [2000, 10], [2025, 10]], pol: [[1500, 30], [1880, 30], [1914, 25], [1939, 42], [1951, 40], [1970, 36], [2000, 25], [2025, 24]], ukr: [[1500, 20], [1880, 20], [1914, 30], [1939, 12], [1951, 8], [1970, 9], [2000, 19], [2025, 19]], hun: [[1500, 10], [1880, 10], [1914, 5], [1939, 5], [1951, 7], [1970, 7], [2000, 5], [2025, 5]], rom: [[1880, 3], [1914, 10], [1939, 9], [1951, 20], [1970, 22], [2000, 17], [2025, 16]], ger: [[1880, 2], [1914, 5], [1933, 5], [1939, 16], [1951, 11], [1970, 9], [2000, 6], [2025, 6]], rus: [[1880, 0], [1914, 5], [1939, 6], [1951, 6], [1970, 9], [1990, 10], [2000, 18], [2025, 20]] },
+      sef: { spa: [[1500, 100], [1700, 20], [1951, 13], [2025, 13]], tur: [[1500, 0], [1700, 40], [1900, 40], [1951, 30], [1970, 28], [2025, 28]], bal: [[1500, 0], [1700, 30], [1900, 30], [1951, 35], [1970, 25], [2025, 25]], syr: [[1500, 0], [1700, 10], [1951, 10], [1970, 12], [2025, 12]], egy: [[1900, 0], [1948, 3], [1951, 12], [1960, 22], [2025, 22]] },
+      mag: { mor: [[1800, 90], [1948, 70], [1951, 40], [1970, 68], [2025, 70]], tun: [[1800, 5], [1948, 15], [1951, 18], [1970, 14], [2025, 13]], alg: [[1800, 3], [1948, 5], [1951, 4], [1970, 5], [2025, 5]], lib: [[1800, 2], [1948, 10], [1951, 38], [1970, 13], [2025, 12]] },
+      miz: { irq: [[1880, 20], [1939, 25], [1951, 55], [1970, 48], [1990, 46], [2000, 37], [2025, 37]], kur: [[1880, 20], [1939, 20], [1951, 14], [1970, 13], [2000, 12], [2025, 12]], per: [[1880, 30], [1939, 30], [1951, 20], [1970, 25], [1990, 26], [2000, 21], [2025, 21]], buk: [[1880, 25], [1939, 15], [1951, 5], [1970, 5], [1990, 5], [2000, 12], [2025, 12]], geo: [[1880, 5], [1939, 5], [1951, 3], [1970, 6], [1980, 8], [2000, 10], [2025, 10]], mtn: [[1880, 0], [1939, 5], [1951, 3], [1970, 3], [1990, 3], [2000, 8], [2025, 8]] } },
+    iraq: { miz: { _home: 'irq', irq: [[-600, 100], [800, 92], [1900, 82], [2025, 82]], kur: [[-600, 0], [800, 8], [1900, 18], [2025, 18]] } },
+    iran: { miz: 'per' },
+    casia: { miz: 'buk', ash: 'rus' },
+    caucasus: { ash: 'rus', miz: { geo: [[100, 70], [1800, 50], [1900, 45], [1970, 52], [1989, 40], [2025, 15]], mtn: [[100, 30], [1800, 50], [1900, 55], [1970, 48], [1989, 60], [2025, 85]] } },
+    syria: { isr: 'jud', sef: 'syr' }, yemen: { yem: 'yem' },
+    egypt: { isr: 'jud', med: 'hel', sef: 'egy' },
+    turkey: { med: 'rmn', sef: 'tur' }, india: { ind: 'ind' },
+    libya: { med: 'hel', mag: 'lib' }, tunisia: { mag: 'tun' }, algeria: { mag: 'alg', sef: 'spa' }, morocco: { mag: 'mor', sef: 'spa' },
+    ethiopia: { eth: 'eth' },
+    safrica: { ash: { _home: 'lit', lit: [[1850, 30], [1900, 75], [2025, 80]], pol: [[1850, 10], [2025, 10]], ger: [[1850, 60], [1900, 15], [2025, 10]] } },
+    balkans: { med: 'rmn', sef: 'bal', ash: 'hun' },
+    italy: { med: 'ita', sef: 'spa', ash: 'ger' }, iberia: { med: 'ita', sef: 'spa' },
+    france: { med: 'ita',
+      ash: { _home: 'ger', ger: [[900, 100], [1880, 100], [1914, 60], [1939, 35], [2025, 35]], pol: [[1880, 0], [1914, 20], [1939, 40], [2025, 40]], rom: [[1880, 0], [1914, 8], [2025, 8]], lit: [[1880, 0], [1914, 4], [2025, 5]], ukr: [[1880, 0], [1914, 4], [2025, 5]], hun: [[1880, 0], [1939, 4], [2025, 4]], rus: [[1880, 0], [1914, 4], [2025, 3]] },
+      sef: { _home: 'spa', spa: [[1000, 100], [1900, 100], [1939, 30], [1970, 15], [2025, 15]], tur: [[1900, 0], [1939, 35], [1970, 20], [2025, 20]], bal: [[1900, 0], [1939, 35], [1970, 15], [2025, 15]], egy: [[1939, 0], [1948, 0], [1960, 40], [2025, 40]], syr: [[1939, 0], [1970, 10], [2025, 10]] },
+      mag: { alg: [[1950, 40], [1960, 45], [1963, 62], [1970, 55], [2025, 50]], tun: [[1950, 35], [1960, 35], [1963, 22], [1970, 26], [2025, 28]], mor: [[1950, 25], [1960, 20], [1963, 16], [1970, 19], [2025, 22]] } },
+    germany: { med: 'ita', ash: { _home: 'ger', ger: [[900, 100], [1989, 100], [2000, 25], [2025, 15]], rus: [[1989, 0], [2000, 40], [2025, 45]], ukr: [[1989, 0], [2000, 35], [2025, 40]] } },
+    uk: { ash: { ger: [[1066, 100], [1850, 80], [1880, 60], [1914, 12], [1939, 18], [2025, 15]], pol: [[1700, 0], [1850, 15], [1880, 25], [1914, 40], [2025, 40]], lit: [[1850, 5], [1880, 10], [1914, 28], [2025, 26]], ukr: [[1850, 0], [1914, 10], [2025, 9]], rus: [[1850, 0], [1914, 5], [2025, 5]], rom: [[1850, 0], [1914, 5], [2025, 5]] },
+      sef: { _home: 'spa', spa: [[1655, 100], [1900, 100], [1960, 55], [2025, 50]], egy: [[1900, 0], [1960, 20], [2025, 20]], syr: [[1900, 0], [1960, 10], [2025, 10]], tur: [[1900, 0], [1960, 8], [2025, 10]], bal: [[1900, 0], [1960, 7], [2025, 10]] } },
+    benelux: { sef: 'spa', ash: { _home: 'ger', ger: [[1620, 100], [1880, 100], [1939, 60], [2025, 50]], pol: [[1880, 0], [1939, 40], [2025, 40]], hun: [[1939, 0], [1960, 8], [2025, 10]] } },
+    bohemia: { ash: 'ger' }, hungary: { ash: 'hun' }, poland: { ash: 'pol' }, lita: { ash: 'lit' }, ukraine: { ash: 'ukr' }, romania: { ash: 'rom' }, russia: { ash: 'rus' },
+    usa: {
+      ash: { ger: [[1654, 100], [1880, 80], [1900, 22], [1925, 8], [1950, 10], [2025, 8]], pol: [[1850, 0], [1880, 10], [1900, 26], [1925, 28], [2025, 27]], lit: [[1850, 0], [1880, 5], [1900, 20], [1925, 22], [2025, 21]], ukr: [[1850, 0], [1880, 3], [1900, 22], [1925, 28], [2025, 28]], hun: [[1850, 0], [1880, 1], [1900, 5], [1925, 6], [2025, 6]], rom: [[1850, 0], [1880, 1], [1900, 3], [1925, 5], [2025, 5]], rus: [[1880, 0], [1900, 2], [1925, 3], [1970, 3], [2025, 5]] },
+      sef: { _home: 'spa', spa: [[1654, 100], [1900, 100], [1925, 10], [2025, 5]], tur: [[1900, 0], [1925, 35], [2025, 20]], bal: [[1900, 0], [1925, 35], [2025, 20]], syr: [[1900, 0], [1925, 20], [1970, 35], [2025, 45]], egy: [[1925, 0], [1970, 10], [2025, 10]] },
+      miz: { per: [[1950, 30], [1970, 30], [1990, 65], [2025, 60]], buk: [[1950, 5], [1990, 10], [2000, 24], [2025, 25]], irq: [[1950, 60], [1970, 60], [1990, 15], [2025, 10]], mtn: [[1950, 5], [1990, 10], [2025, 5]] } },
+    canada: { mag: 'mor', ash: { pol: [[1850, 20], [1925, 30], [2025, 30]], ukr: [[1850, 10], [1925, 25], [2025, 24]], lit: [[1850, 10], [1925, 15], [2025, 14]], rom: [[1850, 5], [1925, 15], [2025, 14]], ger: [[1850, 55], [1925, 5], [2025, 5]], hun: [[1925, 3], [1960, 6], [2025, 6]], rus: [[1925, 5], [1990, 5], [2025, 7]] } },
+    mexcar: { sef: { _home: 'spa', spa: [[1650, 100], [1900, 100], [1925, 15], [2025, 10]], syr: [[1900, 0], [1925, 50], [2025, 55]], tur: [[1900, 0], [1925, 20], [2025, 20]], bal: [[1900, 0], [1925, 15], [2025, 15]] },
+      ash: { pol: [[1900, 45], [2025, 45]], lit: [[1900, 20], [2025, 20]], ukr: [[1900, 15], [2025, 15]], hun: [[1900, 5], [2025, 5]], rom: [[1900, 5], [2025, 5]], ger: [[1900, 5], [2025, 5]], rus: [[1900, 5], [2025, 5]] } },
+    brazil: { sef: { _home: 'spa', spa: [[1630, 100], [1900, 100], [1939, 30], [2025, 20]], egy: [[1939, 0], [1960, 30], [2025, 30]], syr: [[1900, 0], [1939, 35], [2025, 30]], tur: [[1900, 0], [1939, 20], [2025, 10]], bal: [[1900, 0], [1939, 15], [2025, 10]] },
+      ash: { pol: [[1900, 45], [2025, 45]], rom: [[1900, 15], [2025, 15]], ger: [[1900, 10], [1939, 16], [2025, 15]], ukr: [[1900, 10], [2025, 10]], lit: [[1900, 5], [2025, 5]], hun: [[1900, 5], [2025, 5]], rus: [[1900, 5], [2025, 5]] } },
+    cone: { ash: { ukr: [[1890, 45], [1939, 35], [2025, 35]], pol: [[1890, 20], [1939, 30], [2025, 30]], rom: [[1890, 15], [1939, 10], [2025, 10]], lit: [[1890, 10], [2025, 10]], ger: [[1890, 5], [1939, 10], [2025, 10]], rus: [[1890, 5], [2025, 5]] },
+      sef: { syr: [[1900, 40], [2025, 40]], tur: [[1900, 30], [2025, 30]], bal: [[1900, 20], [2025, 20]], spa: [[1900, 10], [2025, 10]] } },
+    australia: { ash: { ger: [[1800, 70], [1900, 55], [1939, 40], [1960, 18], [2025, 15]], pol: [[1800, 20], [1900, 25], [1939, 30], [1960, 45], [2025, 36]], hun: [[1939, 3], [1960, 14], [2025, 10]], lit: [[1800, 5], [1900, 10], [1980, 8], [2025, 15]], rus: [[1900, 5], [1980, 6], [2025, 12]], ukr: [[1900, 5], [1980, 6], [2025, 12]] } }
+  };
 
   const R = [];
   function reg(id, name, lat, lon, series) { R.push({ id, name, lat, lon, series }); }
@@ -257,20 +342,20 @@ const ATLAS = (function () {
 
   /* migration arcs: [fromRegion, toRegion, startYear, endYear, group] */
   const FLOWS = [
-    ['israel', 'iraq', -597, -575, 'isr'], ['israel', 'egypt', -586, -560, 'isr'], ['iraq', 'israel', -538, -440, 'isr'],
+    ['israel', 'iraq', -597, -575, 'isr', ['jud', 'irq']], ['israel', 'egypt', -586, -560, 'isr'], ['iraq', 'israel', -538, -440, 'isr', ['jud', 'irq']],
     ['iraq', 'iran', -500, -300, 'miz'],
     ['israel', 'egypt', -310, -100, 'med'], ['israel', 'syria', -250, 0, 'isr'], ['syria', 'turkey', -210, 0, 'med'], ['turkey', 'balkans', -150, 50, 'med'],
     ['israel', 'italy', -63, 140, 'med'], ['egypt', 'libya', -300, -100, 'med'],
-    ['israel', 'iraq', 70, 250, 'isr'], ['israel', 'yemen', 100, 400, 'yem'], ['italy', 'iberia', 50, 300, 'med'],
+    ['israel', 'iraq', 70, 250, 'isr', ['jud', 'irq']], ['israel', 'yemen', 100, 400, 'yem'], ['italy', 'iberia', 50, 300, 'med'],
     ['iraq', 'casia', 400, 900, 'miz'],
-    ['egypt', 'tunisia', 650, 900, 'mag'], ['tunisia', 'morocco', 700, 1000, 'mag'], ['morocco', 'iberia', 711, 950, 'sef'], ['iraq', 'iberia', 800, 1000, 'sef'],
+    ['egypt', 'tunisia', 650, 900, 'mag'], ['tunisia', 'morocco', 700, 1000, 'mag'], ['morocco', 'iberia', 711, 950, 'sef'], ['iraq', 'iberia', 800, 1000, 'sef', ['spa']],
     ['italy', 'germany', 800, 1000, 'ash'], ['france', 'germany', 900, 1100, 'ash'], ['france', 'uk', 1066, 1150, 'ash'],
     ['uk', 'france', 1289, 1292, 'ash'], ['france', 'germany', 1305, 1325, 'ash'], ['france', 'iberia', 1305, 1325, 'sef'],
     ['germany', 'poland', 1250, 1520, 'ash'], ['germany', 'bohemia', 1100, 1400, 'ash'], ['germany', 'italy', 1348, 1450, 'ash'],
     ['poland', 'lita', 1388, 1600, 'ash'], ['poland', 'ukraine', 1500, 1648, 'ash'],
     ['iberia', 'algeria', 1391, 1396, 'sef'], ['iberia', 'morocco', 1492, 1500, 'sef'], ['iberia', 'turkey', 1492, 1540, 'sef'], ['iberia', 'balkans', 1492, 1540, 'sef'], ['iberia', 'italy', 1492, 1530, 'sef'],
     ['balkans', 'israel', 1500, 1570, 'sef'], ['turkey', 'syria', 1500, 1600, 'sef'], ['turkey', 'egypt', 1517, 1600, 'sef'],
-    ['iberia', 'benelux', 1590, 1680, 'sef'], ['benelux', 'brazil', 1630, 1650, 'sef'], ['brazil', 'mexcar', 1654, 1670, 'sef'], ['brazil', 'usa', 1654, 1660, 'sef'], ['benelux', 'uk', 1655, 1700, 'sef'],
+    ['iberia', 'benelux', 1590, 1680, 'sef'], ['benelux', 'brazil', 1630, 1650, 'sef'], ['brazil', 'mexcar', 1654, 1670, 'sef', ['spa']], ['brazil', 'usa', 1654, 1660, 'sef', ['spa']], ['benelux', 'uk', 1655, 1700, 'sef'],
     ['ukraine', 'benelux', 1648, 1680, 'ash'], ['germany', 'benelux', 1620, 1750, 'ash'], ['bohemia', 'hungary', 1700, 1850, 'ash'], ['poland', 'romania', 1780, 1880, 'ash'], ['poland', 'hungary', 1780, 1880, 'ash'],
     ['germany', 'usa', 1836, 1880, 'ash'],
     ['poland', 'usa', 1881, 1924, 'ash'], ['lita', 'usa', 1881, 1924, 'ash'], ['ukraine', 'usa', 1881, 1924, 'ash'], ['romania', 'usa', 1881, 1924, 'ash'], ['hungary', 'usa', 1881, 1914, 'ash'],
@@ -279,18 +364,18 @@ const ATLAS = (function () {
     ['balkans', 'usa', 1900, 1924, 'sef'], ['turkey', 'cone', 1900, 1930, 'sef'], ['syria', 'mexcar', 1900, 1930, 'sef'],
     ['germany', 'usa', 1933, 1941, 'ash'], ['germany', 'uk', 1933, 1939, 'ash'], ['germany', 'israel', 1933, 1939, 'ash'], ['bohemia', 'uk', 1938, 1939, 'ash'],
     ['ukraine', 'casia', 1941, 1942, 'ash'], ['poland', 'russia', 1939, 1941, 'ash'],
-    ['germany', 'israel', 1945, 1951, 'ash'], ['germany', 'usa', 1946, 1952, 'ash'], ['romania', 'israel', 1948, 1966, 'ash'], ['poland', 'israel', 1946, 1958, 'ash'], ['hungary', 'israel', 1948, 1957, 'ash'], ['balkans', 'israel', 1948, 1950, 'sef'], ['turkey', 'israel', 1948, 1950, 'sef'],
-    ['yemen', 'israel', 1949, 1951, 'yem'], ['iraq', 'israel', 1950, 1952, 'miz'], ['libya', 'israel', 1948, 1952, 'mag'], ['iran', 'israel', 1948, 1955, 'miz'], ['egypt', 'israel', 1948, 1958, 'sef'], ['india', 'israel', 1949, 1970, 'ind'],
+    ['germany', 'israel', 1945, 1951, 'ash', ['pol']], ['germany', 'usa', 1946, 1952, 'ash', ['pol']], ['romania', 'israel', 1948, 1966, 'ash'], ['poland', 'israel', 1946, 1958, 'ash'], ['hungary', 'israel', 1948, 1957, 'ash'], ['balkans', 'israel', 1948, 1950, 'sef'], ['turkey', 'israel', 1948, 1950, 'sef'],
+    ['yemen', 'israel', 1949, 1951, 'yem'], ['iraq', 'israel', 1950, 1952, 'miz', ['irq', 'kur']], ['libya', 'israel', 1948, 1952, 'mag'], ['iran', 'israel', 1948, 1955, 'miz'], ['egypt', 'israel', 1948, 1958, 'sef'], ['india', 'israel', 1949, 1970, 'ind'],
     ['morocco', 'israel', 1948, 1967, 'mag'], ['tunisia', 'israel', 1948, 1967, 'mag'], ['morocco', 'france', 1956, 1970, 'mag'], ['tunisia', 'france', 1956, 1968, 'mag'], ['algeria', 'france', 1960, 1963, 'mag'], ['egypt', 'france', 1956, 1958, 'sef'], ['morocco', 'canada', 1957, 1975, 'mag'],
     ['iran', 'usa', 1978, 1987, 'miz'], ['russia', 'israel', 1969, 1980, 'ash'], ['ukraine', 'usa', 1973, 1981, 'ash'],
-    ['russia', 'israel', 1989, 2000, 'ash'], ['ukraine', 'israel', 1989, 2000, 'ash'], ['lita', 'israel', 1989, 1998, 'ash'], ['ukraine', 'usa', 1988, 1998, 'ash'], ['russia', 'germany', 1991, 2005, 'ash'], ['casia', 'israel', 1989, 1998, 'miz'], ['caucasus', 'israel', 1989, 1998, 'miz'], ['casia', 'usa', 1989, 1998, 'miz'],
+    ['russia', 'israel', 1989, 2000, 'ash'], ['ukraine', 'israel', 1989, 2000, 'ash'], ['lita', 'israel', 1989, 1998, 'ash'], ['ukraine', 'usa', 1988, 1998, 'ash'], ['russia', 'germany', 1991, 2005, 'ash', ['rus', 'ukr']], ['casia', 'israel', 1989, 1998, 'miz'], ['caucasus', 'israel', 1989, 1998, 'miz', ['geo', 'mtn']], ['casia', 'usa', 1989, 1998, 'miz'],
     ['ethiopia', 'israel', 1984, 1986, 'eth'], ['ethiopia', 'israel', 1990, 1992, 'eth'], ['ethiopia', 'israel', 1997, 2012, 'eth'],
-    ['safrica', 'australia', 1977, 2005, 'ash'], ['cone', 'israel', 1976, 2003, 'ash'], ['france', 'israel', 2000, 2018, 'mag'], ['ukraine', 'israel', 2022, 2024, 'ash'], ['russia', 'israel', 2022, 2024, 'ash']
+    ['safrica', 'australia', 1977, 2005, 'ash', ['lit']], ['cone', 'israel', 1976, 2003, 'ash'], ['france', 'israel', 2000, 2018, 'mag', ['mor', 'tun', 'alg']], ['ukraine', 'israel', 2022, 2024, 'ash'], ['russia', 'israel', 2022, 2024, 'ash']
   ];
 
   /* timeline warp: [year, position 0..1]. Dense eras get more room, so playback slows there. */
   const WARP = [[-1000, 0], [-600, 0.07], [-330, 0.11], [1, 0.17], [136, 0.225], [650, 0.28], [1000, 0.33], [1492, 0.455], [1800, 0.565], [1880, 0.64], [1939, 0.755], [1945, 0.815], [1952, 0.865], [2025, 1]];
 
-  return { GROUPS, REGIONS: R, CHAPTERS, EVENTS, FLOWS, WARP, Y0: -1000, Y1: 2025 };
+  return { GROUPS, COMMUNITIES, FAMILY_BIO, SPLIT, REGIONS: R, CHAPTERS, EVENTS, FLOWS, WARP, Y0: -1000, Y1: 2025 };
 })();
 if (typeof module !== 'undefined') module.exports = ATLAS;

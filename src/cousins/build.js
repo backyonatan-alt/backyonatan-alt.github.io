@@ -34,7 +34,7 @@ const meta=`<meta charset="utf-8">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZHETPL7EV5');</script>
 `;
 // share button in the kicker row
-body=body.replace('<span class="kicker">3,000 years · 36 regions · 9 communities</span>','<div class="topbar"><a class="txtbtn" href="../">&larr; All stories</a><span class="kicker">3,000 years · 36 regions · 9 communities</span><span id="shared" hidden>Link copied</span><button type="button" class="txtbtn sharebtn" id="share">Share</button></div>');
+body=body.replace('<span class="kicker">3,000 years · 36 regions · 29 communities</span>','<div class="topbar"><a class="txtbtn" href="../">&larr; All stories</a><span class="kicker">3,000 years · 36 regions · 29 communities</span><span id="shared" hidden>Link copied</span><button type="button" class="txtbtn sharebtn" id="share">Share</button></div>');
 if(!body.includes('id="share"'))throw new Error('share not injected');
 const shareJs=`<script>
 (function(){var b=document.getElementById('share'),n=document.getElementById('shared');if(!b)return;

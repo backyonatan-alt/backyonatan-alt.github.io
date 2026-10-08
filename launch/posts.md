@@ -9,7 +9,7 @@ I asked an AI a simple question: how related are two random Jews?
 
 The answer sent me down a rabbit hole. Geneticists say today's 10 million Ashkenazi Jews carry the DNA signature of a founding group equivalent to about 350 people, who lived 25 to 32 generations ago. Any two of them share about as much DNA as fourth or fifth cousins.
 
-So I built a map to see how that happened. 3,000 years, 36 regions, 9 communities. Press play and watch Babylon, Alexandria, Spain, Poland and New York rise and fall.
+So I built a map to see how that happened. 3,000 years, 36 regions, 29 communities. Tap any one of them, Moroccan, Litvak, Iraqi, and follow its whole journey. Press play and watch Babylon, Alexandria, Spain, Poland and New York rise and fall.
 
 Three things that surprised me:
 1. In 1100, Ashkenazi Jews were a few percent of the Jewish world. By 1939 they were nine in ten.
