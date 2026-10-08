@@ -26,11 +26,10 @@ p{margin:0;max-width:60ch}
 .card span{color:var(--mut);font-size:15.5px}
 .card b{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .card:hover,.card:focus-visible{border-color:var(--on);outline:none}
-.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:18px}
 .row .card{grid-template-columns:minmax(0,1fr);align-content:start}
 .row .card h2{font-size:32px}
 .row .card div{justify-content:flex-start}
-.sec{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);border-top:1px solid var(--line);padding-top:16px;margin-bottom:-14px}
 @media (max-width:700px){.card{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
@@ -41,27 +40,22 @@ p{margin:0;max-width:60ch}
     <h1>Data Stories</h1>
   </header>
   <p>Each page takes one subject and explains it through its numbers, with charts and maps you can play with.</p>
-  <a class="card" href="cousins/">
-    <img src="cousins/cousins-preview.png" alt="World map with circles showing Jewish population by region around 1922" width="1200" height="630">
-    <div>
-      <h2>A Nation of Cousins</h2>
-      <span>3,000 years of the Jewish people on one animated map, and why any two Ashkenazi Jews are about fourth cousins.</span>
-      <b>Open the map &rarr;</b>
-    </div>
-  </a>
-  <div class="sec">Sports analytics by the numbers</div>
   <div class="row">
+    <a class="card" href="cousins/">
+      <img src="cousins/cousins-preview.png" alt="World map with circles showing Jewish population by region around 1922" width="1200" height="630">
+      <div><h2>A Nation of Cousins</h2><span>3,000 years of the Jewish people on one animated map, and why any two Ashkenazi Jews are about fourth cousins.</span><b>Open &rarr;</b></div>
+    </a>
     <a class="card" href="moneyball/">
       <img src="moneyball/preview.png" alt="Moneyball by the numbers title card" width="1200" height="630">
-      <div><h2>Moneyball</h2><span>The 2002 Oakland A's rebuilt from the raw season data: how a poor team bought wins cheaply.</span><b>Baseball &rarr;</b></div>
+      <div><h2>Moneyball by the Numbers</h2><span>The 2002 Oakland A's rebuilt from the raw season data: how a poor team bought wins cheaply.</span><b>Open &rarr;</b></div>
     </a>
     <a class="card" href="moreyball/">
       <img src="moreyball/preview.png" alt="Moreyball by the numbers title card" width="1200" height="630">
-      <div><h2>Moreyball</h2><span>How the NBA moved its shots to two places on the floor, told through 4.4 million shot locations.</span><b>Basketball &rarr;</b></div>
+      <div><h2>Moreyball by the Numbers</h2><span>How the NBA moved its shots to two places on the floor, told through 4.4 million shot locations.</span><b>Open &rarr;</b></div>
     </a>
     <a class="card" href="expected-goals/">
       <img src="expected-goals/preview.png" alt="Expected goals by the numbers title card" width="1200" height="630">
-      <div><h2>Expected Goals</h2><span>What xG is, whether it predicts anything, and why the league table lies.</span><b>Soccer &rarr;</b></div>
+      <div><h2>Expected Goals by the Numbers</h2><span>What xG is, whether it predicts anything, and why the league table lies.</span><b>Open &rarr;</b></div>
     </a>
   </div>
 </main>
