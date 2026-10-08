@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yonatan's Data Stories</title>
+<meta name="description" content="Interactive pages that explain one subject through its numbers.">
+<meta property="og:title" content="Yonatan's Data Stories">
+<meta property="og:description" content="Interactive pages that explain one subject through its numbers.">
+<meta property="og:image" content="https://backyonatan-alt.github.io/cousins/cousins-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1730">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@800;900&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@600&display=swap">
+<style>
+:root{--sea:#0e1730;--on:#e9edf7;--mut:#98a5c2;--line:#2a3860;--gold:#e8b93e;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sea);color:var(--on);font:400 17px/1.55 "IBM Plex Sans",system-ui,sans-serif}
+main{max-width:980px;margin-inline:auto;padding-inline:20px;padding-block:48px 80px;display:flex;flex-direction:column;gap:32px}
+.k{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1{font:900 clamp(52px,10vw,104px)/.92 "Sofia Sans Extra Condensed","Arial Narrow",Impact,sans-serif;text-transform:uppercase;margin:10px 0 0;text-wrap:balance}
+p{margin:0;max-width:60ch}
+.card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);border:1px solid var(--line);color:inherit;text-decoration:none}
+.card img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:1200/630}
+.card div{padding:22px;display:flex;flex-direction:column;gap:10px;justify-content:center;min-width:0}
+.card h2{font:800 40px/.95 "Sofia Sans Extra Condensed","Arial Narrow",Impact,sans-serif;text-transform:uppercase;margin:0}
+.card span{color:var(--mut);font-size:15.5px}
+.card b{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.card:hover,.card:focus-visible{border-color:var(--on);outline:none}
+@media (max-width:700px){.card{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="k">Interactive pages by Yonatan</span>
+    <h1>Data Stories</h1>
+  </header>
+  <p>Each page takes one subject and explains it through its numbers, with charts and maps you can play with.</p>
+  <a class="card" href="cousins/">
+    <img src="cousins/cousins-preview.png" alt="World map with circles showing Jewish population by region around 1922" width="1200" height="630">
+    <div>
+      <h2>A Nation of Cousins</h2>
+      <span>3,000 years of the Jewish people on one animated map, and why any two Ashkenazi Jews are about fourth cousins.</span>
+      <b>Open the map &rarr;</b>
+    </div>
+  </a>
+</main>
+</body>
+</html>
