@@ -34,9 +34,8 @@ button{font:inherit;color:inherit}
 .lede{font-size:17.5px;line-height:1.45;max-width:60ch;color:var(--on);padding-bottom:6px;flex:1 1 380px;min-width:0}
 .atlas{padding-block:6px 30px}
 .stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-areas:'map side' 'ctl ctl' 'tl tl' 'chips chips' 'chap chap';gap:10px 14px;align-items:start;--mh:clamp(380px,calc(100vh - 385px),640px)}
-.stage.following{--mh:clamp(320px,calc(100vh - 489px),640px)}
 .mapbox{grid-area:map}.side{grid-area:side}.controls{grid-area:ctl}.tlwrap{grid-area:tl}.chips{grid-area:chips}.chapter{grid-area:chap}
-.mapbox{position:relative;height:var(--mh);max-width:100%;border:1px solid var(--on-line);background:var(--sea);overflow:hidden;min-width:0}
+.mapbox{position:relative;min-height:var(--mh);align-self:stretch;max-width:100%;border:1px solid var(--on-line);background:var(--sea);overflow:hidden;min-width:0}
 #map{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
 #map.drag{cursor:grabbing}
 .clock{position:absolute;left:14px;top:10px;pointer-events:none;display:flex;flex-direction:column;gap:2px}
@@ -55,7 +54,7 @@ button{font:inherit;color:inherit}
 #tip .row span{margin-left:auto;font-variant-numeric:tabular-nums}
 #tip .pk{color:var(--on-muted);font:400 11px/1.4 var(--mono);margin-top:5px}
 
-.side{background:var(--panel);border:1px solid var(--on-line);padding:12px 14px;display:flex;flex-direction:column;gap:9px;min-width:0;height:var(--mh);overflow-y:auto;scrollbar-width:thin}
+.side{background:var(--panel);border:1px solid var(--on-line);padding:12px 14px;display:flex;flex-direction:column;gap:9px;min-width:0;}
 .side .lab{color:var(--on-muted)}
 .tot{display:flex;flex-direction:column;gap:4px}
 .tot b{font:900 46px/.9 var(--display);font-variant-numeric:tabular-nums}
@@ -99,11 +98,10 @@ details.colors summary{cursor:pointer;font:600 11px/1.2 var(--mono);letter-spaci
 .seg .txtbtn:first-child{margin-left:0}
 .grp{display:flex;align-items:center;gap:8px}
 .grp .lab{color:var(--on-muted)}
-.tlwrap.river{height:190px}
 .tlwrap{position:relative;height:86px;border:1px solid var(--on-line);background:var(--panel);cursor:ew-resize;touch-action:none}
 #tl{position:absolute;inset:0;width:100%;height:100%;display:block}
-.chips{display:flex;gap:6px;overflow-x:auto;min-width:0;padding-bottom:6px;scrollbar-width:thin}
-.chips button{flex:none;background:transparent;border:1px solid var(--on-line);color:var(--on);padding:7px 10px 6px;cursor:pointer;display:flex;flex-direction:column;gap:3px;text-align:left}
+.chips{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.chips button{flex:1 1 auto;background:transparent;border:1px solid var(--on-line);color:var(--on);padding:7px 10px 6px;cursor:pointer;display:flex;flex-direction:column;gap:3px;text-align:left}
 .chips button b{font:800 17px/1 var(--display);letter-spacing:.03em;text-transform:uppercase}
 .chips button span{font:400 10.5px/1 var(--mono);color:var(--on-muted)}
 .chips button[aria-current="true"]{background:var(--on);color:var(--sea);border-color:var(--on)}
@@ -120,8 +118,7 @@ details.colors summary{cursor:pointer;font:600 11px/1.2 var(--mono);letter-spaci
 @media (max-width:900px){
   .hero h1{white-space:normal}
   .stage{grid-template-columns:minmax(0,1fr);grid-template-areas:'map' 'ctl' 'tl' 'chips' 'chap' 'side'}
-  .mapbox{height:auto}
-  .side{height:auto;overflow:visible}
+  .mapbox{min-height:0}
   .mapbox::before{content:"";display:block;padding-top:100%}
   .side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 18px}
   .side .tot,.side .sharebar,.side details{grid-column:1/-1}
@@ -138,13 +135,13 @@ details.colors summary{cursor:pointer;font:600 11px/1.2 var(--mono);letter-spaci
   .kicker{font-size:10.5px;letter-spacing:.1em}
   .stage{grid-template-areas:'map' 'tl' 'ctl' 'chips' 'chap' 'side';gap:8px}
   .tlwrap{height:72px}
-  .tlwrap.river{height:150px}
   .controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:0}
   .play{min-width:0;justify-content:center;padding-block:11px 10px}
   .g-views,.g-speed .lab{display:none}
   .g-speed .seg{width:100%}
   .g-speed .txtbtn{flex:1;padding-inline:0;padding-block:13px}
   #auto,#arcs{padding-block:12px;text-align:center}
+  .chips{display:none}
   .chapter{padding-top:10px}
   .chapter h2{font-size:30px}
   .chapter p{font-size:16px}
@@ -233,7 +230,6 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
       <div class="tot"><span class="lab" id="totlab">Jews in the world</span><b id="tot">120K</b></div>
       <div class="sharebar" id="sharebar" aria-hidden="true"></div>
       <div><span class="lab">By community · tap to follow its journey</span><ul class="legend" id="legend"></ul></div>
-      <div><span class="lab">Largest right now</span><ol class="top" id="top"></ol></div>
       <details class="colors"><summary>Change colors</summary>
         <div class="swgrid" id="swgrid"></div>
         <button type="button" class="txtbtn" id="creset" style="margin-top:10px">Reset colors</button>
@@ -290,7 +286,8 @@ footer{border-top:3px solid var(--ink);padding-block:22px 60px;font-size:14px;co
   <ul>
     <li><strong>Area is people.</strong> A circle four times the area holds four times as many Jews. Circles grow a little when you zoom so small communities stay visible.</li>
     <li><strong>Color is ancestry.</strong> Each color is one of the families that geneticists find when they compare Jewish communities. Shades of one color are the communities inside that family, such as Polish, Litvak and Hungarian within Ashkenazi. A circle with several colors is a place where they live side by side, as in Israel today.</li>
-    <li><strong>Follow one community.</strong> Tap any name in the list beside the map. The map then shows only that group, the camera follows it, and the timeline turns into a river. Each band of the river is a place, and its width is how many people lived there.</li>
+    <li><strong>Follow one community.</strong> Tap any name in the list beside the map. The map then shows only that group, the camera follows it, and the routes it has travelled stay drawn on the map.</li>
+    <li><strong>Lines are migrations.</strong> A moving line is a migration happening in that period. Its width is how many people moved. The big modern waves use known figures. Older ones are estimated from how much the destination grew.</li>
     <li><strong>Old numbers are soft.</strong> After 1880 the figures follow censuses and the standard demographic series. Before 1500 they are scholarly estimates with wide error bars, and ancient figures are disputed by a factor of two or more.</li>
     <li><strong>The timeline is stretched.</strong> The six years of the Shoah get as much room as six centuries of late antiquity, so playback slows down where the map changes fastest.</li>
   </ul>

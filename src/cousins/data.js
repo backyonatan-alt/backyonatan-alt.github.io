@@ -373,9 +373,29 @@ const ATLAS = (function () {
     ['safrica', 'australia', 1977, 2005, 'ash', ['lit']], ['cone', 'israel', 1976, 2003, 'ash'], ['france', 'israel', 2000, 2018, 'mag', ['mor', 'tun', 'alg']], ['ukraine', 'israel', 2022, 2024, 'ash'], ['russia', 'israel', 2022, 2024, 'ash']
   ];
 
+
+  /* how many people each migration arc carried, in thousands, keyed by from>to>startYear. Rough figures from the standard histories; arcs not listed are estimated by the page. */
+  const FLOW_VOL = {
+    'israel>iraq>-597': 20, 'iraq>israel>-538': 40,
+    'iberia>algeria>1391': 5, 'iberia>morocco>1492': 20, 'iberia>turkey>1492': 40, 'iberia>balkans>1492': 30, 'iberia>italy>1492': 10, 'iberia>benelux>1590': 4,
+    'germany>usa>1836': 200, 'poland>usa>1881': 800, 'lita>usa>1881': 500, 'ukraine>usa>1881': 700, 'romania>usa>1881': 150, 'hungary>usa>1881': 100,
+    'lita>safrica>1881': 40, 'ukraine>cone>1889': 150, 'poland>uk>1881': 120, 'romania>canada>1890': 40,
+    'ukraine>israel>1882': 35, 'poland>israel>1919': 140, 'yemen>israel>1881': 5, 'lita>russia>1915': 250, 'ukraine>russia>1915': 400,
+    'balkans>usa>1900': 30, 'turkey>cone>1900': 30, 'syria>mexcar>1900': 15,
+    'germany>usa>1933': 100, 'germany>uk>1933': 50, 'germany>israel>1933': 55, 'bohemia>uk>1938': 20,
+    'ukraine>casia>1941': 150, 'poland>russia>1939': 300,
+    'germany>israel>1945': 140, 'germany>usa>1946': 100, 'romania>israel>1948': 270, 'poland>israel>1946': 170, 'hungary>israel>1948': 30, 'balkans>israel>1948': 55, 'turkey>israel>1948': 35,
+    'yemen>israel>1949': 49, 'iraq>israel>1950': 123, 'libya>israel>1948': 33, 'iran>israel>1948': 30, 'egypt>israel>1948': 35, 'india>israel>1949': 20,
+    'morocco>israel>1948': 235, 'tunisia>israel>1948': 45, 'morocco>france>1956': 40, 'tunisia>france>1956': 50, 'algeria>france>1960': 130, 'egypt>france>1956': 10, 'morocco>canada>1957': 20,
+    'iran>usa>1978': 40, 'russia>israel>1969': 60, 'ukraine>usa>1973': 50,
+    'russia>israel>1989': 300, 'ukraine>israel>1989': 300, 'lita>israel>1989': 90, 'ukraine>usa>1988': 150, 'russia>germany>1991': 200, 'casia>israel>1989': 70, 'caucasus>israel>1989': 100, 'casia>usa>1989': 40,
+    'ethiopia>israel>1984': 8, 'ethiopia>israel>1990': 14, 'ethiopia>israel>1997': 40,
+    'safrica>australia>1977': 15, 'cone>israel>1976': 50, 'france>israel>2000': 45, 'ukraine>israel>2022': 15, 'russia>israel>2022': 60
+  };
+
   /* timeline warp: [year, position 0..1]. Dense eras get more room, so playback slows there. */
   const WARP = [[-1000, 0], [-600, 0.07], [-330, 0.11], [1, 0.17], [136, 0.225], [650, 0.28], [1000, 0.33], [1492, 0.455], [1800, 0.565], [1880, 0.64], [1939, 0.755], [1945, 0.815], [1952, 0.865], [2025, 1]];
 
-  return { GROUPS, COMMUNITIES, FAMILY_BIO, SPLIT, REGIONS: R, CHAPTERS, EVENTS, FLOWS, WARP, Y0: -1000, Y1: 2025 };
+  return { GROUPS, COMMUNITIES, FAMILY_BIO, SPLIT, FLOW_VOL, REGIONS: R, CHAPTERS, EVENTS, FLOWS, WARP, Y0: -1000, Y1: 2025 };
 })();
 if (typeof module !== 'undefined') module.exports = ATLAS;

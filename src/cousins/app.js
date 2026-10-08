@@ -66,8 +66,19 @@ const FLOWS=A.FLOWS.map(f=>{
   const a=RID[f[0]],b=RID[f[1]],fi=GI[f[4]];let coms;
   if(f[5])coms=f[5].map(k=>CI[k]);
   else{coms=[];for(const r of [a,b]){const p=r.parts.find(q=>q.fi===fi);if(p&&p.home>=0&&!coms.includes(p.home))coms.push(p.home)}}
-  return{a,b,y0:f[2],y1:f[3],fi,coms,p0:y2p(f[2]),p1:y2p(f[3])};
+  return{a,b,y0:f[2],y1:f[3],fi,coms,p0:y2p(f[2]),p1:y2p(f[3]),vol:(A.FLOW_VOL||{})[f[0]+'>'+f[1]+'>'+f[2]]||0};
 });
+/* arcs without a known size get an estimate: how much the family grew at the destination while the arc ran, shared between arcs by the size of their source */
+(function volumes(){
+  const famAt=(r,fi,y)=>{let t=0;for(const p of r.parts)if(p.fi===fi)t+=val(p.s,y);return t};
+  for(const f of FLOWS){if(f.vol)continue;
+    const D=Math.max(0,famAt(f.b,f.fi,f.y1)-famAt(f.b,f.fi,f.y0));
+    let w=Math.max(1,famAt(f.a,f.fi,f.y0)),sw=0;
+    for(const g of FLOWS)if(g.b===f.b&&g.fi===f.fi&&g.y0<f.y1&&g.y1>f.y0)sw+=Math.max(1,famAt(g.a,g.fi,g.y0));
+    f.vol=Math.max(1,Math.min(120,D*w/(sw||w)));
+  }
+})();
+const arcW=f=>Math.max(1,Math.min(13,(0.8+0.42*Math.sqrt(f.vol))*Math.max(.6,Math.min(1,W/1000))));
 const EVENTS=A.EVENTS.map(e=>({x:e.lon,y:PY(e.lat),p:y2p(e.y),yr:e.y,t:e.t}));
 const CH=A.CHAPTERS.map(c=>Object.assign({p0:y2p(c.y0),p1:y2p(c.y1)},c));
 
@@ -158,12 +169,13 @@ function draw(now){
       if(!past&&(S.p<f.p0-0.004||S.p>f.p1+0.004))continue;
       const a=scr(f.a),b=scr(f.b),g=arc(a,b);if(!g)continue;
       const col=S.focus?fc:S.colors[f.fi];
-      if(past){ctx.strokeStyle=col;ctx.globalAlpha=.22;ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.quadraticCurveTo(g.cx,g.cy,b[0],b[1]);ctx.stroke();continue}
+      const lw=arcW(f);
+      if(past){ctx.strokeStyle=col;ctx.globalAlpha=.2;ctx.lineWidth=Math.max(1,lw*.7);ctx.lineCap='round';ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.quadraticCurveTo(g.cx,g.cy,b[0],b[1]);ctx.stroke();continue}
       const fade=Math.min(1,(S.p-f.p0+0.004)/0.006,(f.p1+0.004-S.p)/0.006);
-      ctx.strokeStyle=col;ctx.globalAlpha=(S.focus?.6:.42)*fade;ctx.lineWidth=S.focus?2:1.4;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.quadraticCurveTo(g.cx,g.cy,b[0],b[1]);ctx.stroke();
-      ctx.fillStyle=col;ctx.globalAlpha=.95*fade;
-      const n=g.d>260?4:3;
-      for(let i=0;i<n;i++){const u=reduce?(i+.5)/n:((t*0.32+i/n)%1),m=1-u;const x=m*m*a[0]+2*m*u*g.cx+u*u*b[0],y=m*m*a[1]+2*m*u*g.cy+u*u*b[1];ctx.beginPath();ctx.arc(x,y,S.focus?2.8:2.4,0,6.3);ctx.fill()}
+      ctx.strokeStyle=col;ctx.globalAlpha=(lw>4?.38:.5)*fade;ctx.lineWidth=lw;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.quadraticCurveTo(g.cx,g.cy,b[0],b[1]);ctx.stroke();
+      ctx.fillStyle=lw>5?C.on:col;ctx.globalAlpha=.95*fade;
+      const n=g.d>260?4:3,pr=Math.max(2.2,Math.min(4,lw*.45));
+      for(let i=0;i<n;i++){const u=reduce?(i+.5)/n:((t*0.32+i/n)%1),m=1-u;const x=m*m*a[0]+2*m*u*g.cx+u*u*b[0],y=m*m*a[1]+2*m*u*g.cy+u*u*b[1];ctx.beginPath();ctx.arc(x,y,pr,0,6.3);ctx.fill()}
     }
     ctx.globalAlpha=1;
   }
@@ -230,23 +242,14 @@ function draw(now){
 
 /* ---------- journeys ---------- */
 const NS=520;
-const SHORT={'Lithuania, Latvia & Belarus':'Lithuania','Argentina, Uruguay & Chile':'Argentina','Bohemia, Moravia & Austria':'Bohemia & Austria','Netherlands & Belgium':'Low Countries','Greece & the Balkans':'Balkans','Georgia & the Caucasus':'Caucasus','Bukhara & Central Asia':'Central Asia','Rhineland / Germany':'Germany','Babylonia / Iraq':'Iraq','Persia / Iran':'Iran','Asia Minor / Turkey':'Turkey','Cyrenaica / Libya':'Libya','England / Britain':'Britain','Land of Israel':'Israel','Spain & Portugal':'Iberia','Mexico & the Caribbean':'Mexico','Hungary & Slovakia':'Hungary','Romania & Moldova':'Romania','Syria & Lebanon':'Syria','Australia & New Zealand':'Australia','United States':'USA'};
-/* sample the focused group across the whole timeline, region by region */
+/* sample the focused group across the whole timeline for its card: first year, peak, today */
 function buildJourney(){
-  const tmp=new Float64Array(NC),rows=REG.map(()=>new Float64Array(NS+1)),tot=new Float64Array(NS+1);
+  const tmp=new Float64Array(NC),tot=new Float64Array(NS+1),last=[];
   let first=-1,peak=0,peakJ=0;
   for(let j=0;j<=NS;j++){const y=p2y(j/NS);
-    REG.forEach((r,k)=>{regionAt(r,y,tmp);let t=0;for(let i=0;i<NC;i++)if(inFocus(i))t+=tmp[i];rows[k][j]=t;tot[j]+=t});
+    for(const r of REG){regionAt(r,y,tmp);let t=0;for(let i=0;i<NC;i++)if(inFocus(i))t+=tmp[i];tot[j]+=t;if(j===NS&&t>=0.05)last.push({name:r.name,v:t})}
     if(tot[j]>0.05&&first<0)first=j;if(tot[j]>peak){peak=tot[j];peakJ=j}}
-  /* bands: every region that ever held a real share, in order of arrival */
-  const info=REG.map((r,k)=>{let mx=0,f=-1;for(let j=0;j<=NS;j++){if(rows[k][j]>mx)mx=rows[k][j]}for(let j=0;j<=NS;j++)if(rows[k][j]>mx*0.02&&mx>0){f=j;break}return{k,mx,f,name:r.name}}).filter(o=>o.mx>0);
-  info.sort((a,b)=>b.mx-a.mx);
-  const keep=info.filter((o,i)=>i<8&&o.mx>=peak*0.03),rest=info.filter(o=>!keep.includes(o));
-  keep.sort((a,b)=>a.f-b.f);
-  const bands=keep.map(o=>({name:SHORT[o.name]||o.name,v:rows[o.k]}));
-  if(rest.length){const v=new Float64Array(NS+1);for(const o of rest)for(let j=0;j<=NS;j++)v[j]+=rows[o.k][j];bands.push({name:'Elsewhere',v})}
-  const now=REG.map((r,k)=>({name:r.name,v:rows[k][NS]})).filter(o=>o.v>=0.05).sort((a,b)=>b.v-a.v);
-  return{bands,tot,first:Math.max(0,first),peak,peakY:p2y(peakJ/NS),today:tot[NS],now};
+  return{tot,first:Math.max(0,first),peak,peakY:p2y(peakJ/NS),today:tot[NS],now:last.sort((a,b)=>b.v-a.v)};
 }
 function setFocus(f){
   if(f&&S.focus&&((f.com!=null&&f.com===S.focus.com)||(f.fam!=null&&f.com==null&&S.focus.com==null&&f.fam===S.focus.fam)))f=null;
@@ -254,10 +257,9 @@ function setFocus(f){
   S.journey=f?buildJourney():null;
   if(f){const j=Math.round(S.p*NS);if(S.journey.tot[Math.min(NS,j)]<0.05)S.p=Math.min(1,(S.journey.first+1)/NS)}
   setAuto(true);
-  tlw.classList.toggle('river',!!f);$('chips').hidden=!!f;$('chprev').hidden=!!f;$('chnext').hidden=!!f;$('exitfocus').hidden=!f;
+  $('chips').hidden=!!f;$('chprev').hidden=!!f;$('chnext').hidden=!!f;$('exitfocus').hidden=!f;
   $('chplay').textContent=f?'Play this journey':'Play this chapter';
   legendRows.forEach(o=>{const on=!!f&&(o.com!=null?f.com===o.com:(f.com==null&&f.fam===o.fam));o.b.setAttribute('aria-pressed',String(on));o.b.classList.toggle('dim',!!f&&!on&&!(o.fam===f.fam&&(f.com==null||o.sub)))});
-  document.querySelector('.stage').classList.toggle('following',!!f);
   S.cardDirty=true;stackDirty=true;lastPanel=0;resizeTL();
   /* on a phone the list sits below the map, so bring the map back into view */
   if(f&&matchMedia('(max-width:900px)').matches)box.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
@@ -305,8 +307,6 @@ function updatePanel(now){
   $('totlab').textContent=S.focus?focusName()+' Jews in the world':'Jews in the world';
   for(const o of legendRows){const v=o.com!=null?wc[o.com]:wf[o.fam];o.v.textContent=fmtPop(v);o.s.textContent=pct(v,tot);o.b.classList.toggle('zero',!(v>=0.05))}
   for(let i=0;i<NG;i++){const v=wf[i];barSegs[i].style.flex=(v>0?v/tot*100:0)+' 1 0%';barSegs[i].hidden=!(v>0);barSegs[i].style.opacity=(S.focus&&S.focus.fam!==i)?'.25':'1'}
-  const top=REG.filter(r=>r.tot>=0.05).sort((a,b)=>b.tot-a.tot).slice(0,5);
-  $('top').innerHTML=top.map(r=>{let mi=-1;for(let i=0;i<NC;i++)if(inFocus(i)&&(mi<0||r.c[i]>r.c[mi]))mi=i;return '<li><i style="background:'+comColor[mi]+'"></i><span>'+esc(r.name)+'</span><b>'+fmtPop(r.tot)+'</b></li>'}).join('');
   if(S.focus){
     if(S.cardDirty){S.cardDirty=false;S.ch=-1;const J=S.journey,isCom=S.focus.com!=null,c=isCom?COM[S.focus.com]:null,g=G[S.focus.fam];
       $('chno').textContent='';$('chtitle').textContent=focusName();
@@ -322,7 +322,6 @@ function updatePanel(now){
       $('chno').textContent=ci+1;$('chtitle').textContent=c.title;$('chtext').textContent=c.text;$('yrsub').textContent=c.title;
       $('chyrs').textContent='Chapter '+(ci+1)+' of '+CH.length+' · '+yearText(c.y0)+' to '+yearText(c.y1);
       chipBtns.forEach((b,j)=>{b.setAttribute('aria-current',String(j===ci))});
-      const cb=chipBtns[ci],cc=$('chips');if(cb&&cc.scrollWidth>cc.clientWidth)cc.scrollTo({left:cb.offsetLeft-cc.clientWidth/2+cb.offsetWidth/2,behavior:reduce?'auto':'smooth'});
     }
   }
   const tw=$('tlwrap');tw.setAttribute('aria-valuenow',Math.round(year));tw.setAttribute('aria-valuetext',yearText(year));
@@ -411,38 +410,21 @@ function buildStack(){
   stack=document.createElement('canvas');stack.width=Math.round(TW*dpr);stack.height=Math.round(TH*dpr);
   const c=stack.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);
   const top=8,bot=TH-TLAB,hh=bot-top;
-  if(S.focus&&S.journey){
-    /* the river: one band per place, total width follows the size of the group (square-root scale) */
-    const J=S.journey,base=focusColor(),mid=top+hh/2,n=J.bands.length,T=new Float64Array(NS+1);
-    for(let j=0;j<=NS;j++)T[j]=J.tot[j]>0?Math.max(1.5,hh*Math.sqrt(J.tot[j]/J.peak)):0;
-    const off=new Float64Array(NS+1);
-    J.bands.forEach((b,k)=>{
-      const col=shade(base,[0,0.34,-0.26,0.55,-0.4,0.2,0.44,-0.14,0.3][k%9]);c.fillStyle=col;c.beginPath();
-      const th=j=>J.tot[j]>0?T[j]*b.v[j]/J.tot[j]:0;
-      for(let j=0;j<=NS;j++){const x=j/NS*TW,y=mid-T[j]/2+off[j];j?c.lineTo(x,y):c.moveTo(x,y)}
-      for(let j=NS;j>=0;j--)c.lineTo(j/NS*TW,mid-T[j]/2+off[j]+th(j));
-      c.closePath();c.fill();c.strokeStyle=C.panel;c.lineWidth=.8;c.stroke();
-      let bj=0,bt=0;for(let j=0;j<=NS;j++){const t=th(j);if(t>bt){bt=t;bj=j}}
-      b._lab={j:bj,t:bt,y:mid-T[bj]/2+off[bj]+bt/2,col};
-      for(let j=0;j<=NS;j++)off[j]+=th(j);
-    });
-    c.font='600 11px "IBM Plex Sans",system-ui,sans-serif';c.textBaseline='middle';c.textAlign='center';const used=[];
-    for(const b of J.bands.slice().sort((x,y)=>y._lab.t-x._lab.t)){const L=b._lab;if(L.t<13)continue;const w=c.measureText(b.name).width;let x=L.j/NS*TW;x=Math.max(w/2+4,Math.min(TW-w/2-4,x));
-      if(used.some(u=>Math.abs(u[0]-x)<(u[2]+w)/2+6&&Math.abs(u[1]-L.y)<13))continue;used.push([x,L.y,w]);
-      c.fillStyle=lum(L.col)>0.55?'#0a1124':'#ffffff';c.fillText(b.name,x,L.y)}
-  }else{
-    const cols=[];let mx=0;const tmp=new Float64Array(NC);
-    for(let j=0;j<=NS;j++){const y=p2y(j/NS),t=new Float64Array(NG);for(const r of REG){regionAt(r,y,tmp);for(let i=0;i<NC;i++)t[COM[i].fi]+=tmp[i]}let s=0;for(let i=0;i<NG;i++)s+=t[i];mx=Math.max(mx,s);cols.push(t)}
-    mx=mx||1;
-    CH.forEach((ch,i)=>{if(i%2)return;c.fillStyle='rgba(255,255,255,.035)';c.fillRect(ch.p0*TW,0,(ch.p1-ch.p0)*TW,bot)});
-    const base=new Float64Array(NS+1);
-    for(let i=0;i<NG;i++){
-      c.fillStyle=S.colors[i];c.beginPath();
-      for(let j=0;j<=NS;j++){const x=j/NS*TW,y=bot-(base[j]+cols[j][i])/mx*hh;j?c.lineTo(x,y):c.moveTo(x,y)}
-      for(let j=NS;j>=0;j--)c.lineTo(j/NS*TW,bot-base[j]/mx*hh);
-      c.closePath();c.fill();for(let j=0;j<=NS;j++)base[j]+=cols[j][i];
-    }
-  }
+  /* stacked areas: the nine families, or only the communities being followed */
+  const ser=S.focus?COM.map((c,i)=>i).filter(inFocus).map(i=>({col:comColor[i],get:(tc)=>tc[i]})):G.map((g,i)=>({col:S.colors[i],get:(tc,tf)=>tf[i]}));
+  const cols=[];let mx=0;const tmp=new Float64Array(NC);
+  for(let j=0;j<=NS;j++){const y=p2y(j/NS),tc=new Float64Array(NC),tf=new Float64Array(NG);
+    for(const r of REG){regionAt(r,y,tmp);for(let i=0;i<NC;i++){tc[i]+=tmp[i];tf[COM[i].fi]+=tmp[i]}}
+    const row=ser.map(s=>s.get(tc,tf));let s=0;for(const v of row)s+=v;mx=Math.max(mx,s);cols.push(row)}
+  mx=mx||1;
+  if(!S.focus)CH.forEach((ch,i)=>{if(i%2)return;c.fillStyle='rgba(255,255,255,.035)';c.fillRect(ch.p0*TW,0,(ch.p1-ch.p0)*TW,bot)});
+  const base=new Float64Array(NS+1);
+  ser.forEach((s,i)=>{
+    c.fillStyle=s.col;c.beginPath();
+    for(let j=0;j<=NS;j++){const x=j/NS*TW,y=bot-(base[j]+cols[j][i])/mx*hh;j?c.lineTo(x,y):c.moveTo(x,y)}
+    for(let j=NS;j>=0;j--)c.lineTo(j/NS*TW,bot-base[j]/mx*hh);
+    c.closePath();c.fill();for(let j=0;j<=NS;j++)base[j]+=cols[j][i];
+  });
   ticks(c,bot);
   stackDirty=false;
 }
