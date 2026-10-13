@@ -10,6 +10,7 @@ Live at https://backyonatan-alt.github.io/
 | `/` | Home page, one row per article | `index.html` directly | nothing |
 | `/cousins/` | A Nation of Cousins (animated Jewish population map) | `src/cousins/` (`page.html`, `app.js`, `data.js`) | `node src/cousins/build.js` |
 | `/moneyball/`, `/moreyball/`, `/expected-goals/` | Three sports analytics articles | `src/sports/sports-analytics-by-the-numbers.html` (one combined source) | `python3 src/sports/split.py` |
+| `/dogfight/` | Dogfight Ground School (air combat basics, written for the game Epic Fury IAF) | `dogfight/index.html` directly | nothing |
 
 Never hand-edit `cousins/index.html` or the three sports `index.html` files. They are build output and get overwritten.
 
