@@ -4,76 +4,130 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dogfight Ground School</title>
-<meta name="description" content="Why the jet you are chasing keeps getting away. Pursuit geometry, corner speed and six classic maneuvers, with a chase you can fly yourself.">
+<meta name="description" content="A beginner's ground school for anyone who has tried a flight simulator: why the jet you are chasing keeps getting away, corner speed, and six classic maneuvers in 3D.">
 <link rel="canonical" href="https://backyonatan-alt.github.io/dogfight/">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://backyonatan-alt.github.io/dogfight/">
 <meta property="og:title" content="Dogfight Ground School">
-<meta property="og:description" content="Why the jet you are chasing keeps getting away. Pursuit geometry, corner speed and six classic maneuvers, with a chase you can fly yourself.">
+<meta property="og:description" content="A beginner's ground school for anyone who has tried a flight simulator: why the jet you are chasing keeps getting away, corner speed, and six classic maneuvers in 3D.">
 <meta property="og:image" content="https://backyonatan-alt.github.io/dogfight/preview.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dogfight Ground School">
-<meta name="twitter:description" content="Why the jet you are chasing keeps getting away. Pursuit geometry, corner speed and six classic maneuvers, with a chase you can fly yourself.">
+<meta name="twitter:description" content="A beginner's ground school for anyone who has tried a flight simulator: why the jet you are chasing keeps getting away, corner speed, and six classic maneuvers in 3D.">
 <meta name="twitter:image" content="https://backyonatan-alt.github.io/dogfight/preview.png">
-<meta name="theme-color" content="#13232b">
+<meta name="theme-color" content="#174f9e">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHETPL7EV5"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZHETPL7EV5');</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;1,800&family=Barlow:wght@400;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-/* Layout: a pilot's briefing card. One reading column, diagrams break out wide, blue = you, red = bandit everywhere. */
+/* Layout: a pilot's briefing over the sea. Full-bleed sky hero with a live 3D chase, then one reading column where every maneuver gets its own 3D clip. Blue = you, red = bandit everywhere. */
 :root{
   color-scheme:light;
-  --bg:#edf2f1; --surface:#f9fbfa; --ink:#13232b; --muted:#536870; --line:#c9d5d4;
-  --me:#1b5fa8; --bandit:#bf3a2b; --sand:#9a6730; --ok:#1c7a4c; --zone:rgba(28,122,76,.16);
-  --display:"Saira Condensed","Arial Narrow",Impact,sans-serif;
-  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#f3f7fa; --surface:#ffffff; --ink:#0c2340; --muted:#4d6076; --line:#cfdbe6; --accent:#ffc72c; --accent-ink:#9a6700; --ok:#1c7a4c;
+  --me:#1556b0; --bandit:#c8321f;
+  --sky-top:#174f9e; --sky-hor:#9cc9ea; --scrim:rgba(16,62,128,.78); --stage-on:#ffffff; --stage-mut:#dcebf8;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
-
 *{box-sizing:border-box}
-[hidden]{display:none!important}img{max-width:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);padding-inline:20px;padding-block:28px 80px}
-.wrap{max-width:920px;margin-inline:auto;display:flex;flex-direction:column;gap:56px}
-section{display:flex;flex-direction:column;gap:18px;min-width:0}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05;text-transform:uppercase;letter-spacing:.01em}
-h1{font-size:clamp(44px,9vw,84px);font-weight:700}
-h2{font-size:clamp(30px,5vw,42px);font-weight:700;border-top:3px solid var(--ink);padding-top:12px}
-h3{font-size:24px;font-weight:700}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--me)}
+:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-style:italic;font-weight:800;text-transform:uppercase;text-wrap:balance;margin:0;line-height:.98;letter-spacing:.005em}
+h2{font-size:clamp(34px,5.2vw,52px);border-top:3px solid var(--ink);padding-top:14px}
+h3{font-size:30px}
 p,ul,ol{margin:0;max-width:66ch}
 ul,ol{padding-left:22px;display:flex;flex-direction:column;gap:6px}
-.lede{font-size:21px;line-height:1.45;max-width:58ch}
-.eyebrow{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--sand)}
+.eyebrow{font:600 12px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
 .me{color:var(--me);font-weight:600}.bd{color:var(--bandit);font-weight:600}
-kbd{font:600 13px/1 var(--mono);border:1px solid var(--ink);border-bottom-width:3px;border-radius:4px;padding:3px 6px;background:var(--surface);white-space:nowrap}
-nav{display:flex;flex-wrap:wrap;gap:8px}
-nav a{font:600 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:8px 10px;background:var(--surface)}
-nav a:hover,nav a:focus-visible{border-color:var(--ink)}
-a{color:var(--me)}
-:focus-visible{outline:2px solid var(--sand);outline-offset:2px}
+.note{font-size:14.5px;color:var(--muted)}
+.wrap{max-width:960px;margin-inline:auto;padding-inline:20px;padding-block:48px 80px;display:flex;flex-direction:column;gap:64px}
+section{display:flex;flex-direction:column;gap:18px;min-width:0}
 
-.hud{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+/* hero */
+.hero{display:grid;background:var(--sky-top);color:var(--stage-on)}
+.hero>*{grid-area:1/1;min-width:0}
+.hero-stage{height:clamp(420px,50vw,600px);background:linear-gradient(var(--sky-top),var(--sky-hor) 27%)}
+.hero-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--scrim) 0%,var(--scrim) 22%,transparent 58%);pointer-events:none}
+.hero-txt{z-index:2;align-self:center;display:flex;flex-direction:column;gap:18px;padding-inline:max(20px,calc((100vw - 1140px)/2));padding-block:36px;max-width:calc(max(20px,(100vw - 1140px)/2) + 580px);pointer-events:none}
+.hero-txt a,.hero-txt nav{pointer-events:auto}
+.back{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:inherit;text-decoration:none;border:1px solid currentColor;padding:8px 10px;align-self:flex-start;opacity:.9}
+.back:hover{background:var(--stage-on);color:var(--ink)}
+.hero .eyebrow{background:var(--accent);color:var(--ink);padding:6px 8px;align-self:flex-start}
+.hero h1{font-size:clamp(58px,9.2vw,128px);line-height:.9;text-shadow:0 2px 0 rgba(12,35,64,.25)}
+.lede{font-size:clamp(18px,1.9vw,22px);line-height:1.4;max-width:32ch!important}
+.hero nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.hero nav a{font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--stage-on);text-decoration:none;border:1px solid rgba(255,255,255,.5);padding:8px 9px;background:rgba(12,35,64,.35)}
+.hero nav a:hover,.hero nav a:focus-visible{border-color:#fff;background:rgba(12,35,64,.7)}
+.hero .cap{right:16px;left:auto;text-align:right;color:var(--ink)}
+@media (max-width:760px){
+  .hero>*{grid-area:auto}
+  .hero-txt{padding-block:24px 4px;max-width:none;order:-1}
+  .hero-stage{height:auto;aspect-ratio:4/3;max-width:100%}
+  .hero-stage::after{display:none}
+  .lede{max-width:40ch!important}
+}
+
+/* stages and clips */
+.stage{margin:0;position:relative;min-width:0;overflow:hidden;background:linear-gradient(var(--sky-top),var(--sky-hor) 14%)}
+.stage canvas{display:block;width:100%;height:100%;position:absolute;inset:0}
+.nogl{position:absolute;inset:0;display:grid;place-items:center;margin:0;padding:20px;text-align:center;color:var(--stage-on)}
+.cap{position:absolute;left:14px;bottom:12px;right:14px;font:600 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--stage-mut);pointer-events:none}
+.tag{position:absolute;left:0;top:0;font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 6px;pointer-events:none;white-space:nowrap;will-change:transform}
+.tag.me{background:var(--me);color:#fff}.tag.bd{background:var(--bandit);color:#fff}
+.read{position:absolute;top:12px;left:12px;display:flex;gap:6px;pointer-events:none;flex-wrap:wrap}
+.read span{font:600 11px/1 var(--mono);letter-spacing:.1em;color:#dcebf8;display:flex;flex-direction:column;gap:5px;padding:8px 10px;min-width:74px;background:rgba(12,35,64,.55)}
+.read b{font:600 18px/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:0}
+.flag{position:absolute;right:12px;top:12px;font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:8px 10px;pointer-events:none;color:#fff;background:rgba(12,35,64,.55)}
+.flag:empty{display:none}.flag.good{background:var(--ok)}.flag.bad{background:var(--bandit)}
+.ctl{display:flex;gap:12px;align-items:center;padding:10px 14px;border-top:1px solid var(--line);background:var(--surface)}
+.ctl button{font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--ink);background:var(--ink);color:#fff;padding:9px 12px;min-width:72px}
+.ctl input{flex:1;min-width:0;accent-color:var(--accent-ink)}
+.ctl span{font:600 12px/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.clip{display:flex;flex-direction:column;min-width:0}
+.clip .stage{aspect-ratio:16/10;max-width:100%}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:9px 10px;border:1px solid var(--ink);background:transparent;color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.lab{font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:s;max-width:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;font-size:15.5px;line-height:1.4;color:var(--muted);transition:color .2s}
+.steps li::before{content:counter(s);font:600 12px/26px var(--mono);width:26px;height:26px;text-align:center;border:1px solid var(--line);color:var(--muted)}
+.steps li.on{color:var(--ink);font-weight:600}
+.steps li.on::before{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* brief */
+.brief{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.brief h2{border-top:0;padding-top:0;font-size:clamp(30px,4.6vw,44px)}
+.brief .meta{font:600 12px/1.5 var(--mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--line);padding-top:10px;max-width:none}
+
+/* debrief tiles */
+.hud{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .hud div{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
 .hud b{font:600 24px/1 var(--mono);font-variant-numeric:tabular-nums}
 .hud span{font-size:13.5px;line-height:1.35;color:var(--muted)}
 .hud .bad b{color:var(--bandit)}
 
-.panel{background:var(--surface);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0}
-.split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
-@media (max-width:720px){.split{grid-template-columns:minmax(0,1fr)}}
-canvas{width:100%;aspect-ratio:1/1;display:block;background:var(--bg);border:1px solid var(--line)}
-.seg{display:flex;flex-wrap:wrap;gap:6px}
-.seg button{font:600 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;padding:10px 12px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.lab{font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.read{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.read div{display:flex;flex-direction:column;gap:4px}
-.read b{font:600 20px/1 var(--mono);font-variant-numeric:tabular-nums}
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.panel .split{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.panel .side{padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.panel .foot{padding:14px 18px;border-top:1px solid var(--line)}
+#simPanel .stage{aspect-ratio:16/10;max-width:100%}
+.readrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.readrow div{display:flex;flex-direction:column;gap:4px}
+.readrow b{font:600 20px/1 var(--mono);font-variant-numeric:tabular-nums}
 .verdict{font-weight:600;border-left:4px solid var(--muted);padding:6px 0 6px 12px;min-height:4.6em}
 .verdict.good{border-color:var(--ok)}.verdict.bad{border-color:var(--bandit)}
-input[type=range]{width:100%;accent-color:var(--sand)}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+@media (max-width:760px){
+  .panel .split{grid-template-columns:minmax(0,1fr)}
+  #simPanel .stage,.clip .stage{aspect-ratio:1/1}
+}
 
 figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
 figure .scroll{overflow-x:auto}
@@ -82,35 +136,36 @@ figcaption{font-size:14.5px;color:var(--muted);max-width:66ch}
 .s-me{stroke:var(--me);fill:none;stroke-width:2.5}
 .s-bd{stroke:var(--bandit);fill:none;stroke-width:2.5}
 .s-dim{stroke:var(--muted);fill:none;stroke-width:1.5;stroke-dasharray:5 5}
-.f-me{fill:var(--me)}.f-bd{fill:var(--bandit)}.f-ink{fill:currentColor}.f-mu{fill:var(--muted)}.f-sand{fill:var(--sand)}
+.f-me{fill:var(--me)}.f-bd{fill:var(--bandit)}.f-ink{fill:currentColor}.f-mu{fill:var(--muted)}.f-sand{fill:var(--accent-ink)}
 svg text{font:500 12px var(--body);fill:currentColor}
 svg text.t-me{fill:var(--me);font-weight:600}svg text.t-bd{fill:var(--bandit);font-weight:600}svg text.t-mu{fill:var(--muted)}
-svg text.num{font:600 12px var(--mono);fill:var(--bg)}
 .grid line{stroke:var(--line);stroke-width:1}
+.chartbox{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start;padding:18px}
+@media (max-width:720px){.chartbox{grid-template-columns:minmax(0,1fr)}}
+.chartbox .side{padding:0}
 
-.moves{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:20px}
-.move{background:var(--surface);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.move .when{font-size:15px;color:var(--muted)}
-.move ol{font-size:15.5px}
-.tblwrap{overflow-x:auto;border:1px solid var(--line)}
+/* maneuvers */
+.moves{display:flex;flex-direction:column;gap:28px}
+.move{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.move .txt{padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.move .when{font-size:15.5px;color:var(--muted)}
+@media (max-width:760px){.move{grid-template-columns:minmax(0,1fr)}.move .txt{order:3}}
+
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.keys div{background:var(--surface);padding:12px 14px;font-size:15px;display:flex;flex-direction:column;gap:6px}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
 table{border-collapse:collapse;width:100%;min-width:560px;background:var(--surface);font-size:15.5px}
 th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
 th{font:600 12px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 tr:last-child td{border-bottom:0}
-.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.keys div{background:var(--surface);padding:12px 14px;font-size:15px;display:flex;flex-direction:column;gap:6px}
-.drills{list-style:none;padding:0;gap:0;border:1px solid var(--line);background:var(--surface);max-width:none}
+.drills{list-style:none;padding:0;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface);max-width:none}
 .drills li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:14px;border-bottom:1px solid var(--line)}
 .drills li:last-child{border-bottom:0}
 .drills input{width:20px;height:20px;margin-top:3px;accent-color:var(--ok)}
 .drills label b{display:block}
 .drills label span{font-size:15px;color:var(--muted)}
-.note{font-size:14.5px;color:var(--muted)}
-.top a{font:600 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink);text-decoration:none;border:1px solid var(--ink);padding:9px 12px;display:inline-block}
-.top a:hover,.top a:focus-visible{background:var(--ink);color:var(--bg)}
-.brief{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--sand);padding:22px;gap:12px}
-.brief h2{border-top:0;padding-top:0;font-size:clamp(28px,4.6vw,40px)}
-.brief .meta{font:600 12px/1.4 var(--mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--line);padding-top:10px;max-width:none}
+.end{display:flex;justify-content:flex-start}
+.end a{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:2px solid var(--ink);padding:10px 16px}
 </style>
 </head>
 <body>
@@ -119,38 +174,44 @@ tr:last-child td{border-bottom:0}
 <marker id="ah-bd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="f-bd"/></marker>
 </defs></svg>
 
-<div class="wrap">
-
-<header style="display:flex;flex-direction:column;gap:18px">
-  <div class="top"><a href="../">&larr; All stories</a></div>
-  <span class="eyebrow">Epic Fury IAF · keyboard pilot · air-to-air</span>
-  <h1>Dogfight Ground School</h1>
-  <p class="lede">You don't get on a tail by pointing at the other jet. You get there by flying to where it <em>was</em>, at the speed where your jet turns best. Everything below is that one idea, broken down.</p>
-  <nav aria-label="Sections">
-    <a href="#debrief">Debrief</a><a href="#pursuit">Pursuit geometry</a><a href="#speed">Speed and turn</a><a href="#hands">Keyboard</a><a href="#moves">Maneuvers</a><a href="#weapons">Weapons</a><a href="#flow">Fight flow</a><a href="#drills">Drills</a>
-  </nav>
+<header class="hero">
+  <figure class="stage hero-stage">
+    <canvas id="cHero" aria-label="3D animation: a blue jet follows a red jet around a tight turn"></canvas>
+    <figcaption class="cap">Lag pursuit · live 3D</figcaption>
+  </figure>
+  <div class="hero-txt">
+    <a class="back" href="../">&larr; All stories</a>
+    <span class="eyebrow">Air combat, explained</span>
+    <h1>Dogfight Ground School</h1>
+    <p class="lede">You don't get on a tail by pointing at the other jet. You get there by flying to where it <em>was</em>, at the speed where your jet turns best.</p>
+    <nav aria-label="Sections">
+      <a href="#debrief">Debrief</a><a href="#pursuit">Pursuit</a><a href="#speed">Speed</a><a href="#hands">Keyboard</a><a href="#moves">Maneuvers</a><a href="#weapons">Weapons</a><a href="#flow">Fight flow</a><a href="#drills">Drills</a>
+    </nav>
+  </div>
 </header>
+
+<main class="wrap">
 
 <section class="brief" id="brief">
   <span class="eyebrow">The story in brief</span>
   <h2>Why does the jet you are chasing keep getting away?</h2>
-  <p>Point your nose straight at an enemy jet and you will probably lose it. That feels wrong, and it is one of the first things fighter pilots are taught to unlearn.</p>
+  <p>Anyone who has tried a flight simulator knows the moment. You spot the enemy, point your nose straight at it, and it slides off the screen. You turn harder. It gets further away. Pointing at the other jet is the natural thing to do, and it is the first thing fighter pilots are taught to unlearn.</p>
   <p>A dogfight is a close turning fight between two aircraft. Air forces teach it under the name basic fighter maneuvers, or BFM. Under the jargon it is geometry. Every turning jet flies a circle, and the winner is the one who gets onto the other jet's circle, behind it, at the speed where their own jet turns best.</p>
-  <p>This page started as a training guide for Epic Fury IAF, a flight game played on a keyboard. It opens with one real screenshot from a lost fight, then explains pursuit geometry, speed, six classic maneuvers, weapons and a set of drills. You can fly the chase yourself in the animation and drag the speed chart.</p>
-  <p class="meta">Eight sections · about 12 minutes · two interactive diagrams · numbers come from a generic physics model, not from a real aircraft manual</p>
+  <p>This page is the ground school nobody gave you. It covers the handful of ideas that turn a beginner into someone who can get on a tail and stay there: how to read the HUD, pursuit geometry, speed, six classic maneuvers, weapons, and drills you can fly in any simulator. Every maneuver has a 3D clip you can pause and scrub, and you can fly the chase yourself.</p>
+  <p class="meta">Eight sections · about 12 minutes · nine 3D clips · for any flight sim · the numbers come from a generic physics model, not from a real aircraft manual</p>
 </section>
 
 <section id="debrief">
-  <h2>One screenshot, debriefed</h2>
-  <p>These numbers are the HUD from one frame of a lost fight in Epic Fury IAF: 2.1 km behind an enemy jet that got away. They already show why. Read them as if you were the pilot:</p>
+  <h2>Read the HUD first</h2>
+  <p>Every sim puts the same few numbers on the glass in front of you, and most beginners never look at them. This is a HUD frozen in the middle of a lost fight: 2.1 km behind an enemy jet that is getting away. The numbers already show why. Read them as if you were the pilot:</p>
   <div class="hud">
     <div class="bad"><b>584</b><span>Airspeed in knots. Far too fast to turn. Target: about 450.</span></div>
     <div class="bad"><b>G 2.0</b><span>You're barely pulling. At this speed and G your turn circle is about 5 km wide in radius.</span></div>
     <div><b>M 0.92</b><span>Mach number. Same story as the airspeed.</span></div>
     <div><b>THR 60%</b><span>Throttle. Fine, but the speed hasn't bled off yet.</span></div>
-    <div><b>R 2.1 KM</b><span>Range to the selected target (the red box, Enemy 1).</span></div>
+    <div><b>R 2.1 KM</b><span>Range to the selected target. Close enough for a missile, if the angle were right.</span></div>
     <div><b>325</b><span>Heading. The right tape (11,835) is altitude in feet.</span></div>
-    <div><b>MSL UNL</b><span>Unlimited missiles. No need to save them, but a bad shot still wastes the setup.</span></div>
+    <div><b>MSL 4</b><span>Missiles left. Ammo is not the problem here. The setup is.</span></div>
   </div>
   <p>Three fixes, in order of payoff: <strong>slow to about 450 knots before you turn</strong>, <strong>pull hard when you do turn</strong> (7 to 9 G, not 2), and <strong>aim behind the bandit, not at it</strong>. The next two sections show why.</p>
 </section>
@@ -163,10 +224,16 @@ tr:last-child td{border-bottom:0}
     <li><strong>Pure pursuit:</strong> nose on the bandit. Feels natural, used for a missile shot. With extra speed you end up flying through them.</li>
     <li><strong>Lag pursuit:</strong> nose behind the bandit's tail. Closes slowly, keeps you behind, and lets you match their circle. <strong>This is the one most new pilots miss.</strong></li>
   </ul>
-  <div class="panel">
+  <div class="panel" id="simPanel">
     <div class="split">
-      <canvas id="sim" aria-label="Top-down animation of a blue jet chasing a red jet that flies a circle"></canvas>
-      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+      <div class="clip">
+        <figure class="stage"><canvas id="cSim" aria-label="3D animation of a blue jet chasing a red jet that flies a circle"></canvas>
+          <div class="read" aria-hidden="true"><span>Range<b class="rRng">0 m</b></span><span>Angle off<b class="rAo">0°</b></span></div>
+          <span class="tag me">You</span><span class="tag bd">Bandit</span><span class="flag"></span>
+        </figure>
+        <div class="ctl"><button type="button" class="pp">Pause</button><input type="range" min="0" max="1000" value="0" aria-label="Clip position"><span class="tm">0:00 / 0:32</span></div>
+      </div>
+      <div class="side">
         <span class="lab">Where you point your nose</span>
         <div class="seg" id="modeSeg">
           <button type="button" data-mode="lead" aria-pressed="false">Lead</button>
@@ -179,16 +246,10 @@ tr:last-child td{border-bottom:0}
           <button type="button" data-kt="450" aria-pressed="true">450 kt</button>
           <button type="button" data-kt="580" aria-pressed="false">580 kt</button>
         </div>
-        <div class="read">
-          <div><span class="lab">Range</span><b id="rRng">0 m</b></div>
-          <div><span class="lab">Angle off</span><b id="rAo">0°</b></div>
-          <div><span class="lab">Time</span><b id="rT">0 s</b></div>
-        </div>
-        <p class="verdict" id="verdict"></p>
-        <div class="seg"><button type="button" id="replay">Replay</button></div>
+        <p class="verdict"></p>
       </div>
     </div>
-    <p class="note">Top view. <span class="me">Blue is you</span>, <span class="bd">red is the bandit</span>. The short line through the bandit is its 3-9 line (wingtip to wingtip). The green wedge is the control zone: behind the tail, close, nose roughly aligned. Get in front of the 3-9 line and you've swapped roles. Try pure at 450, then lag at 450.</p>
+    <p class="note foot"><span class="me">Blue is you</span>, <span class="bd">red is the bandit</span>. The dark line through the bandit is its 3-9 line (wingtip to wingtip). The green wedge is the control zone: behind the tail, close, nose roughly aligned. The yellow dot is where your nose is pointing. Get in front of the 3-9 line and you've swapped roles. Try pure at 450, then lag at 450.</p>
   </div>
   <figure>
     <div class="scroll"><svg viewBox="0 0 360 240" width="560" role="img" aria-label="Fly to the point where the bandit started its turn, then turn onto its circle">
@@ -213,143 +274,61 @@ tr:last-child td{border-bottom:0}
 <section id="speed">
   <h2>Speed is your turn</h2>
   <p>Too fast and the circle is huge. Too slow and the wings can't pull enough G. In between sits <strong>corner speed</strong>, the slowest speed where you can still pull maximum G. That is where the jet turns fastest and tightest at once. For an F-16-type jet it lands around 400 to 450 knots.</p>
-  <div class="panel">
-    <div class="split">
-      <figure>
-        <div class="scroll"><svg id="chart" viewBox="0 0 520 300" width="520" role="img" aria-label="Turn rate against airspeed, peaking at corner speed near 450 knots"></svg></div>
-        <figcaption>Best possible turn rate at each speed, pulling as hard as the jet allows (9 G limit, generic fighter model).</figcaption>
-      </figure>
-      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
-        <label class="lab" for="spd">Airspeed: <span id="spdV">450</span> kt</label>
-        <input type="range" id="spd" min="170" max="700" step="5" value="450">
-        <div class="read">
-          <div><span class="lab">Turn rate</span><b id="oRate"></b></div>
-          <div><span class="lab">Radius</span><b id="oRad"></b></div>
-          <div><span class="lab">180° takes</span><b id="oT"></b></div>
-        </div>
-        <svg id="circ" viewBox="0 0 300 170" width="300" role="img" aria-label="Turn circle size at the chosen speed compared with a 2.1 kilometre range"></svg>
-        <p class="note">The bar is 2.1 km, the range in the screenshot. At 584 kt and 9 G the radius is about 1,030 m. At the 2 G in the screenshot it is about 5,300 m.</p>
+  <div class="panel"><div class="chartbox">
+    <figure>
+      <div class="scroll"><svg id="chart" viewBox="0 0 520 300" width="520" role="img" aria-label="Turn rate against airspeed, peaking at corner speed near 450 knots"></svg></div>
+      <figcaption>Best possible turn rate at each speed, pulling as hard as the jet allows (9 G limit, generic fighter model).</figcaption>
+    </figure>
+    <div class="side">
+      <label class="lab" for="spd">Airspeed: <span id="spdV">450</span> kt</label>
+      <input type="range" id="spd" min="170" max="700" step="5" value="450">
+      <div class="readrow" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div><span class="lab">Turn rate</span><b id="oRate"></b></div>
+        <div><span class="lab">Radius</span><b id="oRad"></b></div>
+        <div><span class="lab">180° takes</span><b id="oT"></b></div>
       </div>
+      <svg id="circ" viewBox="0 0 300 170" width="300" role="img" aria-label="Turn circle size at the chosen speed compared with a 2.1 kilometre range"></svg>
+      <p class="note">The bar is 2.1 km, the range in the screenshot. At 584 kt and 9 G the radius is about 1,030 m. At the 2 G in the screenshot it is about 5,300 m.</p>
     </div>
-  </div>
+  </div></div>
   <p><strong>Pulling G costs speed.</strong> A hard turn bleeds knots every second. So the throttle rule in a turning fight is simple: above 480, throttle back or tap the airbrake. Between 400 and 480, leave it. Below 400, go full throttle and burner and keep pulling. Below 300, ease off the pull for two seconds with the nose slightly down and burner on, then turn again.</p>
   <p><strong>Altitude is stored speed.</strong> Nose down gives you knots for free, nose up spends them. That is what the yo-yos below use.</p>
-  <p class="note">The numbers come from a standard physics model, not from this game's code. Drill 2 measures where your jet's corner speed actually sits.</p>
+  <p class="note">The numbers come from a standard physics model, not from any particular sim. Drill 2 measures where your jet's corner speed actually sits in yours.</p>
 </section>
 
 <section id="hands">
-  <h2>Keyboard technique</h2>
-  <p>On a keyboard every input is all or nothing, so technique is about order and timing.</p>
+  <h2>Controls, whatever you fly on</h2>
+  <p>Keyboard, gamepad or a full stick: the inputs are the same eight things. Technique is about the order you use them in. Find each one in your sim's control list before you start.</p>
   <div class="keys">
-    <div><span><kbd>←</kbd> <kbd>→</kbd> roll, then <kbd>↑</kbd>/<kbd>↓</kbd> pull</span><span class="note">Every turn is two steps. Roll until the bandit is at the top of your screen, release roll, then hold the pull key. The jet turns toward the top of its canopy (the lift vector). Don't try to steer with yaw.</span></div>
-    <div><span><kbd>P</kbd> padlock, <kbd>T</kbd> <kbd>[</kbd> <kbd>]</kbd> target</span><span class="note">Select the bandit and keep eyes on it. Lose sight, lose the fight. If the padlock view confuses you, tap <kbd>V</kbd> views until one keeps both jets visible.</span></div>
-    <div><span><kbd>Z</kbd> <kbd>X</kbd> / scroll: throttle</span><span class="note">Set it before the turn. Glance at the speed box on the left of the HUD every few seconds and hold 400 to 480.</span></div>
-    <div><span><kbd>Shift</kbd> boost (afterburner)</span><span class="note">Use it to climb, to recover below 400 kt, to run down a bandit that's flying straight, or to escape. Never while already above 500 in a turn.</span></div>
-    <div><span><kbd>B</kbd> airbrake</span><span class="note">Short taps to stop an overshoot. It throws away energy, so a high yo-yo is the better fix when you have the room.</span></div>
-    <div><span><kbd>Q</kbd> <kbd>E</kbd> yaw</span><span class="note">Only for the last few degrees of a gun shot. Never to turn the jet.</span></div>
-    <div><span><kbd>Space</kbd> missile, <kbd>Ctrl</kbd>/<kbd>Tab</kbd> gun</span><span class="note">See Weapons. Both need a steady nose, so release roll first.</span></div>
-    <div><span><kbd>F</kbd> flare, <kbd>R</kbd> radar</span><span class="note">Flares with a break turn when someone is behind you. Radar to find the next contact.</span></div>
+    <div><span><b>Roll, then pull</b></span><span class="note">Every turn is two steps. Roll until the bandit is at the top of your screen, stop rolling, then pull. The jet turns toward the top of its canopy (pilots call it the lift vector). Don't try to steer with the rudder.</span></div>
+    <div><span><b>Padlock or target view</b></span><span class="note">Select the bandit and keep your eyes on it. Lose sight, lose the fight. If the padlock view confuses you, cycle views until one keeps both jets on screen.</span></div>
+    <div><span><b>Throttle</b></span><span class="note">Set it before the turn, not during. Glance at the airspeed box on the left of the HUD every few seconds and hold 400 to 480 knots.</span></div>
+    <div><span><b>Afterburner</b></span><span class="note">Use it to climb, to recover below 400 knots, to run down a bandit that is flying straight, or to escape. Never while already above 500 in a turn.</span></div>
+    <div><span><b>Airbrake</b></span><span class="note">Short taps to stop an overshoot. It throws energy away, so a high yo-yo is the better fix when you have the room.</span></div>
+    <div><span><b>Rudder (yaw)</b></span><span class="note">Only for the last few degrees of a gun shot. Never to turn the jet.</span></div>
+    <div><span><b>Missile and gun</b></span><span class="note">See Weapons. Both need a steady nose, so stop rolling first.</span></div>
+    <div><span><b>Flares and radar</b></span><span class="note">Flares with a break turn when someone is behind you. Radar to find the next contact.</span></div>
   </div>
-  <p class="note">Check which arrow raises the nose in your game. In most sims it is <kbd>↓</kbd> (stick back). "Pull" below always means nose toward the top of your canopy.</p>
+  <p class="note">Which way is "pull" depends on your sim. On most, pulling the stick back (or the down arrow on a keyboard) raises the nose. "Pull" on this page always means nose toward the top of your canopy.</p>
 </section>
 
 <section id="moves">
   <h2>Maneuvers</h2>
-  <p>Six moves cover almost every situation. Each one is the same roll-then-pull, aimed somewhere different.</p>
+  <p>Six moves cover almost every situation. Each one is the same roll-then-pull, aimed somewhere different. Every clip loops like a short video. Pause it, or drag the bar to any moment. The steps light up as the jet flies them.</p>
   <div class="moves">
-
-    <article class="move">
-      <h3>High yo-yo</h3>
-      <p class="when">You're behind a turning bandit but too fast. It's sliding across your windscreen and you're about to fly past.</p>
-      <figure><svg viewBox="0 0 360 200" role="img" aria-label="Side view: you climb above the bandit's turn, then drop back onto its tail">
-        <path d="M20,150 L330,150" class="s-bd" marker-end="url(#ah-bd)"/>
-        <polygon points="0,-8 6,7 0,3 -6,7" class="f-bd" transform="translate(268,150) rotate(90)"/>
-        <path d="M24,160 C100,160 118,62 170,62 C206,62 218,104 226,136" class="s-me" marker-end="url(#ah-me)"/>
-        <circle cx="60" cy="160" r="9" class="f-ink"/><text x="60" y="164" text-anchor="middle" class="num">1</text>
-        <circle cx="168" cy="62" r="9" class="f-ink"/><text x="168" y="66" text-anchor="middle" class="num">2</text>
-        <circle cx="222" cy="118" r="9" class="f-ink"/><text x="222" y="122" text-anchor="middle" class="num">3</text>
-        <text x="190" y="40" text-anchor="middle" class="t-mu">speed turned into height</text>
-        <text x="330" y="172" text-anchor="end" class="t-bd">bandit's level turn</text>
-      </svg><figcaption>Side view. Going up slows you down and shrinks your circle without throwing energy away.</figcaption></figure>
-      <ol><li>Ease the roll so your wings are about halfway to level.</li><li>Pull. The nose goes up and outside the turn, and speed drops.</li><li>As the bandit passes below your nose, roll back toward it and pull down onto its tail.</li></ol>
-    </article>
-
-    <article class="move">
-      <h3>Low yo-yo</h3>
-      <p class="when">You're behind but can't close. The bandit sits at the same range, turning as well as you.</p>
-      <figure><svg viewBox="0 0 360 200" role="img" aria-label="Side view: you dive inside the bandit's turn to gain speed, then pull up to its tail">
-        <path d="M20,60 L330,60" class="s-bd" marker-end="url(#ah-bd)"/>
-        <polygon points="0,-8 6,7 0,3 -6,7" class="f-bd" transform="translate(286,60) rotate(90)"/>
-        <path d="M24,70 C90,70 118,158 176,158 C222,158 240,112 252,80" class="s-me" marker-end="url(#ah-me)"/>
-        <circle cx="58" cy="72" r="9" class="f-ink"/><text x="58" y="76" text-anchor="middle" class="num">1</text>
-        <circle cx="176" cy="158" r="9" class="f-ink"/><text x="176" y="162" text-anchor="middle" class="num">2</text>
-        <circle cx="244" cy="102" r="9" class="f-ink"/><text x="244" y="106" text-anchor="middle" class="num">3</text>
-        <text x="176" y="186" text-anchor="middle" class="t-mu">height turned into speed</text>
-        <text x="330" y="44" text-anchor="end" class="t-bd">bandit's level turn</text>
-      </svg><figcaption>Side view. The dive adds speed and cuts across the inside of the bandit's circle.</figcaption></figure>
-      <ol><li>Roll a little past the bandit so your nose points below and ahead of it (lead).</li><li>Pull. You dive across the inside of the turn and gain speed.</li><li>Roll back, pull up to the bandit. Don't hold the dive long or you'll overshoot.</li></ol>
-    </article>
-
-    <article class="move">
-      <h3>Break turn</h3>
-      <p class="when">A bandit or a missile is behind you. This is the first defensive move, always.</p>
-      <figure><svg viewBox="0 0 360 200" role="img" aria-label="Top view: you turn hard into the attacker so it flies past your tail">
-        <path d="M150,195 L214,30" class="s-bd" marker-end="url(#ah-bd)"/>
-        <polygon points="0,-8 6,7 0,3 -6,7" class="f-bd" transform="translate(165,157) rotate(21)"/>
-        <path d="M120,150 L120,120 A60,60 0 0 1 180,60 L270,60" class="s-me" marker-end="url(#ah-me)"/>
-        <polygon points="0,-8 6,7 0,3 -6,7" class="f-me" transform="translate(120,150)"/>
-        <circle cx="120" cy="128" r="9" class="f-ink"/><text x="120" y="132" text-anchor="middle" class="num">1</text>
-        <circle cx="146" cy="72" r="9" class="f-ink"/><text x="146" y="76" text-anchor="middle" class="num">2</text>
-        <circle cx="250" cy="60" r="9" class="f-ink"/><text x="250" y="64" text-anchor="middle" class="num">3</text>
-        <circle cx="104" cy="112" r="2.5" class="f-sand"/><circle cx="98" cy="98" r="2.5" class="f-sand"/><circle cx="112" cy="90" r="2.5" class="f-sand"/>
-        <text x="92" y="84" text-anchor="end" class="t-mu">flares</text>
-        <text x="224" y="26" class="t-bd">overshoots</text>
-      </svg><figcaption>Top view. Turning into the attacker makes the angle too sharp for them to follow, and they cross in front of your 3-9 line.</figcaption></figure>
-      <ol><li>Roll toward the side the attacker is on and pull as hard as you can. Tap <kbd>F</kbd> a few times.</li><li>Keep pulling. You're trading speed for angle on purpose.</li><li>When they flash past, reverse your roll and turn after them. Now you're the one behind.</li></ol>
-    </article>
-
-    <article class="move">
-      <h3>Scissors</h3>
-      <p class="when">After an overshoot you're side by side, both slow, both turning into each other.</p>
-      <figure><svg viewBox="0 0 360 200" role="img" aria-label="Top view: two jets weave across each other's paths; the slower one falls behind">
-        <path d="M30,80 C80,40 110,150 165,110 C205,82 235,150 300,118" class="s-bd" marker-end="url(#ah-bd)"/>
-        <path d="M30,140 C70,170 120,60 160,112 C190,150 215,84 262,96" class="s-me" marker-end="url(#ah-me)"/>
-        <text x="30" y="66" class="t-bd">Bandit</text><text x="30" y="166" class="t-me">You</text>
-        <text x="330" y="150" text-anchor="end" class="t-mu">less forward travel = behind</text>
-      </svg><figcaption>Top view. Each reversal is a race to go forward more slowly than the other jet.</figcaption></figure>
-      <ol><li>Throttle back, airbrake out, and turn toward the bandit.</li><li>Each time you cross its path, reverse your roll and pull back toward it.</li><li>The moment it drifts ahead of your wing line, stop weaving and point at its tail.</li></ol>
-    </article>
-
-    <article class="move">
-      <h3>Immelmann and Split-S</h3>
-      <p class="when">You need to reverse direction fast, right after a head-on pass or to escape.</p>
-      <figure><svg viewBox="0 0 360 200" role="img" aria-label="Side view: Immelmann is a half loop up, Split-S is a half loop down">
-        <path d="M20,165 L90,165 A45,45 0 0 0 90,75 L30,75" class="s-me" marker-end="url(#ah-me)"/>
-        <path d="M200,75 L260,75 A45,45 0 0 1 260,165 L200,165" class="s-me" marker-end="url(#ah-me)"/>
-        <text x="80" y="190" text-anchor="middle">Immelmann</text><text x="80" y="58" text-anchor="middle" class="t-mu">exit higher, slower</text>
-        <text x="240" y="58" text-anchor="middle">Split-S</text><text x="240" y="190" text-anchor="middle" class="t-mu">exit lower, faster</text>
-      </svg><figcaption>Side view. Both are half loops with a half roll to get upright again.</figcaption></figure>
-      <ol><li><strong>Immelmann</strong> (you're fast, 450+): burner, pull straight up and over, then roll upright at the top.</li><li><strong>Split-S</strong> (you're slow and high): roll upside down, throttle back, pull through to level.</li><li>Never Split-S below about 8,000 ft or above 450 kt. The loop down is big.</li></ol>
-    </article>
-
-    <article class="move">
-      <h3>The merge</h3>
-      <p class="when">You and the bandit pass head-on. Whoever turns better in the next 15 seconds gets the tail.</p>
-      <figure><svg viewBox="0 0 360 200" role="img" aria-label="Top view: after a head-on pass both jets turn; yours is the smaller circle at corner speed">
-        <path d="M180,195 L180,110 A45,45 0 1 1 135,155" class="s-me" marker-end="url(#ah-me)"/>
-        <path d="M196,10 L196,95 A70,70 0 1 1 266,165" class="s-bd" marker-end="url(#ah-bd)"/>
-        <text x="120" y="92" text-anchor="end" class="t-me">you: 450 kt, tight</text>
-        <text x="345" y="60" text-anchor="end" class="t-bd">bandit: fast, wide</text>
-      </svg><figcaption>Top view. Same G, different speed. The slower jet at corner speed gets its nose around first.</figcaption></figure>
-      <ol><li>Arrive at 450 kt. Pass close, don't turn early.</li><li>As the bandit passes your wing, roll toward it and pull maximum G.</li><li>Halfway around, look for it. If your nose is coming onto it first, you won the turn. Go to lag and settle in.</li></ol>
-    </article>
+    <article class="move"><div class="clip" data-m="yoyo"></div><div class="txt"><h3>High yo-yo</h3><p class="when">You're behind a turning bandit but too fast. It's sliding across your windscreen and you're about to fly past. Going up slows you down and shrinks your circle without throwing energy away.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="lowyoyo"></div><div class="txt"><h3>Low yo-yo</h3><p class="when">You're behind but can't close. The bandit sits at the same range, turning as well as you. The dive adds speed and cuts across the inside of the bandit's circle.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="brk"></div><div class="txt"><h3>Break turn</h3><p class="when">A bandit or a missile is behind you. This is the first defensive move, always. Turning into the attacker makes the angle too sharp for them to follow, and they cross in front of your 3-9 line.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="sciss"></div><div class="txt"><h3>Scissors</h3><p class="when">After an overshoot you're side by side, both slow, both turning into each other. Each reversal is a race to go forward more slowly than the other jet.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="immel,splits"></div><div class="txt"><div class="seg pick" role="group" aria-label="Maneuver"></div><h3>Immelmann and Split-S</h3><p class="when">You need to reverse direction fast, right after a head-on pass or to escape. Both are half loops with a half roll to get upright again. Immelmann when you're fast (450+), Split-S when you're slow and high. Never Split-S below about 8,000 ft or above 450 kt. The loop down is big.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="merge"></div><div class="txt"><h3>The merge</h3><p class="when">You and the bandit pass head-on. Whoever turns better in the next 15 seconds gets the tail. Same G, different speed: the slower jet at corner speed gets its nose around first.</p><ol class="steps"></ol></div></article>
   </div>
 </section>
 
 <section id="weapons">
   <h2>Weapons</h2>
-  <p><strong>Missile (<kbd>Space</kbd>).</strong> A heat-seeker wants the bandit's tailpipe and a steady launch. Best shot: you're behind its 3-9 line, 1 to 3 km back, nose on it (pure pursuit), wings steady for a second. The screenshot range of 2.1 km is fine. What was missing is the angle. The game's own loading tips say the same: confirm the selected contact before firing, and keep moving during the attack.</p>
-  <p><strong>Gun (<kbd>Ctrl</kbd> or <kbd>Tab</kbd>).</strong> Inside about 600 m. Bullets take time to fly, so put your nose ahead of the bandit along its path (lead pursuit) and let it fly into the stream. Short bursts. Lead pursuit closes fast, so plan to pull up and away right after.</p>
+  <p><strong>Missile.</strong> A heat-seeker wants the bandit's tailpipe and a steady launch. Best shot: you're behind its 3-9 line, 1 to 3 km back, nose on it (pure pursuit), wings steady for a second. The screenshot range of 2.1 km is fine. What was missing is the angle.</p>
+  <p><strong>Gun.</strong> Inside about 600 m. Bullets take time to fly, so put your nose ahead of the bandit along its path (lead pursuit) and let it fly into the stream. Short bursts. Lead pursuit closes fast, so plan to pull up and away right after.</p>
   <p><strong>The sequence that works:</strong> lag to get behind and stable, pure for the missile, and only if that fails, lead for the gun.</p>
 </section>
 
@@ -376,7 +355,7 @@ tr:last-child td{border-bottom:0}
   <p>Work down the list in order. One drill per session is enough. Ticks are saved in this browser.</p>
   <ol class="drills" id="drillList">
     <li><input type="checkbox" id="d1"><label for="d1"><b>1. Speed gate</b><span>Fly level and hold 420 to 470 kt for a full minute using only throttle and airbrake. Then do it through gentle turns.</span></label></li>
-    <li><input type="checkbox" id="d2"><label for="d2"><b>2. Find your corner</b><span>Do a full 360° maximum-pull turn starting at 350, 450 and 550 kt. Count the seconds for each. The quickest one is your jet's corner speed in this game. Note the G you reach.</span></label></li>
+    <li><input type="checkbox" id="d2"><label for="d2"><b>2. Find your corner</b><span>Do a full 360° maximum-pull turn starting at 350, 450 and 550 kt. Count the seconds for each. The quickest one is your jet's corner speed in your sim. Note the G you reach.</span></label></li>
     <li><input type="checkbox" id="d3"><label for="d3"><b>3. Lift vector</b><span>With a bandit selected, roll until it sits at the top of your screen, stop rolling, pull. Repeat twenty times until roll-stop-pull is one motion.</span></label></li>
     <li><input type="checkbox" id="d4"><label for="d4"><b>4. Entry window</b><span>Against a turning bandit, keep your nose behind its tail and don't pull hard until you cross the path it flew. Goal: end up behind it with its tailpipe visible.</span></label></li>
     <li><input type="checkbox" id="d5"><label for="d5"><b>5. High yo-yo</b><span>Arrive on purpose at 550 kt behind a turning bandit. Fix the overshoot by going up, not with the airbrake.</span></label></li>
@@ -394,125 +373,373 @@ tr:last-child td{border-bottom:0}
     <li><a href="https://codex.uoaf.net/index.php/BFM_tactics">BFM tactics (UOAF Codex)</a>: turn circle entry, control zone, F-16 numbers</li>
     <li><a href="https://vnfa2.tripod.com/F-16_Part4.html">BFM Mechanics, F-16 handbook excerpt</a>: corner velocity, turn rate and radius</li>
     <li><a href="https://fa714ladder.tripod.com/bfm3.html">Introduction to Defensive BFM</a>: break turns and overshoots</li>
-    <li><a href="https://www.epicfuryiaf.com/">Epic Fury IAF</a>: the game this guide was written for</li>
   </ul>
+  <p class="note">The 3D clips are drawn from the maneuver descriptions above. Speed, altitude and G in the readouts are illustrative numbers that follow the text, not a flight model.</p>
 </section>
-</div>
 
+<div class="end"><a href="../">&larr; All stories</a></div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 (function(){
-const KT=0.5144,G=9.81,VS=150*KT,$=id=>document.getElementById(id);
+const $=id=>document.getElementById(id);
+const KT=0.5144,G=9.81,VS=150*KT;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function maxN(v){return Math.min(9,(v/VS)**2)}
 function maxRate(v){const n=maxN(v);return n<=1?0:G*Math.sqrt(n*n-1)/v}
 function wrap(a){while(a>Math.PI)a-=2*Math.PI;while(a<-Math.PI)a+=2*Math.PI;return a}
-function tok(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
 
-/* ---------- pursuit simulator ---------- */
-function simulate(mode,kt){
-  const vb=390*KT,wb=G*Math.sqrt(24)/vb,R=vb/wb,va=kt*KT,wa=maxRate(va);
-  const d={lead:0.45,pure:0,lag:-0.5}[mode],dt=1/30,F=[];
-  let th=0,a={x:R+400,y:-1900,h:Math.PI/2},over=false,zone=0,minR=1e9;
-  for(let t=0;t<32;t+=dt){
-    const b={x:R*Math.cos(th),y:R*Math.sin(th),h:th+Math.PI/2};
-    const aim={x:R*Math.cos(th+d),y:R*Math.sin(th+d)};
-    const rx=a.x-b.x,ry=a.y-b.y,rng=Math.hypot(rx,ry);
-    const fwd=rx*Math.cos(b.h)+ry*Math.sin(b.h);
-    const tail=Math.acos(Math.max(-1,Math.min(1,-fwd/rng)));
-    const ho=Math.abs(wrap(a.h-b.h));
-    let st='chase';
-    if(fwd>0&&rng<600){st='over';if(t>3)over=true}
-    else if(tail<35*Math.PI/180&&rng>250&&rng<1300&&ho<40*Math.PI/180){st='zone';zone+=dt}
-    minR=Math.min(minR,rng);
-    F.push({ax:a.x,ay:a.y,ah:a.h,bx:b.x,by:b.y,bh:b.h,mx:aim.x,my:aim.y,rng,ho,st,t});
-    const err=wrap(Math.atan2(aim.y-a.y,aim.x-a.x)-a.h);
-    a.h+=Math.max(-wa*dt,Math.min(wa*dt,err));
-    a.x+=va*Math.cos(a.h)*dt;a.y+=va*Math.sin(a.h)*dt;th+=wb*dt;
+/* ================= turn chart (SVG) ================= */
+(function(){
+  const W=520,H=300,L=46,Rt=14,T=20,B=44,x0=150,x1=700,y1=25;
+  const sx=k=>L+(k-x0)/(x1-x0)*(W-L-Rt),sy=d=>T+(1-d/y1)*(H-T-B);
+  const rateDeg=k=>maxRate(k*KT)*180/Math.PI;
+  function chart(k){
+    let g='<g class="grid">';
+    for(let d=0;d<=25;d+=5)g+='<line x1="'+L+'" x2="'+(W-Rt)+'" y1="'+sy(d)+'" y2="'+sy(d)+'"/><text class="t-mu" x="'+(L-8)+'" y="'+(sy(d)+4)+'" text-anchor="end">'+d+'</text>';
+    for(let v=200;v<=700;v+=100)g+='<text class="t-mu" x="'+sx(v)+'" y="'+(H-B+18)+'" text-anchor="middle">'+v+'</text>';
+    g+='</g><text class="t-mu" x="'+(W-Rt)+'" y="'+(H-8)+'" text-anchor="end">airspeed, knots</text><text class="t-mu" x="'+L+'" y="12">turn rate, degrees per second</text>';
+    let p='';for(let v=x0;v<=x1;v+=5)p+=(p?'L':'M')+sx(v).toFixed(1)+','+sy(rateDeg(v)).toFixed(1);
+    g+='<path d="'+p+'" class="s-me"/>';
+    g+='<line class="s-dim" x1="'+sx(450)+'" x2="'+sx(450)+'" y1="'+sy(rateDeg(450))+'" y2="'+sy(0)+'"/><text x="'+(sx(450)+6)+'" y="'+(sy(rateDeg(450))-8)+'">corner speed</text>';
+    g+='<circle class="f-bd" r="5" cx="'+sx(584)+'" cy="'+sy(rateDeg(584))+'"/><text class="t-bd" x="'+(sx(584)+8)+'" y="'+(sy(rateDeg(584))-8)+'">the screenshot</text>';
+    g+='<line stroke="currentColor" stroke-width="1.5" x1="'+sx(k)+'" x2="'+sx(k)+'" y1="'+T+'" y2="'+sy(0)+'"/><circle class="f-ink" r="5" cx="'+sx(k)+'" cy="'+sy(rateDeg(k))+'"/>';
+    $('chart').innerHTML=g;
   }
-  return {F,over,zone,minR,R};
-}
-const cv=$('sim'),cx=cv.getContext('2d');
-let mode='pure',kt=450,run=simulate(mode,kt),fi=0,raf=0;
-const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function verdict(){
-  const v=$('verdict'),m=Math.round(run.minR/10)*10;
-  if(run.over||run.minR<150){v.className='verdict bad';v.textContent='Overshoot. You got within '+m+' m and flew out past the bandit\'s wing line. Now it can turn onto your tail.'}
-  else if(run.zone>=6){v.className='verdict good';v.textContent='Stable behind the bandit for '+Math.round(run.zone)+' s, closest '+m+' m. This is the missile shot.'}
-  else{v.className='verdict';v.textContent='Never closed. At '+kt+' kt you are slower than the bandit. Get speed first, then lag.'}
-}
-function draw(){
-  const dpr=window.devicePixelRatio||1,w=cv.clientWidth,h=cv.clientHeight;
-  if(cv.width!==Math.round(w*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}
-  cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,w,h);
-  const s=Math.min(w,h)/3600,X=x=>w/2+(x-150)*s,Y=y=>h/2-(y+300)*s;
-  const cMe=tok('--me'),cBd=tok('--bandit'),cMu=tok('--muted'),cZone=tok('--zone'),cInk=tok('--ink'),cSand=tok('--sand');
-  const f=run.F[fi];
-  cx.setLineDash([5,5]);cx.strokeStyle=cMu;cx.lineWidth=1;cx.beginPath();cx.arc(X(0),Y(0),run.R*s,0,7);cx.stroke();cx.setLineDash([]);
-  // control zone wedge behind bandit
-  const back=-(f.bh)+Math.PI; // canvas angle pointing behind bandit (y flipped)
-  cx.fillStyle=cZone;cx.beginPath();cx.moveTo(X(f.bx),Y(f.by));cx.arc(X(f.bx),Y(f.by),1300*s,back-0.61,back+0.61);cx.closePath();cx.fill();
-  // 3-9 line
-  const px=-Math.sin(f.bh),py=Math.cos(f.bh);
-  cx.strokeStyle=cInk;cx.lineWidth=1.5;cx.beginPath();cx.moveTo(X(f.bx-px*420),Y(f.by-py*420));cx.lineTo(X(f.bx+px*420),Y(f.by+py*420));cx.stroke();
-  // trails
-  function trail(kx,ky,c){cx.strokeStyle=c;cx.lineWidth=2.5;cx.beginPath();for(let i=0;i<=fi;i+=2){const p=run.F[i];i?cx.lineTo(X(p[kx]),Y(p[ky])):cx.moveTo(X(p[kx]),Y(p[ky]))}cx.stroke()}
-  trail('bx','by',cBd);trail('ax','ay',cMe);
-  // aim point
-  cx.strokeStyle=cSand;cx.lineWidth=2;cx.beginPath();cx.moveTo(X(f.mx)-6,Y(f.my));cx.lineTo(X(f.mx)+6,Y(f.my));cx.moveTo(X(f.mx),Y(f.my)-6);cx.lineTo(X(f.mx),Y(f.my)+6);cx.stroke();
-  function jet(x,y,hd,c){cx.save();cx.translate(X(x),Y(y));cx.rotate(-hd+Math.PI/2);cx.fillStyle=c;cx.beginPath();cx.moveTo(0,-10);cx.lineTo(7,8);cx.lineTo(0,4);cx.lineTo(-7,8);cx.closePath();cx.fill();cx.restore()}
-  jet(f.bx,f.by,f.bh,cBd);jet(f.ax,f.ay,f.ah,cMe);
-  cx.font='600 12px "IBM Plex Mono",monospace';cx.fillStyle=cSand;cx.fillText('+ your aim point',10,18);
-  if(f.st==='zone'){cx.fillStyle=tok('--ok');cx.fillText('IN THE CONTROL ZONE',10,36)}
-  if(f.st==='over'){cx.fillStyle=cBd;cx.fillText('OVERSHOOT',10,36)}
-  $('rRng').textContent=Math.round(f.rng/10)*10+' m';$('rAo').textContent=Math.round(f.ho*180/Math.PI)+'°';$('rT').textContent=Math.floor(f.t)+' s';
-}
-function tick(){draw();if(fi<run.F.length-1){fi++;raf=requestAnimationFrame(tick)}}
-function start(){cancelAnimationFrame(raf);run=simulate(mode,kt);verdict();if(still){fi=run.F.length-1;draw()}else{fi=0;tick()}}
-function seg(id,attr,set){$(id).addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
-  [...$(id).children].forEach(x=>x.setAttribute('aria-pressed',x===b));set(b.dataset[attr]);start()})}
-seg('modeSeg','mode',v=>mode=v);seg('spdSeg','kt',v=>kt=+v);
-$('replay').addEventListener('click',start);
-addEventListener('resize',draw);
-
-/* ---------- turn chart ---------- */
-const W=520,H=300,L=46,Rt=14,T=20,B=44,x0=150,x1=700,y1=25;
-const sx=k=>L+(k-x0)/(x1-x0)*(W-L-Rt),sy=d=>T+(1-d/y1)*(H-T-B);
-const rateDeg=k=>maxRate(k*KT)*180/Math.PI;
-function chart(k){
-  let g='<g class="grid">';
-  for(let d=0;d<=25;d+=5)g+='<line x1="'+L+'" x2="'+(W-Rt)+'" y1="'+sy(d)+'" y2="'+sy(d)+'"/><text class="t-mu" x="'+(L-8)+'" y="'+(sy(d)+4)+'" text-anchor="end">'+d+'</text>';
-  for(let v=200;v<=700;v+=100)g+='<text class="t-mu" x="'+sx(v)+'" y="'+(H-B+18)+'" text-anchor="middle">'+v+'</text>';
-  g+='</g><text class="t-mu" x="'+(W-Rt)+'" y="'+(H-8)+'" text-anchor="end">airspeed, knots</text><text class="t-mu" x="'+L+'" y="12">turn rate, degrees per second</text>';
-  let p='';for(let v=x0;v<=x1;v+=5)p+=(p?'L':'M')+sx(v).toFixed(1)+','+sy(rateDeg(v)).toFixed(1);
-  g+='<path d="'+p+'" class="s-me"/>';
-  g+='<line class="s-dim" x1="'+sx(450)+'" x2="'+sx(450)+'" y1="'+sy(rateDeg(450))+'" y2="'+sy(0)+'"/><text x="'+(sx(450)+6)+'" y="'+(sy(rateDeg(450))-8)+'">corner speed</text>';
-  g+='<circle class="f-bd" r="5" cx="'+sx(584)+'" cy="'+sy(rateDeg(584))+'"/><text class="t-bd" x="'+(sx(584)+8)+'" y="'+(sy(rateDeg(584))-8)+'">the screenshot</text>';
-  g+='<line stroke="currentColor" stroke-width="1.5" x1="'+sx(k)+'" x2="'+sx(k)+'" y1="'+T+'" y2="'+sy(0)+'"/><circle class="f-ink" r="5" cx="'+sx(k)+'" cy="'+sy(rateDeg(k))+'"/>';
-  $('chart').innerHTML=g;
-}
-function circ(r){
-  const s=0.088,pr=Math.min(r*s,78),big=r*s>78;
-  let g='<circle cx="85" cy="85" r="'+pr.toFixed(1)+'" class="s-me"'+(big?' stroke-dasharray="4 4"':'')+'/>';
-  g+='<text class="t-me" x="85" y="89" text-anchor="middle">your turn circle</text>';
-  g+='<line stroke="currentColor" stroke-width="3" x1="180" x2="180" y1="'+(160-2100*s).toFixed(1)+'" y2="160"/><text x="190" y="'+(164-1050*s).toFixed(1)+'">2.1 km</text>';
-  $('circ').innerHTML=g;
-}
-function upd(){
-  const k=+$('spd').value,v=k*KT,w=maxRate(v),r=v/w;
-  $('spdV').textContent=k;$('oRate').textContent=(w*180/Math.PI).toFixed(1)+'°/s';
-  $('oRad').textContent=Math.round(r/10)*10+' m';$('oT').textContent=(Math.PI/w).toFixed(1)+' s';
-  chart(k);circ(r);
-}
-$('spd').addEventListener('input',upd);
-
-/* ---------- drills ---------- */
-let done={};try{done=JSON.parse(localStorage.getItem('drills')||'{}')}catch(e){}
-document.querySelectorAll('#drillList input').forEach(c=>{c.checked=!!done[c.id];
-  c.addEventListener('change',()=>{done[c.id]=c.checked;try{localStorage.setItem('drills',JSON.stringify(done))}catch(e){}})});
-
-upd();start();
+  function circ(r){
+    const s=0.088,pr=Math.min(r*s,78),big=r*s>78;
+    let g='<circle cx="85" cy="85" r="'+pr.toFixed(1)+'" class="s-me"'+(big?' stroke-dasharray="4 4"':'')+'/>';
+    g+='<text class="t-me" x="85" y="89" text-anchor="middle">your turn circle</text>';
+    g+='<line stroke="currentColor" stroke-width="3" x1="180" x2="180" y1="'+(160-2100*s).toFixed(1)+'" y2="160"/><text x="190" y="'+(164-1050*s).toFixed(1)+'">2.1 km</text>';
+    $('circ').innerHTML=g;
+  }
+  function upd(){
+    const k=+$('spd').value,v=k*KT,w=maxRate(v),r=v/w;
+    $('spdV').textContent=k;$('oRate').textContent=(w*180/Math.PI).toFixed(1)+'°/s';
+    $('oRad').textContent=Math.round(r/10)*10+' m';$('oT').textContent=(Math.PI/w).toFixed(1)+' s';
+    chart(k);circ(r);
+  }
+  $('spd').addEventListener('input',upd);upd();
 })();
-</script>
 
+/* ================= drills ================= */
+(function(){
+  let done={};try{done=JSON.parse(localStorage.getItem('drills')||'{}')}catch(e){}
+  document.querySelectorAll('#drillList input').forEach(c=>{c.checked=!!done[c.id];
+    c.addEventListener('change',()=>{done[c.id]=c.checked;try{localStorage.setItem('drills',JSON.stringify(done))}catch(e){}})});
+})();
+
+/* ================= 3D ================= */
+if(!window.THREE){document.querySelectorAll('.stage').forEach(s=>s.insertAdjacentHTML('beforeend','<p class="nogl">The 3D clip could not load in this browser.</p>'));return}
+const T=THREE,V=(x,y,z)=>new T.Vector3(x,y,z);
+const P={fog:0x9cc9ea,fogNF:[130,420],ground:0x2a6fa6,grid:0x9ccbe6,gridOp:.2,hemi:[0xffffff,0x4f86b5,.95],sun:.9,me:0x1556b0,bd:0xd23a24,body:0xb3bec6,under:0xe3e9ed,trailOp:.36,edgeMix:.8,shadow:.22,drop:0xffffff,cloud:[0xffffff,.5]};
+const JET=1.3,WING=3.05*JET;
+
+/* ---------- jet model: single-engine fighter, nose toward +z ---------- */
+function loft(secs,seg,n){
+  const pos=[],idx=[],e=2/n;
+  secs.forEach(q=>{for(let j=0;j<seg;j++){const a=j/seg*6.28318,c=Math.cos(a),sn=Math.sin(a);
+    pos.push(q[1]*Math.sign(c)*Math.pow(Math.abs(c),e),q[3]+q[2]*Math.sign(sn)*Math.pow(Math.abs(sn),e),q[0])}});
+  for(let i=0;i<secs.length-1;i++)for(let j=0;j<seg;j++){const a=i*seg+j,b=i*seg+(j+1)%seg,c=a+seg,d=b+seg;idx.push(a,c,b,b,c,d)}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();return g;
+}
+function slab(pts,d){const sh=new T.Shape();pts.forEach((q,i)=>i?sh.lineTo(q[0],q[1]):sh.moveTo(q[0],q[1]));
+  return new T.ExtrudeGeometry(sh,{depth:d,steps:1,bevelEnabled:true,bevelThickness:.012,bevelSize:.03,bevelSegments:1})}
+const GEO=(()=>{
+  const nose=[[4.75,.015,.015,-.04],[4.45,.09,.09,-.03],[3.9,.2,.19,-.01],[3.3,.3,.29,.02]];
+  const fus=[[3.3,.3,.29,.02],[2.6,.42,.42,.05],[1.8,.55,.5,.05],[.8,.66,.55,.02],[-.4,.7,.56,0],[-1.6,.66,.54,0],[-2.8,.56,.5,.02],[-3.7,.47,.46,.03],[-4.4,.43,.43,.03]];
+  const W=[[0,2.95],[.42,2.7],[.78,1.1],[3.05,-.95],[3.05,-1.7],[.5,-1.95],[-.5,-1.95],[-3.05,-1.7],[-3.05,-.95],[-.78,1.1],[-.42,2.7]];
+  const St=[[0,-2.6],[.5,-2.6],[1.85,-3.6],[1.85,-4.05],[.5,-4.0],[-.5,-4.0],[-1.85,-4.05],[-1.85,-3.6],[-.5,-2.6]];
+  return {nose:loft(nose,20,2.1),fus:loft(fus,20,2.5),intake:loft([[2.15,.3,.17,-.5],[1.3,.37,.21,-.55],[-.2,.36,.17,-.5],[-1.4,.2,.04,-.46]],16,2.6),
+    lip:new T.CircleGeometry(1,16),wing:slab(W,.045).rotateX(Math.PI/2),stab:slab(St,.04).rotateX(Math.PI/2),
+    fin:slab([[-1.4,.4],[-3.25,2.6],[-4.0,2.6],[-3.95,.4]],.07).rotateY(-Math.PI/2).translate(.035,0,0),
+    can:new T.SphereGeometry(1,22,14),msl:new T.CylinderGeometry(.065,.065,2.2,8).rotateX(Math.PI/2),mslTip:new T.ConeGeometry(.065,.35,8).rotateX(Math.PI/2),
+    noz:new T.CylinderGeometry(.43,.34,.5,18,1,true).rotateX(Math.PI/2).translate(0,.03,-4.62),glow:new T.CircleGeometry(.31,16),
+    f1:new T.ConeGeometry(.3,3.2,14,1,true).rotateX(-Math.PI/2).translate(0,0,-1.6),f2:new T.ConeGeometry(.17,1.9,12,1,true).rotateX(-Math.PI/2).translate(0,0,-.95)};
+})();
+function makeJet(col){
+  const g=new T.Group(),ph=o=>new T.MeshPhongMaterial(Object.assign({shininess:38,specular:0x333b40},o)),c=new T.Color(col);
+  const m={body:ph({color:new T.Color(P.body).lerp(c,.28)}),radome:ph({color:0x3d474e,shininess:20}),top:ph({color:c}),bot:ph({color:new T.Color(P.under).lerp(c,.38)}),
+    can:ph({color:0x0d1a22,shininess:160,specular:0xffffff,transparent:true,opacity:.93}),dark:ph({color:0x15191c,side:T.DoubleSide,shininess:8}),msl:ph({color:0xe9edf0}),
+    glow:new T.MeshBasicMaterial({color:0xffb347}),
+    f1:new T.MeshBasicMaterial({color:0xff7a2e,transparent:true,opacity:.5,blending:T.AdditiveBlending,depthWrite:false,side:T.DoubleSide}),
+    f2:new T.MeshBasicMaterial({color:0xd7ecff,transparent:true,opacity:.85,blending:T.AdditiveBlending,depthWrite:false,side:T.DoubleSide})};
+  const add=(geo,mat)=>{const me=new T.Mesh(geo,mat);g.add(me);return me};
+  add(GEO.nose,m.radome);add(GEO.fus,m.body);add(GEO.intake,m.body);
+  const lip=add(GEO.lip,m.dark);lip.scale.set(.27,.14,1);lip.position.set(0,-.5,2.16);
+  add(GEO.wing,m.top).position.y=.06;add(GEO.wing,m.bot).position.y=0;
+  add(GEO.stab,m.top).position.y=.07;add(GEO.stab,m.bot).position.y=.02;
+  add(GEO.fin,m.top);
+  const can=add(GEO.can,m.can);can.scale.set(.31,.37,1.3);can.position.set(0,.4,2.05);
+  [-1,1].forEach(sd=>{add(GEO.msl,m.msl).position.set(sd*3.13,.02,-1.25);add(GEO.mslTip,m.msl).position.set(sd*3.13,.02,.02)});
+  add(GEO.noz,m.dark);const gl=add(GEO.glow,m.glow);gl.rotation.y=Math.PI;gl.position.set(0,.03,-4.7);
+  const fl=new T.Group();fl.position.set(0,.03,-4.82);g.add(fl);fl.add(new T.Mesh(GEO.f1,m.f1),new T.Mesh(GEO.f2,m.f2));
+  g.scale.setScalar(JET);
+  g.userData.burn=v=>{fl.scale.set(.8+.3*v,.8+.3*v,Math.max(.05,v))};
+  return g;
+}
+
+/* ---------- paths ---------- */
+function keyed(keys){return t=>{let i=0;while(i<keys.length-2&&t>keys[i+1][0])i++;
+  const k0=keys[Math.max(0,i-1)],k1=keys[i],k2=keys[i+1],k3=keys[Math.min(keys.length-1,i+2)],s=clamp((t-k1[0])/(k2[0]-k1[0]),0,1),o=[];
+  for(let j=1;j<k1.length;j++){const a=k0[j],b=k1[j],c=k2[j],d=k3[j];o.push(.5*(2*b+(-a+c)*s+(2*a-5*b+4*c-d)*s*s+(-a+3*b-3*c+d)*s*s*s))}return o}}
+function lin(keys){return t=>{let i=0;while(i<keys.length-2&&t>keys[i+1][0])i++;const a=keys[i],b=keys[i+1],s=clamp((t-a[0])/(b[0]-a[0]),0,1);return a.slice(1).map((v,j)=>v+(b[j+1]-v)*s)}}
+const N=360;
+function sample(fn,upFn,g){
+  const Pp=[],F=[],U=[],R=[];
+  for(let i=0;i<=N;i++)Pp.push(fn(i/N));
+  for(let i=0;i<=N;i++){F.push(Pp[Math.min(N,i+1)].clone().sub(Pp[Math.max(0,i-1)]).normalize());
+    if(upFn)U.push(upFn(i/N));else{const k=8,a=clamp(i,k,N-k),h=k/N;U.push(Pp[a+k].clone().add(Pp[a-k]).addScaledVector(Pp[a],-2).multiplyScalar(1/(h*h)).add(V(0,g,0)))}}
+  if(!upFn)for(let pass=0;pass<3;pass++){const S=U.map((_,i)=>{const s=V(0,0,0);let n=0;for(let j=-6;j<=6;j++){const q=U[i+j];if(q){s.add(q);n++}}return s.multiplyScalar(1/n)});S.forEach((s,i)=>U[i]=s)}
+  for(let i=0;i<=N;i++){const r=U[i].clone().cross(F[i]).normalize();R.push(r);U[i]=F[i].clone().cross(r).normalize()}
+  return {P:Pp,F,U,R};
+}
+const polar=k=>{const f=keyed(k);return t=>{const [th,r,y]=f(t);return V(r*Math.cos(th),y,r*Math.sin(th))}};
+const xyz=k=>{const f=keyed(k);return t=>{const [x,y,z]=f(t);return V(x,y,z)}};
+function halfLoop(dir){ // dir 1 = Immelmann (up), -1 = Split-S (down)
+  const L1=30,Rr=13,L3=30,arc=Math.PI*Rr,tot=L1+arc+L3,x0=-34,y0=dir>0?8:34;
+  const seg=t=>{const s=t*tot;if(s<L1)return [0,s];if(s<L1+arc)return [1,(s-L1)/Rr];return [2,s-L1-arc]};
+  if(dir>0)return {who:'me',
+    fn:t=>{const [k,v]=seg(t);if(k===0)return V(x0+v,y0,0);if(k===1)return V(x0+L1+Rr*Math.sin(v),y0+Rr*(1-Math.cos(v)),0);return V(x0+L1-v,y0+2*Rr,0)},
+    up:t=>{const [k,v]=seg(t);if(k===0)return V(0,1,0);if(k===1)return V(-Math.sin(v),Math.cos(v),0);const ro=Math.PI*clamp((v-3)/(L3-12),0,1),e=(1-Math.cos(ro))/2*Math.PI;return V(0,-Math.cos(e),Math.sin(e))}};
+  return {who:'me',
+    fn:t=>{const [k,v]=seg(t);if(k===0)return V(x0+v,y0,0);if(k===1)return V(x0+L1+Rr*Math.sin(v),y0-Rr*(1-Math.cos(v)),0);return V(x0+L1-v,y0-2*Rr,0)},
+    up:t=>{const [k,v]=seg(t);if(k===0){const ro=Math.PI*clamp((v-8)/(L1-12),0,1),e=(1-Math.cos(ro))/2*Math.PI;return V(0,Math.cos(e),Math.sin(e))}if(k===1)return V(-Math.sin(v),-Math.cos(v),0);return V(0,1,0)}};
+}
+const MV={
+  yoyo:{name:'High yo-yo',dur:10,g:45,alt:y=>6600+y*250,burn:{me:.3,bd:.65},
+    steps:['Ease the roll so your wings are about halfway to level.','Pull. The nose goes up and outside the turn, and speed drops.','As the bandit passes below your nose, roll back toward it and pull down onto its tail.'],at:[0,.24,.56],
+    read:lin([[0,550,2],[.2,535,4.5],[.5,440,3],[.75,450,6],[1,460,5]]),
+    cam:{t:[6,16,8],r:78,h:24,a0:.15,sw:1.3},
+    jets:[{who:'bd',fn:t=>{const th=-.5+2.5*t;return V(30*Math.cos(th),12,30*Math.sin(th))}},
+          {who:'me',fn:polar([[0,-1.3,31,12],[.2,-.55,33.5,13.5],[.38,.05,37,21],[.54,.55,37.5,27],[.7,1.0,35,24.5],[.85,1.35,32,18],[1,1.62,30,12.6]])}]},
+  lowyoyo:{name:'Low yo-yo',dur:10,g:45,alt:y=>6600+y*250,burn:{me:.8,bd:.6},
+    steps:['Roll a little past the bandit so your nose points below and ahead of it (lead).','Pull. You dive across the inside of the turn and gain speed.','Roll back, pull up to the bandit. Don\'t hold the dive long or you\'ll overshoot.'],at:[0,.28,.66],
+    read:lin([[0,420,4],[.3,470,3],[.55,500,4],[.8,470,6.5],[1,455,5]]),
+    cam:{t:[4,12,8],r:78,h:30,a0:.15,sw:1.3},
+    jets:[{who:'bd',fn:t=>{const th=-.4+2.5*t;return V(30*Math.cos(th),16,30*Math.sin(th))}},
+          {who:'me',fn:polar([[0,-1.3,31,16],[.18,-.75,30,14],[.35,-.25,26.5,9.5],[.52,.35,24,7],[.7,1.0,26,10],[.86,1.4,28.5,14],[1,1.68,29.6,15.6]])}]},
+  brk:{name:'Break turn',dur:10,g:45,alt:y=>7000+y*250,burn:{me:.5,bd:.9},flares:true,
+    steps:['Roll toward the side the attacker is on and pull as hard as you can. Drop a few flares.','Keep pulling. You\'re trading speed for angle on purpose.','When they flash past, reverse your roll and turn after them. Now you\'re the one behind.'],at:[0,.3,.6],
+    read:lin([[0,450,1],[.2,430,8],[.45,360,8],[.62,330,4],[1,340,6]]),
+    cam:{t:[14,14,-2],r:90,h:40,a0:-1.35,sw:.75},
+    jets:[{who:'bd',fn:xyz([[0,14,14,-95],[.2,10,14,-60],[.36,6,14,-30],[.5,4,14,-5],[.64,6,14,18],[.8,14,14,38],[1,30,14,55]])},
+          {who:'me',fn:xyz([[0,0,14,-45],[.18,0,14,-24],[.3,2,14,-10],[.42,9,14,0],[.54,19,14,4],[.64,28,14,3],[.74,33,14,9],[.86,32,14,22],[1,28,14,40]])}]},
+  sciss:{name:'Scissors',dur:11,g:260,alt:y=>7000+y*250,burn:{me:.1,bd:.2},
+    steps:['Throttle back, airbrake out, and turn toward the bandit.','Each time you cross its path, reverse your roll and pull back toward it.','The moment it drifts ahead of your wing line, stop weaving and point at its tail.'],at:[0,.3,.72],
+    read:lin([[0,330,3],[.5,270,4],[1,240,3.5]]),
+    cam:{t:[0,14,34],r:72,h:32,a0:-1.35,sw:.35},
+    jets:[{who:'bd',fn:t=>V(9*Math.cos(2*Math.PI*1.5*t),14,-30+86*t)},
+          {who:'me',fn:t=>V(-9*Math.cos(2*Math.PI*1.5*t),14,-30+66*t)}]},
+  immel:{name:'Immelmann',dur:8,g:45,alt:y=>6000+y*300,burn:{me:1},
+    steps:['Arrive fast, 450 knots or more. Burner on.','Pull straight up and over the top. Speed turns into height.','You are upside down and pointing the other way. Roll upright.'],at:[0,.27,.7],
+    read:lin([[0,480,1],[.27,475,5],[.5,380,5],[.7,300,2.5],[1,320,1]]),
+    cam:{t:[-8,29,0],r:74,h:-2,a0:1.15,sw:.7},jets:[halfLoop(1)]},
+  splits:{name:'Split-S',dur:8,g:45,alt:y=>6000+y*300,burn:{me:.1},
+    steps:['You are slow and high. Throttle back.','Roll upside down.','Pull through the bottom half of a loop and level off, much faster, pointing the other way.'],at:[0,.1,.3],
+    read:lin([[0,280,1],[.3,290,1],[.5,360,5],[.7,440,6],[1,470,2]]),
+    cam:{t:[-8,20,0],r:74,h:2,a0:1.15,sw:.7},jets:[halfLoop(-1)]},
+  merge:{name:'The merge',dur:10,g:45,alt:y=>7000+y*250,burn:{me:.7,bd:.5},
+    steps:['Arrive at 450 kt. Pass close, don\'t turn early.','As the bandit passes your wing, roll toward it and pull maximum G.','Halfway around, look for it. If your nose is coming onto it first, you won the turn. Go to lag and settle in.'],at:[0,.3,.62],
+    read:lin([[0,450,1],[.3,450,2],[.4,440,9],[.7,410,8],[1,400,7]]),
+    cam:{t:[2,14,0],r:92,h:48,a0:.45,sw:.6},
+    jets:[{who:'bd',fn:t=>{if(t<.3)return V(-4,14,45-150*t);const ps=(t-.3)/.7*Math.PI*.95;return V(18-22*Math.cos(ps),14,-5-22*Math.sin(ps))}},
+          {who:'me',fn:t=>{if(t<.3)return V(4,14,-40+150*t);const ps=(t-.3)/.7*Math.PI*1.25;return V(-9+13*Math.cos(ps),14,5+13*Math.sin(ps))}}]}
+};
+
+/* ---------- stage: scene + lazily created renderer ---------- */
+const stages=[];
+function Stage(canvas){
+  const S=new T.Scene(),cam=new T.PerspectiveCamera(36,1,1,1200);
+  const amb=new T.HemisphereLight(P.hemi[0],P.hemi[1],P.hemi[2]),sun=new T.DirectionalLight(0xffffff,P.sun);sun.position.set(50,90,20);S.add(amb,sun);
+  const ground=new T.Mesh(new T.PlaneGeometry(2400,2400).rotateX(-Math.PI/2),new T.MeshBasicMaterial({color:P.ground}));ground.position.y=-.1;S.add(ground);
+  const grid=new T.GridHelper(720,72,P.grid,P.grid);grid.material.transparent=true;grid.material.opacity=P.gridOp;grid.renderOrder=1;S.add(grid);
+  S.fog=new T.Fog(P.fog,P.fogNF[0],P.fogNF[1]);
+  const cv=document.createElement('canvas');cv.width=cv.height=128;const c2=cv.getContext('2d'),gr=c2.createRadialGradient(64,64,4,64,64,62);
+  gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.5,'rgba(255,255,255,.4)');gr.addColorStop(1,'rgba(255,255,255,0)');c2.fillStyle=gr;c2.fillRect(0,0,128,128);
+  const ctex=new T.CanvasTexture(cv),cmat=new T.SpriteMaterial({map:ctex,transparent:true,depthWrite:false,color:P.cloud[0],opacity:P.cloud[1]}),clouds=new T.Group();let seed=11;const rnd=()=>(seed=seed*16807%2147483647)/2147483647;
+  for(let i=0;i<18;i++){const sp=new T.Sprite(cmat),a=rnd()*6.283,d=50+rnd()*200,wd=50+rnd()*80;sp.position.set(Math.cos(a)*d,1.5+rnd()*3,Math.sin(a)*d);sp.scale.set(wd,wd*.2,1);clouds.add(sp)}
+  S.add(clouds);
+  let w=0,h=0,R=null;
+  const st={S,cam,live:false,dirty:true,ctex,get aspect(){return w/h||1},get w(){return w},get h(){return h},
+    show(){if(!R){R=new T.WebGLRenderer({canvas,antialias:true,alpha:true});R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));w=h=0;st.dirty=true}},
+    hide(){if(R){R.dispose();R.forceContextLoss();R=null}},
+    size(){const cw=canvas.clientWidth,ch=canvas.clientHeight;if(R&&cw&&ch&&(cw!==w||ch!==h)){w=cw;h=ch;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();st.dirty=true}},
+    draw(){if(R){R.render(S,cam);st.dirty=false}}};
+  new IntersectionObserver(e=>{st.live=e[0].isIntersecting;if(st.live)st.show();else st.hide()},{rootMargin:'160px'}).observe(canvas);
+  stages.push(st);return st;
+}
+function ribbon(Pts,Rs,wd){
+  const n=Pts.length,pos=new Float32Array(n*6),idx=[],L=[[],[]];
+  for(let i=0;i<n;i++){const a=Pts[i].clone().addScaledVector(Rs[i],wd),b=Pts[i].clone().addScaledVector(Rs[i],-wd);L[0].push(a);L[1].push(b);pos.set([a.x,a.y,a.z,b.x,b.y,b.z],i*6);if(i<n-1){const k=i*2;idx.push(k,k+1,k+2,k+1,k+3,k+2)}}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(pos,3));g.setIndex(idx);
+  const grp=new T.Group(),sheet=new T.Mesh(g,new T.MeshBasicMaterial({transparent:true,side:T.DoubleSide,depthWrite:false}));sheet.renderOrder=3;grp.add(sheet);
+  const lm=new T.LineBasicMaterial({transparent:true,opacity:.95}),lines=L.map(q=>{const l=new T.Line(new T.BufferGeometry().setFromPoints(q),lm);l.renderOrder=4;grp.add(l);return l});
+  grp.userData.paint=(c,k)=>{sheet.material.color.set(c);sheet.material.opacity=P.trailOp*(k||1);lm.color.set(c).lerp(new T.Color(0xffffff),P.edgeMix)};
+  grp.userData.range=i=>{sheet.geometry.setDrawRange(0,i*6);lines.forEach(l=>l.geometry.setDrawRange(0,i+1))};
+  return grp;
+}
+function track(Pts,c){const g=new T.BufferGeometry().setFromPoints(Pts.map(p=>V(p.x,.05,p.z)));return new T.Line(g,new T.LineBasicMaterial({color:c,transparent:true,opacity:.45}))}
+function dropLine(){const g=new T.BufferGeometry().setFromPoints([V(0,0,0),V(0,0,0)]);return new T.Line(g,new T.LineBasicMaterial({color:P.drop,transparent:true,opacity:.55}))}
+function shadow(){return new T.Mesh(new T.CircleGeometry(3.6,20).rotateX(-Math.PI/2),new T.MeshBasicMaterial({color:0x000000,transparent:true,opacity:P.shadow,depthWrite:false}))}
+const M4=new T.Matrix4(),tmp=V(0,0,0);
+function place(st,el,p,dy){tmp.copy(p).project(st.cam);el.style.transform='translate('+((tmp.x*.5+.5)*st.w+12).toFixed(1)+'px,'+((-tmp.y*.5+.5)*st.h+dy).toFixed(1)+'px)'}
+function fmtT(sec,dur){return '0:'+String(Math.floor(sec)).padStart(2,'0')+' / 0:'+String(dur).padStart(2,'0')}
+
+/* ---------- hero: endless lag chase ---------- */
+(function(){
+  const cv=$('cHero');if(!cv)return;const st=Stage(cv);
+  const Rr=30,alt=13,bank=1.25,up=V(-Math.sin(bank),Math.cos(bank),0),fw=V(0,0,1),rt=up.clone().cross(fw).normalize();
+  const basis=new T.Matrix4().makeBasis(rt,up,fw),pivots=[],jets=[];
+  [['bd',0],['me',-.62]].forEach(([who,ph])=>{
+    const c=who==='me'?P.me:P.bd,pv=new T.Group(),jet=makeJet(c);jet.position.set(Rr,alt,0);jet.quaternion.setFromRotationMatrix(basis);pv.add(jet);jets.push(jet);
+    const pts=[],rs=[];for(let i=0;i<=60;i++){const a=-1.7*(1-i/60);pts.push(V(Rr*Math.cos(a),alt,Rr*Math.sin(a)));rs.push(V(Math.cos(bank)*Math.cos(a),Math.sin(bank),Math.cos(bank)*Math.sin(a)))}
+    const rb=ribbon(pts,rs,WING);rb.userData.paint(c,.55);pv.add(rb,track(pts,c));
+    const drop=new T.Line(new T.BufferGeometry().setFromPoints([V(Rr,alt,0),V(Rr,0,0)]),new T.LineBasicMaterial({color:P.drop,transparent:true,opacity:.5}));pv.add(drop);
+    st.S.add(pv);pivots.push([pv,ph]);
+  });
+  const ring=new T.LineLoop(new T.BufferGeometry().setFromPoints(Array.from({length:96},(_,i)=>V(Rr*Math.cos(i/96*6.2832),alt,Rr*Math.sin(i/96*6.2832)))),new T.LineDashedMaterial({color:P.drop,dashSize:2,gapSize:2,transparent:true,opacity:.5}));
+  ring.computeLineDistances();st.S.add(ring);
+  let t0=0;
+  st.update=dt=>{
+    if(!reduce)t0+=dt;else if(!st.dirty)return;
+    const th=t0*.42;pivots.forEach(([pv,ph])=>pv.rotation.y=-(th+ph));jets.forEach(j=>j.userData.burn(.55+.25*Math.random()));
+    const wide=st.aspect>1.7,a=.9+t0*.05,r=(wide?92:98)*Math.max(1,1.35/st.aspect);
+    st.cam.position.set(r*Math.cos(a),30,r*Math.sin(a));st.cam.lookAt(0,9,0);
+    if(wide)st.cam.setViewOffset(st.w,st.h,-st.w*.2,0,st.w,st.h);else st.cam.clearViewOffset();
+    st.dirty=true;
+  };
+})();
+
+/* ---------- maneuver clips ---------- */
+function buildClip(root){
+  const keys=root.dataset.m.split(','),txt=root.closest('.move')||root.parentElement;
+  root.innerHTML='<figure class="stage"><canvas aria-label="3D animation of the maneuver"></canvas><div class="read" aria-hidden="true"><span>SPD KT<b class="rS"></b></span><span>ALT FT<b class="rA"></b></span><span>G<b class="rG"></b></span></div><span class="tag me">You</span><span class="tag bd">Bandit</span><span class="flag"></span></figure>'+
+    '<div class="ctl"><button type="button" class="pp">Pause</button><input type="range" min="0" max="1000" value="0" aria-label="Clip position"><span class="tm"></span></div>';
+  const q=s=>root.querySelector(s),steps=txt.querySelector('.steps'),pick=txt.querySelector('.pick');
+  const st=Stage(q('canvas'));let cur=null,u=reduce?.8:0,playing=!reduce,hold=0;
+  function setPlay(p){playing=p;q('.pp').textContent=p?'Pause':'Play'}
+  function load(key){
+    if(cur)cur.objs.forEach(o=>{st.S.remove(o);o.traverse(c=>{if(c.geometry&&!Object.values(GEO).includes(c.geometry))c.geometry.dispose()})});
+    const def=MV[key],objs=[],jets=[];
+    def.jets.forEach(j=>{const c=j.who==='me'?P.me:P.bd,s=sample(j.fn,j.up,def.g),jet=makeJet(c),rb=ribbon(s.P,s.R,WING),tr=track(s.P,c),drop=dropLine(),sh=shadow();
+      rb.userData.paint(c,.75);[jet,rb,tr,drop,sh].forEach(o=>{st.S.add(o);objs.push(o)});jets.push({s,jet,rb,tr,drop,sh,who:j.who,p:V(0,0,0)})});
+    let flares=null;
+    if(def.flares){const fm=new T.SpriteMaterial({map:st.ctex,color:0xffd166,transparent:true,depthWrite:false,blending:T.AdditiveBlending});flares=[];
+      const me=jets.find(j=>j.who==='me');for(let k=0;k<6;k++){const t=.3+k*.04,i=Math.round(t*N),sp=new T.Sprite(fm);sp.scale.set(5,5,1);sp.userData={t,p:me.s.P[i].clone()};st.S.add(sp);objs.push(sp);flares.push(sp)}}
+    cur={def,objs,jets,flares,key};
+    if(steps)steps.innerHTML=def.steps.map(s=>'<li>'+s+'</li>').join('');
+    q('.tag.bd').hidden=!def.jets.some(j=>j.who==='bd');
+    u=reduce?.8:0;hold=0;st.dirty=true;
+  }
+  function frame(){
+    u=clamp(u,0,1);const d=cur.def,f=u*N,i=Math.min(N-1,Math.floor(f)),fr=f-i;
+    cur.jets.forEach(j=>{const s=j.s,p=s.P[i].clone().lerp(s.P[i+1],fr);
+      j.jet.position.copy(p);M4.makeBasis(s.R[i],s.U[i],s.F[i]);j.jet.quaternion.setFromRotationMatrix(M4);
+      j.rb.userData.range(i);j.tr.geometry.setDrawRange(0,i+1);j.jet.userData.burn(((d.burn&&d.burn[j.who])||.5)*(.8+.3*Math.random()));
+      const a=j.drop.geometry.attributes.position;a.setXYZ(0,p.x,p.y,p.z);a.setXYZ(1,p.x,0,p.z);a.needsUpdate=true;j.sh.position.set(p.x,.06,p.z);j.p=p});
+    if(cur.flares)cur.flares.forEach(sp=>{const on=u>=sp.userData.t;sp.visible=on;if(on){const age=(u-sp.userData.t)*d.dur;sp.position.copy(sp.userData.p);sp.position.y-=age*2.2;sp.material.opacity=clamp(1.2-age*.3,0,1)}});
+    const c=d.cam,a=c.a0+c.sw*u,r=c.r*Math.max(1,1.5/st.aspect);
+    st.cam.position.set(c.t[0]+r*Math.cos(a),c.t[1]+c.h,c.t[2]+r*Math.sin(a));st.cam.lookAt(c.t[0],c.t[1],c.t[2]);st.cam.updateMatrixWorld();
+    cur.jets.forEach(j=>j.who==='me'?place(st,q('.tag.me'),j.p,cur.jets.length>1?10:-28):place(st,q('.tag.bd'),j.p,-30));
+    const me=cur.jets.find(j=>j.who==='me'),rd=d.read(u);
+    q('.rS').textContent=Math.round(rd[0]/5)*5;q('.rG').textContent=rd[1].toFixed(1);q('.rA').textContent=(Math.round(d.alt(me.p.y)/100)*100).toLocaleString('en-US');
+    let on=0;d.at.forEach((t,k)=>{if(u>=t)on=k});if(steps)[...steps.children].forEach((li,k)=>li.classList.toggle('on',k===on));
+    q('input').value=Math.round(u*1000);q('.tm').textContent=fmtT(u*d.dur,d.dur);
+  }
+  st.update=dt=>{if(playing){if(u>=1){hold+=dt;if(hold>1.6){u=0;hold=0}}else u=Math.min(1,u+dt/cur.def.dur);st.dirty=true}if(st.dirty)frame()};
+  q('.pp').addEventListener('click',()=>{if(!playing&&u>=1){u=0;hold=0}setPlay(!playing)});
+  q('input').addEventListener('input',e=>{u=e.target.value/1000;hold=0;st.dirty=true});
+  if(pick&&keys.length>1){pick.innerHTML=keys.map((k,i)=>'<button type="button" data-k="'+k+'" aria-pressed="'+(i?'false':'true')+'">'+MV[k].name+'</button>').join('');
+    pick.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...pick.children].forEach(x=>x.setAttribute('aria-pressed',x===b));load(b.dataset.k);if(!reduce)setPlay(true)})}
+  load(keys[0]);setPlay(playing);
+}
+document.querySelectorAll('.clip[data-m]').forEach(buildClip);
+
+/* ---------- pursuit simulator in 3D ---------- */
+(function(){
+  const cv=$('cSim');if(!cv)return;const st=Stage(cv),SC=1/25,ALT=14;
+  function simulate(mode,kt){
+    const vb=390*KT,wb=G*Math.sqrt(24)/vb,R=vb/wb,va=kt*KT,wa=maxRate(va);
+    const d={lead:0.45,pure:0,lag:-0.5}[mode],dt=1/30,F=[];
+    let th=0,a={x:R+400,y:-1900,h:Math.PI/2},over=false,zone=0,minR=1e9;
+    for(let t=0;t<32;t+=dt){
+      const b={x:R*Math.cos(th),y:R*Math.sin(th),h:th+Math.PI/2};
+      const aim={x:R*Math.cos(th+d),y:R*Math.sin(th+d)};
+      const rx=a.x-b.x,ry=a.y-b.y,rng=Math.hypot(rx,ry);
+      const fwd=rx*Math.cos(b.h)+ry*Math.sin(b.h);
+      const tail=Math.acos(Math.max(-1,Math.min(1,-fwd/rng)));
+      const ho=Math.abs(wrap(a.h-b.h));
+      let stt='chase';
+      if(fwd>0&&rng<600){stt='over';if(t>3)over=true}
+      else if(tail<35*Math.PI/180&&rng>250&&rng<1300&&ho<40*Math.PI/180){stt='zone';zone+=dt}
+      minR=Math.min(minR,rng);
+      const err=wrap(Math.atan2(aim.y-a.y,aim.x-a.x)-a.h),dh=Math.max(-wa*dt,Math.min(wa*dt,err));
+      F.push({ax:a.x,ay:a.y,ah:a.h,aw:dh/dt,bx:b.x,by:b.y,bh:b.h,mx:aim.x,my:aim.y,rng,ho,st:stt,t});
+      a.h+=dh;a.x+=va*Math.cos(a.h)*dt;a.y+=va*Math.sin(a.h)*dt;th+=wb*dt;
+    }
+    return {F,over,zone,minR,R,va,vb,wb};
+  }
+  function frames(run,kx,ky,kh,kw,v){ // 3D samples every 3rd frame
+    const Pp=[],Fw=[],U=[],Rr=[];
+    for(let i=0;i<run.F.length;i+=3){const f=run.F[i],h=f[kh],w=kw?f[kw]:run.wb,bank=Math.atan(v*w/G);
+      Pp.push(V(f[kx]*SC,ALT,f[ky]*SC));const fw=V(Math.cos(h),0,Math.sin(h)),left=V(-Math.sin(h),0,Math.cos(h));
+      const up=V(0,Math.cos(bank),0).addScaledVector(left,Math.sin(bank)),r=up.clone().cross(fw).normalize();Fw.push(fw);U.push(fw.clone().cross(r).normalize());Rr.push(r)}
+    return {P:Pp,F:Fw,U,R:Rr};
+  }
+  const me=makeJet(P.me),bd=makeJet(P.bd),pv=new T.Group();st.S.add(me,bd,pv);
+  const zoneSh=new T.Shape();zoneSh.absarc(0,0,10,Math.PI/2-.61,Math.PI/2+.61,false);zoneSh.absarc(0,0,52,Math.PI/2+.61,Math.PI/2-.61,true);
+  const zone=new T.Mesh(new T.ShapeGeometry(zoneSh,24).rotateX(-Math.PI/2),new T.MeshBasicMaterial({color:0x1c7a4c,transparent:true,opacity:.28,side:T.DoubleSide,depthWrite:false}));zone.renderOrder=2;
+  const l39=new T.Line(new T.BufferGeometry().setFromPoints([V(-17,0,0),V(17,0,0)]),new T.LineBasicMaterial({color:0x0c2340}));pv.add(zone,l39);
+  const aim=new T.Sprite(new T.SpriteMaterial({map:st.ctex,color:0xffc72c,transparent:true,depthWrite:false}));aim.scale.set(5,5,1);st.S.add(aim);
+  const sh1=shadow(),sh2=shadow(),d1=dropLine(),d2=dropLine();st.S.add(sh1,sh2,d1,d2);
+  let mode='pure',kt=450,run,A,B,rbA,rbB,trA,trB,u=reduce?.6:0,playing=!reduce,hold=0;
+  const q=s=>document.querySelector('#simPanel '+s);
+  function load(){
+    run=simulate(mode,kt);A=frames(run,'ax','ay','ah','aw',run.va);B=frames(run,'bx','by','bh',null,run.vb);
+    [rbA,rbB,trA,trB].forEach(o=>{if(o){st.S.remove(o);o.traverse(c=>{if(c.geometry)c.geometry.dispose()})}});
+    rbA=ribbon(A.P,A.R,WING);rbA.userData.paint(P.me,.75);rbB=ribbon(B.P,B.R,WING);rbB.userData.paint(P.bd,.75);trA=track(A.P,P.me);trB=track(B.P,P.bd);st.S.add(rbA,rbB,trA,trB);
+    const v=q('.verdict'),m=Math.round(run.minR/10)*10;
+    if(run.over||run.minR<150){v.className='verdict bad';v.textContent=(m<100?'Overshoot. You flew right through the bandit':'Overshoot. You got within '+m+' m')+' and out past its wing line. Now it can turn onto your tail.'}
+    else if(run.zone>=6){v.className='verdict good';v.textContent='Stable behind the bandit for '+Math.round(run.zone)+' s, closest '+m+' m. This is the missile shot.'}
+    else{v.className='verdict';v.textContent='Never closed. At '+kt+' kt you are slower than the bandit. Get speed first, then lag.'}
+    u=reduce?.6:0;hold=0;st.dirty=true;
+  }
+  function pose(jet,S,i,fr){const p=S.P[i].clone().lerp(S.P[Math.min(S.P.length-1,i+1)],fr);jet.position.copy(p);M4.makeBasis(S.R[i],S.U[i],S.F[i]);jet.quaternion.setFromRotationMatrix(M4);return p}
+  function frame(){
+    u=clamp(u,0,1);const n=A.P.length-1,f=u*n,i=Math.min(n-1,Math.floor(f)),fr=f-i,fi=Math.min(run.F.length-1,Math.round(u*(run.F.length-1))),F=run.F[fi];
+    const pa=pose(me,A,i,fr),pb=pose(bd,B,i,fr);rbA.userData.range(i);rbB.userData.range(i);trA.geometry.setDrawRange(0,i+1);trB.geometry.setDrawRange(0,i+1);
+    me.userData.burn((kt>500?.9:.5)*(.8+.3*Math.random()));bd.userData.burn(.6*(.8+.3*Math.random()));
+    pv.position.copy(pb);pv.rotation.y=Math.PI/2-F.bh;aim.position.set(F.mx*SC,ALT,F.my*SC);
+    [[sh1,d1,pa],[sh2,d2,pb]].forEach(([s,d,p])=>{s.position.set(p.x,.06,p.z);const a=d.geometry.attributes.position;a.setXYZ(0,p.x,p.y,p.z);a.setXYZ(1,p.x,0,p.z);a.needsUpdate=true});
+    const a=-1.05+.55*u,r=150*Math.max(1,1.5/st.aspect);st.cam.position.set(12+r*Math.cos(a),ALT+80,-22+r*Math.sin(a));st.cam.lookAt(12,ALT,-22);st.cam.updateMatrixWorld();
+    place(st,q('.tag.me'),pa,10);place(st,q('.tag.bd'),pb,-30);
+    const fl=q('.flag');fl.textContent=F.st==='zone'?'In the control zone':F.st==='over'?'Overshoot':'';fl.className='flag '+(F.st==='zone'?'good':F.st==='over'?'bad':'');
+    q('.rRng').textContent=Math.round(F.rng/10)*10+' m';q('.rAo').textContent=Math.round(F.ho*180/Math.PI)+'°';q('.tm').textContent=fmtT(F.t,32);q('input').value=Math.round(u*1000);
+  }
+  st.update=dt=>{if(playing){if(u>=1){hold+=dt;if(hold>2){u=0;hold=0}}else u=Math.min(1,u+dt/32);st.dirty=true}if(st.dirty)frame()};
+  function setPlay(p){playing=p;q('.pp').textContent=p?'Pause':'Play'}
+  function seg(id,attr,set){$(id).addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...$(id).children].forEach(x=>x.setAttribute('aria-pressed',x===b));set(b.dataset[attr]);load();if(!reduce)setPlay(true)})}
+  seg('modeSeg','mode',v=>mode=v);seg('spdSeg','kt',v=>kt=+v);
+  q('.pp').addEventListener('click',()=>{if(!playing&&u>=1){u=0;hold=0}setPlay(!playing)});
+  q('input').addEventListener('input',e=>{u=e.target.value/1000;hold=0;st.dirty=true});
+  load();setPlay(playing);
+})();
+
+/* ---------- one loop for every stage ---------- */
+let last=performance.now();
+function loop(now){
+  const dt=clamp((now-last)/1000,0,.05);last=now;
+  stages.forEach(st=>{if(!st.live)return;st.size();if(st.update)st.update(dt);if(st.dirty)st.draw()});
+  requestAnimationFrame(loop);
+}
+addEventListener('resize',()=>stages.forEach(st=>st.dirty=true));
+requestAnimationFrame(loop);
+})();
+
+</script>
 
 </body>
 </html>

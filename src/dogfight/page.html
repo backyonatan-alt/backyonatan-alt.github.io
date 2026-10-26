@@ -1,0 +1,363 @@
+<title>Dogfight Ground School</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;1,800&family=Barlow:wght@400;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a pilot's briefing over the sea. Full-bleed sky hero with a live 3D chase, then one reading column where every maneuver gets its own 3D clip. Blue = you, red = bandit everywhere. */
+:root{
+  color-scheme:light;
+  --bg:#f3f7fa; --surface:#ffffff; --ink:#0c2340; --muted:#4d6076; --line:#cfdbe6; --accent:#ffc72c; --accent-ink:#9a6700; --ok:#1c7a4c;
+  --me:#1556b0; --bandit:#c8321f;
+  --sky-top:#174f9e; --sky-hor:#9cc9ea; --scrim:rgba(16,62,128,.78); --stage-on:#ffffff; --stage-mut:#dcebf8;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--me)}
+:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-style:italic;font-weight:800;text-transform:uppercase;text-wrap:balance;margin:0;line-height:.98;letter-spacing:.005em}
+h2{font-size:clamp(34px,5.2vw,52px);border-top:3px solid var(--ink);padding-top:14px}
+h3{font-size:30px}
+p,ul,ol{margin:0;max-width:66ch}
+ul,ol{padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.eyebrow{font:600 12px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+.me{color:var(--me);font-weight:600}.bd{color:var(--bandit);font-weight:600}
+.note{font-size:14.5px;color:var(--muted)}
+.wrap{max-width:960px;margin-inline:auto;padding-inline:20px;padding-block:48px 80px;display:flex;flex-direction:column;gap:64px}
+section{display:flex;flex-direction:column;gap:18px;min-width:0}
+
+/* hero */
+.hero{display:grid;background:var(--sky-top);color:var(--stage-on)}
+.hero>*{grid-area:1/1;min-width:0}
+.hero-stage{height:clamp(420px,50vw,600px);background:linear-gradient(var(--sky-top),var(--sky-hor) 27%)}
+.hero-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--scrim) 0%,var(--scrim) 22%,transparent 58%);pointer-events:none}
+.hero-txt{z-index:2;align-self:center;display:flex;flex-direction:column;gap:18px;padding-inline:max(20px,calc((100vw - 1140px)/2));padding-block:36px;max-width:calc(max(20px,(100vw - 1140px)/2) + 580px);pointer-events:none}
+.hero-txt a,.hero-txt nav{pointer-events:auto}
+.back{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:inherit;text-decoration:none;border:1px solid currentColor;padding:8px 10px;align-self:flex-start;opacity:.9}
+.back:hover{background:var(--stage-on);color:var(--ink)}
+.hero .eyebrow{background:var(--accent);color:var(--ink);padding:6px 8px;align-self:flex-start}
+.hero h1{font-size:clamp(58px,9.2vw,128px);line-height:.9;text-shadow:0 2px 0 rgba(12,35,64,.25)}
+.lede{font-size:clamp(18px,1.9vw,22px);line-height:1.4;max-width:32ch!important}
+.hero nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.hero nav a{font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--stage-on);text-decoration:none;border:1px solid rgba(255,255,255,.5);padding:8px 9px;background:rgba(12,35,64,.35)}
+.hero nav a:hover,.hero nav a:focus-visible{border-color:#fff;background:rgba(12,35,64,.7)}
+.hero .cap{right:16px;left:auto;text-align:right;color:var(--ink)}
+@media (max-width:760px){
+  .hero>*{grid-area:auto}
+  .hero-txt{padding-block:24px 4px;max-width:none;order:-1}
+  .hero-stage{height:auto;aspect-ratio:4/3;max-width:100%}
+  .hero-stage::after{display:none}
+  .lede{max-width:40ch!important}
+}
+
+/* stages and clips */
+.stage{margin:0;position:relative;min-width:0;overflow:hidden;background:linear-gradient(var(--sky-top),var(--sky-hor) 14%)}
+.stage canvas{display:block;width:100%;height:100%;position:absolute;inset:0}
+.nogl{position:absolute;inset:0;display:grid;place-items:center;margin:0;padding:20px;text-align:center;color:var(--stage-on)}
+.cap{position:absolute;left:14px;bottom:12px;right:14px;font:600 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--stage-mut);pointer-events:none}
+.tag{position:absolute;left:0;top:0;font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 6px;pointer-events:none;white-space:nowrap;will-change:transform}
+.tag.me{background:var(--me);color:#fff}.tag.bd{background:var(--bandit);color:#fff}
+.read{position:absolute;top:12px;left:12px;display:flex;gap:6px;pointer-events:none;flex-wrap:wrap}
+.read span{font:600 11px/1 var(--mono);letter-spacing:.1em;color:#dcebf8;display:flex;flex-direction:column;gap:5px;padding:8px 10px;min-width:74px;background:rgba(12,35,64,.55)}
+.read b{font:600 18px/1 var(--mono);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:0}
+.flag{position:absolute;right:12px;top:12px;font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:8px 10px;pointer-events:none;color:#fff;background:rgba(12,35,64,.55)}
+.flag:empty{display:none}.flag.good{background:var(--ok)}.flag.bad{background:var(--bandit)}
+.ctl{display:flex;gap:12px;align-items:center;padding:10px 14px;border-top:1px solid var(--line);background:var(--surface)}
+.ctl button{font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--ink);background:var(--ink);color:#fff;padding:9px 12px;min-width:72px}
+.ctl input{flex:1;min-width:0;accent-color:var(--accent-ink)}
+.ctl span{font:600 12px/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.clip{display:flex;flex-direction:column;min-width:0}
+.clip .stage{aspect-ratio:16/10;max-width:100%}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:9px 10px;border:1px solid var(--ink);background:transparent;color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.lab{font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:s;max-width:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;font-size:15.5px;line-height:1.4;color:var(--muted);transition:color .2s}
+.steps li::before{content:counter(s);font:600 12px/26px var(--mono);width:26px;height:26px;text-align:center;border:1px solid var(--line);color:var(--muted)}
+.steps li.on{color:var(--ink);font-weight:600}
+.steps li.on::before{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* brief */
+.brief{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.brief h2{border-top:0;padding-top:0;font-size:clamp(30px,4.6vw,44px)}
+.brief .meta{font:600 12px/1.5 var(--mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--line);padding-top:10px;max-width:none}
+
+/* debrief tiles */
+.hud{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.hud div{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.hud b{font:600 24px/1 var(--mono);font-variant-numeric:tabular-nums}
+.hud span{font-size:13.5px;line-height:1.35;color:var(--muted)}
+.hud .bad b{color:var(--bandit)}
+
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.panel .split{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.panel .side{padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.panel .foot{padding:14px 18px;border-top:1px solid var(--line)}
+#simPanel .stage{aspect-ratio:16/10;max-width:100%}
+.readrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.readrow div{display:flex;flex-direction:column;gap:4px}
+.readrow b{font:600 20px/1 var(--mono);font-variant-numeric:tabular-nums}
+.verdict{font-weight:600;border-left:4px solid var(--muted);padding:6px 0 6px 12px;min-height:4.6em}
+.verdict.good{border-color:var(--ok)}.verdict.bad{border-color:var(--bandit)}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+@media (max-width:760px){
+  .panel .split{grid-template-columns:minmax(0,1fr)}
+  #simPanel .stage,.clip .stage{aspect-ratio:1/1}
+}
+
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+figure .scroll{overflow-x:auto}
+svg{max-width:100%;height:auto;display:block;color:var(--ink)}
+figcaption{font-size:14.5px;color:var(--muted);max-width:66ch}
+.s-me{stroke:var(--me);fill:none;stroke-width:2.5}
+.s-bd{stroke:var(--bandit);fill:none;stroke-width:2.5}
+.s-dim{stroke:var(--muted);fill:none;stroke-width:1.5;stroke-dasharray:5 5}
+.f-me{fill:var(--me)}.f-bd{fill:var(--bandit)}.f-ink{fill:currentColor}.f-mu{fill:var(--muted)}.f-sand{fill:var(--accent-ink)}
+svg text{font:500 12px var(--body);fill:currentColor}
+svg text.t-me{fill:var(--me);font-weight:600}svg text.t-bd{fill:var(--bandit);font-weight:600}svg text.t-mu{fill:var(--muted)}
+.grid line{stroke:var(--line);stroke-width:1}
+.chartbox{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start;padding:18px}
+@media (max-width:720px){.chartbox{grid-template-columns:minmax(0,1fr)}}
+.chartbox .side{padding:0}
+
+/* maneuvers */
+.moves{display:flex;flex-direction:column;gap:28px}
+.move{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.move .txt{padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.move .when{font-size:15.5px;color:var(--muted)}
+@media (max-width:760px){.move{grid-template-columns:minmax(0,1fr)}.move .txt{order:3}}
+
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.keys div{background:var(--surface);padding:12px 14px;font-size:15px;display:flex;flex-direction:column;gap:6px}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:560px;background:var(--surface);font-size:15.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font:600 12px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.drills{list-style:none;padding:0;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface);max-width:none}
+.drills li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:14px;border-bottom:1px solid var(--line)}
+.drills li:last-child{border-bottom:0}
+.drills input{width:20px;height:20px;margin-top:3px;accent-color:var(--ok)}
+.drills label b{display:block}
+.drills label span{font-size:15px;color:var(--muted)}
+.end{display:flex;justify-content:flex-start}
+.end a{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:2px solid var(--ink);padding:10px 16px}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<marker id="ah-me" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="f-me"/></marker>
+<marker id="ah-bd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="f-bd"/></marker>
+</defs></svg>
+
+<header class="hero">
+  <figure class="stage hero-stage">
+    <canvas id="cHero" aria-label="3D animation: a blue jet follows a red jet around a tight turn"></canvas>
+    <figcaption class="cap">Lag pursuit · live 3D</figcaption>
+  </figure>
+  <div class="hero-txt">
+    <a class="back" href="../">&larr; All stories</a>
+    <span class="eyebrow">Air combat, explained</span>
+    <h1>Dogfight Ground School</h1>
+    <p class="lede">You don't get on a tail by pointing at the other jet. You get there by flying to where it <em>was</em>, at the speed where your jet turns best.</p>
+    <nav aria-label="Sections">
+      <a href="#debrief">Debrief</a><a href="#pursuit">Pursuit</a><a href="#speed">Speed</a><a href="#hands">Keyboard</a><a href="#moves">Maneuvers</a><a href="#weapons">Weapons</a><a href="#flow">Fight flow</a><a href="#drills">Drills</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="brief" id="brief">
+  <span class="eyebrow">The story in brief</span>
+  <h2>Why does the jet you are chasing keep getting away?</h2>
+  <p>Anyone who has tried a flight simulator knows the moment. You spot the enemy, point your nose straight at it, and it slides off the screen. You turn harder. It gets further away. Pointing at the other jet is the natural thing to do, and it is the first thing fighter pilots are taught to unlearn.</p>
+  <p>A dogfight is a close turning fight between two aircraft. Air forces teach it under the name basic fighter maneuvers, or BFM. Under the jargon it is geometry. Every turning jet flies a circle, and the winner is the one who gets onto the other jet's circle, behind it, at the speed where their own jet turns best.</p>
+  <p>This page is the ground school nobody gave you. It covers the handful of ideas that turn a beginner into someone who can get on a tail and stay there: how to read the HUD, pursuit geometry, speed, six classic maneuvers, weapons, and drills you can fly in any simulator. Every maneuver has a 3D clip you can pause and scrub, and you can fly the chase yourself.</p>
+  <p class="meta">Eight sections · about 12 minutes · nine 3D clips · for any flight sim · the numbers come from a generic physics model, not from a real aircraft manual</p>
+</section>
+
+<section id="debrief">
+  <h2>Read the HUD first</h2>
+  <p>Every sim puts the same few numbers on the glass in front of you, and most beginners never look at them. This is a HUD frozen in the middle of a lost fight: 2.1 km behind an enemy jet that is getting away. The numbers already show why. Read them as if you were the pilot:</p>
+  <div class="hud">
+    <div class="bad"><b>584</b><span>Airspeed in knots. Far too fast to turn. Target: about 450.</span></div>
+    <div class="bad"><b>G 2.0</b><span>You're barely pulling. At this speed and G your turn circle is about 5 km wide in radius.</span></div>
+    <div><b>M 0.92</b><span>Mach number. Same story as the airspeed.</span></div>
+    <div><b>THR 60%</b><span>Throttle. Fine, but the speed hasn't bled off yet.</span></div>
+    <div><b>R 2.1 KM</b><span>Range to the selected target. Close enough for a missile, if the angle were right.</span></div>
+    <div><b>325</b><span>Heading. The right tape (11,835) is altitude in feet.</span></div>
+    <div><b>MSL 4</b><span>Missiles left. Ammo is not the problem here. The setup is.</span></div>
+  </div>
+  <p>Three fixes, in order of payoff: <strong>slow to about 450 knots before you turn</strong>, <strong>pull hard when you do turn</strong> (7 to 9 G, not 2), and <strong>aim behind the bandit, not at it</strong>. The next two sections show why.</p>
+</section>
+
+<section id="pursuit">
+  <h2>Pursuit geometry</h2>
+  <p>A turning jet flies a circle. To sit on its tail you have to get onto that same circle, behind it. Where you put your nose decides whether that happens:</p>
+  <ul>
+    <li><strong>Lead pursuit:</strong> nose ahead of the bandit. Closes distance fast and cuts the corner. Needed for a gun shot. Held too long, you fly out in front.</li>
+    <li><strong>Pure pursuit:</strong> nose on the bandit. Feels natural, used for a missile shot. With extra speed you end up flying through them.</li>
+    <li><strong>Lag pursuit:</strong> nose behind the bandit's tail. Closes slowly, keeps you behind, and lets you match their circle. <strong>This is the one most new pilots miss.</strong></li>
+  </ul>
+  <div class="panel" id="simPanel">
+    <div class="split">
+      <div class="clip">
+        <figure class="stage"><canvas id="cSim" aria-label="3D animation of a blue jet chasing a red jet that flies a circle"></canvas>
+          <div class="read" aria-hidden="true"><span>Range<b class="rRng">0 m</b></span><span>Angle off<b class="rAo">0°</b></span></div>
+          <span class="tag me">You</span><span class="tag bd">Bandit</span><span class="flag"></span>
+        </figure>
+        <div class="ctl"><button type="button" class="pp">Pause</button><input type="range" min="0" max="1000" value="0" aria-label="Clip position"><span class="tm">0:00 / 0:32</span></div>
+      </div>
+      <div class="side">
+        <span class="lab">Where you point your nose</span>
+        <div class="seg" id="modeSeg">
+          <button type="button" data-mode="lead" aria-pressed="false">Lead</button>
+          <button type="button" data-mode="pure" aria-pressed="true">Pure</button>
+          <button type="button" data-mode="lag" aria-pressed="false">Lag</button>
+        </div>
+        <span class="lab">Your speed (bandit holds 390 kt, 5 G)</span>
+        <div class="seg" id="spdSeg">
+          <button type="button" data-kt="350" aria-pressed="false">350 kt</button>
+          <button type="button" data-kt="450" aria-pressed="true">450 kt</button>
+          <button type="button" data-kt="580" aria-pressed="false">580 kt</button>
+        </div>
+        <p class="verdict"></p>
+      </div>
+    </div>
+    <p class="note foot"><span class="me">Blue is you</span>, <span class="bd">red is the bandit</span>. The dark line through the bandit is its 3-9 line (wingtip to wingtip). The green wedge is the control zone: behind the tail, close, nose roughly aligned. The yellow dot is where your nose is pointing. Get in front of the 3-9 line and you've swapped roles. Try pure at 450, then lag at 450.</p>
+  </div>
+  <figure>
+    <div class="scroll"><svg viewBox="0 0 360 240" width="560" role="img" aria-label="Fly to the point where the bandit started its turn, then turn onto its circle">
+      <circle cx="230" cy="120" r="70" class="s-dim"/>
+      <path d="M160,120 A70,70 0 0 1 230,50" class="s-bd"/>
+      <polygon points="0,-8 6,7 0,3 -6,7" class="f-bd" transform="translate(232,50) rotate(90)"/>
+      <path d="M40,208 L226,56" class="s-dim"/>
+      <path d="M40,208 Q120,165 160,120 A70,70 0 0 1 192,61" class="s-me" marker-end="url(#ah-me)"/>
+      <polygon points="0,-8 6,7 0,3 -6,7" class="f-me" transform="translate(40,208) rotate(60)"/>
+      <circle cx="160" cy="120" r="6" class="f-sand"/>
+      <text x="150" y="112" text-anchor="end">Entry window</text>
+      <text x="150" y="127" text-anchor="end" class="t-mu">where they began the turn</text>
+      <text x="248" y="40" class="t-bd">Bandit</text>
+      <text x="56" y="226" class="t-me">You</text>
+      <text x="118" y="106" class="t-mu" transform="rotate(-39 118,106)">pointing straight at it</text>
+      <text x="230" y="124" text-anchor="middle" class="t-mu">their turn circle</text>
+    </svg></div>
+    <figcaption>The entry window. Don't start your hard turn while you're outside the bandit's circle. Fly to the spot where they started turning (you'll see them slide across your windscreen), then pull. The dashed straight line is the natural mistake: flying straight at the bandit.</figcaption>
+  </figure>
+</section>
+
+<section id="speed">
+  <h2>Speed is your turn</h2>
+  <p>Too fast and the circle is huge. Too slow and the wings can't pull enough G. In between sits <strong>corner speed</strong>, the slowest speed where you can still pull maximum G. That is where the jet turns fastest and tightest at once. For an F-16-type jet it lands around 400 to 450 knots.</p>
+  <div class="panel"><div class="chartbox">
+    <figure>
+      <div class="scroll"><svg id="chart" viewBox="0 0 520 300" width="520" role="img" aria-label="Turn rate against airspeed, peaking at corner speed near 450 knots"></svg></div>
+      <figcaption>Best possible turn rate at each speed, pulling as hard as the jet allows (9 G limit, generic fighter model).</figcaption>
+    </figure>
+    <div class="side">
+      <label class="lab" for="spd">Airspeed: <span id="spdV">450</span> kt</label>
+      <input type="range" id="spd" min="170" max="700" step="5" value="450">
+      <div class="readrow" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div><span class="lab">Turn rate</span><b id="oRate"></b></div>
+        <div><span class="lab">Radius</span><b id="oRad"></b></div>
+        <div><span class="lab">180° takes</span><b id="oT"></b></div>
+      </div>
+      <svg id="circ" viewBox="0 0 300 170" width="300" role="img" aria-label="Turn circle size at the chosen speed compared with a 2.1 kilometre range"></svg>
+      <p class="note">The bar is 2.1 km, the range in the screenshot. At 584 kt and 9 G the radius is about 1,030 m. At the 2 G in the screenshot it is about 5,300 m.</p>
+    </div>
+  </div></div>
+  <p><strong>Pulling G costs speed.</strong> A hard turn bleeds knots every second. So the throttle rule in a turning fight is simple: above 480, throttle back or tap the airbrake. Between 400 and 480, leave it. Below 400, go full throttle and burner and keep pulling. Below 300, ease off the pull for two seconds with the nose slightly down and burner on, then turn again.</p>
+  <p><strong>Altitude is stored speed.</strong> Nose down gives you knots for free, nose up spends them. That is what the yo-yos below use.</p>
+  <p class="note">The numbers come from a standard physics model, not from any particular sim. Drill 2 measures where your jet's corner speed actually sits in yours.</p>
+</section>
+
+<section id="hands">
+  <h2>Controls, whatever you fly on</h2>
+  <p>Keyboard, gamepad or a full stick: the inputs are the same eight things. Technique is about the order you use them in. Find each one in your sim's control list before you start.</p>
+  <div class="keys">
+    <div><span><b>Roll, then pull</b></span><span class="note">Every turn is two steps. Roll until the bandit is at the top of your screen, stop rolling, then pull. The jet turns toward the top of its canopy (pilots call it the lift vector). Don't try to steer with the rudder.</span></div>
+    <div><span><b>Padlock or target view</b></span><span class="note">Select the bandit and keep your eyes on it. Lose sight, lose the fight. If the padlock view confuses you, cycle views until one keeps both jets on screen.</span></div>
+    <div><span><b>Throttle</b></span><span class="note">Set it before the turn, not during. Glance at the airspeed box on the left of the HUD every few seconds and hold 400 to 480 knots.</span></div>
+    <div><span><b>Afterburner</b></span><span class="note">Use it to climb, to recover below 400 knots, to run down a bandit that is flying straight, or to escape. Never while already above 500 in a turn.</span></div>
+    <div><span><b>Airbrake</b></span><span class="note">Short taps to stop an overshoot. It throws energy away, so a high yo-yo is the better fix when you have the room.</span></div>
+    <div><span><b>Rudder (yaw)</b></span><span class="note">Only for the last few degrees of a gun shot. Never to turn the jet.</span></div>
+    <div><span><b>Missile and gun</b></span><span class="note">See Weapons. Both need a steady nose, so stop rolling first.</span></div>
+    <div><span><b>Flares and radar</b></span><span class="note">Flares with a break turn when someone is behind you. Radar to find the next contact.</span></div>
+  </div>
+  <p class="note">Which way is "pull" depends on your sim. On most, pulling the stick back (or the down arrow on a keyboard) raises the nose. "Pull" on this page always means nose toward the top of your canopy.</p>
+</section>
+
+<section id="moves">
+  <h2>Maneuvers</h2>
+  <p>Six moves cover almost every situation. Each one is the same roll-then-pull, aimed somewhere different. Every clip loops like a short video. Pause it, or drag the bar to any moment. The steps light up as the jet flies them.</p>
+  <div class="moves">
+    <article class="move"><div class="clip" data-m="yoyo"></div><div class="txt"><h3>High yo-yo</h3><p class="when">You're behind a turning bandit but too fast. It's sliding across your windscreen and you're about to fly past. Going up slows you down and shrinks your circle without throwing energy away.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="lowyoyo"></div><div class="txt"><h3>Low yo-yo</h3><p class="when">You're behind but can't close. The bandit sits at the same range, turning as well as you. The dive adds speed and cuts across the inside of the bandit's circle.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="brk"></div><div class="txt"><h3>Break turn</h3><p class="when">A bandit or a missile is behind you. This is the first defensive move, always. Turning into the attacker makes the angle too sharp for them to follow, and they cross in front of your 3-9 line.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="sciss"></div><div class="txt"><h3>Scissors</h3><p class="when">After an overshoot you're side by side, both slow, both turning into each other. Each reversal is a race to go forward more slowly than the other jet.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="immel,splits"></div><div class="txt"><div class="seg pick" role="group" aria-label="Maneuver"></div><h3>Immelmann and Split-S</h3><p class="when">You need to reverse direction fast, right after a head-on pass or to escape. Both are half loops with a half roll to get upright again. Immelmann when you're fast (450+), Split-S when you're slow and high. Never Split-S below about 8,000 ft or above 450 kt. The loop down is big.</p><ol class="steps"></ol></div></article>
+    <article class="move"><div class="clip" data-m="merge"></div><div class="txt"><h3>The merge</h3><p class="when">You and the bandit pass head-on. Whoever turns better in the next 15 seconds gets the tail. Same G, different speed: the slower jet at corner speed gets its nose around first.</p><ol class="steps"></ol></div></article>
+  </div>
+</section>
+
+<section id="weapons">
+  <h2>Weapons</h2>
+  <p><strong>Missile.</strong> A heat-seeker wants the bandit's tailpipe and a steady launch. Best shot: you're behind its 3-9 line, 1 to 3 km back, nose on it (pure pursuit), wings steady for a second. The screenshot range of 2.1 km is fine. What was missing is the angle.</p>
+  <p><strong>Gun.</strong> Inside about 600 m. Bullets take time to fly, so put your nose ahead of the bandit along its path (lead pursuit) and let it fly into the stream. Short bursts. Lead pursuit closes fast, so plan to pull up and away right after.</p>
+  <p><strong>The sequence that works:</strong> lag to get behind and stable, pure for the missile, and only if that fails, lead for the gun.</p>
+</section>
+
+<section id="flow">
+  <h2>Fight flow</h2>
+  <p>What you see out the window tells you what to do next.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>You see</th><th>It means</th><th>Do this</th></tr></thead>
+    <tbody>
+      <tr><td>Bandit sliding fast across your screen</td><td>Too much angle or speed. Overshoot coming.</td><td>Point behind its tail (lag). If fast, high yo-yo.</td></tr>
+      <tr><td>Bandit fixed in one spot, getting bigger</td><td>Collision course. You're closing fast.</td><td>Fine for a quick gun burst. Otherwise ease to lag before you fly through.</td></tr>
+      <tr><td>You see its tailpipe, it barely moves</td><td>You're in the control zone.</td><td>Match speed, steady the nose, missile.</td></tr>
+      <tr><td>Same range, can't close</td><td>Matched turns.</td><td>Low yo-yo, or burner if below 400 kt.</td></tr>
+      <tr><td>Its nose is pointing at you</td><td>Neutral or head-on.</td><td>Set 450 kt and fly the merge.</td></tr>
+      <tr><td>It's behind you</td><td>You're defensive.</td><td>Break turn into it, flares. Never fly straight.</td></tr>
+      <tr><td>Speed under 300</td><td>Out of energy.</td><td>Release the pull, nose slightly down, burner, two seconds.</td></tr>
+      <tr><td>Speed over 520 in a turn</td><td>Circle too wide.</td><td>Throttle back, tap airbrake, or go up.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="drills">
+  <h2>Drills</h2>
+  <p>Work down the list in order. One drill per session is enough. Ticks are saved in this browser.</p>
+  <ol class="drills" id="drillList">
+    <li><input type="checkbox" id="d1"><label for="d1"><b>1. Speed gate</b><span>Fly level and hold 420 to 470 kt for a full minute using only throttle and airbrake. Then do it through gentle turns.</span></label></li>
+    <li><input type="checkbox" id="d2"><label for="d2"><b>2. Find your corner</b><span>Do a full 360° maximum-pull turn starting at 350, 450 and 550 kt. Count the seconds for each. The quickest one is your jet's corner speed in your sim. Note the G you reach.</span></label></li>
+    <li><input type="checkbox" id="d3"><label for="d3"><b>3. Lift vector</b><span>With a bandit selected, roll until it sits at the top of your screen, stop rolling, pull. Repeat twenty times until roll-stop-pull is one motion.</span></label></li>
+    <li><input type="checkbox" id="d4"><label for="d4"><b>4. Entry window</b><span>Against a turning bandit, keep your nose behind its tail and don't pull hard until you cross the path it flew. Goal: end up behind it with its tailpipe visible.</span></label></li>
+    <li><input type="checkbox" id="d5"><label for="d5"><b>5. High yo-yo</b><span>Arrive on purpose at 550 kt behind a turning bandit. Fix the overshoot by going up, not with the airbrake.</span></label></li>
+    <li><input type="checkbox" id="d6"><label for="d6"><b>6. Missile discipline</b><span>For one whole session, only fire from behind the 3-9 line, under 3 km, with a steady nose. Count hits per shot.</span></label></li>
+    <li><input type="checkbox" id="d7"><label for="d7"><b>7. Guns</b><span>From the control zone, close to 500 m, pull lead, fire a one-second burst, pull away upward.</span></label></li>
+    <li><input type="checkbox" id="d8"><label for="d8"><b>8. Break and reverse</b><span>Let a bandit get behind you. Break into it with flares, watch it overshoot, reverse, and get a shot.</span></label></li>
+  </ol>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Basic_fighter_maneuvers">Basic fighter maneuvers (Wikipedia)</a>: pursuit curves, yo-yos, scissors, energy management</li>
+    <li><a href="https://en.wikipedia.org/wiki/Air_combat_manoeuvring">Air combat manoeuvring (Wikipedia)</a></li>
+    <li><a href="https://codex.uoaf.net/index.php/BFM_tactics">BFM tactics (UOAF Codex)</a>: turn circle entry, control zone, F-16 numbers</li>
+    <li><a href="https://vnfa2.tripod.com/F-16_Part4.html">BFM Mechanics, F-16 handbook excerpt</a>: corner velocity, turn rate and radius</li>
+    <li><a href="https://fa714ladder.tripod.com/bfm3.html">Introduction to Defensive BFM</a>: break turns and overshoots</li>
+  </ul>
+  <p class="note">The 3D clips are drawn from the maneuver descriptions above. Speed, altitude and G in the readouts are illustrative numbers that follow the text, not a flight model.</p>
+</section>
+
+<div class="end"><a href="../">&larr; All stories</a></div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+{{APP}}
+</script>
