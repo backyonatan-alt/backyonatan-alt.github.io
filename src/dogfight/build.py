@@ -1,19 +1,8 @@
-import re
-src=open('/home/claude/backyonatan-alt.github.io/dogfight/index.html',encoding='utf8').read()
-def between(a,b,inc=True):
-    i=src.index(a);j=src.index(b,i+len(a));return src[i:j+len(b)] if inc else src[i+len(a):j]
-HUD=between('<div class="hud">','</div>\n  <p>Three fixes')[:-len('\n  <p>Three fixes')]
-ENTRY=between('<figure>\n    <div class="scroll"><svg viewBox="0 0 360 240"','</figure>')
-KEYS=between('<div class="keys">','</div>\n  <p class="note">Check which arrow')[:-len('\n  <p class="note">Check which arrow')]+'\n  '+between('<p class="note">Check which arrow','</p>')
-WEAPONS=between('<h2>Weapons</h2>\n','</section>',False)
-FLOW=between('<div class="tblwrap">','</table></div>')
-DRILLS=between('<ol class="drills" id="drillList">','</ol>')
-SOURCES=between('<h2>Sources</h2>\n  <ul>','</ul>').replace('<h2>Sources</h2>\n  ','')
+# Builds dogfight/index.html from page.html and app.js. Run: python3 src/dogfight/build.py
 import os;os.chdir(os.path.dirname(os.path.abspath(__file__)));page=open('page.html',encoding='utf8').read()
 app=open('app.js',encoding='utf8').read()
 page=page.replace('{{APP}}',app)
-assert '{{' not in page and '—' not in page
-open('../../dogfight/draft-artifact.html','w',encoding='utf8').write(page) if False else None
+assert '{{' not in page and '\u2014' not in page
 # site version
 T="Dogfight Ground School"; D="A beginner's ground school for anyone who has tried a flight simulator: why the jet you are chasing keeps getting away, corner speed, and six classic maneuvers in 3D."
 U="https://backyonatan-alt.github.io/dogfight/"
@@ -45,4 +34,4 @@ body=page[page.index('<link rel="stylesheet"'):]
 j=body.index('</style>')+8
 site=head+body[:j]+'\n</head>\n<body>\n'+body[j:].lstrip()+'\n</body>\n</html>\n'
 open('../../dogfight/index.html','w',encoding='utf8').write(site)
-print(len(page),len(site))
+print('wrote dogfight/index.html',len(site))
