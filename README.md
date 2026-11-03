@@ -7,3 +7,4 @@ Interactive data stories.
 - [Moreyball by the Numbers](https://backyonatan-alt.github.io/moreyball/)
 - [Expected Goals by the Numbers](https://backyonatan-alt.github.io/expected-goals/)
 - [Dogfight Ground School](https://backyonatan-alt.github.io/dogfight/)
+- [Frequent Flyers](https://backyonatan-alt.github.io/flyers/): an NBA season in miles, and whether the travel costs wins.

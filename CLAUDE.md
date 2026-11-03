@@ -11,8 +11,9 @@ Live at https://backyonatan-alt.github.io/
 | `/cousins/` | A Nation of Cousins (animated Jewish population map) | `src/cousins/` (`page.html`, `app.js`, `data.js`) | `node src/cousins/build.js` |
 | `/moneyball/`, `/moreyball/`, `/expected-goals/` | Three sports analytics articles | `src/sports/sports-analytics-by-the-numbers.html` (one combined source) | `python3 src/sports/split.py` |
 | `/dogfight/` | Dogfight Ground School (beginner's air combat guide for any flight sim, with 3D clips) | `src/dogfight/` (`page.html`, `app.js`) | `python3 src/dogfight/build.py` |
+| `/flyers/` | Frequent Flyers (NBA travel: animated route map, miles by team, does travel cost wins) | `src/flyers/` (`page.html`, `data.json`, `cost.json`, `map.json`) | `python3 src/flyers/build.py` |
 
-Never hand-edit `cousins/index.html`, `dogfight/index.html` or the three sports `index.html` files. They are build output and get overwritten.
+Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html` or the three sports `index.html` files. They are build output and get overwritten.
 
 ## Rules for this site
 
@@ -40,6 +41,12 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html` or the three sports 
 - The 3D clips use three.js r128 from cdnjs. Jets, paths and cameras are all in `app.js` (`MV` holds each maneuver: path functions, camera, steps, illustrative readouts). Each stage creates its WebGL context only while on screen, so the page stays under the browser's context limit.
 - Blue is always you, red is always the bandit. Speed, altitude and G in the readouts are illustrative numbers that follow the text, not a flight model.
 - No game names. The page is written for anyone who has tried a flight simulator.
+
+## Flyers notes
+
+- Data comes from ESPN schedules via sportsdataverse (GitHub release `espn_nba_schedules`, files `nba_schedule_<year>.csv`, year = season end). `src/flyers/travel.py <csv>` computes each team's arena-to-arena route, miles, time zone changes and per-game rest; `pool.py` pools four seasons and fits the logistic model behind chapter 3. `data.json` holds the 2024-25 routes, `cost.json` the pooled road-game splits.
+- Map: `map.json` is US states (us-atlas 10m, simplified) plus Canada and Mexico outlines (world-atlas 110m). Paris and Mexico City games sit off the map as edge labels. d3 v7 from cdnjs does the projection.
+- Hero animation shows each flight for about six days then fades it; the full-season hairball is a static figure in chapter 1. One color for all teams, amber for the picked team. East/West colors are used only in the bar chart.
 
 ## Adding a new article
 
