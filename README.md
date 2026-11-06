@@ -8,3 +8,4 @@ Interactive data stories.
 - [Expected Goals by the Numbers](https://backyonatan-alt.github.io/expected-goals/)
 - [Dogfight Ground School](https://backyonatan-alt.github.io/dogfight/)
 - [Frequent Flyers](https://backyonatan-alt.github.io/flyers/): an NBA season in miles, and whether the travel costs wins.
+- [נבחרת הגלישה הטובה אי פעם? חצי ממנה.](https://backyonatan-alt.github.io/windsurf/): Israel's Olympic windsurfing team since 1992, in Hebrew. Best ever for the women, not for the men.

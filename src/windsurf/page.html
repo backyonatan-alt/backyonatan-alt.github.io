@@ -1,0 +1,436 @@
+<title>חצי נבחרת שיא</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Heebo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a Hebrew, right-to-left long read on the dark sea stage, like the cousins map. One column of text, charts break out full width and read left to right. Women are coral, men are teal, everywhere. This is a fixed dark design, not a dark mode. */
+:root{
+  color-scheme:light;
+  --bg:#0f2230; --surface:#163a4a; --ink:#e7f0f3; --muted:#9db4bf; --line:#2b556a;
+  --w:#ff7a59; --m:#3cc8dc; --w-soft:#5a2d22; --m-soft:#174a56; --gold:#ffd166; --sea:#0f2230; --sea-2:#163a4a;
+  --display:"Secular One","Heebo",Arial,sans-serif; --body:"Heebo",Arial,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17.5px/1.7 var(--body);direction:rtl}
+a{color:#8fdff0}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--w);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.15;text-wrap:balance}
+h2{font-size:clamp(28px,4.4vw,40px);border-top:3px solid var(--w);padding-top:14px;color:#fff}
+h2 .cn{display:block;font:500 13px var(--mono);color:var(--w);letter-spacing:.1em;margin-bottom:8px}
+h3{font-size:22px}
+p,ul,ol{margin:0;max-width:64ch}
+ul,ol{padding-right:22px;display:flex;flex-direction:column;gap:6px}
+.eyebrow{font:500 12px/1.3 var(--mono);letter-spacing:.08em;color:var(--muted);direction:ltr;text-align:right}
+.wrap{max-width:980px;margin-inline:auto;padding-inline:20px;padding-block:44px 80px;display:flex;flex-direction:column;gap:60px}
+section{display:flex;flex-direction:column;gap:18px;min-width:0}
+.note{font-size:14.5px;color:var(--muted)}
+.wm{color:var(--w);font-weight:700}.mm{color:var(--m);font-weight:700}
+.num{font-family:var(--mono);direction:ltr;unicode-bidi:isolate}
+
+/* hero */
+.hero{background:var(--sea);color:#e7f0f3;padding-inline:20px;padding-block:28px 32px;border-bottom:1px solid var(--line)}
+.hero-in{max-width:1180px;margin-inline:auto;display:flex;flex-direction:column;gap:16px}
+.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.back{font:500 12px/1 var(--mono);color:#e7f0f3;text-decoration:none;border:1px solid var(--sea-2);padding:8px 10px;direction:ltr}
+.hero h1{font-size:clamp(44px,8vw,96px);line-height:1}
+.hero .eyebrow{color:var(--w)}
+.lede{font-size:clamp(17px,1.9vw,21px);line-height:1.5;max-width:50ch;color:#e7f0f3}
+.stage{position:relative;background:var(--sea-2);border:1px solid #244a5c;padding:14px 12px 10px;direction:ltr;display:flex;flex-direction:column;gap:10px}
+.stage svg{display:block;width:100%;height:auto;overflow:visible}
+.stage svg text{fill:#c9d8de;font:500 11px var(--mono)}
+.stage svg.mob text{font-size:15px}.stage svg.mob text.lab{font-size:16px}
+.stage svg text.lab{font:400 13px var(--display);fill:#9db4bf;letter-spacing:.02em}
+.stage svg text.zone{font:500 11px var(--body);fill:#ffd166;opacity:.8}
+.stage svg text.ann{font:500 12.5px var(--body);fill:#e7f0f3}
+.stage svg text.ann.w{fill:#ffb59e}.stage svg text.ann.m{fill:#8fdff0}
+.stage svg .ann-ln{stroke:#9db4bf;stroke-width:1;fill:none;opacity:.7}
+.stage svg .best{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;opacity:.55}
+.stage svg .dot{cursor:pointer;transition:opacity .2s}
+.stage svg.hl .dot{opacity:.12}.stage svg.hl .dot.on{opacity:1}
+.stage svg.hl .best{opacity:.12}
+.stage svg .link{stroke:#fff;stroke-width:1.2;fill:none;opacity:.7;pointer-events:none}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13.5px;color:#c9d8de;direction:rtl}
+.ctl label{display:inline-flex;gap:7px;align-items:center;cursor:pointer;border:1px solid #2b556a;padding:5px 11px;border-radius:999px;background:transparent;user-select:none}
+.ctl label:has(input:checked){background:#0f2230;border-color:#9db4bf;color:#fff}
+.ctl input{position:absolute;opacity:0;width:0;height:0}
+.ctl .sw{width:11px;height:11px;border-radius:50%;display:inline-block}
+.ctl .gap{flex:1}
+.ctl .who{font:500 12px var(--mono);color:#ffd166;min-width:0;direction:rtl}
+.stage figcaption{direction:rtl;color:#9db4bf;font-size:14px}
+.key{direction:rtl;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:14px;color:#e7f0f3;padding:2px 2px 0}
+.key span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.key svg{width:16px;height:16px;flex:none}
+.key i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.key .k2{color:#c9d8de;margin-inline-start:auto}
+.key.sm{font-size:13px;color:#c9d8de;gap:4px 14px;margin:-4px 0 6px}
+.key.sm i{width:12px;height:12px;border-radius:2px}
+.key.sm svg{width:16px;height:16px}
+.stage .thesis{direction:rtl;font-family:var(--display);font-size:clamp(17px,2vw,22px);line-height:1.35;color:#e7f0f3;padding:2px 2px 0}
+.stage .thesis .wm{color:#ff8a66}.stage .thesis .mm{color:#5fd3e6}
+.tip{position:fixed;z-index:30;pointer-events:none;background:#061018;color:#fff;font-size:13px;line-height:1.4;padding:8px 10px;border:1px solid #4a7a90;max-width:260px;display:none;direction:rtl}
+
+/* brief */
+.brief{background:#122f3d;border:1px solid var(--line);border-right:6px solid var(--w);padding:24px;display:flex;flex-direction:column;gap:12px}
+.brief h2{border-top:0;padding-top:0;font-size:clamp(26px,4vw,36px)}
+.brief .meta{font:500 12px/1.6 var(--mono);color:var(--muted);border-top:1px solid var(--line);padding-top:10px;max-width:none;direction:rtl}
+
+/* cards and charts */
+.card{background:var(--surface);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card h3{font-size:20px}
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+figcaption{font-size:14.5px;color:var(--muted)}
+.chart{direction:ltr}
+.chart svg{max-width:100%;height:auto;display:block}
+.chart svg text{font:500 11.5px var(--body);fill:var(--ink)}
+.chart svg text.mono{font:500 11px var(--mono)}
+.chart svg text.mu{fill:var(--muted)}
+.grid line{stroke:var(--line)}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.tiles div{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tiles b{font:600 26px/1 var(--mono);direction:ltr;text-align:right;color:var(--gold)}
+.tiles span{font-size:13.5px;line-height:1.4;color:var(--muted)}
+.tiles .w b{color:var(--w)}.tiles .m b{color:var(--m)}
+.callout{font-family:var(--display);font-size:clamp(22px,3.2vw,30px);line-height:1.25;color:#fff;border-right:6px solid var(--gold);padding-right:16px;max-width:34ch}
+.seg{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.seg button{font:500 13px var(--body);padding:8px 12px;border:1px solid var(--muted);background:transparent;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--gold);color:#1a1200;border-color:var(--gold)}
+.sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px}
+.sliders label{display:flex;flex-direction:column;gap:4px;font-size:14px}
+.sliders input{accent-color:var(--gold)}
+.sliders b{font-family:var(--mono)}
+.tbl{overflow-x:auto;border:1px solid var(--line);max-height:520px;overflow-y:auto}
+table{border-collapse:collapse;width:100%;background:var(--surface);font-size:14px;min-width:640px}
+th,td{text-align:right;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap}
+th{font:500 11px/1.3 var(--mono);color:var(--muted);position:sticky;top:0;background:var(--surface)}
+td.n{font-family:var(--mono);direction:ltr;text-align:right}
+td a{font-family:var(--mono);font-size:12px}
+.search{border:1px solid var(--line);padding:9px 12px;width:min(100%,360px);background:var(--surface)}
+.cov{direction:ltr}
+.cov svg text{font:500 10.5px var(--mono);fill:var(--ink)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--muted);align-items:center}
+.legend i{display:inline-block;width:12px;height:12px;margin-left:5px;vertical-align:-1px}
+.end a{font:500 12px/1 var(--mono);text-decoration:none;color:#fff;border:2px solid #e7f0f3;padding:10px 16px;display:inline-block;direction:ltr}
+@media (max-width:640px){.hero h1{font-size:40px}.lede{font-size:16px}}
+
+/* Methodology: deliberately small and quiet, it is the appendix. */
+#method{gap:10px}
+#method h2{font-size:22px;border-top-width:1px;border-top-color:var(--line);padding-top:10px;color:#c9d8de}
+#method ul{font-size:13.5px;line-height:1.5;color:#9db4bf;padding-inline-start:18px;margin:0}
+#method li{margin-bottom:4px}
+#method p{font-size:14px;color:#9db4bf}
+#method details.all summary{cursor:pointer;font:500 13px var(--mono);color:#c9d8de;padding:6px 0}
+#method details.all .card{margin-top:8px}
+#method .tbl{font-size:12.5px}
+</style>
+
+<header class="hero"><div class="hero-in">
+  <div class="top"><a class="back" href="#top">&larr; All stories</a><span class="eyebrow">גלישת רוח אולימפית · ישראל 1992-2026 · חקירת נתונים</span></div>
+  <h1>נבחרת הגלישה הטובה אי פעם? חצי ממנה.</h1>
+  <p class="lede">זהב וכסף באולימפיאדת פריז. שלוש ישראליות בצמרת אליפות העולם. כולם אומרים שזו נבחרת הגלישה הכי טובה שהייתה לנו. כדי לבדוק אם זה נכון אספתי <span id="nRows2">1224</span> תוצאות, מגל פרידמן ועד תמר שטיינברג, ובניתי עמוד שאפשר ללחוץ ולבדוק בו הכל. התשובה: תלוי את מי שואלים.</p>
+  <figure class="stage" id="tlStage">
+    <div class="ctl" id="tlCtl">
+      <label><input type="checkbox" data-g="W" checked> <i class="sw" style="background:var(--w)"></i> נשים</label>
+      <label><input type="checkbox" data-g="M" checked> <i class="sw" style="background:var(--m)"></i> גברים</label>
+      <span class="gap"></span>
+      <label><input type="checkbox" data-c="Olympics" checked> אולימפיאדה</label>
+      <label><input type="checkbox" data-c="World Championship" checked> אליפות עולם</label>
+      <label><input type="checkbox" data-c="European Championship"> אליפות אירופה</label>
+    </div>
+    <div class="thesis"><span class="wm">נשים:</span> יותר מדליות ויותר גולשות בצמרת מאי פעם. <span class="mm">גברים:</span> השיא היה ב-2004 עם שני גולשים. היום יש עומק, אין שליטה.</div>
+    <div class="key" aria-label="מקרא">
+      <span><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5" fill="#c9d8de"/></svg>אליפות עולם</span>
+      <span><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5" fill="none" stroke="#c9d8de" stroke-width="1.8"/></svg>אליפות אירופה</span>
+      <span><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="4.2" fill="#c9d8de"/><circle cx="9" cy="9" r="7.4" fill="none" stroke="#ffd166" stroke-width="1.8"/></svg>מדליה</span>
+      <span><svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="#c9d8de"/></svg>אולימפיאדה</span>
+      <span><svg viewBox="0 0 18 18"><rect x="5.5" y="5.5" width="7" height="7" transform="rotate(45 9 9)" fill="#c9d8de"/><rect x="2.5" y="2.5" width="13" height="13" transform="rotate(45 9 9)" fill="none" stroke="#ffd166" stroke-width="1.6"/></svg>מדליה אולימפית</span>
+      <span class="k2"><i style="background:var(--w)"></i>נשים <i style="background:var(--m);margin-inline-start:10px"></i>גברים</span>
+    </div>
+    <div id="tl"></div>
+    <figcaption class="note">כל תוצאה של ישראלים מ-1992. בתרשים למטה: כמה סיימו בטופ 10 באותה שנה. <span id="tlWho">עברו עם העכבר על נקודה ותראו מי זה ואת כל הקריירה שלו.</span></figcaption>
+  </figure>
+</div></header>
+
+<main class="wrap" id="top">
+
+<section class="brief">
+  <h2>כן לנשים. לא לגברים. והסיבה מפתיעה.</h2>
+  <p>ב-14:12 שרון קנטור מבטיחה מדליה אולימפית בפריז, מיד אחריה ב-15:35 תום ראובני חוצה ראשון את קו הסיום ולוקח זהב, ההפתעה הגדולה של המשלחת. שנה וחצי אחר כך, באליפות העולם, ישראליות במקומות 1, 2 ו-4. קשה לא להגיד שגלישת הרוח הישראלית בשיא כל הזמנים.</p>
+  <p>אבל שיא של מה? מדליה אולימפית אחת לא אומרת הרבה על נבחרת. גל פרידמן לקח זהב ב-2004 ומאחוריו לא היה כמעט אף אחד. אז במקום לספור רק מדליות, רציתי לספור גם את מי שמאחוריהן: כמה ישראלים בטופ 10, כמה ספורטאים שונים מגיעים לשם.</p>
+  <p>אספתי <span id="nRows3">1224</span> תוצאות של ישראלים מ-1992 ועד היום: אולימפיאדות, אליפויות עולם ואירופה, ונוער, על שלושה דגמי גלשנים. מה שהכי הפתיע אותי: הנשים טובות ועמוקות מאי פעם, בכל מדד שבדקתי. ואצל הגברים? יש היום יותר גולשים טובים מאי פעם, אבל השיא שלהם היה לפני עשרים שנה, ועשו אותו שני גולשים בלבד.</p>
+</section>
+
+<section id="eras">
+  <h2>שלושה גלשנים, שלוש תקופות</h2>
+  <p>לפני שמשווים, דבר אחד חשוב: התחרות עצמה השתנתה שלוש פעמים.</p>
+  <div class="tiles">
+    <div><b class="num">1992-2005</b><span><strong>מיסטרל</strong> (ו-Lechner ב-1992). גלשן שיוט קלאסי. 70-120 מתחרים באליפויות עולם, ניקוד מצטבר פשוט.</span></div>
+    <div><b class="num">2006-2021</b><span><strong>RS:X</strong>. גלשן גדול יותר, מפרש גדול יותר. מ-2008 מרוץ מדליות כפול ניקוד לעשירייה הראשונה. 60-160 מתחרים.</span></div>
+    <div><b class="num">2021 ועד היום</b><span><strong>iQFOiL</strong>. גלשן מרחף, מהירות כפולה. הפורמט: סדרה, רבע גמר, חצי גמר, ומרוץ גמר אחד שקובע את המדליות. המקום הסופי תלוי במרוץ אחד.</span></div>
+  </div>
+  <p>המעבר ל-iQFOiL הוא השבר הגדול. ב-RS:X אלוף העולם היה מי שצבר הכי פחות נקודות במשך שבוע. ב-iQFOiL ארבעה גולשים מגיעים ל-Medal Series ומי שחוצה ראשון את הקו מנצח. מקום 4 ומקום 5 הם פתאום שני עולמות, ולכן בהמשך אני מסתכל על טופ 10 ולא רק על פודיום.</p>
+</section>
+
+<section id="medals">
+  <h2>מדליות: מי לקח ומתי</h2>
+  <p>מתחילים ממה שכולם סופרים: מדליות. אולימפיאדות, אליפויות עולם ואליפויות אירופה, לפי עידן.</p>
+  <div class="row2">
+    <div class="card"><h3>נשים</h3><div class="key sm"><span><i style="background:var(--w)"></i>אולימפיאדה</span><span><i style="background:var(--w);opacity:.75"></i>אליפות עולם</span><span><i style="background:var(--w);opacity:.5"></i>אליפות אירופה</span></div><div class="chart" id="medW"></div></div>
+    <div class="card"><h3>גברים</h3><div class="key sm"><span><i style="background:var(--m)"></i>אולימפיאדה</span><span><i style="background:var(--m);opacity:.75"></i>אליפות עולם</span><span><i style="background:var(--m);opacity:.5"></i>אליפות אירופה</span></div><div class="chart" id="medM"></div></div>
+  </div>
+  <p class="callout">בעידן מיסטרל הגברים לקחו 15 מדליות ב-12 שנים. כולן, בלי יוצא מן הכלל, של שני גולשים: עמית ענבר וגל פרידמן. זאת לא נבחרת, זה צמד.</p>
+  <p>אצל הנשים הקצב הפוך. מדליה אחת בכל עידן מיסטרל (לי קורזיץ, אלופת העולם ב-2003 בגיל 19), 11 בעידן RS:X (רובן של קורזיץ ודוידוביץ'), ו-<span id="wIqMed" class="num"></span> בשש שנות iQFOiL, של <span id="wIqAth"></span> ספורטאיות שונות.</p>
+</section>
+
+<section id="depth">
+  <h2>עומק: כמה ישראלים בצמרת</h2>
+  <p>מדליה היא תוצאה של אדם אחד. עומק זה כמה ישראלים יושבים בעשירייה הראשונה של אליפות העולם באותה שנה. כוכב בודד לא יכול לזייף את המדד הזה. ספרתי רק את מי שבעשרים הראשונים, כי מספר הישראלים בתחרות תלוי גם במקום: באליפות העולם 2016 באילת היו 30 ישראלים בתחרות, ואף אחד בחמישייה.</p>
+  <div class="card"><h3>ישראלים בטופ 10 ובטופ 20 באליפות העולם, לפי שנה</h3><div class="key sm"><span><i style="background:var(--w)"></i>נשים בטופ 10</span><span><i style="background:#7a3a2a"></i>נשים 11-20</span><span><i style="background:var(--m)"></i>גברים בטופ 10</span><span><i style="background:#1f5e6e"></i>גברים 11-20</span></div><div class="chart" id="depthW"></div><div class="chart" id="depthM"></div></div>
+  <p class="callout">מ-22' יש ארבע ישראליות בטופ 10 של אליפות העולם כמעט כל שנה. ב-16 שנות RS:X השיא של הנשים היה שתיים.</p>
+  <p>אצל הגברים התמונה אחרת. בכל שנה יש לכל היותר שני ישראלים בטופ 10: בעידן RS:X זה היה צוברי ומשיח, ב-iQFOiL זה ראובני ועומר (ב-2025 ורדימון ועומר). מאחוריהם יש היום ארבעה עד עשרה ישראלים נוספים באליפות העולם, אבל הם מסיימים במקומות 20 עד 70. כלומר: יותר גולשים מאי פעם, אבל רק שניים קרובים לפודיום. אצל הנשים ארבע.</p>
+  <div class="card"><h3>כוכב בודד או סגל: ספורטאים שונים עם תוצאת טופ 10, לפי מחזור של ארבע שנים</h3><div class="chart" id="squad"></div></div>
+</section>
+
+<section id="gender">
+  <h2>נשים מול גברים</h2>
+  <div class="row2">
+    <div class="card"><h3 class="wm">נשים, iQFOiL 2021-2026</h3><div class="tiles" id="tilesW"></div></div>
+    <div class="card"><h3 class="mm">גברים, iQFOiL 2021-2026</h3><div class="tiles" id="tilesM"></div></div>
+  </div>
+  <p>הנשים מובילות בכל מדד: מדליות, טופ 10, ספורטאיות שונות בטופ 10. הגברים מחזיקים מדד אחד, אבל הוא הכי חשוב: הזהב האולימפי של ראובני. אם מודדים נבחרת לפי השיא שלה, הגברים ב-2024 שווים לפרידמן ב-2004. אם מודדים לפי הרוחב, הנשים לבד. מדליה אחת עושה כותרת. ארבע בטופ 10 עושות נבחרת.</p>
+  <p class="callout">הנבחרת הטובה אי פעם היא נבחרת הנשים. לגברים יש עומק בלי כוכב דומיננטי, וזה מצב שלא היה להם אף פעם.</p>
+</section>
+
+<section id="youth">
+  <h2>דור ההמשך</h2>
+  <p>רוצים לדעת אם זה ימשיך? אליפויות העולם לנוער (עד גיל 19 ו-17) הן המקום להסתכל.</p>
+  <div class="card"><h3>ישראלים בטופ 10 באליפויות העולם לנוער, לפי שנה</h3><div class="chart" id="youthW"></div><div class="chart" id="youthM"></div></div>
+  <p>בנוער שני המינים נראים אותו דבר. מ-2010 ישראל לוקחת 5 עד 13 מדליות נוער בשנה (אליפויות עולם ואירופה, U15 עד U19), אצל הבנים אפילו קצת יותר: 40 מדליסטים שונים מול 33 מדליסטיות.</p>
+  <p class="callout">ההבדל מתחיל אחרי גיל 19. מ-33 המדליסטיות בנוער, 7 הגיעו לטופ 10 של אליפות העולם לבוגרות. מ-40 המדליסטים, 4.</p>
+  <p>הבנות שעברו: ספיצ'קוב, דריהן, טיבי, קנטור, שטיינברג, מוריס ופלג. הבנים: עומר, כהן, ראובני וורדימון. המאגר לא חסר לגברים. מה שקורה בין 19 ל-23 הוא השאלה הבאה, והנתונים כאן לא עונים עליה.</p>
+</section>
+
+<section id="index">
+  <h2>תזיזו את המשקולות</h2>
+  <p>ציון אחד לכל מחזור של ארבע שנים, ממדליות, מקומות 4-5, מקומות 6-10 ומספר הספורטאים השונים בטופ 10. המשקולות בידיים שלכם. תזיזו ותבדקו אם המסקנה משתנה. אצלי היא לא זזה.</p>
+  <div class="card">
+    <div class="sliders">
+      <label>מדליה (מקום 1-3) <b id="vMed">5</b><input type="range" id="wMed" min="0" max="10" value="5"></label>
+      <label>מקום 4-5 <b id="vT5">3</b><input type="range" id="wT5" min="0" max="10" value="3"></label>
+      <label>מקום 6-10 <b id="vT10">1</b><input type="range" id="wT10" min="0" max="10" value="1"></label>
+      <label>ספורטאי שונה בטופ 10 <b id="vSq">2</b><input type="range" id="wSq" min="0" max="10" value="2"></label>
+    </div>
+    <div class="seg" id="idxComp"><span class="note">כולל:</span><button type="button" data-c="Olympics" aria-pressed="true">אולימפיאדה</button><button type="button" data-c="World Championship" aria-pressed="true">אליפות עולם</button><button type="button" data-c="European Championship" aria-pressed="false">אליפות אירופה</button></div>
+    <div class="chart" id="idx"></div>
+    <p class="note" id="idxNote"></p>
+  </div>
+</section>
+
+<section id="method">
+  <h2>מתודולוגיה ומקורות</h2>
+  <ul>
+    <li>מקורות: Olympedia לאולימפיאדות (כל המתחרים). קבצי התוצאות של קלאס RS:X ו-iQFOiL, ויקיפדיה (אליפויות ISAF המשולבות 2011, 2014, 2018), the-sports.org ו-totallympics כמראות של קבצי תוצאות רשמיים, ודיווחי World Sailing, sail-world, וואלה ו-ynet כשאתרי התוצאות לא נגישים. כל שורה בטבלה למטה מקושרת למקור שלה.</li>
+    <li>זהויות: איותים שונים של אותו אדם אוחדו (צוברי/Tzuberi/Zubari, קורזיץ, משיח, ספיצ'קוב). שמות בעברית הם תעתיק.</li>
+    <li>"עידן" נקבע לפי הדגם של התחרות, לא לפי שנה. ב-2020-2021 התקיימו אליפויות גם ב-RS:X וגם ב-iQFOiL.</li>
+    <li>מספר מתחרים: המספר האחרון בטבלת התוצאות. היכן שיש רק מספר נרשמים מדיווח, זה מסומן בהערה.</li>
+    <li>מה לא נבדק: ליגות וגביעי עולם (World Cup), דירוג עולמי, מצבי רוח ומזג אוויר. ההשוואה היא בין תוצאות, לא בין יכולות.</li>
+    <li>כיסוי: אולימפיאדות מלאות לכל השנים. אליפויות עולם מלאות (כל המיקומים ומספר המתחרים) ב-30 מהדורות, בעיקר 2006-2023; בשאר רק מדליסטים ועשירייה ראשונה מדיווחי עיתונות. אליפויות אירופה ברובן חלקיות. לכן מדליות וטופ 10 אמינים לכל התקופה, ו"כמה ישראלים היו בתחרות" רק במהדורות המלאות. נתון חסר הוא לא אפס הישגים.</li>
+    <li>הסתייגויות: באליפויות העולם 2022, 2024 ו-2025 ובאליפויות אירופה 2020, 2023 ו-2025 מספר המתחרים הוא מספר הנרשמים ולא המסיימים. באליפות העולם 2016 באילת מקומות הצי הכסוף (44 ומטה) הם דירוג בצי הכסוף בתוספת גודל צי הזהב, השיטה המקובלת. באליפות העולם 2012 המקורות חלוקים על משיח (6 או 7) ודוידוביץ' (8 או 6), השתמשתי בטבלה המלאה של the-sports.org. המקום ה-41 של ראובני באליפות העולם 2025 מבוסס על דיווח של וואלה בלבד.</li>
+  </ul>
+  <p>מצאתם טעות? יש לכם טבלת תוצאות שחסרה לי, במיוחד מעידן המיסטרל? אשמח לשמוע ולתקן.</p>
+  <details class="all"><summary>כל התוצאות, עם קישור למקור של כל שורה</summary><div class="card"><input class="search" id="q" type="search" placeholder="חיפוש לפי שם, שנה או תחרות"><div class="tbl"><table id="all"><thead><tr><th>שנה</th><th>תחרות</th><th>דגם</th><th>מגדר</th><th>קטגוריה</th><th>ספורטאי/ת</th><th>מקום</th><th>מתחרים</th><th>מקור</th></tr></thead><tbody></tbody></table></div></div></details>
+</section>
+
+<div class="end"><a href="#top">&larr; All stories</a></div>
+</main>
+<div class="tip" id="tip"></div>
+
+<script>const D={{DATA}};</script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const R=D.rows,COV=D.cov;
+const COL={W:'#ff7a59',M:'#3cc8dc'},SOFT={W:'#7a3a2a',M:'#1f5e6e'};
+const HE={Olympics:'אולימפיאדה','World Championship':'אליפות עולם','European Championship':'אליפות אירופה','Youth World Championship':'אליפות עולם נוער','Youth European Championship':'אליפות אירופה נוער','Youth Olympics':'אולימפיאדת נוער'};
+const name=r=>r.he||r.a;
+const senior=R.filter(r=>r.age==='senior'&&r.pos);
+['nRows2','nRows3'].forEach(id=>$(id).textContent=R.length);
+const cycle=y=>(y-1)-((y-1)%4)+1;
+const cyc=c=>c+'-'+(c+3);
+const S=(t,a)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',t);for(const k in a)e.setAttribute(k,a[k]);return e};
+const tip=$('tip');
+function showTip(e,html){tip.innerHTML=html;tip.style.display='block';const x=Math.min(innerWidth-280,e.clientX+14),y=Math.min(innerHeight-90,e.clientY+14);tip.style.left=x+'px';tip.style.top=y+'px'}
+function hideTip(){tip.style.display='none'}
+const rowTip=r=>'<b>'+name(r)+'</b><br>'+r.y+' · '+HE[r.comp]+' · '+r.cls+'<br>מקום '+r.pos+(r.n?' מתוך '+r.n:'');
+
+/* ---------- hero timeline ---------- */
+const ANN=[
+  {a:'Gal Fridman',y:1996,comp:'Olympics',t:['פרידמן, ארד אולימפי 1996'],ax:1995,row:0},
+  {a:'Gal Fridman',y:2004,comp:'Olympics',t:['פרידמן, זהב אולימפי 2004'],ax:2005,row:0},
+  {a:'Shahar Zubari',y:2008,comp:'Olympics',t:['צוברי, ארד אולימפי 2008'],ax:2009,row:1},
+  {a:'Lee Korzits',y:2012,comp:'World Championship',t:['קורזיץ, שלוש אליפויות עולם ברצף'],ax:2013.2,row:0},
+  {a:'Tom Reuveny',y:2024,comp:'Olympics',t:['פריז 2024: זהב ראובני, כסף קנטור'],ax:2022.3,row:1},
+  {a:'Tamar Steinberg',y:2026,comp:'World Championship',t:['שטיינברג וקנטור, 1 ו-2 בעולם 2026'],ax:2025.3,row:0}
+];
+const COMPSYM={'Olympics':'מעוין','World Championship':'עיגול','European Championship':'עיגול קטן'};
+function timeline(){
+  const comps=[...document.querySelectorAll('#tlCtl [data-c]:checked')].map(i=>i.dataset.c),gs=[...document.querySelectorAll('#tlCtl [data-g]:checked')].map(i=>i.dataset.g);
+  const rows=senior.filter(r=>comps.includes(r.comp)&&gs.includes(r.g));
+  const mobile=innerWidth<640;
+  const W=mobile?560:1100,H=mobile?520:600,L=mobile?40:44,Rr=mobile?12:60,T=mobile?30:66,B=mobile?40:34,y0=1991,y1=2027,SC=mobile?1.45:1;
+  const STRIP=mobile?70:76,yb=H-B-STRIP;
+  const x=y=>L+(y-y0)/(y1-y0)*(W-L-Rr),py=p=>T+Math.log(p)/Math.log(170)*(yb-T);
+  const s=S('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'כל תוצאה ישראלית לפי שנה ומקום',class:mobile?'mob':''});
+  // era bands
+  const eras=[[1991,2005.5,'מיסטרל · 1992-2005'],[2005.5,2021.5,'RS:X · 2006-2021'],[2021.5,2027,'iQFOiL · 2022 ועד היום']];
+  eras.forEach(([a,b,l],i)=>{s.append(S('rect',{x:x(a),y:T-8,width:x(b)-x(a),height:yb-T+8,fill:i%2?'#1a4356':'#163a4a'}));const t=S('text',{x:x(a)+8,y:yb-8,class:'lab'});t.textContent=l;s.append(t)});
+  // zones: podium and top 10
+  s.append(S('rect',{x:L,y:py(.8),width:W-L-Rr,height:py(3.5)-py(.8),fill:'#ffd166',opacity:.13}));
+  s.append(S('rect',{x:L,y:py(3.5),width:W-L-Rr,height:py(10.5)-py(3.5),fill:'#ffffff',opacity:.045}));
+  if(!mobile){const z1=S('text',{x:W-Rr+8,y:py(1.7)+4,class:'zone'});z1.textContent='פודיום';s.append(z1);const z2=S('text',{x:W-Rr+8,y:py(6)+4,class:'zone',style:'fill:#c9d8de'});z2.textContent='טופ 10';s.append(z2)}
+  // grid
+  [1,3,10,20,50,100].forEach(p=>{s.append(S('line',{x1:L,x2:W-Rr,y1:py(p),y2:py(p),stroke:'#2b556a','stroke-dasharray':p<=3?'':'2 5',opacity:p<=3?.9:.7}));const t=S('text',{x:L-8,y:py(p)+4,'text-anchor':'end'});t.textContent=p===1?'מקום 1':p;s.append(t)});
+  for(let y=1992;y<=2026;y+=mobile?4:2){const t=S('text',{x:x(y),y:H-12,'text-anchor':'middle'});t.textContent=y;s.append(t)}
+  // depth strip: distinct Israelis in top 10 per year
+  {const st=yb+14,sb=H-B-6,hmax=sb-st;const cnt={};rows.filter(r=>r.pos<=10).forEach(r=>{const k=r.y+r.g;(cnt[k]=cnt[k]||new Set()).add(r.a)});const mx=Math.max(4,...Object.values(cnt).map(v=>v.size));
+    s.append(S('line',{x1:L,x2:W-Rr,y1:sb,y2:sb,stroke:'#2b556a'}));const lt=S('text',{x:L-8,y:st+hmax/2+4,'text-anchor':'end',class:'zone',style:'fill:#c9d8de'});lt.textContent='בטופ 10';s.append(lt);
+    for(let y=1992;y<=2026;y++)gs.forEach((g,gi)=>{const n=(cnt[y+g]||{size:0}).size;if(!n)return;const bw=4.2*SC,bx=x(y)+(gs.length===2?(gi?0.6:-bw-0.6):-bw/2),bh=n/mx*hmax;s.append(S('rect',{x:bx,y:sb-bh,width:bw,height:bh,fill:COL[g],opacity:.9}));if(n>=3){const t=S('text',{x:bx+bw/2,y:sb-bh-3,'text-anchor':'middle',style:'font-size:'+(mobile?12:10)+'px;fill:'+COL[g]});t.textContent=n;s.append(t)}})}
+  // dots
+  const jit={};rows.forEach(r=>{const k=r.y+r.g+r.comp;jit[k]=(jit[k]||0)+1});
+  const seen={},byA={};
+  const dots=S('g',{});
+  rows.slice().sort((a,b)=>b.pos-a.pos).forEach(r=>{const k=r.y+r.g+r.comp,i=(seen[k]=(seen[k]||0)+1),off=(i-(jit[k]+1)/2)*3.4*SC;
+    const cx=x(r.y)+(r.g==='W'?-3:3)*SC+off*(r.comp==='Olympics'?0:1),cy=py(r.pos);
+    r._x=cx;r._y=cy;(byA[r.a]=byA[r.a]||[]).push(r);
+    const med=r.pos<=3,og=r.comp==='Olympics',ec=r.comp==='European Championship';
+    const g=S('g',{class:'dot'});
+    let c;
+    if(og){const d=5.5*SC;c=S('rect',{x:cx-d,y:cy-d,width:2*d,height:2*d,transform:'rotate(45 '+cx+' '+cy+')',fill:COL[r.g],stroke:'#0f2230','stroke-width':.8});if(med){const d2=8.5*SC;g.append(S('rect',{x:cx-d2,y:cy-d2,width:2*d2,height:2*d2,transform:'rotate(45 '+cx+' '+cy+')',fill:'none',stroke:'#ffd166','stroke-width':1.8}))}}
+    else if(ec){c=S('circle',{cx,cy,r:4.6*SC,fill:'none',stroke:COL[r.g],'stroke-width':1.6});if(med)g.append(S('circle',{cx,cy,r:7.6*SC,fill:'none',stroke:'#ffd166','stroke-width':1.8}))}
+    else{c=S('circle',{cx,cy,r:4.6*SC,fill:COL[r.g],stroke:'#0f2230','stroke-width':.8});if(med)g.append(S('circle',{cx,cy,r:7.6*SC,fill:'none',stroke:'#ffd166','stroke-width':1.8}))}
+    g.append(c);g.dataset.a=r.a;
+    g.addEventListener('mousemove',e=>{focus(r.a);showTip(e,rowTip(r)+'<br><span style="color:#9db4bf">'+CAREER+'</span>')});g.addEventListener('mouseleave',()=>{hideTip();focus(null)});dots.append(g)});
+  s.append(dots);
+  // annotations (desktop only)
+  if(!mobile)ANN.forEach(an=>{const r=rows.find(q=>q.a===an.a&&q.y===an.y&&q.comp===an.comp);if(!r)return;const tx=x(an.ax),ty=an.row?30:8,bottom=ty+10;
+    s.append(S('path',{d:'M'+r._x+','+(r._y-9)+' L'+tx+','+(bottom+4),class:'ann-ln'}));
+    an.t.forEach((line,i)=>{const t=S('text',{x:tx,y:ty+i*15+10,class:'ann '+(i?'':r.g.toLowerCase()),'text-anchor':'middle'});t.textContent=line;if(i)t.setAttribute('style','fill:#9db4bf;font-size:11.5px');s.append(t)})});
+  const link=S('path',{class:'link',d:''});s.append(link);let CAREER='';
+  function focus(a){if(!a){s.classList.remove('hl');link.setAttribute('d','');return}
+    s.classList.add('hl');[...dots.children].forEach(g=>g.classList.toggle('on',g.dataset.a===a));const rs=byA[a].slice().sort((p,q)=>p.y-q.y||p._x-q._x);link.setAttribute('d',rs.map((r,i)=>(i?'L':'M')+r._x+','+r._y).join(' '));
+    const med=rs.filter(r=>r.pos<=3).length,t10=rs.filter(r=>r.pos<=10).length;CAREER=rs.length+' תוצאות, '+t10+' בטופ 10, '+med+' מדליות ('+rs[0].y+'-'+rs[rs.length-1].y+')'}
+  $('tl').innerHTML='';$('tl').append(s);
+}
+document.querySelectorAll('#tlCtl input').forEach(i=>i.addEventListener('change',timeline));timeline();let tlW=innerWidth;addEventListener('resize',()=>{if((innerWidth<640)!==(tlW<640)){tlW=innerWidth;timeline()}});
+
+/* ---------- chapter 2: medals by era ---------- */
+function medals(g){
+  const eras=['Mistral','RS:X','iQFOiL'],comps=['Olympics','World Championship','European Championship'],W=460,H=230,L=70,bw=90;
+  const yrs={};eras.forEach(e=>yrs[e]=new Set(senior.filter(r=>r.g===g&&r.era===e).map(r=>r.y)).size);
+  const s=S('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'מדליות לפי עידן'});
+  const max=18,y=v=>H-40-v/max*(H-70);
+  [0,5,10,15].forEach(v=>{s.append(S('line',{x1:L,x2:W-10,y1:y(v),y2:y(v),stroke:'#2b556a'}));const t=S('text',{x:L-8,y:y(v)+4,'text-anchor':'end',class:'mono mu'});t.textContent=v;s.append(t)});
+  eras.forEach((e,i)=>{let acc=0;const x0=L+20+i*130;
+    comps.forEach((c,j)=>{const n=senior.filter(r=>r.g===g&&r.era===e&&r.comp===c&&r.pos<=3).length;if(!n)return;
+      const rc=S('rect',{x:x0,y:y(acc+n),width:bw,height:y(acc)-y(acc+n),fill:COL[g],opacity:[1,.75,.5][j]});
+      const names=[...new Set(senior.filter(r=>r.g===g&&r.era===e&&r.comp===c&&r.pos<=3).map(name))];
+      rc.addEventListener('mousemove',ev=>showTip(ev,'<b>'+HE[c]+'</b> · '+e+'<br>'+n+' מדליות: '+names.join(', ')));rc.addEventListener('mouseleave',hideTip);s.append(rc);acc+=n});
+    const t=S('text',{x:x0+bw/2,y:H-22,'text-anchor':'middle'});t.textContent=e==='Mistral'?'מיסטרל':e;s.append(t);
+    const t2=S('text',{x:x0+bw/2,y:H-8,'text-anchor':'middle',class:'mono mu',style:'direction:rtl'});t2.textContent=yrs[e]&&acc?(acc/yrs[e]).toFixed(1)+' מדליות לשנה':'';s.append(t2);
+    const t3=S('text',{x:x0+bw/2,y:y(acc)-6,'text-anchor':'middle',class:'mono'});t3.textContent=acc;s.append(t3)});
+  return s;
+}
+$('medW').append(medals('W'));$('medM').append(medals('M'));
+$('wIqMed').textContent=senior.filter(r=>r.g==='W'&&r.era==='iQFOiL'&&r.pos<=3).length;$('wIqAth').textContent=['','אחת','שתי','שלוש','ארבע','חמש','שש','שבע','שמונה','תשע','עשר'][new Set(senior.filter(r=>r.g==='W'&&r.era==='iQFOiL'&&r.pos<=3).map(name)).size]||new Set(senior.filter(r=>r.g==='W'&&r.era==='iQFOiL'&&r.pos<=3).map(name)).size;
+
+/* ---------- chapter 3: depth per Worlds edition ---------- */
+function depth(g,el,comp,label){
+  const ed={};senior.filter(r=>r.g===g&&r.comp===comp).forEach(r=>{const k=r.y+' '+r.cls;(ed[k]=ed[k]||{y:r.y,cls:r.cls,rows:[]}).rows.push(r)});
+  const W=1100,H=150,L=36,y0=1991,y1=2027,x=y=>L+(y-y0)/(y1-y0)*(W-L-16),max=6,yy=v=>H-28-v/max*(H-50);
+  const s=S('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':label});
+  [2,4,6].forEach(v=>{s.append(S('line',{x1:L,x2:W-16,y1:yy(v),y2:yy(v),stroke:'#2b556a'}));const t=S('text',{x:L-6,y:yy(v)+4,'text-anchor':'end',class:'mono mu'});t.textContent=v;s.append(t)});
+  for(let y=1992;y<=2026;y+=2){const t=S('text',{x:x(y),y:H-10,'text-anchor':'middle',class:'mono mu'});t.textContent=y;s.append(t)}
+  Object.values(ed).forEach(e=>{const t10=e.rows.filter(r=>r.pos<=10),t20=e.rows.filter(r=>r.pos>10&&r.pos<=20),xx=x(e.y)+(e.cls==='iQFOiL'&&e.y<=2021?6:0)-5;
+    if(t20.length){const r2=S('rect',{x:xx,y:yy(t10.length+t20.length),width:10,height:yy(t10.length)-yy(t10.length+t20.length),fill:SOFT[g]});s.append(r2)}
+    if(t10.length){const r1=S('rect',{x:xx,y:yy(t10.length),width:10,height:yy(0)-yy(t10.length),fill:COL[g]});s.append(r1)}
+    const hit=S('rect',{x:xx-2,y:yy(6),width:14,height:yy(0)-yy(6),fill:'transparent'});
+    hit.addEventListener('mousemove',ev=>showTip(ev,'<b>'+e.y+' · '+e.cls+'</b>'+(e.rows[0].n?' · '+e.rows[0].n+' מתחרים':'')+'<br>'+e.rows.filter(r=>r.pos<=20).sort((a,b)=>a.pos-b.pos).map(r=>name(r)+' '+r.pos).join('<br>')+(e.rows.length>e.rows.filter(r=>r.pos<=20).length?'<br>ועוד '+(e.rows.length-e.rows.filter(r=>r.pos<=20).length)+' מחוץ לעשרים':'')));hit.addEventListener('mouseleave',hideTip);s.append(hit)});
+  const t=S('text',{x:W-16,y:14,'text-anchor':'end'});t.textContent=g==='W'?'נשים':'גברים';t.setAttribute('fill',COL[g]);s.append(t);
+  el.append(s);
+}
+depth('W',$('depthW'),'World Championship','ישראליות בטופ 10 ובטופ 20 באליפות העולם');depth('M',$('depthM'),'World Championship','ישראלים בטופ 10 ובטופ 20 באליפות העולם');
+
+/* ---------- squad per cycle ---------- */
+(function(){
+  const cs=[...new Set(senior.map(r=>cycle(r.y)))].sort(),W=1100,H=240,L=36,gap=Math.floor((W-L-30)/cs.length),bw=Math.floor(gap*.34);
+  const s=S('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'ספורטאים שונים עם טופ 10 לפי מחזור'});
+  const max=10,yy=v=>H-36-v/max*(H-60);
+  [2,4,6,8,10].forEach(v=>{s.append(S('line',{x1:L,x2:W-10,y1:yy(v),y2:yy(v),stroke:'#2b556a'}));const t=S('text',{x:L-6,y:yy(v)+4,'text-anchor':'end',class:'mono mu'});t.textContent=v;s.append(t)});
+  cs.forEach((c,i)=>{const x0=L+16+i*gap;['M','W'].forEach((g,j)=>{const rows=senior.filter(r=>r.g===g&&cycle(r.y)===c&&r.pos<=10),ath=[...new Set(rows.map(name))];if(!ath.length)return;
+      const r=S('rect',{x:x0+j*(bw+4),y:yy(ath.length),width:bw,height:yy(0)-yy(ath.length),fill:COL[g],opacity:c===2025?.6:1});
+      r.addEventListener('mousemove',ev=>showTip(ev,'<b>'+cyc(c)+'</b> '+(g==='W'?'נשים':'גברים')+'<br>'+ath.join(', ')));r.addEventListener('mouseleave',hideTip);s.append(r);
+      const t=S('text',{x:x0+j*(bw+4)+bw/2,y:yy(ath.length)-5,'text-anchor':'middle',class:'mono'});t.textContent=ath.length;s.append(t)});
+    const t=S('text',{x:x0+bw+2,y:H-16,'text-anchor':'middle',class:'mono mu'});t.textContent=cyc(c)+(c===2025?'*':'');s.append(t)});
+  $('squad').append(s);
+})();
+
+/* ---------- chapter 5 tiles ---------- */
+function tiles(g,el){
+  const rs=senior.filter(r=>r.g===g&&r.era==='iQFOiL'),wc=rs.filter(r=>r.comp==='World Championship');
+  const ed=new Set(wc.map(r=>r.y)),t10perEd=ed.size?(wc.filter(r=>r.pos<=10).length/ed.size).toFixed(1):'0';
+  const full=wc.filter(r=>r.n),best=full.length?Math.round(100*Math.max(...full.map(r=>1-(r.pos-1)/(r.n-1)))):null;
+  el.innerHTML=[['מדליות',rs.filter(r=>r.pos<=3).length,'אולימפיאדה, עולם ואירופה'],['ספורטאים בטופ 10',new Set(rs.filter(r=>r.pos<=10).map(name)).size,'אנשים שונים'],['בטופ 10 באליפות עולם',t10perEd,'ממוצע לאליפות'],['זהב',rs.filter(r=>r.pos===1).length,'כולל אליפות אירופה']].map(([l,v,n])=>'<div class="'+g.toLowerCase()+'"><b>'+v+'</b><span>'+l+'<br>'+n+'</span></div>').join('');
+}
+tiles('W',$('tilesW'));tiles('M',$('tilesM'));
+
+/* ---------- chapter 6 youth ---------- */
+(function(){
+  const yr=R.filter(r=>r.comp==='Youth World Championship'&&r.pos);
+  if(!yr.length)return;
+  const mk=g=>{const ed={};yr.filter(r=>r.g===g).forEach(r=>{const k=r.y+' '+r.cls+' '+r.age;(ed[k]=ed[k]||{y:r.y,cls:r.cls,age:r.age,rows:[]}).rows.push(r)});
+    const W=1100,H=140,L=36,y0=1999,y1=2027,x=y=>L+(y-y0)/(y1-y0)*(W-L-16),max=5,yy=v=>H-28-v/max*(H-50);
+    const s=S('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'נוער בטופ 10'});
+    [1,2,3,4,5].forEach(v=>{s.append(S('line',{x1:L,x2:W-16,y1:yy(v),y2:yy(v),stroke:'#2b556a'}));const t=S('text',{x:L-6,y:yy(v)+4,'text-anchor':'end',class:'mono mu'});t.textContent=v;s.append(t)});
+    for(let y=2000;y<=2026;y+=2){const t=S('text',{x:x(y),y:H-10,'text-anchor':'middle',class:'mono mu'});t.textContent=y;s.append(t)}
+    Object.values(ed).forEach(e=>{const t10=e.rows.filter(r=>r.pos<=10);if(!t10.length)return;const xx=x(e.y)+(e.age==='U17'?6:-6)-5;
+      const r=S('rect',{x:xx,y:yy(t10.length),width:10,height:yy(0)-yy(t10.length),fill:COL[g],opacity:e.age==='U17'?.55:1});
+      r.addEventListener('mousemove',ev=>showTip(ev,'<b>'+e.y+' · '+e.cls+' · '+e.age+'</b>'+(e.rows[0].n?' · '+e.rows[0].n+' מתחרים':'')+'<br>'+t10.sort((a,b)=>a.pos-b.pos).map(r=>name(r)+' '+r.pos).join('<br>')));r.addEventListener('mouseleave',hideTip);s.append(r)});
+    const t=S('text',{x:W-16,y:14,'text-anchor':'end'});t.textContent=(g==='W'?'נשים':'גברים')+' · כהה U19, בהיר U17';t.setAttribute('fill',COL[g]);s.append(t);return s};
+  $('youthW').append(mk('W'));$('youthM').append(mk('M'));
+  const t10=yr.filter(r=>r.pos<=10),med=yr.filter(r=>r.pos<=3);
+})();
+
+/* ---------- chapter 7 index ---------- */
+function index(){
+  const w={med:+$('wMed').value,t5:+$('wT5').value,t10:+$('wT10').value,sq:+$('wSq').value};
+  ['Med','T5','T10','Sq'].forEach(k=>$('v'+k).textContent=$('w'+k).value);
+  const comps=[...document.querySelectorAll('#idxComp button[aria-pressed="true"]')].map(b=>b.dataset.c);
+  const cs=[...new Set(senior.map(r=>cycle(r.y)))].sort(),out={};
+  ['W','M'].forEach(g=>{out[g]=cs.map(c=>{const rows=senior.filter(r=>r.g===g&&cycle(r.y)===c&&comps.includes(r.comp));
+    const eds=new Set(COV.filter(x=>x.g===g&&cycle(x.y)===c&&comps.includes(x.comp)&&(x.st==='full'||x.st==='partial')).map(x=>x.y+x.comp+x.cls)).size||1;
+    const sc=(w.med*rows.filter(r=>r.pos<=3).length+w.t5*rows.filter(r=>r.pos>3&&r.pos<=5).length+w.t10*rows.filter(r=>r.pos>5&&r.pos<=10).length+w.sq*new Set(rows.filter(r=>r.pos<=10).map(name)).size)/eds;
+    return {c,sc,eds,n:rows.length}})});
+  const W=1100,H=250,L=36,gap=Math.floor((W-L-30)/cs.length),bw=Math.floor(gap*.34),max=Math.max(1,...out.W.map(o=>o.sc),...out.M.map(o=>o.sc)),yy=v=>H-36-v/max*(H-60);
+  const s=S('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'מדד איכות לפי מחזור'});
+  const bestW=Math.max(...out.W.filter(o=>o.c<2025).map(o=>o.sc)),bestM=Math.max(...out.M.filter(o=>o.c<2025).map(o=>o.sc));
+  cs.forEach((c,i)=>{const x0=L+16+i*gap;['M','W'].forEach((g,j)=>{const o=out[g][i];if(!o.sc)return;const best=o.sc===(g==='W'?bestW:bestM);
+      const r=S('rect',{x:x0+j*(bw+4),y:yy(o.sc),width:bw,height:yy(0)-yy(o.sc),fill:COL[g],opacity:best?1:.45,stroke:best?'#0f2230':'none','stroke-width':2});
+      r.addEventListener('mousemove',ev=>showTip(ev,'<b>'+cyc(c)+'</b> '+(g==='W'?'נשים':'גברים')+'<br>ציון '+o.sc.toFixed(2)+' לתחרות, על '+o.eds+' תחרויות עם נתונים'));r.addEventListener('mouseleave',hideTip);s.append(r)});
+    const t=S('text',{x:x0+bw+2,y:H-16,'text-anchor':'middle',class:'mono mu'});t.textContent=cyc(c)+(c===2025?'*':'');s.append(t)});
+  $('idx').innerHTML='';$('idx').append(s);
+  const bw_=out.W.find(o=>o.sc===bestW),bm_=out.M.find(o=>o.sc===bestM);
+  $('idxNote').textContent='עם המשקולות האלה המחזור הטוב ביותר של הנשים הוא '+cyc(bw_.c)+' ושל הגברים '+cyc(bm_.c)+'. העמודה המודגשת בכל צבע היא הגבוהה ביותר מבין המחזורים המלאים. 2025-2028* הוא מחזור חלקי של שתי עונות ולא מתמודד על התואר. הציון הוא לתחרות אחת עם נתונים, כדי שמחזור עם יותר תחרויות מכוסות לא ינצח רק בגלל זה.';
+}
+['wMed','wT5','wT10','wSq'].forEach(id=>$(id).addEventListener('input',index));
+$('idxComp').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');index()});
+index();
+
+/* ---------- table ---------- */
+(function(){
+  const tb=document.querySelector('#all tbody');
+  function render(q){q=(q||'').trim().toLowerCase();const rs=R.filter(r=>!q||(r.y+' '+HE[r.comp]+' '+r.comp+' '+r.cls+' '+r.a+' '+r.he).toLowerCase().includes(q)).sort((a,b)=>b.y-a.y||a.comp.localeCompare(b.comp)||(a.pos||999)-(b.pos||999));
+    tb.innerHTML=rs.slice(0,600).map(r=>'<tr><td class="n">'+r.y+'</td><td>'+HE[r.comp]+'</td><td class="n">'+r.cls+'</td><td>'+(r.g==='W'?'נ':'ג')+'</td><td class="n">'+r.age+'</td><td>'+name(r)+' <span class="note num">'+r.a+'</span></td><td class="n">'+(r.pos||'')+'</td><td class="n">'+(r.n||'')+'</td><td><a href="'+r.src+'" target="_blank" rel="noopener">מקור</a></td></tr>').join('')}
+  render('');$('q').addEventListener('input',e=>render(e.target.value));
+})();
+})();
+</script>
