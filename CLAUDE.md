@@ -12,7 +12,7 @@ Live at https://backyonatan-alt.github.io/
 | `/moneyball/`, `/moreyball/`, `/expected-goals/` | Three sports analytics articles | `src/sports/sports-analytics-by-the-numbers.html` (one combined source) | `python3 src/sports/split.py` |
 | `/dogfight/` | Dogfight Ground School (beginner's air combat guide for any flight sim, with 3D clips) | `src/dogfight/` (`page.html`, `app.js`) | `python3 src/dogfight/build.py` |
 | `/flyers/` | Frequent Flyers (NBA travel: animated route map, miles by team, does travel cost wins) | `src/flyers/` (`page.html`, `data.json`, `cost.json`, `map.json`) | `python3 src/flyers/build.py` |
-| `/windsurf/` | נבחרת הגלישה הטובה אי פעם? חצי ממנה. (Hebrew, RTL: Israel's Olympic windsurfing team 1992-2026, women vs men, depth not just medals) | `src/windsurf/` (`page.html`, `data.json`; `data/*.csv` + `prep.py` make `data.json`) | `python3 src/windsurf/build.py` |
+| `/windsurf/` | The Best Team Ever? Half of It. (Hebrew page, title הנבחרת הכי טובה שהייתה לנו? חצי ממנה., RTL: Israel's Olympic windsurfing team 1992-2026, women vs men, depth not just medals) | `src/windsurf/` (`page.html`, `data.json`; `data/*.csv` + `prep.py` make `data.json`) | `python3 src/windsurf/build.py` |
 
 Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`, `windsurf/index.html` or the three sports `index.html` files. They are build output and get overwritten.
 
@@ -51,7 +51,7 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`
 
 ## Windsurf notes
 
-- Hebrew page, `dir="rtl"`; charts are `direction:ltr` inside. Fixed dark design (same sea palette as the home page), not a dark mode. Women are coral (`--w`), men teal (`--m`), everywhere.
+- Hebrew page, `dir="rtl"`; charts are `direction:ltr` inside. The home row is in English (title, text and `windsurf/card.png`), the share preview `preview.png` is in Hebrew; both are rendered from `og.html` / `og-en.html` in the windsurf working folder with Playwright. Fixed dark design (same sea palette as the home page), not a dark mode. Women are coral (`--w`), men teal (`--m`), everywhere.
 - Data: `src/windsurf/data/*.csv` per `SCHEMA.md` (one row per Israeli per event, plus coverage rows: full / partial / none / not_held). `prep.py` merges name spellings (`ALIAS`), adds Hebrew names (`HEB`) and writes `data.json`; it prints any athlete without a Hebrew name. `analyze.py` prints the per-cycle tables.
 - Seven chapters, no chapter numbers. Coverage and caveats (entries vs finishers in 2022-2025, Eilat 2016 silver fleet, 2012, Reuveny 41st) live as two bullets in the methodology section; the full results table is collapsed behind a `<details>`. Youth chapter shows counts, plus the youth-to-senior conversion finding (7 of 33 women medalists reached a senior top 10, 4 of 40 men).
 - Charts explain themselves with legends (`.key`), not captions under the chart. Yonatan removed every caption; do not add them back. Never use the word שדה for field size, say מתחרים or תחרות.

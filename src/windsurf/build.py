@@ -5,7 +5,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 page=open('page.html',encoding='utf8').read()
 page=page.replace('{{DATA}}',open('data.json',encoding='utf8').read())
 assert '{{' not in page
-T="נבחרת הגלישה הטובה אי פעם? חצי ממנה."; D="האם נבחרת גלישת הרוח של ישראל טובה היום יותר מאי פעם? 1,224 תוצאות מ-1992 ועד היום, מגל פרידמן ועד תמר שטיינברג. התשובה: כן לנשים, לא לגברים, והסיבה מפתיעה."
+T="הנבחרת הכי טובה שהייתה לנו? חצי ממנה."; D="האם נבחרת גלישת הרוח של ישראל טובה היום יותר מאי פעם? 1,224 תוצאות מ-1992 ועד היום, מגל פרידמן ועד תמר שטיינברג. התשובה: כן לנשים, לא לגברים, והסיבה מפתיעה."
 U="https://backyonatan-alt.github.io/windsurf/"
 head=f'''<!doctype html>
 <html lang="he" dir="rtl">
