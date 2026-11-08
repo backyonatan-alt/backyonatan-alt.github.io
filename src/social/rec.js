@@ -1,0 +1,16 @@
+const {chromium}=require('playwright');const fs=require('fs');const path=require('path');
+const D=__dirname;
+const f=(fam,pkg,w,sub,style='normal')=>{try{return '@font-face{font-family:"'+fam+'";font-weight:'+w+';src:url(data:font/woff2;base64,'+fs.readFileSync(path.join(D,'node_modules/@fontsource/'+pkg+'/files/'+pkg+'-'+sub+'-'+w+'-'+style+'.woff2')).toString('base64')+')}'}catch(e){return ''}};
+const FF=[600,800,900].map(w=>f('Big Shoulders Display','big-shoulders-display',w,'latin')).join('')+[400,500,600].map(w=>f('IBM Plex Mono','ibm-plex-mono',w,'latin')).join('')+[400,500,600].map(w=>f('IBM Plex Sans','ibm-plex-sans',w,'latin')).join('');
+let html=fs.readFileSync('/home/claude/backyonatan-alt.github.io/flyers/index.html','utf8');
+html=html.replace('https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js','file://'+path.join(D,'node_modules/d3/dist/d3.min.js'));
+html=html.replace(/<link[^>]*fonts\.googleapis[^>]*>/g,'').replace('</head>','<style>'+FF+'</style></head>');
+fs.writeFileSync(path.join(D,'flyers-test.html'),html);
+(async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium/chrome-linux/chrome'}).catch(()=>chromium.launch());
+const ctx=await b.newContext({viewport:{width:1280,height:900},deviceScaleFactor:1,recordVideo:{dir:path.join(D,'vid'),size:{width:1280,height:900}}});
+const pg=await ctx.newPage();await pg.goto('file://'+path.join(D,'flyers-test.html'));await pg.waitForTimeout(1500);
+const el=await pg.$('#heroStage');const bb=await el.boundingBox();console.log('bbox',JSON.stringify(bb));
+await pg.evaluate(()=>window.scrollTo(0,document.querySelector('#heroStage').getBoundingClientRect().top+window.scrollY-10));await pg.waitForTimeout(500);
+const bb2=await (await pg.$('#heroStage')).boundingBox();console.log('bbox2',JSON.stringify(bb2));fs.writeFileSync(path.join(D,'bbox.json'),JSON.stringify(bb2));
+await pg.waitForTimeout(24000);
+await ctx.close();await b.close();console.log('done')})();

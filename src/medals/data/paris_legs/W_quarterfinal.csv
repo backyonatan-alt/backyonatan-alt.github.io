@@ -1,0 +1,36 @@
+leg,from,to,competitor,nation,sailid,rank,timeSinceGun_ms,distanceSinceGun_m,averageSOG_kts
+1,M - Start line (St RC-St Pn),M - 1,Zheng Yan,CHN,CHN,6,54827,602.45,21.43
+1,M - Start line (St RC-St Pn),M - 1,Maria Belen Bazo German,PER,PER,7,57012,624.87,21.36
+1,M - Start line (St RC-St Pn),M - 1,Helene Noesmoen,FRA,FRA,2,52497,603.7,22.36
+1,M - Start line (St RC-St Pn),M - 1,Maja Dziarnowska,POL,POL,3,52520,620.04,22.96
+1,M - Start line (St RC-St Pn),M - 1,Katerina Svikova,CZE,CZE,4,53284,629.83,23.04
+1,M - Start line (St RC-St Pn),M - 1,Theresa Marie Steinlein,GER,GER,1,51536,595.04,22.48
+1,M - Start line (St RC-St Pn),M - 1,Veerle Ten Have,NZL,NZL,5,53408,601.56,21.89
+2,M - 1,M - 4 gate,Zheng Yan,CHN,CHN,7,147962,1588.15,20.57
+2,M - 1,M - 4 gate,Maria Belen Bazo German,PER,PER,5,145214,1525.14,19.84
+2,M - 1,M - 4 gate,Helene Noesmoen,FRA,FRA,1,138394,1546.7,21.34
+2,M - 1,M - 4 gate,Maja Dziarnowska,POL,POL,3,142444,1603.01,21.25
+2,M - 1,M - 4 gate,Katerina Svikova,CZE,CZE,6,146807,1586.68,19.89
+2,M - 1,M - 4 gate,Theresa Marie Steinlein,GER,GER,2,139424,1566.89,21.49
+2,M - 1,M - 4 gate,Veerle Ten Have,NZL,NZL,4,143015,1568.29,20.97
+3,M - 4 gate,M - 1,Zheng Yan,CHN,CHN,1,295530,2801.26,15.98
+3,M - 4 gate,M - 1,Maria Belen Bazo German,PER,PER,2,297429,2793.15,16.19
+3,M - 4 gate,M - 1,Helene Noesmoen,FRA,FRA,4,317280,3011.28,15.91
+3,M - 4 gate,M - 1,Maja Dziarnowska,POL,POL,5,322324,3054.64,15.69
+3,M - 4 gate,M - 1,Katerina Svikova,CZE,CZE,6,329692,3046.47,15.52
+3,M - 4 gate,M - 1,Theresa Marie Steinlein,GER,GER,3,308340,2906.4,15.41
+3,M - 4 gate,M - 1,Veerle Ten Have,NZL,NZL,7,335048,3156.16,16.07
+4,M - 1,M - 4s,Zheng Yan,CHN,CHN,1,389849,3813.76,20.87
+4,M - 1,M - 4s,Maria Belen Bazo German,PER,PER,2,393643,3801.98,20.38
+4,M - 1,M - 4s,Helene Noesmoen,FRA,FRA,4,415737,4059.29,20.69
+4,M - 1,M - 4s,Maja Dziarnowska,POL,POL,6,424557,4085.4,19.6
+4,M - 1,M - 4s,Katerina Svikova,CZE,CZE,5,420786,4064.31,21.72
+4,M - 1,M - 4s,Theresa Marie Steinlein,GER,GER,3,410705,3988.75,20.55
+4,M - 1,M - 4s,Veerle Ten Have,NZL,NZL,7,431532,4155.88,20.14
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Zheng Yan,CHN,CHN,1,422000,4170.74,21.58
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Maria Belen Bazo German,PER,PER,2,426946,4157.35,20.74
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Helene Noesmoen,FRA,FRA,4,445718,4412.71,22.91
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Maja Dziarnowska,POL,POL,5,456320,4443.89,21.94
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Katerina Svikova,CZE,CZE,6,457089,4424.59,19.29
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Theresa Marie Steinlein,GER,GER,3,441556,4342.29,22.28
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Veerle Ten Have,NZL,NZL,7,460190,4486.17,22.4

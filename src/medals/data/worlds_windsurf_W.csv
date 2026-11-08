@@ -1,0 +1,786 @@
+event,year,cls,gender,rank,name,nation,status,source_url
+worlds,2008,windsurf,W,1,Alessandra Sensini,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,2,Barbara Kendall,NZL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,3,Marina Alabau Neira,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,4,Faustine Merret,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,5,Blanca Manchón,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,6,Piccon Charline,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,7,Peina Chen,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,8,Shaw Bryony,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,9,Mingli Duan,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,10,Pauline Perrin,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,11,Lise Vidal,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,12,Zofia Noceti-Klepacka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,13,Malgorzata Bialecka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,14,Jessica Crisp,AUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,15,Romy Kinzl,GER,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,16,Flavia Tartaglini,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,17,Laura Linares,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,18,Olga Maslivets,UKR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,19,Kei Chan Wai,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2008,windsurf,W,20,Yasuko Kosuge,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2008-women-epf7556.html
+worlds,2009,windsurf,W,1,Marina Alabau Neira,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,2,Blanca Manchón,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,3,Charline Picon,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,4,Agata Brygola,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,5,Marine Rambaud,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,6,Shaw Bryony,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,7,Jessica Crisp,AUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,8,Flavia Tartaglini,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,9,Eugénie Ricard,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,10,Yue Huang,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,11,Kate Ellingham,NZL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,12,Pauline Perrin,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,13,Marta Hlavaty,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,14,Wai Kei Chan,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,15,Laura Linares,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,16,Malgorzata Bialecka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,17,Nikola Girke,CAN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,18,Maayan Davidovich,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,19,Jannnicke Stalstrom,NOR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,20,Moana Delle,GER,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,21,Izzy Hamilton,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,22,Maja Dziarnowska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,23,Lise Vidal,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,24,Chan Hei Man,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,25,Bettina Honore,DEN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,26,Angeliki Skarlatou,GRE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,27,Yuki Sunaga,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,28,Helene Noesmoen,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,29,Dominique Vallee,CAN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,30,Tuuli Petäjä,FIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,31,Peina Chen,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,32,Patricia Freitas,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,33,Michiru Takagi,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,34,Olga Gorbatykh,UKR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,35,Fujiko Onishi,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,36,Justina Sellars,NZL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,37,Anastasia Davrou,GRE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,38,Sybille Bosch,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,39,Leonore Bosch,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,40,Farrah Hall,USA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,41,Diani Detre,HUN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,42,Claudia Carney,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,43,Steffanie Williams,NZL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,44,Natalia Wojcik,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,45,Beth Williamson,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,46,Sophie Bailey,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,47,Katrine Jensen,DEN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,48,Maria Aadland Mollestad,NOR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,49,Agnieszka Bilska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,50,Irene Nicola Makedona,CYP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,51,Jazmine Lynch,NZL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,52,Eyangelia Karagiorgoy,GRE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,53,Kirsten O Callaghan,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,54,Joanna Evans,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,55,Ingrid Puusta,EST,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,56,Jazmin Lopez Becker,ARG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,57,Becky Plummer,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,58,Celine Noyer,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,59,Bruna Mello,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2009,windsurf,W,60,Magdalena Resano,ARG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2009-women-epf12624.html
+worlds,2010,windsurf,W,1,Blanca Manchon,ESP,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,2,Alessandra Sensini,ITA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,3,Picon Charline,FRA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,4,Bryony Shaw,GBR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,5,Zofia Klepacka,POL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,6,Lee-el Korzits,ISR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,7,Marina Alabau,ESP,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,8,Moana Delle,GER,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,9,Maja Dziarnowska,POL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,10,Sun Sasa,CHN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,11,Agata Brygola,POL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,12,Marine Rambaud,FRA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,13,Jessica Crisp,AUS,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,14,Laura Linares,ITA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,15,Chen Qiubin,CHN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,16,Ricard Eugenie,FRA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,17,Perrin Pauline,FRA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,18,Li Ling,CHN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,19,Flavia Tartaglini,ITA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,20,Malgorzata Bialecka,POL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,21,Huang Yue,CHN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,22,Wang Ning,CHN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,23,Zhu Huangli,CHN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,24,Chan Wai Kei,HKG,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,25,Chen Peina,CHN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,26,Jannicke Stalstrom,NOR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,27,Olga Maslivets,UKR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,28,Nikola Girke,CAN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,29,Maayan Davidovich,ISR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,30,Yasuko Kosuge,JPN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,31,Izzy Hamilton,GBR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,32,Angeliki Skarlatou,GRE,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,33,Yuki Sunaga,JPN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,34,Kate Ellingham,NZL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,35,Tuuli Petaja,FIN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,36,Steffanie Williams,NZL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,37,Noesmoen Helene,FRA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,38,Bettina Honoré,DEN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,39,Wang Shuijia,CHN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,40,Sybille Bosch,FRA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,41,Natalia Kosinska,NZL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,42,Dominique Vallée,CAN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,43,Léonore Bosch,FRA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,44,Agnieszka Bilska,POL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,45,Irina Bontemps,BUL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,46,Claudia Carney,GBR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,47,Demita Vega De Lille,MEX,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,48,Sophie Bailey,GBR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,49,Alice Monk,NZL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,50,Diana Detre,HUN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,51,Ingrid Puusta,EST,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,52,Natalia Wojcik,POL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,53,Beth Williamson,GBR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,54,Katrine Jensen,DEN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,55,Pepa Mavrodieva,BUL,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,56,Maria Aadland Mollestad,NOR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,57,Marcelien de Koning,NED,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,58,Joanna Sterling,AUS,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,59,Farrah Hall,USA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,60,Irene Nicola Makedona,CYP,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,61,Esther de Geus,NED,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,62,Laerke Buhl-Hansen,DEN,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,63,Lilian de Geus,NED,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,64,Nitsan Maayan,ISR,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,65,Sarocha Prumprai,THA,,https://www.sail-world.com/-74294
+worlds,2010,windsurf,W,66,Maria Antonia Dominguez,ESP,,https://www.sail-world.com/-74294
+worlds,2011,windsurf,W,1,Lee Korzits,ISR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,2,Zofia Noceti Klepacka,POL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,3,Marina Alabau,ESP,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,4,Huang Yue,CHN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,5,Charline Picon,FRA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,6,Maayan Davidovich,ISR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,7,Bryony Shaw,GBR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,8,Li Ling,CHN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,9,Laura Linares,ITA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,10,Olha Maslivets,UKR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,11,Alessandra Sensini,ITA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,12,Blanca Manchón,ESP,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,13,Flavia Tartaglini,ITA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,14,Moana Delle,GER,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,15,Nikola Girke,CAN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,16,Tuuli Petaja,FIN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,17,Jessica Crisp,AUS,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,18,Maja Dziarnowska,POL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,19,Agata Brygoła,POL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,20,Chen Qiubin,CHN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,21,Hei Man Hayley Victoria Chan,HKG,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,22,Chan Wai Kei,HKG,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,23,Jannicke Stålstrøm,NOR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,24,Pauline Perrin,FRA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,25,Eugenie Richard,FRA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,26,Steff Williams,NZL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,27,Ning Wang,CHN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,28,Irina Konstantinova-Bontemps,BUL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,29,Patricia de Costa Freitas,BRA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,30,Sigrid Rondelez,BEL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,31,Izzy Hamilton,GBR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,32,Allison Shreeve,AUS,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,33,Yuki Sunaga,JPN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,34,Huali Zhu,CHN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,35,Natalia Kosińska,NZL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,36,Angeliki Skarlatou,GRE,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,37,Chen Peina,CHN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,38,Hanna Zembrzuska,POL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,39,Diana Klaudia Detre,HUN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,40,Lilian de Geus,NED,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,41,Justina Sellers,NZL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,42,Fujiko Onishi,JPN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,43,Agnieszka Bilska,POL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,44,Claudia Carney,GBR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,45,Yasuko Kosuge,JPN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,46,Maria Aadland,NOR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,47,Dominique Vallee,CAN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,48,Napalai Tansai,THA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,49,Pepa Mavrodieva,BUL,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,50,Ingrid Puusta,EST,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,51,Farrah Hall,USA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,52,Lærke Buhl-Hansen,DEN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,53,Joanna Sterling,AUS,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,54,Demita Vega,MEX,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,55,Sara Katalin Cholnoky,HUN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,56,Veronica Fanciulli,ITA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,57,Jazmín López Becker,ARG,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,58,Carmen Rego Monteiro,BRA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,59,Siripon Kaewuang-Ngam,THA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,60,Bruna Martinelli Cesario de Mello,BRA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,61,Audrey Pei Lin Yong,SIN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,62,Eirini Nikola Makedona,CYP,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,63,Carolina Souza-Mendelblatt,POR,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,64,Tatiana Bazyuk,RUS,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,65,Amanda Ling Kai Ng,SIN,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,66,Annalise Gilbert,AUS,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,67,Monique Meijer,AHO,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2011,windsurf,W,68,Kathleen Tocke,USA,,https://wiki.riteme.site/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2012,windsurf,W,1,Lee Korzits,ISR,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,2,Zofia Klepacka,POL,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,3,Alessandra Sensini,ITA,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,4,Bryony Shaw,GBR,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,5,Maja Dziarnowska,POL,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,6,Maayan Davidovich,ISR,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,7,Charline Picon,FRA,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,8,Flavia Tartaglini,ITA,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,9,Olga Maslivets,UKR,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,10,Marina Alabau,ESP,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,11,Nikola Girke,CAN,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,12,Moana Delle,GER,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,13,Jessica Crisp,AUS,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,14,Tuuli Petaja,FIN,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,15,Natalia Kosińska,NZL,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,16,Chan Wai Kei,HKG,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,17,Angeliki Skarlatou,GRE,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,18,Izzy Hamilton,GBR,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,19,Hélène Noesmoen,FRA,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,20,Agnieszka Bilska,POL,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,21,Pauline Perrin,FRA,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,22,Blanca Manchón,ESP,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,23,Li Ling,CHN,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,24,Hayley Victoria Chan Hei Man,HKG,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,25,Laura Linares,ITA,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,26,Hanna Zembrzuska,POL,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,27,Ning Wang,CHN,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,28,Yue Huang,CHN,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,29,Jannicke Stålstrøm,NOR,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2012,windsurf,W,30,Yuki Sunaga,JPN,,https://en.wikipedia.org/wiki/2012_RS:X_World_Championships
+worlds,2013,windsurf,W,1,Lee-El Korsiz,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,2,Shaw Bryony,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,3,Maayan Davidovich,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,4,Tuuli Petäjä,FIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,5,Charline Picon,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,6,Qiaoshan Weng,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,7,Blanca Manchón,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,8,Patricia Freitas,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,9,Olga Maslivets,UKR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,10,Hayley Hei Man Chan,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,11,Ling Li,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,12,Demita Vega de Lille,MEX,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,13,Natalia Kosinska,NZL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,14,Flavia Tartaglini,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,15,Izzy Hamilton,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,16,Eugénie Ricard,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,17,Kamila Smektala,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,18,Malgorzata Bialecka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,19,Hania Zembrzudka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,20,Maja Dziarnowska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,21,Shuyue Yang,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,22,Yuki Sunaga,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,23,Komine Megumi,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,24,Marina Alabau Neira,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,25,Jeanne Dantes,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,26,Marion Lepert,USA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,27,Noemi Cohen,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,28,Bruna Mello,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,29,Fujiko Onishi,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,30,Agnieszka Bilska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,31,Claudia Carney,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,32,Shahar Tibi,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,33,Patricia Castro,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,34,Blanca Alabau Neira,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,35,Nicole Level,MEX,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,36,Lucia Idoyaga,ARG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,37,Jazmin Lopez Becker,ARG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,38,Maria Celia Tejerina Mackern,ARG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,39,Laurence Bonneau-Charland,CAN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,40,Kathleen Tocke,USA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2013,windsurf,W,41,Dismary Bonillo,VEN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2013-women-epf39816.html
+worlds,2014,windsurf,W,1,Charline Picon,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,2,Marina Alabau,ESP,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,3,Maayan Davidovich,ISR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,4,Wu Jiahui,CHN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,5,Bryony Shaw,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,6,Flavia Tartaglini,ITA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,7,Zofia Noceti-Klepacka,POL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,8,Eugénie Ricard,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,9,Isobel Hamilton,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,10,Lilian de Geus,NED,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,11,Blanca Manchón,ESP,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,12,Zheng Manjia,CHN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,13,Hanna Zembrzuska,POL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,14,Patrícia Freitas,BRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,15,Tuuli Petäjä-Sirén,FIN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,16,Kamila Smektała,POL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,17,Małgorzata Białecka,POL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,18,Laura Linares,ITA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,19,Stefaniya Elfutina,RUS,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,20,Lu Yunxiu,CHN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,21,Natalia Kosinska,NZL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,22,Weng Qiaoshan,CHN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,23,Ingrid Puusta,EST,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,24,Demita Vega,MEX,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,25,Hadar Heller,ISR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,26,Bérénice Mege,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,27,Marta Maggetti,ITA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,28,Megumi Komine,JPN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,29,Fujiko Onishi,JPN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,30,Lærke Buhl-Hansen,DEN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,31,Bruna Martinelli,BRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,32,Maja Dziarnowska,POL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,33,Sun Jiali,CHN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,34,Hélène Noesmoen,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,35,Yuki Sunaga,JPN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,36,Joanna Sterling,AUS,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,37,Jeanne Dantes,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,38,Anastasiya Valkevich,BLR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,39,Maria Mollestad,NOR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,40,Farrah Hall,USA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,41,Megumi Iseda,JPN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,42,Maëlle Guilbaud,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,43,Anzhela Poludarova,RUS,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,44,Marion Lepert,USA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,45,Elena Vacca,ITA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,46,Noelle Finch,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,47,Angeliki Skarlatou,GRE,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,48,Imogen Sills,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,49,Pepa Mavrodieva,BUL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,50,Pilar Lamadrid,ESP,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,51,Sára Cholnoky,HUN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,52,Emma Wilson,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,53,Fanny Baumann,SWE,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,54,María Celia Tejerina,ARG,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,55,Laurence Bonneau-Charland,CAN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,56,Dilara Uralp,TUR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,57,Stefanie Schwarz,GER,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,58,Solvig Sayre,USA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,59,Dismary Bonillo,VEN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,60,Blanca Carracedo,ESP,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,61,Saskia Sills,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2014,windsurf,W,62,Katia Belabbas,ALG,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Women%27s_RS:X
+worlds,2017,windsurf,W,1,Peina Chen,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,2,Jiahui Wu,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,3,Yunxiu Lu,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,4,Zofia Noceti-Klepacka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,5,Manjia Zheng,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,6,Lilian de Geus,NED,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,7,Hongmei Shi,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,8,Blanca Manchón,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,9,Stefania Elfutina,RUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,10,Hayley Victoria Chan,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,11,Xianting Huang,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,12,Helene Noesmoen,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,13,Marina Alabau Neira,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,14,Kamila Smektala,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,15,Noga Geller,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,16,Marta Maggetti,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,17,Hadar Heller,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,18,Bérénice Mege,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,19,Emma Wilson,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,20,Mariam Sekhposyan,RUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,21,Tuuli Petäjä,FIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,22,Patricia Freitas,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,23,Flavia Tartaglini,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,24,Delphine Jariel,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,25,Jeanne Dantes,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,26,Megumi Komine,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,27,Veronica Fanciulli,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,28,Wai Yan Ngai,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,29,Sara Wennekes,NED,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,30,Isobel Hamilton,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,31,Maria Aadland Mollestad,NOR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,32,Maya Morris,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,33,Katy Spychakov,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,34,Fujiko Onishi,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,35,Sin Lam Sonia Lo,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,36,Lucie Belbeoch,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,37,Megumi Iseda,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,38,Maria Belen Bazo,PER,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,39,Siripon Kaewduang-Ngam,THA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,40,Yuki Sunaga,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,41,Sa Bin Chun,KOR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,42,Farrah Hall,USA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,43,Agnieszka Bilska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,44,Ingrid Puusta,EST,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,45,Dilara Uralp,TUR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,46,Maja Dziarnowska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,47,Ma Kwan Ching,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,48,Shai Blank,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,49,Karolina Lipinska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,50,Noy Drihan,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,51,Rina Niijima,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,52,Sarocha Prumprai,THA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,53,Tetard Claire,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,54,Maria Celia Tejerina Mackern,ARG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,55,Fanny Bauman,SWE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,56,Saskia Sills,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,57,Momoka Hara,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,58,Kazami Matuura,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,59,Amanda Ng,SIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,60,Miki Yamabe,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,61,Junna Watanabe,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,62,Nicole Lim,SIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,63,Nene Sugimoto,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,64,Ketija Birzule,LAT,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,65,Chih Ling Wang,TPE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2017,windsurf,W,66,Chou Li,TPE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2017-women-epf74770.html
+worlds,2018,windsurf,W,1,Lilian DE GEUS,NED,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,2,Charline PICON,FRA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,3,Yunxiu LU,CHN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,4,Emma WILSON,GBR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,5,Zofia NOCETI-KLEPACKA,POL,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,6,Peina CHEN,CHN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,7,Marta MAGGETTI,ITA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,8,Hongmei SHI,CHN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,9,Flavia TARTAGLINI,ITA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,10,Lucie BELBEOCH,FRA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,11,Maya MORRIS,ISR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,12,Blanca MANCHON,ESP,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,13,Katy SPYCHAKOV,ISR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,14,Lærke BUHL-HANSEN,DEN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,15,Bryony SHAW,GBR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,16,Noga GELLER,ISR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,17,Stefania ELFUTINA,RUS,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,18,Noy DRIHAN,ISR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,19,Ingrid PUUSTA,EST,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,20,Patricia FREITAS,BRA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,21,Pei Ling CHEN,CHN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,22,Maja DZIARNOWSKA,POL,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,23,Saskia SILLS,GBR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,24,Delphine JARIEL,FRA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,25,Marina ALABAU NEIRA,ESP,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,26,Malgorzata BIALECKA,POL,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,27,Karolina LIPIŃSKA,POL,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,28,Xueling JIN,CHN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,29,Kamila SMEKTALA,POL,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,30,Maria Belen BAZO,PER,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,31,Sara WENNEKES,NED,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,32,Wai Yan NGAI,HKG,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,33,Hadar HELLER,ISR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,34,Megumi KOMINE,JPN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,35,Jie DU,CHN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,36,Yuki SUNAGA,JPN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,37,Bérénice MEGE,FRA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,38,Dilara URALP,TUR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,39,Megumi ISEDA,JPN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,40,Yarden ISAAK,ISR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,41,Fujiko ONISHI,JPN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,42,Claire TETARD,FRA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,43,Angeliki SKARLATOU,GRE,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,44,Lily YOUNG,GBR,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,45,Fanny BAUMANN,SWE,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,46,Mariam SEKHPOSYAN,RUS,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,47,Tuuli PETÄJÄ-SIRÉN,FIN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,48,Farrah HALL,USA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,49,Maria TEJERINA MACKERN,ARG,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,50,Rina NIIJIMA,JPN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,51,Demita VEGA DE LILLE,MEX,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,52,Veerle TEN HAVE,NZL,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,53,Kazami MATSUURA,JPN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,54,Palma CARGO,CRO,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,55,Veronica FANCIULLI,ITA,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,56,Natasa LAPPA,CYP,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,57,Aikaterini DIVARI,GRE,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,58,Chih Ling WANG,TPE,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,59,Agnieszka BILSKA,POL,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,60,Samantha COSTIN,AUS,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,61,Katerina SVIKOVA,CZE,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2018,windsurf,W,62,Anna HAAVISTO,FIN,,https://totallympics.com/forums/topic/2674-sailing-ws-world-championships-2018/page/2/
+worlds,2019,windsurf,W,1,Yunxiu Lu,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,2,Katy Spychakov,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,3,Lilian de Geus,NED,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,4,Stefania Elfutina,RUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,5,Marta Maggetti,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,6,Giorgia Speciale,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,7,Peina Chen,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,8,Zofia Noceti-Klepacka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,9,Saskia Sills,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,10,Hayley Victoria Chan,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,11,Yue Tan,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,12,Emma Wilson,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,13,Lucie Belbeoch,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,14,Xialing Tan,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,15,Patricia Freitas,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,16,Blanca Manchón,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,17,Noy Drihan,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,18,Flavia Tartaglini,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,19,Manjia Zheng,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,20,Maja Dziarnowska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,21,Jiali Sun,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,22,Maya Morris,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,23,Hongmei Shi,CHN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,24,Laerke Buhl-Hansen,DEN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,25,Wai Yan Ngai,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,26,Tuuli Petäjä,FIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,27,Maria Belen Bazo,PER,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,28,Ingrid Puusta,EST,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,29,Noga Geller,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,30,Megumi Iseda,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,31,Shai Blank,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,32,Laura Linares,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,33,Alysia Gibson,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,34,Ma Kwan Ching Ma,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,35,Yuki Sunaga,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,36,Dilara Uralp,TUR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,37,Veronica Fanciulli,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,38,Manon Pianazza,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,39,Malgorzata Bialecka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,40,Bérénice Mege,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,41,Anna Khvorikova,RUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,42,Yarden Isaak,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,43,Delphine Jariel,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,44,Mariana Aguilar,MEX,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,45,Helene Noesmoen,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,46,Karolina Lipinska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,47,Pilar Lamadrid Trueba,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,48,Rina Niijima,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,49,Bruna Martinelli Cesario De Mello,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,50,Agnieszka Bilska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,51,Sara Cholnoky,HUN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,52,Megumi Komine,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2019,windsurf,W,53,Shaw Bryony,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2019-women-epf94437.html
+worlds,2020,windsurf,W,1,Lilian de Geus,NED,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,2,Charline Picon,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,3,Noy Drihan,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,4,Emma Wilson,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,5,Marta Maggetti,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,6,Katy Spychakov,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,7,Zofia Noceti-Klepacka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,8,Maja Dziarnowska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,9,Blanca Manchón,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,10,Hayley Victoria Chan,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,11,Giorgia Speciale,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,12,Karolina Lipinska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,13,Stefania Elfutina,RUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,14,Patricia Freitas,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,15,Maya Morris,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,16,Ingrid Puusta,EST,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,17,Laerke Buhl-Hansen,DEN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,18,Noga Geller,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,19,Maria Belen bazo,PER,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,20,Lucie Belbeoch,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,21,Yuki Sunaga,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,22,Pilar Lamadrid Trueba,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,23,Tuuli Petäjä,FIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,24,Veronica Fanciulli,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,25,Wai Yan Ngai,HKG,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,26,Veerle Ten Have,NZL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,27,Manon Pianazza,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,28,Gelly Skarlatou,GRE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,29,Komine Megumi,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,30,Megumi Iseda,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,31,Rina Niijima,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,32,Dilara Uralp,TUR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,33,Mariana Aguilar Chavez Peon,MEX,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,34,Fujiko Onishi,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,35,Farrah Hall,USA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,36,Nikola Girke,CAN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,37,Claire Tetard,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,38,Momoka Hara,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,39,Bruna Mello,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,40,Palma Cargo,CRO,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,41,Amanda Ng,SIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,42,Olivia Mew,CAN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,43,Matsuura Kazami,JPN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,44,Ioanna Sirti,GRE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,45,Courtney Schoutrop,AUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2020,windsurf,W,46,Amelia Quinlan,AUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2020-women-epf94445.html
+worlds,2021,windsurf,W,1,Lilian de Geus,NED,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,2,Katy Spychakov,ISR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,3,Charline Picon,FRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,4,Emma Wilson,GBR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,5,Zofia Noceti-Klepacka,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,6,Marta Maggetti,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,7,Maja Dziarnowska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,8,Patricia Freitas,BRA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,9,Laerke Buhl-Hansen,DEN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,10,Giorgia Speciale,ITA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,11,Maria Belen Bazo,PER,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,12,Ingrid Puusta,EST,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,13,Tuuli Petäjä,FIN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,14,Karolina Lipinska,POL,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,15,Aikaterini Divari,GRE,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,16,Anna Khvorikova,RUS,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,17,Farrah Hall,USA,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,18,Dilara Uralp,TUR,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,19,Sara Cholnoky,HUN,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,20,Zoe Fernández,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,21,Demita Vega de Lille,MEX,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,22,Blanca Manchón,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,23,Lucía García-Cubillana Lopez,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,24,Carmen Sahuquillo Merchante,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,25,Marina Martín-Prat Medina,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,26,Ana Sánchez Corrales,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,27,Arancha Sahuquillo Merchante,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2021,windsurf,W,28,Kira González Casares,ESP,,https://www.the-sports.org/sailing-rsx-board-world-championship-results-2021-women-epf113481.html
+worlds,2015,windsurf,W,1,Peina Chen,CHN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,2,Bryony Shaw,GBR,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,3,Lilian de Geus,NED,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,4,Zofia Noceti-Klepacka,POL,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,5,Malgorzata Bialecka,POL,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,6,Marina Alabau Neira,ESP,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,7,Charline Picon,FRA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,8,Blanca Manchon,ESP,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,9,Jiali Sun,CHN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,10,Stefania Elfutina,RUS,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,11,Hei Man Hayley Victoria Chan,HKG,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,12,Flavia Tartaglini,ITA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,13,Eugenie Ricard,FRA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,14,Maayan Davidovich,ISR,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,15,Olga Maslivets,RUS,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,16,Manjia Zheng,CHN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,17,Laura Linares,ITA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,18,Natalia Kosinska,NZL,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,19,Patricia Dacosta Freitas,BRA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,20,Ingrid Puusta,EST,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,21,Iseda Megumi,JPN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,22,Jiahui Wu,CHN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,23,Sin lam Sonia Lo,HKG,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,24,Marta Maggetti,ITA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,25,Megumi Komine,JPN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,26,Kamila Smektala,POL,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,27,Yuki Sunaga,JPN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,28,Tuuli Petaja-Siren,FIN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,29,Maria Mollestad,NOR,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,30,Demita Vega,MEX,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,31,Joanna Sterling,AUS,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,32,Isobel Hamilton,GBR,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,33,Veronica Fanciulli,ITA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,34,Onishi Fujiko,JPN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,35,Maja Dziarnowska,POL,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,36,Laerke Buhl-Hansen,DEN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,37,Zuzanna Czurylo,POL,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,38,Gelly Skarlatou,GRE,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,39,Farrah Hall,USA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,40,Marion Lepert,USA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,41,Helene Noesmoen,FRA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,42,Jeanne Dantes,FRA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,43,Lucie Belbeoch,FRA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,44,Bruna Mello,BRA,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,45,Hanna Zembrzuska,POL,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,46,Agnieszka Bilska,POL,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,47,Dilara Uralp,TUR,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,48,Fanny Baumann,SWE,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,49,Emma Wilson,GBR,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,50,Maria Celia Tejerina Mackern,ARG,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,51,Celina Saubidet Birkner,ARG,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,52,Marie Brunvoll Nustad,NOR,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,53,Sara Cholnoky,HUN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,54,Stefanie Schwarz,GER,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,55,Ketija Birzule,LAT,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,56,Nicole Lim,SIN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,57,Olivia Mew,CAN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,58,Keit Järve,EST,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2015,windsurf,W,59,Dismary Bonillo,VEN,,https://rsxclass.com/worlds2015/?results=women-3
+worlds,2023,windsurf,W,1,Emma Wilson,GBR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,2,Shahar Tibi,ISR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,3,Katy Spychakov,ISR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,4,Marta Maggetti,ITA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,5,Sharon Kantor,ISR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,6,Yan Zheng,CHN,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,7,Hélène Noesmoen,FRA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,8,Mina Mobekk,NOR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,9,Tamar Steinberg,ISR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,10,Mariana Aguilar,MEX,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,11,Sara Wennekes,NED,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,12,Pilar Lamadrid,ESP,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,13,Shahar Reshef,ISR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,14,Palma Čargo,CRO,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,15,Maya Morris,ISR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,16,Giorgia Speciale,ITA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,17,Huang Xianting,CHN,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,18,Lola Sorin,FRA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,19,Maja Dziarnowska,POL,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,20,Nicole van der Velden,ESP,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,21,Lilian de Geus,NED,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,22,Veerle ten Have,NZL,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,23,Islay Watson,GBR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,24,Delphine Cousin,FRA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,25,María Belén Bazo,PER,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,26,Helle Oppedal,NOR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,27,Theresa Marie Steinlein,GER,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,28,Maja Kuchta,POL,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,29,Daniela Peleg,ISR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2023,windsurf,W,30,Tan Xialing,CHN,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_Women%27s_iQFoil
+worlds,2024,windsurf,W,1,Sharon Kantor,ISR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,2,Emma Wilson,GBR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,3,Katy Spychakov,ISR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,4,Sara Wennekes,NED,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,5,Pilar Lamadrid Trueba,ESP,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,6,Mariana Aguilar Chavez Peon,MEX,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,7,Maja Dziarnowska,POL,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,8,Shahar Tibi,ISR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,9,Marta Maggetti,ITA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,10,Maya Gysler,NOR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,11,Mina Mobekk,NOR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,12,Tuva Oppedal,NOR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,13,Daniela Peleg,ISR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,14,Tamar Steinberg,ISR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,15,Lola Sorin,FRA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,16,Maya Morris,ISR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,17,Zheng Yan,CHN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,18,Theresa Marie Steinlein,GER,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,19,Nicole Van Der Velden Vizcaya,ESP,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,20,Islay Watson,GBR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,21,Veerle Ten Have,NZL,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,22,Delphine Cousin,FRA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,23,Lilian De Geus,NED,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,24,Palma Čargo,CRO,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,25,Helene Noesmoen,FRA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,26,Yunxiu Lu,CHN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,27,Giorgia Speciale,ITA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,28,Xialing Tan,CHN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,29,Noceti Klepacka Zofia,POL,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,30,Katerina Svikova,CZE,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,31,Maria Belen Bazo,PER,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,32,Dominique Stater,USA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,33,Alice Read,GBR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,34,Xianting Huang,CHN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,35,Laerke Buhl-Hansen,DEN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,36,Ingrid Puusta,EST,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,37,Lucie Belbeoch,FRA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,38,Johanna Hjertberg,SWE,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,39,Kwan Ching Ma,HKG,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,40,Barbora Svikova,CZE,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,41,Emma Viktoria Millend,EST,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,42,Sofia Renna,ITA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,43,Andrea Torres Fullana,ESP,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,44,Manon Pianazza,FRA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,45,Natasa Lappa,CYP,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,46,Merve Vatan,TUR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,47,Oda Sverre,NOR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,48,Manjia Zheng,CHN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,49,Carola Colasanto,ITA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,50,Alisa Engelmann,GER,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,51,Jennie Roberts,GBR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,52,Kristyna Pinosova,CZE,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,53,Rina Niijima,JPN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,54,Linda Oprandi,ITA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,55,Dilara Uralp Palombo,TUR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,56,Wuniu Ayu,CHN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,57,Nela Sadilkova,CZE,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,58,Lucy Kenyon,GBR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,59,Barbara Winau Ordinas,ESP,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,60,Yuki Sunaga,JPN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,61,Katerina Altmannova,CZE,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,62,Giovanna Prada,BRA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,63,Yu Chen,CHN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,64,Sophia Meyer,GER,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,65,Fujiko Onishi,JPN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,66,Aleksandra Blinnikka,FIN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,67,Xiaoni Chen,CHN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,68,Danae Pontifex,GRE,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,69,Ada Tan,TUR,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,70,Julia Gomez Roa,ESP,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,71,Aikaterini Divari,GRE,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,72,Samantha Costin,AUS,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,73,Junna Watanabe,JPN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,74,Lorena Abicht,AUT,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,75,Manon Berger,SUI,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,76,Ambar Papazian,FRA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,77,Bruna Martinelli Cesario De Mello,BRA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,78,Marsha Binte Shahrin,SGP,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,79,Aleksandra Wasiewicz,POL,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,80,Pola Wawrzyniak,POL,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,81,Sofie Hammeken,DEN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,82,Sofia Hamalainen,FIN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,83,Chiara Ferretti,ARG,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,84,Elena Sandera,SUI,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,85,Enrichetta Bettini Fleitas,ESP,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,86,Miki Yamabe,JPN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,87,Aticha Homraruen,THA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,88,Fianne Van Den Brule,NED,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,89,Megumi Iseda (Segawa),JPN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,90,B Lindsay,USA,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,91,Nikola Girke,CAN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,92,Sara Szentivanyi,HUN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,93,Rebecca Heller,CAN,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"
+worlds,2024,windsurf,W,94,Ishwariya Ganesh,IND,,"2024 iQFOiL Worlds Lanzarote, Sailti overall results PDF (provided by Yonatan)"

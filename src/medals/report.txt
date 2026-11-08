@@ -1,0 +1,268 @@
+
+windsurf M 2008  worlds used [2008]
+  worlds medalists(best<=3): 3; at Games: 3; medalled: 2
+  worlds top10: 10; at Games: 6; missing: 4 (nation had another sailor there: 4)
+     missing: 7 Jon-Paul Tobin NZL | nation sent: Tom Ashley
+     missing: 8 Samuel Launay FRA | nation sent: Julien Bontemps
+     missing: 9 Piotr Myszka POL | nation sent: Przemysław Miarczyński
+     missing: 10 Le Nicholas FRA | nation sent: Julien Bontemps
+     fav: 1 Tom Ashley NZL -> OG 1
+     fav: 2 Joao Rodrigues POR -> OG 11
+     fav: 3 Shahar Zubari ISR -> OG 3
+
+windsurf M 2012  worlds used [2011, 2012]
+  worlds medalists(best<=3): 6; at Games: 4; medalled: 2
+  worlds top10: 13; at Games: 10; missing: 3 (nation had another sailor there: 3)
+     missing: 2 Piotr Myszka POL | nation sent: Przemysław Miarczyński
+     missing: 3 Nimrod Mashiach ISR | nation sent: Shahar Zubari
+     missing: 6 Tom Ashley NZL | nation sent: JP Tobin
+     fav: 1 Dorian van Rijsselberghe NED -> OG 1
+     fav: 1 Julien Bontemps FRA -> OG 5
+     fav: 2 Piotr Myszka POL -> OG None
+     fav: 2 Nick Dempsey GBR -> OG 2
+     fav: 3 Nimrod Mashiach ISR -> OG None
+     fav: 3 Jp Tobin NZL -> OG 7
+
+windsurf M 2016  worlds used [2015, 2016]
+  worlds medalists(best<=3): 5; at Games: 4; medalled: 2
+  worlds top10: 15; at Games: 9; missing: 6 (nation had another sailor there: 6)
+     missing: 3 Kiran Badloe NED | nation sent: Dorian van Rijsselberghe
+     missing: 4 Zhichao Zhang CHN | nation sent: Wang Aichen
+     missing: 5 Louis Giard FRA | nation sent: Pierre Le Coq
+     missing: 8 Pawel Tarnowski POL | nation sent: Piotr Myszka
+     missing: 10 Julien Bontemps FRA | nation sent: Pierre Le Coq
+     missing: 10 Chunzhuang Liu CHN | nation sent: Wang Aichen
+     fav: 1 Piotr Myszka POL -> OG 4
+     fav: 1 Pierre Le Coq FRA -> OG 3
+     fav: 2 Dorian van Rijsselberghe NED -> OG 1
+     fav: 2 Aichen Wang CHN -> OG 13
+     fav: 3 Kiran Badloe NED -> OG None
+
+windsurf M 2021  worlds used [2019, 2020]
+  worlds medalists(best<=3): 4; at Games: 2; medalled: 2
+  worlds top10: 15; at Games: 7; missing: 8 (nation had another sailor there: 8)
+     missing: 2 Dorian van Rijsselberghe NED | nation sent: Kiran Badloe
+     missing: 3 Pierre Le Coq FRA | nation sent: Thomas Goyard
+     missing: 4 Shahar Zubari ISR | nation sent: Yoav Cohen
+     missing: 5 Pawel Tarnowski POL | nation sent: Piotr Myszka
+     missing: 7 Daniele Benedetti ITA | nation sent: Mattia Camboni
+     missing: 7 Radoslaw Furmanski POL | nation sent: Piotr Myszka
+     missing: 8 Tom Reuveny ISR | nation sent: Yoav Cohen
+     missing: 8 Louis Giard FRA | nation sent: Thomas Goyard
+     fav: 1 Kiran Badloe NED -> OG 1
+     fav: 2 Dorian van Rijsselberghe NED -> OG None
+     fav: 3 Pierre Le Coq FRA -> OG None
+     fav: 3 Thomas Goyard FRA -> OG 2
+
+windsurf M 2024  worlds used [2023, 2024]
+  worlds medalists(best<=3): 4; at Games: 4; medalled: 1
+  worlds top10: 16; at Games: 10; missing: 6 (nation had another sailor there: 6)
+     missing: 4 Luca Di Tomassi ITA | nation sent: Nicolò Renna
+     missing: 5 Kiran Badloe NED | nation sent: Luuc van Opzeeland
+     missing: 6 Yoav Omer ISR | nation sent: Tom Reuveny
+     missing: 7 Pouliquen Yun FRA | nation sent: Nicolas Goyard
+     missing: 8 Louis Pignolet FRA | nation sent: Nicolas Goyard
+     missing: 10 Thomas Goyard FRA | nation sent: Nicolas Goyard
+     fav: 1 Luuc van Opzeeland NED -> OG 3
+     fav: 1 Nicolo Renna ITA -> OG 6
+     fav: 2 Sebastian Kördel GER -> OG 12
+     fav: 2 Paweł Tarnowski POL -> OG 10
+
+windsurf W 2008  worlds used [2008]
+  worlds medalists(best<=3): 3; at Games: 3; medalled: 1
+  worlds top10: 10; at Games: 5; missing: 5 (nation had another sailor there: 5)
+     missing: 5 Blanca Manchón ESP | nation sent: Marina Alabau
+     missing: 6 Piccon Charline FRA | nation sent: Faustine Merret
+     missing: 7 Peina Chen CHN | nation sent: Yin Jian
+     missing: 9 Mingli Duan CHN | nation sent: Yin Jian
+     missing: 10 Pauline Perrin FRA | nation sent: Faustine Merret
+     fav: 1 Alessandra Sensini ITA -> OG 2
+     fav: 2 Barbara Kendall NZL -> OG 6
+     fav: 3 Marina Alabau Neira ESP -> OG 4
+
+windsurf W 2012  worlds used [2011, 2012]
+  worlds medalists(best<=3): 4; at Games: 4; medalled: 2
+  worlds top10: 13; at Games: 8; missing: 5 (nation had another sailor there: 5)
+     missing: 4 Huang Yue CHN | nation sent: Li Ling
+     missing: 5 Maja Dziarnowska POL | nation sent: Zofia Noceti-Klepacka
+     missing: 6 Maayan Davidovich ISR | nation sent: Lee Korzits
+     missing: 8 Flavia Tartaglini ITA | nation sent: Alessandra Sensini
+     missing: 9 Laura Linares ITA | nation sent: Alessandra Sensini
+     fav: 1 Lee Korzits ISR -> OG 6
+     fav: 2 Zofia Noceti Klepacka POL -> OG 3
+     fav: 3 Marina Alabau ESP -> OG 1
+     fav: 3 Alessandra Sensini ITA -> OG 9
+
+windsurf W 2016  worlds used [2015]
+  worlds medalists(best<=3): 3; at Games: 3; medalled: 1
+  worlds top10: 10; at Games: 7; missing: 3 (nation had another sailor there: 3)
+     missing: 4 Zofia Noceti-Klepacka POL | nation sent: Małgorzata Białecka
+     missing: 8 Blanca Manchon ESP | nation sent: Marina Alabau
+     missing: 9 Jiali Sun CHN | nation sent: Chen Peina
+     fav: 1 Peina Chen CHN -> OG 2
+     fav: 2 Bryony Shaw GBR -> OG 9
+     fav: 3 Lilian de Geus NED -> OG 4
+
+windsurf W 2021  worlds used [2019, 2020]
+  worlds medalists(best<=3): 5; at Games: 4; medalled: 2
+  worlds top10: 15; at Games: 9; missing: 6 (nation had another sailor there: 5)
+     missing: 3 Noy Drihan ISR | nation sent: Katy Spychakov
+     missing: 4 Stefania Elfutina RUS | nation sent: -
+     missing: 6 Giorgia Speciale ITA | nation sent: Marta Maggetti
+     missing: 7 Peina Chen CHN | nation sent: Lu Yunxiu
+     missing: 8 Maja Dziarnowska POL | nation sent: Zofia Noceti-Klepacka
+     missing: 9 Saskia Sills GBR | nation sent: Emma Wilson
+     fav: 1 Yunxiu Lu CHN -> OG 1
+     fav: 1 Lilian de Geus NED -> OG 5
+     fav: 2 Katy Spychakov ISR -> OG 6
+     fav: 2 Charline Picon FRA -> OG 2
+     fav: 3 Noy Drihan ISR -> OG None
+
+windsurf W 2024  worlds used [2023, 2024]
+  worlds medalists(best<=3): 4; at Games: 2; medalled: 2
+  worlds top10: 14; at Games: 10; missing: 4 (nation had another sailor there: 4)
+     missing: 2 Shahar Tibi ISR | nation sent: Sharon Kantor
+     missing: 3 Katy Spychakov ISR | nation sent: Sharon Kantor
+     missing: 9 Tamar Steinberg ISR | nation sent: Sharon Kantor
+     missing: 10 Maya Gysler NOR | nation sent: Mina Mobekk
+     fav: 1 Emma Wilson GBR -> OG 3
+     fav: 1 Sharon Kantor ISR -> OG 2
+     fav: 2 Shahar Tibi ISR -> OG None
+     fav: 3 Katy Spychakov ISR -> OG None
+
+laser M 2008  worlds used []
+  worlds medalists(best<=3): 0; at Games: 0; medalled: 0
+  worlds top10: 0; at Games: 0; missing: 0 (nation had another sailor there: 0)
+
+laser M 2012  worlds used [2011, 2012]
+  worlds medalists(best<=3): 4; at Games: 3; medalled: 1
+  worlds top10: 15; at Games: 11; missing: 4 (nation had another sailor there: 4)
+     missing: 2 Nick Thompson GBR | nation sent: Paul Goodison
+     missing: 5 Tom Burton AUS | nation sent: Tom Slingsby
+     missing: 7 Ashley Brunning AUS | nation sent: Tom Slingsby
+     missing: 8 Johan Wigforss SWE | nation sent: Rasmus Myrgren
+     fav: 1 Tom Slingsby AUS -> OG 1
+     fav: 2 Tonci Stipanovic CRO -> OG 4
+     fav: 2 Nick Thompson GBR -> OG None
+     fav: 3 Andrew Maloney NZL -> OG 5
+
+laser M 2016  worlds used [2015, 2016]
+  worlds medalists(best<=3): 5; at Games: 5; medalled: 1
+  worlds top10: 16; at Games: 12; missing: 4 (nation had another sailor there: 4)
+     missing: 4 Matthew Wearn AUS | nation sent: Tom Burton
+     missing: 5 Marco Gallo ITA | nation sent: Francesco Marrai
+     missing: 6 Andy Maloney NZL | nation sent: Sam Meech
+     missing: 10 Lorenzo Brando Chiavarini GBR | nation sent: Nick Thompson
+     fav: 1 Nick Thompson GBR -> OG 6
+     fav: 2 Philipp Buhl GER -> OG 14
+     fav: 2 Jean-Baptiste Bernaz FRA -> OG 5
+     fav: 3 Tom Burton AUS -> OG 1
+     fav: 3 Rutger Van Schaardenburg NED -> OG 9
+
+laser M 2021  worlds used [2019, 2020]
+  worlds medalists(best<=3): 5; at Games: 3; medalled: 2
+  worlds top10: 15; at Games: 8; missing: 7 (nation had another sailor there: 7)
+     missing: 1 Tom Burton AUS | nation sent: Matt Wearn
+     missing: 3 George Gautrey NZL | nation sent: Sam Meech
+     missing: 5 Nick Thompson GBR | nation sent: Elliot Hanson
+     missing: 7 Luke Elliott AUS | nation sent: Matt Wearn
+     missing: 8 Lorenzo Brando Chiavarini GBR | nation sent: Elliot Hanson
+     missing: 10 Thomas Saunders NZL | nation sent: Sam Meech
+     missing: 10 Filip Juricic CRO | nation sent: Tonči Stipanović
+     fav: 1 Tom Burton AUS -> OG None
+     fav: 1 Philipp Buhl GER -> OG 5
+     fav: 2 Matthew Wearn AUS -> OG 1
+     fav: 3 George Gautrey NZL -> OG None
+     fav: 3 Tonci Stipanovic CRO -> OG 2
+
+laser M 2024  worlds used [2023, 2024]
+  worlds medalists(best<=3): 4; at Games: 3; medalled: 1
+  worlds top10: 15; at Games: 12; missing: 3 (nation had another sailor there: 3)
+     missing: 3 George Gautrey NZL | nation sent: Thomas Saunders
+     missing: 10 Luke Elliott AUS | nation sent: Matt Wearn
+     missing: 10 Elliot Hanson GBR | nation sent: Micky Beckett
+     fav: 1 Matt Wearn AUS -> OG 1
+     fav: 2 Hermann Tomasgaard NOR -> OG 5
+     fav: 2 Michael Beckett GBR -> OG 6
+     fav: 3 George Gautrey NZL -> OG None
+
+laser W 2008  worlds used [2008]
+  worlds medalists(best<=3): 3; at Games: 2; medalled: 1
+  worlds top10: 10; at Games: 8; missing: 2 (nation had another sailor there: 2)
+     missing: 3 Andrea Brewster GBR | nation sent: Penny Clark
+     missing: 10 Xiaoying Shen CHN | nation sent: Xu Lijia
+     fav: 1 Sarah Steyaert FRA -> OG 5
+     fav: 2 Lijia Xu CHN -> OG 3
+     fav: 3 Andrea Brewster GBR -> OG None
+
+laser W 2012  worlds used [2011, 2012]
+  worlds medalists(best<=3): 6; at Games: 6; medalled: 3
+  worlds top10: 15; at Games: 13; missing: 2 (nation had another sailor there: 2)
+     missing: 8 Erika Reineke USA | nation sent: Paige Railey
+     missing: 10 Charlotte Dobson GBR | nation sent: Alison Young
+     fav: 1 Gintare Scheidt LTU -> OG 6
+     fav: 1 Marit Bouwmeester NED -> OG 2
+     fav: 2 Lijia Xu CHN -> OG 1
+     fav: 2 Evi Van Acker BEL -> OG 3
+     fav: 3 Sari Multala FIN -> OG 7
+     fav: 3 Paige Railey USA -> OG 8
+
+laser W 2016  worlds used [2015, 2016]
+  worlds medalists(best<=3): 5; at Games: 5; medalled: 2
+  worlds top10: 14; at Games: 12; missing: 2 (nation had another sailor there: 2)
+     missing: 6 Erika Reineke USA | nation sent: Paige Railey
+     missing: 9 Maxime Jonker NED | nation sent: Marit Bouwmeester
+     fav: 1 Anne-Marie Rindom DEN -> OG 3
+     fav: 1 Alison Young GBR -> OG 8
+     fav: 2 Marit Bouwmeester NED -> OG 1
+     fav: 2 Paige Railey USA -> OG 10
+     fav: 3 Evi Van Acker BEL -> OG 4
+
+laser W 2021  worlds used [2019, 2020]
+  worlds medalists(best<=3): 5; at Games: 4; medalled: 2
+  worlds top10: 16; at Games: 11; missing: 5 (nation had another sailor there: 5)
+     missing: 2 Maxime Jonker NED | nation sent: Marit Bouwmeester
+     missing: 7 Daphne Van Der Vaart NED | nation sent: Marit Bouwmeester
+     missing: 7 Hannah Snellgrove GBR | nation sent: Alison Young
+     missing: 9 Charlotte Rose USA | nation sent: Paige Railey
+     missing: 10 Mirthe Akkerman NED | nation sent: Marit Bouwmeester
+     fav: 1 Marit Bouwmeester NED -> OG 3
+     fav: 1 Anne-Marie Rindom DEN -> OG 1
+     fav: 2 Maxime Jonker NED -> OG None
+     fav: 3 Line Flem Høst NOR -> OG 8
+     fav: 3 Alison Young GBR -> OG 10
+
+laser W 2024  worlds used [2023, 2024]
+  worlds medalists(best<=3): 5; at Games: 4; medalled: 1
+  worlds top10: 14; at Games: 9; missing: 5 (nation had another sailor there: 4)
+     missing: 2 Charlotte Rose USA | nation sent: Erika Reineke
+     missing: 8 Maxime Jonker NED | nation sent: Marit Bouwmeester
+     missing: 8 Vasileia Karachaliou GRE | nation sent: -
+     missing: 9 Carolina Albano ITA | nation sent: Chiara Benini Floriani
+     missing: 10 Mara Stransky AUS | nation sent: Zoe Thomson
+     fav: 1 Anne-Marie Rindom DEN -> OG 2
+     fav: 1 Mária Érdi HUN -> OG 14
+     fav: 2 Charlotte Rose USA -> OG None
+     fav: 2 Maud Jayet SUI -> OG 4
+     fav: 3 Emma Plasschaert BEL -> OG 7
+
+=== Olympic medalists: best Worlds rank in window (None = outside top 20 or no data)
+windsurf M 2008 1:Tom Ashley(1); 2:Julien Bontemps(11); 3:Shahar Zubari(3)
+windsurf M 2012 1:Dorian van Rijsselberghe(1); 2:Nick Dempsey(2); 3:Przemysław Miarczyński(4)
+windsurf M 2016 1:Dorian van Rijsselberghe(2); 2:Nick Dempsey(4); 3:Pierre Le Coq(1)
+windsurf M 2021 1:Kiran Badloe(1); 2:Thomas Goyard(3); 3:Bi Kun(19)
+windsurf M 2024 1:Tom Reuveny(8); 2:Grae Morris(4); 3:Luuc van Opzeeland(1)
+windsurf W 2008 1:Yin Jian(None); 2:Alessandra Sensini(1); 3:Bryony Shaw(8)
+windsurf W 2012 1:Marina Alabau(3); 2:Tuuli Petäjä(14); 3:Zofia Noceti-Klepacka(2)
+windsurf W 2016 1:Charline Picon(7); 2:Chen Peina(1); 3:Stefaniya Yelfutina(10)
+windsurf W 2021 1:Lu Yunxiu(1); 2:Charline Picon(2); 3:Emma Wilson(4)
+windsurf W 2024 1:Marta Maggetti(4); 2:Sharon Kantor(1); 3:Emma Wilson(1)
+laser M 2012 1:Tom Slingsby(1); 2:Pavlos Kontides(10); 3:Rasmus Myrgren(9)
+laser M 2016 1:Tom Burton(3); 2:Tonči Stipanović(7); 3:Sam Meech(7)
+laser M 2021 1:Matt Wearn(2); 2:Tonči Stipanović(3); 3:Hermann Tomasgaard(6)
+laser M 2024 1:Matt Wearn(1); 2:Pavlos Kontides(6); 3:Stefano Peschiera(14)
+laser W 2008 1:Anna Tunnicliffe(6); 2:Gintarė Volungevičiūtė(4); 3:Xu Lijia(2)
+laser W 2012 1:Xu Lijia(2); 2:Marit Bouwmeester(1); 3:Evi Van Acker(2)
+laser W 2016 1:Marit Bouwmeester(2); 2:Annalise Murphy(None); 3:Anne-Marie Rindom(1)
+laser W 2021 1:Anne-Marie Rindom(1); 2:Josefin Olsson(6); 3:Marit Bouwmeester(1)
+laser W 2024 1:Marit Bouwmeester(4); 2:Anne-Marie Rindom(1); 3:Line Høst(5)

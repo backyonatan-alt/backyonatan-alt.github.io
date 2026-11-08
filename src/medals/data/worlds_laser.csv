@@ -1,0 +1,686 @@
+event,year,cls,gender,rank,name,nation,status,source_url
+worlds,2006,laser,M,1,Michael Blackburn,AUS,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,2,Tom Slingsby,AUS,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,3,Rasmus Myrgen,SWE,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,4,Michael Leigh,CAN,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,5,Gustavo Lima,POR,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,6,Andrew Murdoch,NZL,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,7,Giles Scott,GBR,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,8,Paul Goodison,GBR,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,9,Milan Vujasinovic,CRO,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,10,Deniss Karpak,EST,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,11,Bernard Luttmer,CAN,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,12,Thomas Le Breton,FRA,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,13,Mate Arapov,CRO,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,14,David Weaver,NZL,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,15,Matias Del Solar,CHI,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,16,Bruno Fontes,BRA,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,17,Luka Radelic,CRO,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,18,Julio Alsogaray,ARG,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,19,Michael Bullott,NZL,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,M,20,Simon Groteluschen,GER,,https://events.ilcasailing.org/regattauploads/2006/SM/2006_Std_Men_Worlds_Final_Results.htm
+worlds,2006,laser,W,1,Lijia Xu,CHN,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,2,Petra Niemann,GER,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,3,Tania Elias Calles Wolf,MEX,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,4,Anna Tunnicliffe,USA,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,5,Evi Van Acker,BEL,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,6,Sarah Steyaert,FRA,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,7,Karin Soderstrom,SWE,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,8,Sophie De Turkheim,FRA,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,9,Katarzyna Szotynska,POL,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,10,Sarah Blanck,AUS,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,11,Jo Aleh,NZL,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,12,Charlotte Dobson,GBR,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,13,Sari Multala,FIN,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,14,Krystal Weir,AUS,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,15,Trine Julie Abrahamsen,DEN,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,16,Xiaoying Shen,CHN,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,17,Tina Mihelic,CRO,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,18,Virginia Kravarioti,GRE,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,19,Andrea Brewster,GBR,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2006,laser,W,20,Tatiana Drozdovskaya,BLR,,https://events.ilcasailing.org/regattauploads/2006/RW/2006_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,1,Sarah Steyaert,FRA,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,2,Lijia Xu,CHN,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,3,Andrea Brewster,GBR,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,4,Gintare Volungeviciute Scheidt,LTU,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,5,Sarah Blanck,AUS,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,6,Anna Tunnicliffe,USA,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,7,Penny Clark,GBR,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,8,Karin Soderstrom,SWE,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,9,Evi Van Acker,BEL,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,10,Xiaoying Shen,CHN,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,11,Katarzyna Szotynska,POL,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,12,Tuula Tenkanen,FIN,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,13,Paige Railey,USA,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,14,Jo Aleh,NZL,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,15,Lizzie Vickers,GBR,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,16,Marit Bouwmeester,NED,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,17,Sara Winther,NZL,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,18,Nathalie Brugger,SUI,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,19,Elizabeth Yin,SIN,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2008,laser,W,20,Sari Multala,FIN,,https://events.ilcasailing.org/regattauploads/2008/RW/2008_Rdl_Women_Worlds_Final_Results.htm
+worlds,2009,laser,M,1,Paul Goodison,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,2,Michael Bullot,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,3,Nick Thompson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,4,Julio Alsogaray,ARG,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,5,Tonci Stipanovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,6,David Wright,CAN,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,7,Milan Vujasinovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,8,Javier Hernandez,SPA,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,9,Andreas Geritzer,AUT,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,10,Michael Leigh,CAN,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,11,Joshua Junior,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,12,Emil Cedergardh,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,13,Matias Andres Del Solar Goldsmith,CHI,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,14,Johan Wigforss,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,15,Bruno Fontes,BRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,16,Lee Parkhill,CAN,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,17,Tom Slingsby,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,18,Aron Lolic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,19,Pavlos Kontides,CYP,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,M,20,Rodrigue Cabaz,FRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2009-men-epm12623.html
+worlds,2009,laser,W,1,Sari Multala,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,2,Sophie De Turckheim,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,3,Anna Tunnicliffe,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,4,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,5,Lijia Xu,CHN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,6,Evi Van Acker,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,7,Sarah Steyaert,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,8,Annalise Murphy,IRL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,9,Alberte Lindberg,DEN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,10,Francesca Clapcich,ITA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,11,Lucia Reyes,SPA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,12,Sara Winther,NZL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,13,Katarzyna Deberny,POL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,14,Tania Elias Calles Wolf,MEX,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,15,Gabrielle King,AUS,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,16,Sarah Lihan,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,17,Tatiana Drozdovskaya,BLR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,18,Charlotte Dobson,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,19,Fenclova Veronika,CZE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2009,laser,W,20,Maiken Schutt,DEN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2009-women-epf12622.html
+worlds,2010,laser,M,1,Tom Slingsby,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,2,Nick Thompson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,3,Andrew Murdoch,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,4,Julio Alsogaray,ARG,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,5,Pavlos Kontides,CYP,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,6,Joshua Junior,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,7,Jean-baptiste Bernaz,FRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,8,Bruno Fontes,BRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,9,Paul Goodison,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,10,Tonci Stipanovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,11,Tobias Schadewaldt,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,12,Philipp Buhl,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,13,Rasmus Myrgren,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,14,Michael Bullot,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,15,Luka Radelic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,16,Andrew Maloney,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,17,Félix Pruvot,FRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,18,Ashley Brunning,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,19,Roelof Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,M,20,Javier Hernandez,SPA,,https://www.the-sports.org/sailing-laser-world-championship-results-2010-men-epm16881.html
+worlds,2010,laser,W,1,Sari Multala,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,2,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,3,Paige Railey,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,4,Sarah Steyaert,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,5,Tatiana Drozdovskaya,BLR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,6,Tina Mihelic,CRO,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,7,Anna Tunnicliffe,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,8,Evi Van Acker,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,9,Gintare Scheidt,LTU,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,10,Tuula Tenkanen,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,11,Mathilde De Kerangat,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,12,Alison Young,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,13,Wolf Tania Elias Calles,MEX,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,14,Fenclova Veronika,CZE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,15,Francesca Clapcich,ITA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,16,Nathalie Brugger,SWI,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,17,Lisa Ross,CAN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,18,Franziska Goltz,GER,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,19,Annalise Murphy,IRL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2010,laser,W,20,Josefin Olsson,SWE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2010-women-epf16880.html
+worlds,2012,laser,M,1,Tom Slingsby,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,2,Tonci Stipanovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,3,Andrew Maloney,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,4,Juan Ignacio Maegli Aguero,GUA,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,5,Tom Burton,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,6,Andreas Geritzer,AUT,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,7,Rutger Schaardenburg,NED,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,8,Simon Groteluschen,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,9,Rasmus Myrgren,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,10,Julio Alsogaray,ARG,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,11,Philipp Buhl,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,12,Jesper Stålheim,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,13,Ashley Brunning,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,14,Bruno Fontes,BRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,15,David Wright,CAN,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,16,Lee Parkhill,CAN,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,17,Sam Meech,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,18,Kristian Ruth,NOR,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,19,Maxim Semerkhanov,RUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,M,20,Paul Goodison,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2012-men-epm39811.html
+worlds,2012,laser,W,1,Gintare Scheidt,LTU,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,2,Lijia Xu,CHN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,3,Sari Multala,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,4,Alison Young,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,5,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,6,Cecilia Carranza Saroli,ARG,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,7,Sarah Steyaert,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,8,Erika Reineke,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,9,Paige Railey,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,10,Charlotte Dobson,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,11,Sophie De Turckheim,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,12,Tuula Tenkanen,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,13,Alicia Cebrian Martinez de Lagos,SPA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,14,Chloe Martin,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,15,Franziska Goltz,GER,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,16,Claire Blom,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,17,Isabella Bertold,CAN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,18,Josefin Olsson,SWE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,19,Wolf Tania Elias Calles,MEX,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2012,laser,W,20,Tina Mihelic,CRO,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2012-women-epf36865.html
+worlds,2013,laser,M,1,Robert Scheidt,BRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,2,Pavlos Kontides,CYP,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,3,Philipp Buhl,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,4,Rutger Schaardenburg,NED,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,5,Jesper Stålheim,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,6,Tonci Stipanovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,7,Juan Ignacio Maegli Aguero,GUA,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,8,Bruno Fontes,BRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,9,Tom Burton,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,10,Matthew Wearn,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,11,Andrew Maloney,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,12,Jean-baptiste Bernaz,FRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,13,Sam Meech,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,14,Marco Gallo,ITA,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,15,Daniel Mihelic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,16,Nicholas Heiner,NED,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,17,Nick Thompson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,18,Emil Cedergardh,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,19,Lee Parkhill,CAN,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,M,20,Sergey Komissarov,RUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2013-men-epm39810.html
+worlds,2013,laser,W,1,Tina Mihelic,CRO,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,2,Tuula Tenkanen,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,3,Paige Railey,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,4,Dongshuang Zhang,CHN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,5,Sarah Gunni,DEN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,6,Josefin Olsson,SWE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,7,Isabella Bertold,CAN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,8,Evi Van Acker,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,9,Lijia Xu,CHN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,10,Emma Plasschaert,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,11,Alicia Cebrian Martinez de Lagos,SPA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,12,Nazli Cagla Donertas,TUR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,13,Mathilde De Kerangat,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,14,Amelie Riou,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,15,Daiqing Zhou,CHN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,16,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,17,Alison Young,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,18,Xiaowen Ni,CHN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,19,Sara Winer,NZL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2013,laser,W,20,Min Gu,CHN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2013-women-epf39809.html
+worlds,2015,laser,M,1,Nick Thompson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,2,Philipp Buhl,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,3,Tom Burton,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,4,Juan Ignacio Maegli Aguero,GUA,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,5,Matthew Wearn,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,6,Andy Maloney,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,7,Sam Meech,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,8,Kacper Zieminski,POL,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,9,Pavlos Kontides,CYP,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,10,Lorenzo Brando Chiavarini,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,11,Ryan Palk,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,12,Tonci Stipanovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,13,Christopher Barnard,USA,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,14,Charlie Buckingham,USA,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,15,Robert Scheidt,BRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,16,Jesper Stålheim,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,17,Francesco Marrai,ITA,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,18,Giovanni Coccoluto,ITA,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,19,Nicholas Heiner,NED,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,M,20,Daniel Mihelic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2015-men-epm63285.html
+worlds,2015,laser,W,1,Anne-Marie Rindom,DEN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,2,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,3,Evi Van Acker,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,4,Tuula Tenkanen,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,5,Josefin Olsson,SWE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,6,Lijia Xu,CHN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,7,Alison Young,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,8,Manami Doi,JPN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,9,Maxime Jonker,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,10,Erika Reineke,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,11,Ashley Stoddart,AUS,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,12,Mathilde De Kerangat,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,13,Nazli çagla Dönertas,TUR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,14,Tina Mihelic,CRO,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,15,Viktorija Andrulyte,LTU,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,16,Paige Railey,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,17,Amelie Riou,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,18,Emma Plasschaert,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,19,Gintare Volungeviciute,LTU,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2015,laser,W,20,Veronika Kozelska Fenclova,CZE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2015-women-epf66707.html
+worlds,2016,laser,M,1,Nick Thompson,GBR,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,2,Jean-Baptiste Bernaz,FRA,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,3,Rutger Van Schaardenburg,NED,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,4,Matthew Wearn,AUS,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,5,Marco Gallo,ITA,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,6,Tom Burton,AUS,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,7,Tonci Stipanovic,CRO,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,8,Philipp Buhl,GER,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,9,Jesper Stalheim,SWE,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,10,Robert Scheidt,BRA,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,11,Julio Alsogaray,ARG,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,12,Kristian Ruth,NOR,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,13,Giovanni Coccoluto,ITA,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,14,Francesco Marrai,ITA,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,15,Sam Meech,NZL,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,16,Pavlos Kontides,CYP,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,17,Kacper Zieminski,POL,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,18,Andy Maloney,NZL,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,19,Nicholas Heiner,NED,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2016,laser,M,20,Wannes Van Laer,BEL,,https://sailing.laserinternational.org/regattauploads/2016/SM/2016_Std_Men_Worlds_Final_Results.htm
+worlds,2017,laser,M,1,Pavlos Kontides,CYP,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,2,Tom Burton,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,3,Matthew Wearn,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,4,Philipp Buhl,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,5,Jesper Stålheim,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,6,Nick Thompson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,7,Jean-baptiste Bernaz,FRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,8,Thomas Saunders,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,9,Francesco Marrai,ITA,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,10,Lorenzo Brando Chiavarini,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,11,Elliot Hanson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,12,Sam Meech,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,13,Christopher Barnard,USA,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,14,Luke Elliott,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,15,Charlie Buckingham,USA,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,16,Sergey Komissarov,RUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,17,Benjamin Vadnai,HUN,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,18,Filip Jurisic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,19,Karl-Martin Rammo,EST,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2017,laser,M,20,Michael Beckett,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2017-men-epm79509.html
+worlds,2019,laser,M,1,Tom Burton,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,2,Matthew Wearn,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,3,George Gautrey,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,4,Sam Meech,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,5,Nick Thompson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,6,Jean-baptiste Bernaz,FRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,7,Elliot Hanson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,8,Lorenzo Brando Chiavarini,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,9,Philipp Buhl,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,10,Thomas Saunders,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,11,Charlie Buckingham,USA,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,12,Robert Scheidt,BRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,13,Jesper Stålheim,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,14,Francisco Guaragna Rigonat,ARG,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,15,Tonci Stipanovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,16,Jeemin Ha,KOR,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,17,Sergey Komissarov,RUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,18,Pavlos Kontides,CYP,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,19,Kaarle Tapper,FIN,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2019,laser,M,20,Benjamin Vadnai,HUN,,https://www.the-sports.org/sailing-laser-world-championship-results-2019-men-epm94432.html
+worlds,2020,laser,M,1,Philipp Buhl,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,2,Matthew Wearn,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,3,Tonci Stipanovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,4,Jean-baptiste Bernaz,FRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,5,Elliot Hanson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,6,Hermann Tomasgaard,NOR,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,7,Luke Elliott,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,8,Sam Meech,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,9,Jesper Stålheim,SWE,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,10,Filip Juricic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,11,Wannes Van Laer,BEL,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,12,Pavlos Kontides,CYP,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,13,Michael Beckett,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,14,Duko Bos,NED,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,15,Tom Burton,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,16,Alessio Spadoni,ITA,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,17,Rutger Van Schaardenburg,NED,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,18,Charlie Buckingham,USA,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,19,Nick Thompson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,M,20,Juan Ignacio Maegli Aguero,GUA,,https://www.the-sports.org/sailing-laser-world-championship-results-2020-men-epm94447.html
+worlds,2020,laser,W,1,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,2,Maxime Jonker,NED,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,3,Line Flem Høst,NOR,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,4,Anne-Marie Rindom,DEN,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,5,Magdalena Kwasna,POL,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,6,Josefin Olsson,SWE,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,7,Daphne Van Der Vaart,NED,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,8,Manami Doi,JPN,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,9,Emma Plasschaert,BEL,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,10,Mirthe Akkerman,NED,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,11,Vasileia Karachaliou,GRE,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,12,Annalise Murphy,IRL,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,13,Svenja Weger,GER,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,14,Paige Railey,USA,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,15,Marie Bolou,FRA,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,16,Maud Jayet,SWI,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,17,Alison Young,GBR,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,18,Mara Stransky,AUS,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,19,Tuula Tenkanen,FIN,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2020,laser,W,20,Marie Barrue,FRA,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2020-women-epf94446.html
+worlds,2021,laser,M,1,Thomas Saunders,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,2,Finn Lynch,IRL,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,3,Tonci Stipanovic,CRO,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,4,Sergey Komissarov,RUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,5,Zac Littlewood,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,6,Philipp Buhl,GER,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,7,Hermann Tomasgaard,NOR,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,8,Daniel Whiteley,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,9,Giovanni Coccoluto Giorgetti,ITA,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,10,Luke Elliott,AUS,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,11,Jonatan Vadnai,HUN,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,12,Pavlos Kontides,CYP,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,13,Michael Beckett,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,14,William De Smet,BEL,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,15,Sam Whaley,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,16,Joel Rodriguez Perez,SPA,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,17,Elliot Hanson,GBR,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,18,George Gautrey,NZL,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,19,Duko Bos,NED,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2021,laser,M,20,Alexandre Boite,FRA,,https://www.the-sports.org/sailing-laser-world-championship-results-2021-men-epm115950.html
+worlds,2022,laser,M,1,Jean-Baptiste Bernaz,FRA,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,2,Pavlos Kontides,CYP,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,3,Filip Jurišic,CRO,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,4,Thomas Saunders,NZL,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,5,Tonci Stipanovic,CRO,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,6,Finn Lynch,IRL,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,7,Elliot Hanson,GBR,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,8,Philipp Buhl,GER,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,9,Jonatan Vadnai,HUN,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,10,Stefano Peschiera,PER,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,11,Sam Whaley,GBR,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,12,Daniel Whiteley,GBR,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,13,Finn Alexander,AUS,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,14,Alessio Spadoni,ITA,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,15,Clemente Seguel Lacamara,CHI,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,16,Eduardo Marques,POR,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,17,Joaquin Blanco Albalat,ESP,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,18,Michael Beckett,GBR,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,19,Joel Rodriguez Perez,ESP,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2022,laser,M,20,Giovanni Coccoluto Giorgetti,ITA,,https://www.sailwave.com/results/vyc/ILCA7Mens2022.htm
+worlds,2024,laser,M,1,Matt Wearn,AUS,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,2,Hermann Tomasgaard,NOR,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,3,Michael Beckett,GBR,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,4,Philipp Buhl,GER,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,5,Thomas Saunders,NZL,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,6,Pavlos Kontides,CYP,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,7,Jean-Baptiste Bernaz,FRA,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,8,Filip Jurišic,CRO,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,9,Finn Lynch,IRL,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,10,Luke Elliott,AUS,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,11,Duko Bos,NED,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,12,Jonatan Vadnai,HUN,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,13,Juan Maegli,GUA,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,14,Nik Aaron Willim,GER,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,15,George Gautrey,NZL,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,16,Eduardo Marques,POR,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,17,Tonci Stipanovic,CRO,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,18,Sam Whaley,GBR,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,19,Valtteri Uusitalo,FIN,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2024,laser,M,20,Ethan Mcaullay,AUS,,https://jpvm.org/results/2024/ILCA_7/results.html
+worlds,2025,laser,M,1,Willem Wiersema,NED,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,2,Pavlos Kontides,CYP,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,3,Zac Littlewood,AUS,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,4,Jonatan Vadnai,HUN,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,5,Finley Dickinson,GBR,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,6,Elliot Hanson,GBR,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,7,Michael Beckett,GBR,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,8,Stefano Peschiera,PER,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,9,William De Smet,BEL,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,10,Yigit Yalcin Citak,TUR,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,11,Filip Jurisic,CRO,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,12,Lorenzo Brando Chiavarini,ITA,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,13,Dimitri Peroni,ITA,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,14,Ryan Lo,SGP,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,15,Finn Lynch,IRL,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,16,Ethan Mcaullay,AUS,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,17,Julian Hoffmann,GER,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,18,Valtteri Uusitalo,FIN,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,19,Ewan Mcmahon,IRL,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,M,20,Duko Bos,NED,,https://jpvm.org/results/2025/ILCA_WORLDS/mens.html
+worlds,2025,laser,W,1,Louise Cervera,FRA,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,2,Agata Barwinska,POL,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,3,Eve Mcmahon,IRL,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,4,Anna Munch,DEN,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,5,Matilda Nicholls,GBR,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,6,Maxime Jonker,NED,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,7,Elyse Ainsworth,AUS,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,8,Charlotte Rose,USA,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,9,Ebru Bolat,ROU,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,10,Chiara Benini Floriani,ITA,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,11,Anja Von Allmen,SUI,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,12,Zoe Thomson,AUS,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,13,Daisy Collingridge,GBR,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,14,Maria Erdi,HUN,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,15,Roos Wind,NED,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,16,Sylvie Stannage,AUS,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,17,Maud Jayet,SUI,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,18,Wiktoria Golebiowska,POL,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,19,Carolina Albano,ITA,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2025,laser,W,20,Erika Reineke,USA,,https://www.sail-world.com/news/286176/?source=rss
+worlds,2016,laser,W,1,Alison Young,GBR,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,2,Paige Railey,USA,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,3,Anne-Marie Rindom,DEN,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,4,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,5,Gintare Volungeviciute,LTU,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,6,Erika Reineke,USA,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,7,Lijia Xu,CHN,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,8,Nazli Cagla Donertas,TUR,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,9,Manami Doi,JPN,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,10,Brenda Bowskill,CAN,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,11,Sara Winther,NZL,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,12,Tina Mihelic,CRO,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,13,Sarah Gunni Toftedal,DEN,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,14,Tiril Bue,NOR,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,15,Maxime Jonker,NED,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,16,Daphne Van Der Vaart,NED,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,17,Dolores Moreira Fraschini,URU,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,18,Lucía Falasca,ARG,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,19,Susannah Pyatt,NZL,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2016,laser,W,20,Marthe Eide,NOR,,https://www.the-sports.org/sailing-women-s-laser-radial-world-championship-results-2016-women-epf62516.html
+worlds,2017,laser,W,1,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,2,Evi Van Acker,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,3,Manami Doi,JPN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,4,Mathilde De Kerangat,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,5,Brenda Bowskill,CAN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,6,Maxime Jonker,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,7,Daphne Van Der Vaart,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,8,Viktorija Andrulyte,LTU,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,9,Pauline Liebig,GER,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,10,Agata Barwinska,POL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,11,Svenja Weger,GER,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,12,Sarah Douglas,CAN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,13,Marie Barrue,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,14,Monika Mikkola,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,15,Tuula Tenkanen,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,16,Dolores Moreira Fraschini,URU,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,17,Emma Plasschaert,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,18,Maud Jayet,SUI,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,19,Isabella Bertold,CAN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2017,laser,W,20,Maria Erdi,HUN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2017-women-epf79508.html
+worlds,2019,laser,W,1,Anne-Marie Rindom,DEN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,2,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,3,Alison Young,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,4,Emma Plasschaert,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,5,Marie Barrue,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,6,Josefin Olsson,SWE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,7,Hannah Snellgrove,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,8,Tuula Tenkanen,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,9,Charlotte Rose,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,10,Ecem Guzel,TUR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,11,Daphne Van Der Vaart,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,12,Paige Railey,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,13,Monika Mikkola,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,14,Marie Bolou,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,15,Manami Doi,JPN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,16,Vasileia Karachaliou,GRE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,17,Maud Jayet,SUI,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,18,Pernelle Michon,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,19,Line Flem Høst,NOR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2019,laser,W,20,Elena Vorobeva,CRO,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2019-women-epf94434.html
+worlds,2024,laser,W,1,Anne-Marie Rindom,DEN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,2,Charlotte Rose,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,3,Emma Plasschaert,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,4,Maud Jayet,SUI,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,5,Line Flem Høst,NOR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,6,Monika Mikkola,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,7,Maria Erdi,HUN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,8,Maxime Jonker,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,9,Josefin Olsson,SWE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,10,Hannah Snellgrove,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,11,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,12,Anna Munch,DEN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,13,Elyse Ainsworth,AUS,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,14,Louise Cervera,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,15,Vasileia Karachaliou,GRE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,16,Matilda Nicholls,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,17,Mara Stransky,AUS,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,18,Chiara Benini Floriani,ITA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,19,Casey Imeneo,AUS,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2024,laser,W,20,Eve Mcmahon,IRL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2024-women-epf131214.html
+worlds,2022,laser,W,1,Anne-Marie Rindom,DEN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,2,Maud Jayet,SUI,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,3,Emma Plasschaert,BEL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,4,Josefin Olsson,SWE,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,5,Maria Erdi,HUN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,6,Maxime Jonker,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,7,Agata Barwinska,POL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,8,Wiktoria Golebiowska,POL,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,9,Marit Bouwmeester,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,10,Erika Reineke,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,11,Monika Mikkola,FIN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,12,Louise Cervera,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,13,Mara Stransky,AUS,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,14,Charlotte Rose,USA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,15,Sarah Douglas,CAN,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,16,Marie Barrue,FRA,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,17,Mirthe Akkerman,NED,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,18,Zoe Thomson,AUS,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,19,Line Flem Hoe,NOR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2022,laser,W,20,Daisy Collingridge,GBR,,https://www.the-sports.org/sailing-laser-radial-world-championship-results-2022-women-epf126166.html
+worlds,2021,laser,W,1,Emma Plasschaert,BEL,,https://www.sail-world.com/news/244565/2021-ilca-6-radial-worlds-in-oman-overall
+worlds,2021,laser,W,2,Agata Barwinska,POL,,https://www.sail-world.com/news/244565/2021-ilca-6-radial-worlds-in-oman-overall
+worlds,2021,laser,W,3,Viktorija Andrulyte,LTU,,https://www.sail-world.com/news/244565/2021-ilca-6-radial-worlds-in-oman-overall
+worlds,2021,laser,W,4,Anne-Marie Rindom,DEN,,https://www.sail-world.com/news/244565/2021-ilca-6-radial-worlds-in-oman-overall
+worlds,2021,laser,W,5,Julia Büsselberg,GER,,https://www.sail-world.com/news/244565/2021-ilca-6-radial-worlds-in-oman-overall
+worlds,2023,laser,M,1,Matthew Wearn,AUS,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,2,Michael Beckett,GBR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,3,George Gautrey,NZL,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,4,Jean-Baptiste Bernaz,FRA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,5,Lorenzo Brando Chiavarini,ITA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,6,Pavlos Kontides,CYP,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,7,Duko Bos,NED,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,8,Joaquín Blanco,ESP,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,9,Hermann Tomasgaard,NOR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,10,Elliot Hanson,GBR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,11,Thomas Saunders,NZL,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,12,Philipp Buhl,GER,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,13,Joel Rodríguez,ESP,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,14,Stefano Peschiera,PER,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,15,William De Smet,BEL,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,16,Nik Aaron Willim,GER,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,17,Ethan McAullay,AUS,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,18,Kaarle Tapper,FIN,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,19,Jonatán Vadnai,HUN,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,M,20,Luke Elliott,AUS,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_7
+worlds,2023,laser,W,1,Mária Érdi,HUN,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,2,Maud Jayet,SUI,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,3,Anne-Marie Rindom,DEN,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,4,Marit Bouwmeester,NED,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,5,Charlotte Rose,USA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,6,Emma Plasschaert,BEL,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,7,Josefin Olsson,SWE,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,8,Vasileia Karachaliou,GRE,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,9,Carolina Albano,ITA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,10,Mara Stransky,AUS,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,11,Hannah Snellgrove,GBR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,12,Anna Munch,DEN,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,13,Julia Büsselberg,GER,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,14,Mirthe Akkerman,NED,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,15,Erika Reineke,USA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,16,Casey Imeneo,AUS,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,17,Maxime Jonker,NED,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,18,Agata Barwińska,POL,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,19,Line Flem Høst,NOR,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2023,laser,W,20,Chiara Benini Floriani,ITA,,https://en.wikipedia.org/wiki/2023_Sailing_World_Championships_%E2%80%93_ILCA_6
+worlds,2011,laser,M,1,Tom Slingsby,AUS,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,2,Nick Thompson,GBR,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,3,Andrew Murdoch,NZL,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,4,Simon Grotelüschen,GER,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,5,Paul Goodison,GBR,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,6,Andreas Geritzer,AUT,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,7,Ashley Brunning,AUS,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,8,Johan Wigforss,SWE,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,9,Tom Burton,AUS,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,10,Pavlos Kontides,CYP,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,11,Tonči Stipanović,CRO,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,12,Jean-Baptiste Bernaz,FRA,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,13,Andy Maloney,NZL,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,14,Rob Crane,USA,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,15,Bruno Fontes,BRA,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,16,Jesper Stålheim,SWE,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,17,Mike Bullot,NZL,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,18,Julio Alsogaray,ARG,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,19,Milan Vujasinović,CRO,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,M,20,Ha Jee-min,KOR,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2011,laser,W,1,Marit Bouwmeester,NED,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,2,Evi Van Acker,BEL,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,3,Paige Railey,USA,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,4,Veronika Fenclová,CZE,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,5,Gintarė Scheidt,LTU,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,6,Annalise Murphy,IRL,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,7,Alison Young,GBR,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,8,Tatiana Drozdovskaya,BLR,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,9,Sari Multala,FIN,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,10,Sara Winther,NZL,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,11,Tuula Tenkanen,FIN,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,12,Nathalie Brugger,SUI,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,13,Josefin Olsson,SWE,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,14,Hannah Snellgrove,GBR,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,15,Anne-Marie Rindom,DEN,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,16,Charlotte Dobson,GBR,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,17,Claire Blom,NED,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,18,Lisa Fasselt,GER,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,19,Krystal Weir,AUS,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2011,laser,W,20,Maiken Foght Schütt,DEN,,https://en.wikipedia.org/wiki/2011_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,M,1,Nicholas Heiner,NED,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,2,Tom Burton,AUS,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,3,Nick Thompson,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,4,Philipp Buhl,GER,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,5,Robert Scheidt,BRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,6,Jean-Baptiste Bernaz,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,7,Charlie Buckingham,USA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,8,Rutger van Schaardenburg,NED,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,9,Sam Meech,NZL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,10,Pavlos Kontides,CYP,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,11,Lorenzo Brando Chiavarini,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,12,Bruno Fontes,BRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,13,Jesper Stålheim,SWE,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,14,Andy Maloney,NZL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,15,Christopher Barnard,USA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,16,Giovanni Coccoluto,ITA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,17,Ashley Brunning,AUS,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,18,Ryan Palk,AUS,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,19,Luke Elliott,AUS,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,M,20,Thomas Saunders,NZL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser
+worlds,2014,laser,W,1,Marit Bouwmeester,NED,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,2,Josefin Olsson,SWE,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,3,Evi Van Acker,BEL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,4,Tuula Tenkanen,FIN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,5,Veronika Kozelska Fenclova,CZE,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,6,Tina Mihelić,CRO,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,7,Anne-Marie Rindom,DEN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,8,Mathilde de Kerangat,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,9,Alison Young,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,10,Emma Plasschaert,BEL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,11,Sara Winther,NZL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,12,Marie Bolou,FRA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,13,Zhang Dongshuang,CHN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,14,Erika Reineke,USA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,15,Chloe Martin,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,16,Hannah Snellgrove,GBR,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,17,Silvia Zennaro,ITA,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,18,Isabella-Anna Bertold,CAN,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,19,Elizabeth Yin,SGP,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial
+worlds,2014,laser,W,20,Annalise Murphy,IRL,,https://en.wikipedia.org/wiki/2014_ISAF_Sailing_World_Championships_%E2%80%93_Laser_Radial

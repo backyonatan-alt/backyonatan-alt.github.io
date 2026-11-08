@@ -1,0 +1,36 @@
+leg,from,to,competitor,nation,sailid,rank,timeSinceGun_ms,distanceSinceGun_m,averageSOG_kts
+1,M - Start line (St RC-St Pn),M - 1,Pawel Tarnowski,POL,POL,7,47457,633.69,26.04
+1,M - Start line (St RC-St Pn),M - 1,Nicolo Renna,ITA,ITA,6,47000,606.99,25.1
+1,M - Start line (St RC-St Pn),M - 1,Noah Lyons,USA,USA,4,46097,624.47,26.41
+1,M - Start line (St RC-St Pn),M - 1,Ethan Westera,ARU,ARU,3,45359,616.62,26.51
+1,M - Start line (St RC-St Pn),M - 1,Elia Colombo,SUI,SUI,2,43888,602.18,26.71
+1,M - Start line (St RC-St Pn),M - 1,Sam Sills,GBR,GBR,5,46520,610.97,25.64
+1,M - Start line (St RC-St Pn),M - 1,Luuc Van Opzeeland,NED,NED,1,42943,594.78,26.99
+2,M - 1,M - 4 gate,Pawel Tarnowski,POL,POL,6,123204,1559.61,23.76
+2,M - 1,M - 4 gate,Nicolo Renna,ITA,ITA,5,123000,1419.04,20.77
+2,M - 1,M - 4 gate,Noah Lyons,USA,USA,7,125000,1603.87,24.13
+2,M - 1,M - 4 gate,Ethan Westera,ARU,ARU,3,117924,1511.77,23.98
+2,M - 1,M - 4 gate,Elia Colombo,SUI,SUI,2,116630,1530.51,24.81
+2,M - 1,M - 4 gate,Sam Sills,GBR,GBR,4,122526,1526.45,23.41
+2,M - 1,M - 4 gate,Luuc Van Opzeeland,NED,NED,1,113663,1494.3,24.72
+3,M - 4 gate,M - 1,Pawel Tarnowski,POL,POL,7,279095,3030.13,18.34
+3,M - 4 gate,M - 1,Nicolo Renna,ITA,ITA,3,259000,2166.71,10.69
+3,M - 4 gate,M - 1,Noah Lyons,USA,USA,6,274369,3018.83,18.41
+3,M - 4 gate,M - 1,Ethan Westera,ARU,ARU,5,266607,2922.04,18.44
+3,M - 4 gate,M - 1,Elia Colombo,SUI,SUI,4,261826,2904.83,18.4
+3,M - 4 gate,M - 1,Sam Sills,GBR,GBR,2,256893,2710.31,17.13
+3,M - 4 gate,M - 1,Luuc Van Opzeeland,NED,NED,1,251713,2881.05,19.53
+4,M - 1,M - 4s,Pawel Tarnowski,POL,POL,7,353685,3932.9,23.53
+4,M - 1,M - 4s,Nicolo Renna,ITA,ITA,3,332000,2539.73,9.93
+4,M - 1,M - 4s,Noah Lyons,USA,USA,6,345086,3899.7,24.21
+4,M - 1,M - 4s,Ethan Westera,ARU,ARU,5,337049,3823.56,24.88
+4,M - 1,M - 4s,Elia Colombo,SUI,SUI,4,334426,3823.21,24.59
+4,M - 1,M - 4s,Sam Sills,GBR,GBR,2,329585,3594.79,23.65
+4,M - 1,M - 4s,Luuc Van Opzeeland,NED,NED,1,324215,3826.13,25.34
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Pawel Tarnowski,POL,POL,7,382568,4266.69,22.46
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Nicolo Renna,ITA,ITA,3,357000,2667.47,9.93
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Noah Lyons,USA,USA,6,373443,4236.17,23.06
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Ethan Westera,ARU,ARU,5,362391,4164.37,26.14
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Elia Colombo,SUI,SUI,4,362195,4168.56,24.17
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Sam Sills,GBR,GBR,2,354960,3926.97,25.45
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Luuc Van Opzeeland,NED,NED,1,349686,4159.33,25.43

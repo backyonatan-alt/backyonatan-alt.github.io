@@ -1,0 +1,21 @@
+leg,from,to,competitor,nation,sailid,rank,timeSinceGun_ms,distanceSinceGun_m,averageSOG_kts
+1,M - Start line (St RC-St Pn),M - 1,Josh Armit,NZL,NZL,4,46197,634.87,26.81
+1,M - Start line (St RC-St Pn),M - 1,Tom Reuveny,ISR,ISR,2,44525,616.86,27.0
+1,M - Start line (St RC-St Pn),M - 1,Sam Sills,GBR,GBR,3,45698,619.52,26.45
+1,M - Start line (St RC-St Pn),M - 1,Luuc Van Opzeeland,NED,NED,1,44060,608.42,26.91
+2,M - 1,M - 4 gate,Josh Armit,NZL,NZL,4,121801,1540.07,23.27
+2,M - 1,M - 4 gate,Tom Reuveny,ISR,ISR,2,117002,1508.06,23.9
+2,M - 1,M - 4 gate,Sam Sills,GBR,GBR,3,118377,1499.06,23.52
+2,M - 1,M - 4 gate,Luuc Van Opzeeland,NED,NED,1,116314,1517.33,24.45
+3,M - 4 gate,M - 1,Josh Armit,NZL,NZL,3,253152,2769.78,18.2
+3,M - 4 gate,M - 1,Tom Reuveny,ISR,ISR,1,243630,2703.38,18.35
+3,M - 4 gate,M - 1,Sam Sills,GBR,GBR,4,262381,2693.01,16.12
+3,M - 4 gate,M - 1,Luuc Van Opzeeland,NED,NED,2,245317,2744.34,18.49
+4,M - 1,M - 4s,Josh Armit,NZL,NZL,3,335527,3728.67,22.63
+4,M - 1,M - 4s,Tom Reuveny,ISR,ISR,2,329376,3698.66,22.56
+4,M - 1,M - 4s,Sam Sills,GBR,GBR,4,347703,3657.38,21.97
+4,M - 1,M - 4s,Luuc Van Opzeeland,NED,NED,1,328794,3744.09,23.28
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Josh Armit,NZL,NZL,3,362589,4058.62,23.7
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Tom Reuveny,ISR,ISR,2,359000,4052.05,23.19
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Sam Sills,GBR,GBR,4,374047,3982.82,24.01
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Luuc Van Opzeeland,NED,NED,1,353692,4070.0,25.44

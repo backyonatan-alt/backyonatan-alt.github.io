@@ -1,0 +1,16 @@
+leg,from,to,competitor,nation,sailid,rank,timeSinceGun_ms,distanceSinceGun_m,averageSOG_kts
+1,M - Start line (St RC-St Pn),M - 1,Tom Reuveny,ISR,ISR,2,43637,605.05,26.96
+1,M - Start line (St RC-St Pn),M - 1,Grae Morris,AUS,AUS,1,43018,603.97,27.34
+1,M - Start line (St RC-St Pn),M - 1,Luuc Van Opzeeland,NED,NED,3,45071,607.21,26.19
+2,M - 1,M - 4 gate,Tom Reuveny,ISR,ISR,1,130192,1716.96,24.97
+2,M - 1,M - 4 gate,Grae Morris,AUS,AUS,3,131774,1760.24,25.32
+2,M - 1,M - 4 gate,Luuc Van Opzeeland,NED,NED,2,131397,1765.73,26.09
+3,M - 4 gate,M - 1,Tom Reuveny,ISR,ISR,2,285964,3215.97,18.71
+3,M - 4 gate,M - 1,Grae Morris,AUS,AUS,1,285382,3160.46,17.72
+3,M - 4 gate,M - 1,Luuc Van Opzeeland,NED,NED,3,291364,3253.82,18.08
+4,M - 1,M - 4s,Tom Reuveny,ISR,ISR,1,376261,4367.71,24.79
+4,M - 1,M - 4s,Grae Morris,AUS,AUS,2,380975,4335.58,23.9
+4,M - 1,M - 4s,Luuc Van Opzeeland,NED,NED,3,383305,4410.38,24.45
+5,M - 4s,M - Finish line (060 - pin),Tom Reuveny,ISR,ISR,1,403424,4721.07,25.29
+5,M - 4s,M - Finish line (060 - pin),Grae Morris,AUS,AUS,2,408144,4682.17,24.8
+5,M - 4s,M - Finish line (060 - pin),Luuc Van Opzeeland,NED,NED,3,413140,4762.76,22.96

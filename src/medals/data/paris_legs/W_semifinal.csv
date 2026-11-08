@@ -1,0 +1,21 @@
+leg,from,to,competitor,nation,sailid,rank,timeSinceGun_ms,distanceSinceGun_m,averageSOG_kts
+1,M - Start line (St RC-St Pn),M - 1,Zheng Yan,CHN,CHN,3,50174,595.53,23.14
+1,M - Start line (St RC-St Pn),M - 1,Marta Maggetti,ITA,ITA,4,51267,610.57,23.33
+1,M - Start line (St RC-St Pn),M - 1,Maria Belen Bazo German,PER,PER,2,49140,622.31,24.71
+1,M - Start line (St RC-St Pn),M - 1,Sharon Kantor,ISR,ISR,1,47334,594.18,24.49
+2,M - 1,M - 4 gate,Zheng Yan,CHN,CHN,4,134641,1509.38,21.03
+2,M - 1,M - 4 gate,Marta Maggetti,ITA,ITA,3,129586,1536.69,22.99
+2,M - 1,M - 4 gate,Maria Belen Bazo German,PER,PER,2,128946,1535.21,22.24
+2,M - 1,M - 4 gate,Sharon Kantor,ISR,ISR,1,126763,1505.68,22.31
+3,M - 4 gate,M - 1,Zheng Yan,CHN,CHN,3,283491,2697.93,15.52
+3,M - 4 gate,M - 1,Marta Maggetti,ITA,ITA,2,278567,2808.47,16.59
+3,M - 4 gate,M - 1,Maria Belen Bazo German,PER,PER,4,285568,2855.5,16.39
+3,M - 4 gate,M - 1,Sharon Kantor,ISR,ISR,1,275588,2772.28,16.54
+4,M - 1,M - 4s,Zheng Yan,CHN,CHN,4,378010,3677.61,20.15
+4,M - 1,M - 4s,Marta Maggetti,ITA,ITA,2,365246,3728.46,20.63
+4,M - 1,M - 4s,Maria Belen Bazo German,PER,PER,3,369777,3816.19,22.18
+4,M - 1,M - 4s,Sharon Kantor,ISR,ISR,1,360986,3677.43,20.6
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Zheng Yan,CHN,CHN,4,406000,3992.3,21.85
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Marta Maggetti,ITA,ITA,2,395387,4057.85,21.24
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Maria Belen Bazo German,PER,PER,3,399000,4138.4,21.43
+5,M - 4s,M - Finish line (Fi RC-Fi Pn),Sharon Kantor,ISR,ISR,1,390881,4002.13,21.11

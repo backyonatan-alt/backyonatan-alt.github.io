@@ -1,0 +1,16 @@
+leg,from,to,competitor,nation,sailid,rank,timeSinceGun_ms,distanceSinceGun_m,averageSOG_kts
+1,M - Start line (St RC-St Pn),M - 1,Marta Maggetti,ITA,ITA,3,53074,637.98,23.39
+1,M - Start line (St RC-St Pn),M - 1,Emma Wilson,GBR,GBR,1,50721,607.22,23.31
+1,M - Start line (St RC-St Pn),M - 1,Sharon Kantor,ISR,ISR,2,51838,624.9,23.5
+2,M - 1,M - 4 gate,Marta Maggetti,ITA,ITA,3,153344,1728.31,21.14
+2,M - 1,M - 4 gate,Emma Wilson,GBR,GBR,1,147899,1680.48,21.47
+2,M - 1,M - 4 gate,Sharon Kantor,ISR,ISR,2,149291,1669.13,20.83
+3,M - 4 gate,M - 1,Marta Maggetti,ITA,ITA,1,324083,3084.61,15.44
+3,M - 4 gate,M - 1,Emma Wilson,GBR,GBR,3,346070,3349.21,16.37
+3,M - 4 gate,M - 1,Sharon Kantor,ISR,ISR,2,331892,3160.79,15.88
+4,M - 1,M - 4s,Marta Maggetti,ITA,ITA,1,426000,4190.62,21.09
+4,M - 1,M - 4s,Emma Wilson,GBR,GBR,3,452614,4465.68,20.37
+4,M - 1,M - 4s,Sharon Kantor,ISR,ISR,2,430288,4233.14,21.18
+5,M - 4s,M - Finish line (060 - pin),Marta Maggetti,ITA,ITA,1,458491,4531.74,20.41
+5,M - 4s,M - Finish line (060 - pin),Emma Wilson,GBR,GBR,3,489530,4811.79,18.22
+5,M - 4s,M - Finish line (060 - pin),Sharon Kantor,ISR,ISR,2,464150,4575.83,19.67
