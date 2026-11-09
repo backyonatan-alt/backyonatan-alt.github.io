@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>יום אחד מכל חמישה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;800&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/*FONTS*/
+:root{
+  --bg:#f6f3ec; --surface:#fffdf8; --ink:#1d2230; --muted:#6a6f7c; --line:#dcd6c8;
+  --cell:#e9e4d7; --hi:#e0482b; --hi-soft:#f6c9bd; --ink-2:#3c4458;
+  --display:"Rubik",Arial,sans-serif; --body:"Heebo",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6}
+a{color:inherit}
+.back{display:inline-block;margin:18px 20px 0;font-size:14px;color:var(--muted);text-decoration:none}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.wide{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding:48px 0 12px}
+.kicker{font-size:13px;letter-spacing:.08em;color:var(--hi);font-weight:700}
+h1{font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:clamp(44px,9vw,84px);line-height:1;margin:10px 0 14px;letter-spacing:-.01em}
+.dek{font-size:21px;color:var(--ink-2);margin:0 0 6px;font-weight:400;line-height:1.45}
+p{margin:0 0 14px}
+h2{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.2;margin:56px 0 12px}
+.big{font-family:var(--display);font-weight:800;color:var(--hi)}
+
+/* figure */
+figure{margin:26px 0 30px;padding:0}
+.ftitle{font-family:var(--body);font-weight:700;font-size:18px;line-height:1.35;margin:0 0 4px}
+.fsub{font-size:14px;color:var(--muted);margin:0 0 10px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);margin:4px 0 8px}
+.key i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-left:6px}
+.key b{display:inline-block;width:18px;height:3px;vertical-align:4px;margin-left:6px}
+.chart{direction:ltr;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.src{font-size:12px;color:var(--muted);margin-top:6px}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.btns button{font:500 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:5px 11px;border-radius:999px;cursor:pointer}
+.btns button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;padding:6px 9px;border-radius:6px;white-space:nowrap;direction:rtl;opacity:0;transition:opacity .12s}
+svg text{font-family:var(--body);fill:var(--muted);font-size:12px}
+svg .ann{fill:var(--ink);font-size:13px;font-weight:500}
+svg .annhi{fill:var(--hi);font-size:13px;font-weight:700}
+.grow{transition:all 1.1s cubic-bezier(.2,.7,.2,1)}
+
+/* hero simulator */
+.hero{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px;margin:22px 0 10px}
+.stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:4px 26px;margin:2px 0 12px}
+@media(max-width:560px){.stats{gap:4px 14px}.stat .n{font-size:30px}.stat .l{font-size:12px;line-height:1.3}}
+.stat .n{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;color:var(--hi)}
+.stat .l{font-size:13px;color:var(--muted)}
+.ctrl{display:flex;align-items:center;gap:10px;margin-top:10px;direction:ltr}
+.ctrl button{white-space:nowrap;font:700 14px var(--body);border:0;background:var(--ink);color:#fff;border-radius:999px;padding:8px 16px;cursor:pointer}
+.ctrl button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.ctrl input[type=range]{flex:1;min-width:120px;accent-color:var(--hi)}
+@media(max-width:560px){.ctrl{flex-wrap:wrap}.ctrl .ghost{order:9;margin-left:auto}}
+.ctrl .date{font-size:13px;color:var(--muted);min-width:64px;text-align:center;direction:rtl}
+.mode{direction:rtl}
+.room{display:flex;align-items:center;gap:22px;margin:6px 0 4px}
+.room svg{width:190px;flex:none}
+.now .n{font-family:var(--display);font-weight:800;font-size:64px;line-height:1;color:var(--hi)}
+.now .n small{font-size:28px;color:var(--ink)}
+.now .l{font-size:15px;color:var(--ink-2)}
+.now .d{font-size:13px;color:var(--muted);margin-top:4px}
+.kid{margin:2px 0 0;font-size:14px;color:var(--ink-2);min-height:22px}
+.seg{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:12px;direction:rtl}
+.seg .btns{margin:0}
+@media(max-width:560px){.room{gap:14px}.room svg{width:150px}.now .n{font-size:48px}.now .n small{font-size:22px}}
+.method{font-size:15px;color:var(--ink-2);border-top:1px solid var(--line);margin-top:60px;padding-top:16px}
+.method li{margin-bottom:8px}
+.method a{color:var(--ink);text-decoration-color:var(--line)}
+h3{font-weight:800}
+footer{height:80px}
+</style>
+</head>
+<body>
+<a class="back" href="/">→ All stories</a>
+<div class="wrap">
+<header>
+  <div class="kicker">סיפור בנתונים · חורף</div>
+  <h1>יום אחד מכל חמישה</h1>
+  <p class="dek">כמה פעמים פעוט בגן יהיה חולה החורף, מתי זה יקרה, ומה זה אומר לשנים הבאות.</p>
+</header>
+
+<p>כל הורה לפעוט בגן מכיר את זה. נזלת שלא נגמרת, חום באמצע הלילה, טלפון מהגננת בעשר בבוקר.</p>
+<p>והשאלה שחוזרת כל חורף: זה נורמלי? או שהילד הזה פשוט חולה יותר מאחרים?</p>
+<p>יש על זה מחקר טוב. בגרמניה ובפינלנד הורים מילאו יומן כל יום במשך שנתיים, ורשמו מתי הילד חולה וכמה זמן. בהולנד ובקוויבק עקבו אחרי אלפי ילדים עד בית הספר. ובישראל, משרד הבריאות סופר כל שבוע כמה מאושפזים חיוביים ל-RSV ולשפעת.</p>
+<p>מהמספרים האלה בניתי גן מדומה של 16 פעוטות, ונתתי לו לעבור חורף. אחריו: כמה מחלות זה בשנה, מה קורה בחודשים הראשונים בגן, מתי בחורף זה מגיע, ממה זה בא, ומה זה אומר לשנים הבאות.</p>
+
+<div class="hero">
+  <div class="ftitle">חורף אחד בגן של 16 פעוטות</div>
+  <div class="room">
+    <div class="chart" id="room"></div>
+    <div class="now"><div class="n" id="nowN" dir="ltr" style="text-align:right"></div><div class="l">ילדים עם סימני מחלה</div><div class="d" id="nowD"></div></div>
+  </div>
+  <div class="chart" id="cnt"></div>
+  <div class="kid" id="kid"></div>
+  <div class="ctrl">
+    <button id="play">▶</button>
+    <input type="range" id="scrub" min="1" max="151" value="151">
+    <span class="date" id="date"></span>
+    <button class="ghost" id="again">עוד חורף ↻</button>
+  </div>
+  <div class="seg">כמה הם מדביקים זה את זה:<div class="btns" id="beta"><button data-b="0">בלי הדבקה</button><button data-b="0.5" class="on">קצת</button><button data-b="0.8">הרבה</button></div></div>
+</div>
+<p class="src">מודל, לא גן אמיתי. כל ילד חולה בממוצע 7.7 פעמים בשנה, ומחלה נמשכת בחציון 9.7 ימים (LoewenKIDS, גרמניה). העונה לפי גילאי 0-4 בארה"ב. ההדבקה בין הילדים היא המחשה: אין מחקר שמודד אותה בגן, ולכן היא מזיזה את המחלות לגלים בלי לשנות את הממוצע. "סימני מחלה" זה לא בהכרח יום שהילד לא הגיע לגן.</p>
+
+<p>בממוצע, בכל יום בחורף כחמישה מתוך 16 ילדים עם סימני מחלה. כמעט אין יום שכולם בריאים.</p>
+<p>ילדים בגן גם מדביקים זה את זה. זה לא משנה הרבה את הממוצע, אבל הופך את החורף לגלים. כשהגן "מדביק הרבה", יש יותר ימים שבהם חצי גן חולה, ויותר ימים שקטים ביניהם.</p>
+
+<h2>כמה</h2>
+<p>פעוט בשנה השנייה לחייו חולה בממוצע <span class="big">7.7</span> פעמים בשנה בזיהום נשימתי. זה ממחקר LoewenKIDS בגרמניה, שבו הורים מילאו יומן כל יום.</p>
+<p>מחלה אחת נמשכת בחצי מהמקרים כמעט עשרה ימים או יותר. נזלת לא נגמרת ביום-יומיים.</p>
+<figure>
+  <div class="ftitle">בגיל שנה עד שנה וחצי, בערך יום מחלה אחד מכל ארבעה</div>
+  <div class="key" style="direction:rtl"><span>ימים עם סימני מחלה נשימתית בכל חצי שנה, בממוצע לילד</span></div>
+  <div class="chart" id="half"></div>
+  <div class="src">LoewenKIDS, גרמניה, 2014-2020. יומן יומי של הורים, כל הילדים בגיל הזה, בגן או בבית.</div>
+</figure>
+<p>על פני השנתיים הראשונות, ילד ממוצע מבלה יום אחד מכל חמישה עם סימני מחלה. ויש פיזור גדול. במחקר פיני, עשירית מהילדים עברו 98 ימי מחלה בשנה ויותר.</p>
+<p>הגן מוסיף, אבל פחות ממה שנדמה. ילדים שהתחילו מסגרת בגיל שנה עד שנתיים חלו <span class="big">14.1</span> פעמים בשנתיים הראשונות. ילדים שנשארו בבית: <span class="big">11.4</span>. כלומר גם בבית, פעוט חולה הרבה.</p>
+
+<h2>החודשים הראשונים</h2>
+<p>הקפיצה הכי חדה היא בהתחלה.</p>
+<figure>
+  <div class="ftitle">חודשיים אחרי הכניסה למעון, פי שלושה ימי מחלה</div>
+  <div class="key" style="direction:rtl"><span><i style="background:var(--muted);border-radius:50%"></i>לפני הכניסה</span><span><i style="background:var(--hi);border-radius:50%"></i>חודשיים אחרי</span></div>
+  <div class="chart" id="start"></div>
+  <div class="src">ימי מחלה נשימתית בחודש. פעוטות שהתחילו מסגרת בגיל שנה ורבע בממוצע. STEPS, פינלנד.</div>
+</figure>
+<p>במחקר הפיני, פעוטות היו חולים כ-4 ימים בחודש לפני הכניסה למעון. חודשיים אחרי, כבר כ-10.5 ימים בחודש. במסגרת משפחתית קטנה, עם עד חמישה ילדים, הקפיצה הייתה קטנה יותר.</p>
+<p>והחדשות הטובות: אחרי חמישה חודשים הם חזרו לרמה של ילדים שנשארו בבית. מי שהתחיל גן בספטמבר עובר את הגל הזה בדיוק כשהחורף מגיע.</p>
+
+<h2>מתי</h2>
+<p>החורף בישראל מגיע בשני גלים. קודם RSV, הנגיף שאחראי לרוב דלקות הסימפונות אצל תינוקות. אחריו שפעת.</p>
+<figure>
+  <div class="ftitle">בישראל החורף מגיע בשני גלים: קודם RSV, אחריו שפעת</div>
+  <div class="btns" id="isrBtns"></div>
+  <div class="key" style="direction:rtl"><span>כל עמודה היא שבוע. גובה ביחס לשבוע השיא של אותה עונה.</span><span><b style="background:var(--muted);height:1px"></b>אין נתון לשבוע הזה</span></div>
+  <div class="chart" id="isr"></div>
+  <div class="src">מאושפזים חיוביים חדשים בשבוע, כל הגילים. משרד הבריאות, דוחות שבועיים. מאוקטובר 2024 הספירה מבוססת על 13 בתי חולים.</div>
+</figure>
+<p>בשתי העונות האחרונות RSV התחיל לעלות בתחילת דצמבר והגיע לשיא בין סוף דצמבר לאמצע ינואר. השפעת הגיעה לשיא כמה שבועות אחריו, בין אמצע ינואר לאמצע פברואר.</p>
+<p>המספרים האלה הם מאושפזים, מכל הגילים. הם לא סופרים פעוט עם נזלת בבית. אבל הם מראים מתי הנגיפים מסתובבים.</p>
+<figure>
+  <div class="ftitle">בגילאי 0-4, ברוב השנים השיא נופל בסוף דצמבר</div>
+  <div class="btns" id="cdcBtns"></div>
+  <div class="chart" id="cdc"></div>
+  <div class="src">אחוז הביקורים אצל רופא בגלל מחלה דמוית שפעת, גילאי 0-4. CDC ILINet, ארה"ב.</div>
+</figure>
+<p>בישראל אין נתון שבועי פתוח לפי גיל, אז זה מארה"ב. שם, בגילאי 0-4, השיא נופל ברוב השנים בשבוע האחרון של דצמבר. בשנים חריגות הוא הקדים לסוף נובמבר או איחר לפברואר.</p>
+<p>ו-2020/21 נראה אחרת לגמרי. בשנת הקורונה הראשונה לא היה שיא חורף בכלל, והעלייה הגיעה רק בקיץ 2021.</p>
+
+<h2>ממה</h2>
+<figure>
+  <div class="ftitle">שתיים מכל שלוש מחלות הן הצטננות פשוטה</div>
+  <div class="chart" id="waffle"></div>
+  <div class="src">מחלות נשימה בפעוטות עד גיל שנתיים שזוהה בהן נגיף, 761 מחלות. Vesa ועמיתים, פינלנד.</div>
+</figure>
+<p>רוב מה שמסתובב בגן הוא רינו-וירוס, הנגיף של ההצטננות. RSV ושפעת הם החלק הקטן, אבל הם אלה ששולחים לבית החולים.</p>
+<p>הצטננות של פעוט לא תמיד נגמרת בנזלת. בין רבע לכמעט חצי מההצטננויות בגיל הזה הסתיימו גם בדלקת אוזניים.</p>
+
+<h2>ומה אחר כך</h2>
+<p>כאן יש חדשות טובות, עם הסתייגות.</p>
+<figure>
+  <div class="ftitle">ילדי מעון חולים יותר בהתחלה, ופחות בגיל 4 עד 6</div>
+  <div class="key" style="direction:rtl"><span><b style="background:var(--hi)"></b>התחילו מעון בשנה הראשונה</span><span><b style="background:var(--ink)"></b>גדלו בבית</span></div>
+  <div class="chart" id="payback"></div>
+  <div class="src">ביקורים אצל רופא משפחה בגלל זיהום נשימתי עליון או דלקת אוזניים, ל-100 ילדים בשנה. WHISTLER, הולנד.</div>
+</figure>
+<p>במחקר ההולנדי, ילדים שהתחילו מעון בשנה הראשונה הגיעו לרופא הרבה יותר בגיל שנה. משם הפער נסגר, ומגיל שנתיים הם הגיעו פחות מילדים שגדלו בבית. בגיל 5 עד 6, בערך חצי. על פני שש שנים הסכום כמעט זהה.</p>
+<p>מחקר גדול מקוויבק מצא אותו דבר: יותר זיהומים עד גיל שתיים וחצי במעון גדול, ופחות בבית הספר. מחקר רישומים מדנמרק לא מצא את התמורה. שם מעון הוסיף מעט זיהומים עד גיל 6, ואחר כך לא היה הבדל.</p>
+<p>אז הסיכום הזהיר: הגן לא בהכרח מוסיף מחלות. הוא בעיקר מקדים אותן.</p>
+
+<h2>בשורה התחתונה</h2>
+<p>שבע-שמונה מחלות בשנה לפעוט זה לא מזל רע. זה הממוצע. רובן הצטננויות שנמשכות כשבוע וחצי, והן מתרכזות בחודשים הראשונים בגן ובשיא החורף.</p>
+<p>בגן של 16 ילדים, ביום חורף רגיל כחמישה מהם עם סימני מחלה. ביום הכי גרוע, יותר מחצי.</p>
+
+<div class="method">
+<h3 style="font-family:var(--display);font-size:20px;margin:0 0 8px">שיטה ומגבלות</h3>
+<ul>
+<li><b>מספר מחלות, משך מחלה וימי מחלה לפי גיל:</b> <a href="https://www.mdpi.com/2076-2607/10/1/111">LoewenKIDS</a>, גרמניה, 2014-2020. יומן יומי של הורים. מחלה מסתיימת אחרי שלושה ימים בלי סימנים.</li>
+<li><b>לפני ואחרי כניסה למעון:</b> <a href="https://bmjopen.bmj.com/content/7/9/e014635">STEPS</a>, פינלנד (Schuez-Havupalo 2017). עשירית העליונה בימי מחלה: <a href="https://pubmed.ncbi.nlm.nih.gov/27455443/">Toivonen 2016</a>.</li>
+<li><b>פילוח נגיפים:</b> <a href="https://pubmed.ncbi.nlm.nih.gov/11419498/">Vesa 2001</a>, פינלנד, פעוטות בני חודשיים עד שנתיים, 761 מחלות שזוהה בהן נגיף.</li>
+<li><b>מעון מול בית לאורך זמן:</b> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4098954">WHISTLER</a>, הולנד (ביקורים אצל רופא בלבד, לכן המספרים נמוכים מיומן הורים). Côté 2010, קוויבק (יחסי סיכון בלבד, בלי מספרים מוחלטים). <a href="https://academic.oup.com/ije/article/52/2/466/6839854">Søegaard 2023</a>, דנמרק (מרשמי אנטיביוטיקה).</li>
+<li><b>ישראל:</b> מאושפזים חיוביים חדשים ל-RSV ולשפעת, מהדוחות השבועיים של משרד הבריאות. כל הגילים, בתי חולים בלבד. 17 מתוך 66 שבועות חסרים בדוחות שמצאתי ומוצגים כקו קטן. מאוקטובר 2024 הספירה מבוססת על 13 בתי חולים, ולכן כל עונה מוצגת ביחס לשיא שלה. בחלק מהשבועות הדוח מפרט רק שפעת A.</li>
+<li><b>ארה"ב:</b> CDC ILINet, אחוז הביקורים בגלל מחלה דמוית שפעת, גילאי 0-4, עונות 2019/20 עד 2025/26. לפני 2019 אין פילוח לפי גיל.</li>
+<li><b>הגן המדומה:</b> מודל, לא נתונים. כל ילד חולה בממוצע 7.7 פעמים בשנה, משך מחלה עם חציון של 9.7 ימים, והתפלגות לאורך השנה לפי הממוצע של גילאי 0-4 בארה"ב בלי עונות הקורונה. ההדבקה היא המחשה: אין מחקר שמודד אותה בגן, והיא מכוילת כך שהממוצע לא משתנה. המודל לא כולל את הקפיצה של החודשים הראשונים בגן.</li>
+<li>מספרי ביקורים בישראל לפי גיל (מכבי, גילאי 0-2) מתפרסמים בדוחות רק כגרף, ולכן לא נכללו.</li>
+<li>הנתונים וקוד הניתוח נמצאים בתיקייה <code>src/winter</code> במאגר של האתר.</li>
+</ul>
+</div>
+</div>
+<footer></footer>
+
+<script>
+const DATA=/*DATA*/;
+const NS='http://www.w3.org/2000/svg';
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e}
+function svg(host,w,h){host.innerHTML='';const s=el('svg',{viewBox:`0 0 ${w} ${h}`},host);return s}
+function txt(s,x,y,t,cls,anchor){anchor=anchor||'start';const heb=/[\u0590-\u05FF]/.test(t);if(heb&&anchor!=='middle')anchor=anchor==='start'?'end':'start';const e=el('text',{x,y,'text-anchor':anchor},s);if(heb){e.setAttribute('direction','rtl');t='\u200F'+t+'\u200F'}if(cls)e.setAttribute('class',cls);e.textContent=t;return e}
+function tip(host){let t=host.querySelector('.tip');if(!t){t=document.createElement('div');t.className='tip';host.appendChild(t)}return t}
+const narrow=()=>innerWidth<560;
+function onView(id,fn){const e=document.getElementById(id);try{const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){io.disconnect();fn()}},{threshold:.4});io.observe(e)}catch(_){fn()}}
+const WID=host=>Math.max(330,Math.min(640,host.clientWidth||640));
+
+/* ---------- simulator ---------- */
+const START=new Date(2026,10,1), NDAYS=151;
+const MONTHS=['נוב׳','דצמ׳','ינו׳','פבר׳','מרץ'];
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const W=DATA.weight_by_week; // epi week 1..52
+function epiWeek(d){const j=new Date(d.getFullYear(),0,1);return Math.min(52,Math.floor((d-j)/864e5/7)+1)}
+const sumW=W.reduce((a,b)=>a+b,0)*7;
+const S=DATA.studies, SHARE=S.share_days/100;
+function hazard(d){return S.eps_year2*W[epiWeek(d)-1]/sumW/(1-SHARE)}
+const SIG=Math.log(14/7)/1.349;
+function simKid(rng){
+  const sick=new Array(NDAYS).fill(0);let eps=0,d=0;
+  while(d<NDAYS){const day=new Date(+START+d*864e5);
+    if(rng()<hazard(day)){eps++;const u1=rng()||1e-9,u2=rng();const z=Math.sqrt(-2*Math.log(u1))*Math.cos(2*Math.PI*u2);
+      const len=Math.max(1,Math.round(Math.exp(Math.log(S.dur_median)+SIG*z)));
+      for(let k=0;k<len&&d+k<NDAYS;k++)sick[d+k]=1;d+=len}else d++}
+  return {sick,eps}}
+const KB={0:1,0.5:1.084,0.8:1.196}; // keeps the winter average equal across contagion levels (calibrated offline, 1500 winters)
+let seed=7,beta=0.5,gan=null,sel=-1,shown=NDAYS,timer=null;const NK=16;
+
+function simGan(rng,b,K){K=K||KB[b]||1;
+  const left=new Array(NK).fill(0),sick=[...Array(NK)].map(()=>new Array(NDAYS).fill(0)),eps=new Array(NK).fill(0);
+  for(let d=0;d<NDAYS;d++){const day=new Date(+START+d*864e5),h=hazard(day)*K;
+    const prev=left.filter(x=>x>0).length;
+    for(let i=0;i<NK;i++){
+      if(left[i]>0){sick[i][d]=1;left[i]--;continue}
+      const others=prev/(NK-1);const p=h*((1-b)+b*Math.min(4,others/(b?EXP[d]:1)));
+      if(rng()<p){eps[i]++;const u1=rng()||1e-9,u2=rng();const z=Math.sqrt(-2*Math.log(u1))*Math.cos(2*Math.PI*u2);
+        left[i]=Math.max(1,Math.round(Math.exp(Math.log(S.dur_median)+SIG*z)));sick[i][d]=1;left[i]--}}}
+  const counts=[];for(let d=0;d<NDAYS;d++)counts.push(sick.reduce((a,k)=>a+k[d],0));
+  return {sick,eps,counts}}
+const EXPDUMMY=0;
+// expected share of kids sick on each day without contagion, so contagion moves illness around without changing the average
+const EXP=(()=>{const rng=mulberry(424242),acc=new Array(NDAYS).fill(0),R=400;for(let g=0;g<R;g++){const G=simGan(rng,0);G.counts.forEach((c,d)=>acc[d]+=c)}return acc.map(v=>Math.max(.02,v/R/NK))})();
+function roll(){gan=simGan(mulberry(seed*7919+Math.round(beta*10)),beta)}
+function person(s,cx,cy,r,fill,stroke){const g=el('g',{},s);el('circle',{cx,cy:cy-r*.55,r:r*.42,fill},g);el('path',{d:`M${cx-r*.75},${cy+r*.85}a${r*.75},${r*.7} 0 0 1 ${r*1.5},0z`,fill},g);if(stroke)el('rect',{x:cx-r-3,y:cy-r-3,width:2*r+6,height:2*r+6,rx:6,fill:'none',stroke,'stroke-width':2},g);return g}
+function drawRoom(upto){
+  const host=document.getElementById('room'),w=200,c=w/4,s=svg(host,w,w),d=upto-1;
+  for(let i=0;i<NK;i++){const cx=(i%4)*c+c/2,cy=Math.floor(i/4)*c+c/2,on=gan.sick[i][d];
+    const g=person(s,cx,cy,c*.36,on?css('--hi'):css('--cell'),i===sel?css('--ink'):null);g.style.cursor='pointer';
+    el('rect',{x:cx-c/2,y:cy-c/2,width:c,height:c,fill:'transparent'},g);g.onclick=()=>{sel=sel===i?-1:i;draw()}}}
+function drawCnt(upto){
+  const host=document.getElementById('cnt'),w=WID(host),n=narrow(),l=26,r=4,t=24,ch=n?150:180,stripH=sel>=0?14:0,h=t+ch+22+stripH,s=svg(host,w,h);
+  const dw=(w-l-r)/NDAYS,x=d=>l+d*dw,y=v=>t+ch-(v/NK)*ch;
+  txt(s,w-r,12,'כמה ילדים עם סימני מחלה בכל יום','ann','end');
+  [0,4,8,12,16].forEach(v=>{el('line',{x1:l,x2:w-r,y1:y(v),y2:y(v),stroke:css('--line'),'stroke-width':v===0?1.2:.7},s);txt(s,l-6,y(v)+4,v,null,'end')});
+  let lastM=-1;for(let d=0;d<NDAYS;d++){const m=new Date(+START+d*864e5).getMonth();if(m!==lastM){lastM=m;txt(s,x(d)+2,t+ch+16,MONTHS[(m+2)%12],null,'start')}}
+  // faint whole season outline so the reader sees where it is going
+  for(let d=upto;d<NDAYS;d++)el('rect',{x:x(d),y:y(gan.counts[d]),width:Math.max(.8,dw-.3),height:t+ch-y(gan.counts[d]),fill:css('--cell')},s);
+  for(let d=0;d<upto;d++)el('rect',{x:x(d),y:y(gan.counts[d]),width:Math.max(.8,dw-.3),height:t+ch-y(gan.counts[d]),fill:d===upto-1&&upto<NDAYS?css('--hi'):css('--hi'),opacity:d===upto-1?1:.75},s);
+  const avg=gan.counts.reduce((a,b)=>a+b,0)/NDAYS;
+  el('line',{x1:l,x2:w-r,y1:y(avg),y2:y(avg),stroke:css('--ink'),'stroke-dasharray':'4 4','stroke-width':1.2},s);
+  txt(s,l+4,y(avg)-5,'ממוצע החורף: '+avg.toFixed(1),'ann','start');
+  if(upto>0&&upto<NDAYS)el('line',{x1:x(upto),x2:x(upto),y1:t-4,y2:t+ch,stroke:css('--ink'),'stroke-width':1},s);
+  const mx=Math.max(...gan.counts),md=gan.counts.indexOf(mx);
+  if(upto>md){const xx=x(md),right=xx>w*.55;txt(s,xx+(right?-5:5),y(mx)-4,'הכי גרוע: '+mx+' מתוך 16','annhi',right?'end':'start')}
+  if(sel>=0){const yy=t+ch+22;el('line',{x1:l,x2:w-r,y1:yy+4,y2:yy+4,stroke:css('--line'),'stroke-dasharray':'1 3'},s);for(let d=0;d<upto;d++)if(gan.sick[sel][d])el('rect',{x:x(d),y:yy,width:dw+.3,height:8,fill:css('--ink')},s)}}
+function draw(){
+  const upto=Math.max(1,Math.min(shown,NDAYS));drawRoom(upto);drawCnt(upto);
+  document.getElementById('nowN').innerHTML=gan.counts[upto-1]+'<small> / 16</small>';
+  const dd=new Date(+START+(upto-1)*864e5),ds=dd.toLocaleDateString('he-IL',{day:'numeric',month:'long'});
+  document.getElementById('nowD').textContent='ב-'+ds;document.getElementById('date').textContent=dd.toLocaleDateString('he-IL',{day:'numeric',month:'short'});
+  document.getElementById('scrub').value=upto;
+  const kid=document.getElementById('kid');
+  if(sel>=0){const sd=gan.sick[sel].slice(0,upto).reduce((a,b)=>a+b,0);let ep=0;for(let d=0;d<upto;d++)if(gan.sick[sel][d]&&(d===0||!gan.sick[sel][d-1]))ep++;
+    kid.innerHTML=`<b>הילד שבחרתם</b> (הפס השחור): ${ep} מחלות, ${sd} ימים עם סימני מחלה עד עכשיו.`}
+  else kid.textContent='נגיעה בילד מסמנת את הימים שלו.'}
+function play(){if(timer){clearInterval(timer);timer=null;document.getElementById('play').textContent='▶';return}
+  if(shown>=NDAYS)shown=1;document.getElementById('play').textContent='❚❚';
+  timer=setInterval(()=>{shown++;draw();if(shown>=NDAYS){clearInterval(timer);timer=null;document.getElementById('play').textContent='▶'}},50)}
+function stop(){if(timer){clearInterval(timer);timer=null;document.getElementById('play').textContent='▶'}}
+document.getElementById('play').onclick=play;
+document.getElementById('scrub').oninput=e=>{stop();shown=+e.target.value;draw()};
+document.getElementById('again').onclick=()=>{seed++;roll();stop();shown=1;play()};
+document.querySelectorAll('#beta button').forEach(bn=>bn.onclick=()=>{document.querySelectorAll('#beta button').forEach(x=>x.classList.toggle('on',x===bn));beta=+bn.dataset.b;roll();draw()});
+roll();draw();
+// play once when the gan first scrolls into view
+try{const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){io.disconnect();shown=1;play()}},{threshold:.5});io.observe(document.querySelector('.hero'))}catch(e){}
+
+/* ---------- start spike (dumbbell) ---------- */
+function drawStart(){
+  const host=document.getElementById('start'),w=WID(host),h=150,l=narrow()?96:120,r=24,s=svg(host,w,h);
+  const x=v=>l+(v/12)*(w-l-r);
+  [0,4,8,12].forEach(v=>{el('line',{x1:x(v),x2:x(v),y1:10,y2:h-24,stroke:css('--line')},s);txt(s,x(v),h-6,v+' ימים',null,'middle')});
+  if(narrow())[0,4,8,12].forEach(()=>0);const rows=[['מעון',S.start.centre_before,S.start.centre_peak],['משפחתון (עד 5)',S.start.family_before,S.start.family_peak]];
+  rows.forEach(([lab,a,b],i)=>{const y=40+i*52;
+    txt(s,l-12,y+5,lab,'ann','end');
+    const ln=el('line',{x1:x(a),x2:startSeen?x(b):x(a),y1:y,y2:y,stroke:css('--hi-soft'),'stroke-width':6,'stroke-linecap':'round',class:'grow'},s);
+    el('circle',{cx:x(a),cy:y,r:7,fill:css('--muted')},s);const dot=el('circle',{cx:startSeen?x(b):x(a),cy:y,r:9,fill:css('--hi'),class:'grow'},s);
+    txt(s,x(a),y-14,a.toFixed(1),null,'middle');const lb=txt(s,x(b),y-16,b.toFixed(1),'annhi','middle');lb.style.transition='opacity .4s 1s';lb.style.opacity=startSeen?1:0;
+    if(!startSeen)anim.push(()=>{ln.setAttribute('x2',x(b));dot.setAttribute('cx',x(b));lb.style.opacity=1})})}
+let startSeen=false;const anim=[];onView('start',()=>{startSeen=true;requestAnimationFrame(()=>anim.splice(0).forEach(f=>f()))});
+drawStart();
+
+/* ---------- symptom days per half year ---------- */
+function drawHalf(){
+  const host=document.getElementById('half'),w=WID(host),h=230,l=8,r=8,t=34,b=30,s=svg(host,w,h),H=S.halfyear_days;
+  const bw=(w-l-r)/H.length,y=v=>t+(1-v/60)*(h-t-b);
+  el('line',{x1:l,x2:w-r,y1:h-b,y2:h-b,stroke:css('--line')},s);
+  H.forEach(([lab,v],i)=>{const hi=v===Math.max(...H.map(q=>q[1])),cx=l+i*bw+bw/2;
+    const rc=el('rect',{x:cx-bw*.32,y:halfSeen?y(v):h-b,width:bw*.64,height:halfSeen?h-b-y(v):0,rx:3,fill:hi?css('--hi'):css('--ink-2'),opacity:hi?1:.35,class:'grow'},s);
+    if(!halfSeen)animH.push(()=>{rc.setAttribute('y',y(v));rc.setAttribute('height',h-b-y(v))});
+    txt(s,cx,y(v)-8,v.toFixed(1)+' ימים',hi?'annhi':'ann','middle');
+    txt(s,cx,y(v)-24,Math.round(v/182.5*100)+'%',null,'middle');
+    txt(s,cx,h-b+18,lab,null,'middle')})}
+let halfSeen=false;const animH=[];onView('half',()=>{halfSeen=true;requestAnimationFrame(()=>animH.splice(0).forEach(f=>f()))});
+drawHalf();
+
+/* ---------- Israel two waves ---------- */
+const WKLAB=['אוק׳','נוב׳','דצמ׳','ינו׳','פבר׳','מרץ','אפר׳','מאי'];
+function monthTicks(s,x,y){[0,4.5,9,13.5,17.8,22,26.5,31].forEach((i,k)=>{if(narrow()&&k%2)return;txt(s,x(i),y,WKLAB[k],null,'middle')})}
+function line(s,vals,x,y,attrs){let d='',pen=false;vals.forEach((v,i)=>{if(v==null){pen=false;return}d+=(pen?'L':'M')+x(i).toFixed(1)+','+y(v).toFixed(1);pen=true});return el('path',Object.assign({d,fill:'none'},attrs),s)}
+let isrSeason='2023/24';
+function drawIsr(){
+  const host=document.getElementById('isr'),w=WID(host),n=narrow(),l=n?44:56,r=6,rowH=n?78:96,gap=26,t=8,s=svg(host,w,t+2*rowH+gap+30);
+  const D=DATA.israel[isrSeason],bw=(w-l-r)/33,x=i=>l+i*bw;
+  const tp=tip(host);
+  [['rsv','RSV',css('--hi')],['flu','שפעת',css('--ink')]].forEach(([k,lab,col],ri)=>{
+    const y0=t+ri*(rowH+gap),base=y0+rowH,raw=D['raw_'+k],mx=Math.max(...raw.filter(v=>v!=null));
+    txt(s,l-8,y0+rowH/2+5,lab,k==='rsv'?'annhi':'ann','end');
+    el('line',{x1:l,x2:w-r,y1:base,y2:base,stroke:css('--line')},s);
+    raw.forEach((v,i)=>{
+      if(v==null){el('line',{x1:x(i)+bw*.3,x2:x(i)+bw*.7,y1:base-3,y2:base-3,stroke:css('--muted'),'stroke-width':1},s);return}
+      const hh=v/mx*(rowH-14),rc=el('rect',{x:x(i)+bw*.12,y:base-hh,width:bw*.76,height:Math.max(.5,hh),fill:col,rx:1},s);
+      const wk=i<=12?i+40:i-12;
+      rc.onmouseenter=rc.ontouchstart=()=>{tp.innerHTML=`שבוע ${wk} · ${lab}: ${v} מאושפזים`;tp.style.opacity=1;const bb=s.getBoundingClientRect();tp.style.left=Math.min(bb.width-170,Math.max(0,x(i)/w*bb.width-70))+'px';tp.style.top=(y0/(t+2*rowH+gap+30)*bb.height-6)+'px'};
+      rc.onmouseleave=()=>tp.style.opacity=0;
+      if(v===mx){const right=x(i)>w*.6;txt(s,x(i)+bw/2+(right?-4:4),base-hh-5,'שיא: '+v,k==='rsv'?'annhi':'ann',right?'end':'start')}
+    })});
+  const MT=[[0,'אוק׳'],[4.5,'נוב׳'],[9,'דצמ׳'],[13.5,'ינו׳'],[17.8,'פבר׳'],[22,'מרץ'],[26.5,'אפר׳'],[31,'מאי']];
+  MT.forEach(([i,m],k)=>{if(n&&k%2)return;txt(s,x(i)+bw/2,t+2*rowH+gap+20,m,null,'middle')})}
+const ib=document.getElementById('isrBtns');Object.keys(DATA.israel).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.className=k===isrSeason?'on':'';b.onclick=()=>{isrSeason=k;[...ib.children].forEach(c=>c.classList.toggle('on',c===b));drawIsr()};ib.appendChild(b)});
+drawIsr();
+
+/* ---------- CDC seasons ---------- */
+let cdcSel='2025-26';
+function drawCdc(){
+  const host=document.getElementById('cdc'),w=WID(host),h=260,l=34,r=10,t=16,b=28,s=svg(host,w,h);
+  const x=i=>l+i/32*(w-l-r),y=v=>t+(1-v/22)*(h-t-b);
+  [0,5,10,15,20].forEach(v=>{el('line',{x1:l,x2:w-r,y1:y(v),y2:y(v),stroke:css('--line')},s);txt(s,l-6,y(v)+4,v+'%',null,'end')});
+  monthTicks(s,x,h-8);
+  const xmas=12;el('line',{x1:x(xmas),x2:x(xmas),y1:t,y2:h-b,stroke:css('--muted'),'stroke-dasharray':'3 4'},s);txt(s,x(xmas)+4,t+10,'סוף דצמבר','ann','start');
+  for(const k in DATA.cdc){if(k===cdcSel)continue;line(s,DATA.cdc[k],x,y,{stroke:k==='2020-21'?css('--ink-2'):'#c9c3b3','stroke-width':k==='2020-21'?1.5:1.5,'stroke-dasharray':k==='2020-21'?'4 4':''})}
+  const v=DATA.cdc['2020-21'];txt(s,x(20),y(v[20])-8,'2020-21: אין חורף','ann','middle');
+  const sel=DATA.cdc[cdcSel];line(s,sel,x,y,{stroke:css('--hi'),'stroke-width':3.5});
+  const mx=Math.max(...sel.filter(v=>v!=null)),mi=sel.indexOf(mx);el('circle',{cx:x(mi),cy:y(mx),r:5,fill:css('--hi')},s);txt(s,x(mi)+8,y(mx)+4,'שיא '+mx+'% ('+cdcSel+')','annhi','start')}
+const cb=document.getElementById('cdcBtns');Object.keys(DATA.cdc).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.className=k===cdcSel?'on':'';b.onclick=()=>{cdcSel=k;[...cb.children].forEach(c=>c.classList.toggle('on',c===b));drawCdc()};cb.appendChild(b)});
+drawCdc();
+
+/* ---------- waffle ---------- */
+function drawWaffle(){
+  const host=document.getElementById('waffle'),n=narrow(),cs=n?17:30,cols=10,w=WID(host),s=svg(host,w,cols*cs+10);
+  const V=S.viruses.map(([k,v])=>[k,Math.round(v)]);const rest=100-V.reduce((a,b)=>a+b[1],0);V.push(['אחר',rest]);
+  const colors=[css('--hi'),css('--ink'),'#8d8a80','#aaa69a','#c4bfb1','#dcd6c8'];
+  let i=0;V.forEach(([k,v],j)=>{for(let q=0;q<v;q++,i++){const c=Math.floor(i/10),r=i%10;el('rect',{x:c*cs,y:r*cs,width:cs-3,height:cs-3,rx:3,fill:colors[j]},s)}});
+  let yy=n?14:18;const lx=10*cs+(n?14:24);V.forEach(([k,v],j)=>{el('rect',{x:lx,y:yy-11,width:12,height:12,rx:2,fill:colors[j]},s);txt(s,lx+18,yy,v+'% '+k,j===0?'annhi':'ann','start');yy+=n?24:26})}
+drawWaffle();
+
+/* ---------- payback ---------- */
+function drawPay(){
+  const host=document.getElementById('payback'),w=WID(host),h=270,l=34,r=60,t=16,b=30,s=svg(host,w,h);
+  const P=S.payback,x=i=>l+i/5*(w-l-r),y=v=>t+(1-v/110)*(h-t-b);
+  [0,25,50,75,100].forEach(v=>{el('line',{x1:l,x2:w-r,y1:y(v),y2:y(v),stroke:css('--line')},s);txt(s,l-6,y(v)+4,v,null,'end')});
+  P.ages.forEach((a,i)=>txt(s,x(i),h-8,'גיל '+a,null,'middle'));
+  // shaded gap
+  let d='M'+P.daycare.map((v,i)=>x(i)+','+y(v)).join('L')+'L'+P.home.map((v,i)=>x(i)+','+y(v)).reverse().join('L')+'Z';
+  el('path',{d,fill:css('--hi-soft'),opacity:.45},s);
+  line(s,P.home,x,y,{stroke:css('--ink'),'stroke-width':2.5});line(s,P.daycare,x,y,{stroke:css('--hi'),'stroke-width':3.5});
+  P.daycare.forEach((v,i)=>el('circle',{cx:x(i),cy:y(v),r:4,fill:css('--hi')},s));P.home.forEach((v,i)=>el('circle',{cx:x(i),cy:y(v),r:3.5,fill:css('--ink')},s));
+  txt(s,x(0)+10,y(P.daycare[0])-6,'גיל 0-1: '+P.daycare[0]+' מול '+P.home[0],'annhi','start');
+  txt(s,x(5),y(P.daycare[5])+20,'גיל 5-6: '+P.daycare[5]+' מול '+P.home[5],'annhi','end');
+  txt(s,x(5),y(92),'מגיל שנתיים ילדי המעון','ann','end');txt(s,x(5),y(92)+17,'מגיעים לרופא פחות','ann','end')}
+drawPay();
+
+addEventListener('resize',()=>{draw();drawHalf();drawStart();drawIsr();drawCdc();drawWaffle();drawPay()});
+</script>
+</body>
+</html>

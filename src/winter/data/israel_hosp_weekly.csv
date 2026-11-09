@@ -1,0 +1,67 @@
+season,epi_year,epi_week,week_end_date,rsv_new_inpatients,flu_new_inpatients,hospitals_covered,source_url,note
+2023/24,2023,40,2023-10-07,13,,all general hospitals minus 5 not reporting,https://www.gov.il/BlobFolder/reports/flu-07102023/en/files_weekly-flu-corona_flu_en_flu-07102023e.pdf,"flu left blank: report gives conflicting inpatient flu figures (24 in lab section, 19 in summary)"
+2023/24,2023,41,2023-10-14,8,21,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-14102023/en/files_weekly-flu-corona_flu_en_flu-14102023e.pdf,flu = influenza A only stated in hospital section; no B count given
+2023/24,2023,42,2023-10-21,12,10,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-21102023/he/files_weekly-flu-corona_flu_he_flu-21102023.pdf,flu = influenza A only stated in hospital section; no B count given
+2023/24,2023,43,2023-10-28,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2023/24,2023,44,2023-11-04,8,4,all general hospitals minus 4 not reporting,https://www.gov.il/BlobFolder/reports/flu-04112023/he/files_weekly-flu-corona_flu_he_flu-04112023.pdf,flu = influenza A only stated in hospital section; no B count given
+2023/24,2023,45,2023-11-11,29,6,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-11112023/he/files_weekly-flu-corona_flu_he_flu-11112023.pdf,flu = influenza A only stated in hospital section; no B count given
+2023/24,2023,46,2023-11-18,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2023/24,2023,47,2023-11-25,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2023/24,2023,48,2023-12-02,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2023/24,2023,49,2023-12-09,145,8,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-09120223/en/files_weekly-flu-corona_flu_en_flu-09122023e.pdf,A 7 + B 1; note odd folder name in URL
+2023/24,2023,50,2023-12-16,170,14,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-16122023/he/files_weekly-flu-corona_flu_he_flu-16122023.pdf,A 9 + B 5
+2023/24,2023,51,2023-12-23,239,37,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-23122023/he/files_weekly-flu-corona_flu_he_flu-23122023.pdf,A 33 + B 4; report prints date range as 13/12-23/12/23
+2023/24,2023,52,2023-12-30,272,47,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-30122023/en/files_weekly-flu-corona_flu_en_flu-30122023e.pdf,flu = influenza A only stated in hospital section; no B count given
+2023/24,2024,1,2024-01-06,220,68,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-06012024/he/files_weekly-flu-corona_flu_he_flu-06012024.pdf,A 64 + B 4
+2023/24,2024,2,2024-01-13,365,113,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-13012024/en/files_weekly-flu-corona_flu_en_flu-13012024e.pdf,A 110 + B 3
+2023/24,2024,3,2024-01-20,367,209,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-20012024/en/files_weekly-flu-corona_flu_en_flu-20012024e.pdf,A 206 + B 3
+2023/24,2024,4,2024-01-27,334,354,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-27012024/he/files_weekly-flu-corona_flu_he_flu-27012024.pdf,A 350 + B 4
+2023/24,2024,5,2024-02-03,334,599,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-03022024/he/files_weekly-flu-corona_flu_he_flu-03022024.pdf,"flu = influenza A only stated in hospital section; no B count given; RSV 334 identical to week 4, as printed in report"
+2023/24,2024,6,2024-02-10,203,697,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-10022024/en/files_weekly-flu-corona_flu_en_flu-10022024e.pdf,flu = influenza A only stated in hospital section; no B count given
+2023/24,2024,7,2024-02-17,230,1059,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-17022024/he/files_weekly-flu-corona_flu_he_flu-17022024.pdf,A 1053 + B 6
+2023/24,2024,8,2024-02-24,160,951,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-24022024/he/files_weekly-flu-corona_flu_he_flu-24022024.pdf,A 948 + B 3
+2023/24,2024,9,2024-03-02,126,820,all general hospitals minus 1 not reporting,https://www.gov.il/BlobFolder/reports/flu-02032024/en/files_weekly-flu-corona_flu_en_flu-02032024e.pdf,A 817 + B 3
+2023/24,2024,10,2024-03-09,107,710,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-09032024/he/files_weekly-flu-corona_flu_he_flu-09032024.pdf,A 704 + B 6
+2023/24,2024,11,2024-03-16,89,445,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-16032024/en/files_weekly-flu-corona_flu_en_flu-16032024e.pdf,A 441 + B 4; the 23/03/2024 report repeats these week-11 hospital figures
+2023/24,2024,12,2024-03-23,,,,https://www.gov.il/BlobFolder/reports/flu-23032024/he/files_weekly-flu-corona_flu_he_flu-23032024.pdf,"MISSING: the 23/03/2024 report (community week 12) shows week-11 hospital figures, no week-12 inpatient counts"
+2023/24,2024,13,2024-03-30,48,170,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-30032024/en/files_weekly-flu-corona_flu_en_flu-30032024e.pdf,A 167 + B 3; RSV section coverage note refers to week 11 (copy error in report)
+2023/24,2024,14,2024-04-06,40,135,all general hospitals minus 2 not reporting,https://www.gov.il/BlobFolder/reports/flu-06042024/he/files_weekly-flu-corona_flu_he_flu-06042024.pdf,A 126 + B 9
+2023/24,2024,15,2024-04-13,20,55,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-13042024/en/files_weekly-flu-corona_flu_en_flu-13042024e.pdf,"A 53 + B 2; RSV sentence says ""As of week 14"", may not be week 15 alone"
+2023/24,2024,16,2024-04-20,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2023/24,2024,17,2024-04-27,14,19,all general hospitals minus 3 not reporting,https://www.gov.il/BlobFolder/reports/flu-27042024/en/files_weekly-flu-corona_flu_en_flu-27042024e.pdf,A 13 + B 6
+2023/24,2024,18,2024-05-04,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2023/24,2024,19,2024-05-11,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2023/24,2024,20,2024-05-18,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2024,40,2024-10-05,36,4,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-05102024/he/files_weekly-flu-corona_flu_he_flu-05102024.pdf,flu = influenza A only stated in hospital section; no B count given
+2024/25,2024,41,2024-10-12,77,6,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-12102024/he/files_weekly-flu-corona_flu_he_flu-12102024.pdf,A 5 + B 1
+2024/25,2024,42,2024-10-19,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2024,43,2024-10-26,112,6,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-26102024/he/files_weekly-flu-corona_flu_he_flu-26102024.pdf,flu = influenza A only stated in hospital section; no B count given
+2024/25,2024,44,2024-11-02,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2024,45,2024-11-09,96,17,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-09112024/he/files_weekly-flu-corona_flu_he_flu-09112024.pdf,A 13 + B 4
+2024/25,2024,46,2024-11-16,144,16,12 hospitals,https://www.gov.il/BlobFolder/reports/flu-16112024/he/files_weekly-flu-corona_flu_he_flu-16112024.pdf,A 6 + B 10; report states base of 12 hospitals this week
+2024/25,2024,47,2024-11-23,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2024,48,2024-11-30,204,35,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-30112024/he/files_weekly-flu-corona_flu_he_flu-30112024.pdf,A 25 + B 10
+2024/25,2024,49,2024-12-07,223,46,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-07122024/he/files_weekly-flu-corona_flu_he_flu-07122024.pdf,A 29 + B 17
+2024/25,2024,50,2024-12-14,240,77,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-14122024/he/files_weekly-flu-corona_flu_he_flu-14122024.pdf,A 50 + B 27; one hospital missing week-50 data
+2024/25,2024,51,2024-12-21,257,131,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-21122024/he/files_weekly-flu-corona_flu_he_flu-21122024.pdf,A 81 + B 50
+2024/25,2024,52,2024-12-28,273,241,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-28122024/he/files_weekly-flu-corona_flu_he_flu-28122024.pdf,A 150 + B 91
+2024/25,2025,1,2025-01-04,191,250,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-04012025/he/files_weekly-flu-corona_flu_he_flu-04012025.pdf,A 158 + B 92
+2024/25,2025,2,2025-01-11,227,515,12 of 13 hospitals,https://www.gov.il/BlobFolder/reports/flu-11012025/he/files_weekly-flu-corona_flu_he_flu-11012025.pdf,"A 332 + B 176 + 7 A+B; technical fault, only 12 hospitals this week"
+2024/25,2025,3,2025-01-18,177,549,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-18012025/he/files_weekly-flu-corona_flu_he_flu-18012025.pdf,A 379 + B 165 + 5 A+B
+2024/25,2025,4,2025-01-25,148,516,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-25012025/he/files_weekly-flu-corona_flu_he_flu-25012025.pdf,A 341 + B 173 + 2 A+B; read from report summary
+2024/25,2025,5,2025-02-01,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2025,6,2025-02-08,98,481,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-08022025/he/files_weekly-flu-corona_flu_he_flu-08022025.pdf,A 360 + B 120 + 1 A+B
+2024/25,2025,7,2025-02-15,77,455,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-15022025/he/files_weekly-flu-corona_flu_he_flu-15022025.pdf,A 358 + B 95 + 2 A+B
+2024/25,2025,8,2025-02-22,73,443,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-22022025/he/files_weekly-flu-corona_flu_he_flu-22022025.pdf,A 360 + B 82 + 1 A+B
+2024/25,2025,9,2025-03-01,39,394,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-01032025/he/files_weekly-flu-corona_flu_he_flu-01032025.pdf,A 341 + B 51 + 2 A+B
+2024/25,2025,10,2025-03-08,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2025,11,2025-03-15,26,255,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-15032025/he/files_weekly-flu-corona_flu_he_flu-15032025.pdf,A 221 + B 31 (total as printed)
+2024/25,2025,12,2025-03-22,36,209,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-22032025/he/files_weekly-flu-corona_flu_he_flu-22032025.pdf,A 183 + B 26
+2024/25,2025,13,2025-03-29,23,126,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-29032025/he/files_weekly-flu-corona_flu_he_flu-29032025.pdf,A 113 + B 13
+2024/25,2025,14,2025-04-05,15,64,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-05042025/he/files_weekly-flu-corona_flu_he_flu-05042025.pdf,A 60 + B 4
+2024/25,2025,15,2025-04-12,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2025,16,2025-04-19,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2025,17,2025-04-26,,,,,MISSING: report PDF could not be retrieved (gov.il 4xx on all URL variants tried); no news fallback found
+2024/25,2025,18,2025-05-03,6,17,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-03052025/he/files_weekly-flu-corona_flu_he_flu-03052025.pdf,A 15 + B 2
+2024/25,2025,19,2025-05-10,2,10,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-10052025/he/files_weekly-flu-corona_flu_he_flu-10052025.pdf,flu = influenza A only stated in hospital section; no B count given
+2024/25,2025,20,2025-05-17,0,14,13 hospitals,https://www.gov.il/BlobFolder/reports/flu-17052025/he/files_weekly-flu-corona_flu_he_flu-17052025.pdf,A 13 + B 1

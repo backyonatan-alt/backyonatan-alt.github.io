@@ -13,6 +13,7 @@ Live at https://backyonatan-alt.github.io/
 | `/dogfight/` | Dogfight Ground School (beginner's air combat guide for any flight sim, with 3D clips) | `src/dogfight/` (`page.html`, `app.js`) | `python3 src/dogfight/build.py` |
 | `/flyers/` | Frequent Flyers (NBA travel: animated route map, miles by team, does travel cost wins) | `src/flyers/` (`page.html`, `data.json`, `cost.json`, `map.json`) | `python3 src/flyers/build.py` |
 | `/windsurf/` | The Best Team Ever? Half of It. (Hebrew page, title הנבחרת הכי טובה שהייתה לנו? חצי ממנה., RTL: Israel's Olympic windsurfing team 1992-2026, women vs men, depth not just medals) | `src/windsurf/` (`page.html`, `data.json`; `data/*.csv` + `prep.py` make `data.json`) | `python3 src/windsurf/build.py` |
+| `/winter/` | One Day in Five (Hebrew page, title יום אחד מכל חמישה, RTL: how often a toddler in daycare gets sick in winter, a simulated gan of 16, Israeli RSV/flu weeks, US ages 0-4, study figures) | `src/winter/` (`page.html`, `data.json`; `data/*.csv` + `prep.py` make `data.json`) | `python3 src/winter/build.py` |
 
 Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`, `windsurf/index.html` or the three sports `index.html` files. They are build output and get overwritten.
 
@@ -56,6 +57,14 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`
 - Seven chapters, no chapter numbers. Coverage and caveats (entries vs finishers in 2022-2025, Eilat 2016 silver fleet, 2012, Reuveny 41st) live as two bullets in the methodology section; the full results table is collapsed behind a `<details>`. Youth chapter shows counts, plus the youth-to-senior conversion finding (7 of 33 women medalists reached a senior top 10, 4 of 40 men).
 - Charts explain themselves with legends (`.key`), not captions under the chart. Yonatan removed every caption; do not add them back. Never use the word שדה for field size, say מתחרים or תחרות.
 - Hero chart: every senior result by year and position (log scale). Uniform dots, Europeans hollow, Olympics a diamond, a medal is a thin gold ring around the marker (gender color stays visible, no medal colors, no glow), no best-result line, six one-line annotations (`ANN`, desktop only: the five Olympic medals, Korzits, 2026) and a depth strip (Israelis in the top 10 per year). Hovering a dot highlights that person's career and shows a summary in the tooltip; the caption text never changes.
+
+## Winter notes
+
+- Hebrew page, `dir="rtl"`, light design (paper `#f6f3ec`, one highlight red `#e0482b`). Headline font Rubik 800, body Heebo. Charts are `direction:ltr` inside; Hebrew SVG labels go through `txt()`, which sets rtl and swaps start/end anchors.
+- Data: `data/cohort_figures.csv` (study figures, one row per number, source per row), `data/israel_hosp_weekly.csv` (MoH weekly new RSV/flu inpatients, all ages, gaps left empty, 13 hospitals from Oct 2024), `data/cdc_ilinet_age.csv` (CDC ILINet ages 0-4, 2019-20 on). `prep.py` writes `data.json`.
+- Hero: a simulated gan of 16 (`simGan`). Model, not data: 7.7 episodes a year, median 9.7 days, season shape from US 0-4. Contagion buttons are an illustration; `KB` factors keep the winter average equal across levels (calibrated over 1,500 winters). Say so on the page, never present it as measured.
+- Israeli weekly data by age exists only as chart images in the MoH PDFs, so it is not used. Missing weeks show as a short gray dash, never filled.
+- Share images: `node src/winter/og.js` renders `winter/preview.png` (Hebrew) and `winter/card.png` (English home row). Reel: `src/social/reel/winter/reel.js`.
 
 ## Adding a new article
 
