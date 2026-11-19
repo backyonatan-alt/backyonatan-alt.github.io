@@ -90,7 +90,7 @@ var C={hull:0x6e4a2e,deck:0xb89a6a,teal:0x4f7a78,brick:0xa8472e,cream:0xefe6d2,m
 // ---------- light
 scene.add(new THREE.HemisphereLight(0xe9e6da,0x7d7058,0.62));
 var sun=new THREE.DirectionalLight(0xfff1d6,0.62);sun.position.set(-14,22,12);sun.castShadow=true;
-sun.shadow.mapSize.set(2048,2048);var sc=sun.shadow.camera;sc.left=-18;sc.right=18;sc.top=18;sc.bottom=-18;sc.far=70;sun.shadow.bias=-0.0006;scene.add(sun);
+sun.shadow.mapSize.set(2048,2048);var sc=sun.shadow.camera;sc.left=-18;sc.right=18;sc.top=18;sc.bottom=-18;sc.far=70;sun.shadow.bias=-0.0004;sun.shadow.normalBias=0.04;scene.add(sun);
 var bellyLight=new THREE.PointLight(0xffd9a0,0.55,9);bellyLight.position.set(0,1.4,0);scene.add(bellyLight);
 
 // ---------- plank texture
@@ -101,8 +101,8 @@ function planks(){var c=document.createElement('canvas');c.width=c.height=128;va
  var t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;return t}
 var tex=planks();
 var M={
- hull:new THREE.MeshLambertMaterial({color:C.hull,map:tex,side:THREE.DoubleSide}),
- deck:new THREE.MeshLambertMaterial({color:C.deck,map:tex,side:THREE.DoubleSide}),
+ hull:new THREE.MeshLambertMaterial({color:C.hull,map:tex}),
+ deck:new THREE.MeshLambertMaterial({color:C.deck,map:tex}),
  teal:new THREE.MeshLambertMaterial({color:C.teal}),
  brick:new THREE.MeshLambertMaterial({color:C.brick}),
  cream:new THREE.MeshLambertMaterial({color:C.cream}),
@@ -119,7 +119,10 @@ function bot(x){return hw(x)*0.45}
 function keel(x){return x<-4.5?(-4.5-x)/3.5*1.7:x>3.5?(x-3.5)/4.5*2.2:0}
 function wAt(x,y){var k=keel(x),f=(y-k)/(2.9-k);f=Math.max(0,Math.min(1.25,f));return bot(x)+(hw(x)-bot(x))*f}
 function Geo(){this.p=[];this.uv=[]}
-Geo.prototype.quad=function(a,b,c,d,uf){var s=this;[a,b,c,a,c,d].forEach(function(v){s.p.push(v.x,v.y,v.z);var u=uf(v);s.uv.push(u[0],u[1])})};
+// every panel is a thin slab (two one-sided faces), so shadows never land on the back of a lit face
+Geo.prototype.quad=function(a,b,c,d,uf){var s=this,n=b.clone().sub(a).cross(d.clone().sub(a)).normalize().multiplyScalar(0.05);
+ var put=function(v,o){s.p.push(v.x-(o?n.x:0),v.y-(o?n.y:0),v.z-(o?n.z:0));var u=uf(v);s.uv.push(u[0],u[1])};
+ [a,b,c,a,c,d].forEach(function(v){put(v,0)});[a,c,b,a,d,c].forEach(function(v){put(v,1)})};
 Geo.prototype.mesh=function(mat){var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(this.p,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(this.uv,2));g.computeVertexNormals();var m=new THREE.Mesh(g,mat);m.castShadow=m.receiveShadow=true;return m};
 var uvSide=function(v){return[v.x*0.45,v.y*0.8]},uvDeck=function(v){return[v.x*0.3,v.z*1.4]},uvWall=function(v){return[v.z*0.45,v.y*0.8]};
 var ship=new THREE.Group();scene.add(ship);
