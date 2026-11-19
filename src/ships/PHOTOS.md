@@ -15,11 +15,18 @@ Only the Givatayim photo is free to publish. Everything else belongs to the post
 | `rekhasim_gan-haoniya_facebook-group_2021-11-12.jpg` (not in repo) | Rekhasim, Gan HaOniya | [Rekhasim childhood group](https://www.facebook.com/groups/524945757872717/posts/1501398343560782/) | 12 Nov 2021 | Private poster (group admin). Ask him. | Real photo, original 1077x1386. Same design. The plaque on the stern panel appears to carry a GPI logo. |
 | `migdal-haemek_2_municipality-instagram_2025-03-21.jpg` (not in repo) | Migdal HaEmek | [Municipality Instagram](https://www.instagram.com/p/DHdKl02sWW0/) | 21 Mar 2025 | Municipality | Second real photo, different angle, a man walking past. Original 1439x805. |
 | `raanana_COMPOSITE-old-photo-over-2024_youtube.jpg` (not in repo) | Ra'anana | [YouTube video](https://www.youtube.com/watch?v=NDCRV8cLtlA) | 3 Jan 2025 | Video maker | A composite: an old photo of the green ship with kids, blended into a 2024 photo of the same spot. Proves the Ra'anana ship and its design. The maker holds the original old photo. |
+| `givatayim_gan-rivka_ynet_2010.jpg` (not in repo) | Givatayim, Gan Rivka | [ynet, "הכלב ואני", 4 Oct 2010](https://www.ynet.co.il/articles/0,7340,L-3952684,00.html) | Image file dated Jan 2010 | ynet. No photographer named. | Caption says you could once crawl between the hull walls. 408x306. |
+| `givatayim_1to1-landscape_existing-state-fails-standards.jpg` (not in repo) | Givatayim | [1:1 Landscape gallery](http://www.1to1landscape.com/galleries/%D7%A1%D7%A4%D7%99%D7%A0%D7%AA-%D7%94%D7%A4%D7%99%D7%A8%D7%90%D7%98%D7%99%D7%9D/) | undated | 1:1 Landscape | Slide: existing state, the ship does not meet safety standards. Original 1280x925. |
+| `givatayim_1to1-landscape_sinking-proposal-drawing.jpg` (not in repo) | Givatayim | same gallery | undated | 1:1 Landscape | Side-view drawing of the proposal: sink the ship, bury part in the sand, seating steps on deck. Has human figures for scale. |
+| `emanuel_municipality-gallery_2018.jpg` (not in repo) | Emanuel | [Emanuel municipality gallery](https://www.emanuel.muni.il/galleries/26/) | file uploaded Aug 2018 | Municipality | Blue trim, two slides and rope nets. Refit or later model, unclear. Original 1170x780. |
+| `dimona_municipality_original-490px_from-yonatan.jpg` (not in repo) | Dimona | same Dimona post | | Municipality | Original-size copy of the Dimona photo. |
 
 ## No photo found yet
-Reut, Ma'alot, Ra'anana, Rishon LeZion (Hai-Kef), Ramla, Ariel, Nof HaGalil, Kiryat Ata, Rekhasim, Jerusalem, Haifa, Kiryat Malakhi, Kokhav Yair (a 2007 fire video exists on YouTube via the local timeline), and the single-mention towns.
+Reut, Ma'alot, Rishon LeZion (Hai-Kef), Ramla, Ariel, Nof HaGalil, Kiryat Ata, Rekhasim, Jerusalem, Haifa, Kiryat Malakhi, Kokhav Yair (a 2007 fire video exists on YouTube via the local timeline), and the single-mention towns.
 
 The 435-comment Facebook thread has no photos in its comments.
 
 ## What the real photos show
 Givatayim, Migdal HaEmek, Dimona and Kiryat Shmona share one design: two masts with slatted crow's nests, a raised stern with skull panels, a side ramp and a name sign on the hull. Colors differ by town. This supports one design or one supplier. Still unconfirmed by any source.
+
+The 1:1 Landscape gallery also holds a photo of a public workshop with children and a photo of residents voting at a ballot box by the ship. Not saved here (identifiable people).
