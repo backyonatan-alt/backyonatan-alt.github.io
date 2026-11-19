@@ -92,3 +92,11 @@ Source: National Library archive, Koteret Rashit 29 Jun 1988, the only hit for "
 - The copy ends with a Captain Hook line, matching the hull sign in Dimona.
 
 Timeline so far: launch mid 1988 (5 towns) -> Feb 1989 adds Yavne and Rishon LeZion -> spreads through the 1990s -> fires and safety removals from the 2000s -> Kokhav Yair dismantled 2025.
+
+## Photo hunt notes, 19 Nov 2026 (afternoon)
+
+- Migdal HaEmek, from the municipality's Facebook comments: residents knew the place as "Park HaRishonim", not "Park HaTabaot"; the ring structure stood next to the ship; the lower deck smelled of urine; the ship was burned on a Lag BaOmer; one commenter ties it to 1988.
+- Rekhasim photo shows what looks like a GPI plaque on the stern.
+- Ra'anana: a YouTube video overlays an old photo of the ship on the same spot in 2024.
+- Dead ends: Google now shows a robot check in the automated browser; Bing image search returns products and cruises; Facebook in-group search in the big nostalgia group and a Kiryat Shmona residents group returned no further ship photos; the Dimona, Afula and Migdal HaEmek municipal posts asked residents for photos and got none in the comments.
+- Conclusion: the photos are in private albums. A public call for photos is the realistic way to get more than one per ship.
