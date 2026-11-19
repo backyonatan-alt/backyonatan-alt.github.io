@@ -2,7 +2,7 @@
 
 Collected 19 Nov 2026. Files are screen captures at about 800px wide, for research reference. They are not the originals.
 
-Update 19 Nov 2026: Yonatan checked the rights himself and cleared the photos for the site. Seven are on the page (`photos/*.jpg`): Givatayim, Migdal HaEmek x2, Dimona, Kiryat Shmona, Rekhasim, Emanuel, each with a credit linking to its source. Left out: the Eilat and Afula images (look AI-made) and the Ra'anana composite.
+Update 19 Nov 2026: Yonatan checked the rights himself and cleared the photos for the site. Seven are on the page (`photos/*.jpg`): Givatayim, Migdal HaEmek x2, Dimona, Kiryat Shmona, Rekhasim, Emanuel, each with a credit linking to its source. Yonatan then looked at the Eilat and Afula images (possibly AI-reworked) and chose to add them too, so nine are on the page. Left out: the Ra'anana composite.
 
 | File | Ship | Source | Posted | Rights | Notes |
 |---|---|---|---|---|---|

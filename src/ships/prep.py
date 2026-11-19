@@ -1,6 +1,7 @@
 # Writes data.json for the ships page. Run: python3 src/ships/prep.py
 # One entry per ship. Hebrew text here follows ships.csv (the research table); keep the two in step.
 # Last field: photo keys from PH (space separated). Yonatan cleared the rights for these photos (19 Nov 2026).
+# He also chose to include the Eilat and Afula images after seeing them, although they may be AI-reworked.
 # end: fire / removed / unknown. Coordinates mark the town, not the exact spot in the park.
 import json, os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -13,6 +14,8 @@ PH={
  'dimona':('דימונה, ״קפטיין הוק״','עיריית דימונה, אינסטגרם','https://www.instagram.com/p/C9l33TotwOf/','ספינת הפיראטים בדימונה, על הגוף שלט קפטיין הוק'),
  'kiryat-shmona':('קריית שמונה, רחוב האצ״ל','פורסם בקבוצת פייסבוק','https://www.facebook.com/groups/642840429168951/posts/7056274594492137/','ספינת הפיראטים בקריית שמונה, צילום ישן, בתי שיכון ברקע'),
  'rekhasim':('רכסים, גן האונייה','פורסם בקבוצת פייסבוק','https://www.facebook.com/groups/524945757872717/posts/1501398343560782/','ספינת הפיראטים ברכסים בין עצי אורן'),
+ 'eilat':('אילת, מול מרכז מור','פורסם בקבוצת פייסבוק','https://www.facebook.com/groups/541959496157113/posts/2883164722036567/','ספינת הפיראטים באילת, מרחוק, מעבר למדשאה ולדקלים'),
+ 'afula':('עפולה עילית','עיריית עפולה, פייסבוק','https://www.facebook.com/afula.live/posts/1473501828137685/','ספינת הפיראטים בעפולה עילית, שני תרנים ודגלים שחורים'),
  'emanuel':('עמנואל, 2018','המועצה המקומית עמנואל','https://www.emanuel.muni.il/galleries/26/','ספינת משחקים מעץ בעמנואל, עם מגלשות ורשתות חבלים'),
 }
 S=[
@@ -28,10 +31,10 @@ S=[
  ('ראשון לציון',31.957,34.794,'רמת אליהו','','','unknown',''),
  ('רמלה',31.929,34.866,'ליד מגדל המים','','נשרפה. יש מי שזוכר שתי ספינות, השנייה אחרי שהראשונה נשרפה','fire',''),
  ('אריאל',32.105,35.185,'','','נשרפה, ובמקומה נבנה גן משחקים','fire',''),
- ('עפולה עילית',32.628,35.320,'ליד הספורטק','','נשרפה','fire',''),
+ ('עפולה עילית',32.628,35.320,'ליד הספורטק','','נשרפה','fire','afula'),
  ('נוף הגליל',32.710,35.325,'נצרת עילית של אז','עמדה כבר ביוני 1988','','unknown',''),
  ('קריית אתא',32.810,35.105,'פארק הרצל. יש מי שזוכר גם את גן כצנלסון','','','unknown',''),
- ('אילת',29.557,34.951,'הגן שמול מרכז מור','עמדה כבר ביוני 1988','נשרפה','fire',''),
+ ('אילת',29.557,34.951,'הגן שמול מרכז מור','עמדה כבר ביוני 1988','נשרפה','fire','eilat'),
  ('אילת',29.557,34.951,'רחוב לוס אנג׳לס. ספינה קטנה יותר','','','unknown',''),
  ('דימונה',31.069,35.033,'בין התחנה המרכזית הישנה למרכז דמרי. על הגוף נכתב ״קפטיין הוק״','עמדה כבר ביוני 1988','נשרפה','fire','dimona'),
  ('רכסים',32.749,35.099,'פארק יונאי, ״גן האונייה״','','','unknown','rekhasim'),
@@ -52,6 +55,6 @@ for t,la,lo,place,when,fate,end,photo in S:
     d['ships'].append({'place':place,'when':when,'fate':fate,'end':end,'photos':photo.split()})
 from PIL import Image
 ph={k:{'cap':v[0],'credit':v[1],'url':v[2],'alt':v[3],'w':Image.open(f'photos/{k}.jpg').size[0],'h':Image.open(f'photos/{k}.jpg').size[1]} for k,v in PH.items()}
-out={'towns':sorted(towns.values(),key=lambda d:-d['lat']),'n':len(S),'photos':ph,'album':['givatayim','migdal-1','dimona','kiryat-shmona','rekhasim','migdal-2','emanuel']}
+out={'towns':sorted(towns.values(),key=lambda d:-d['lat']),'n':len(S),'photos':ph,'album':['givatayim','migdal-1','dimona','kiryat-shmona','rekhasim','migdal-2','afula','eilat','emanuel']}
 json.dump(out,open('data.json','w',encoding='utf8'),ensure_ascii=False,indent=1)
 print(len(S),'ships in',len(towns),'towns', {e:sum(1 for s in S if s[6]==e) for e in ('fire','removed','unknown')})
