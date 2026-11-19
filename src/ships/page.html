@@ -41,16 +41,18 @@ section{padding:44px 0}
 .sea{font-family:'Amatic SC',cursive;font-weight:700;fill:var(--teal)}
 .ttl{font-family:'Amatic SC',cursive;font-weight:700;fill:var(--ink)}
 .dot{cursor:pointer;outline:none}
-.dot .x{stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;fill:none}
+.dot .x{fill:var(--ink);stroke:#f4ecd6;stroke-width:1.2}
+.dot .sh{display:none;fill:var(--brick);stroke:var(--brick);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
 .dot circle.h{fill:transparent}
 .dot circle.r{fill:none;stroke:var(--brick);stroke-width:2.2;display:none}
 .dot text{font-family:'Miriam Libre',sans-serif;font-size:13.5px;fill:var(--ink);paint-order:stroke;stroke:#f4ecd6;stroke-width:3.5px;stroke-linejoin:round;display:none;pointer-events:none}
 .dot.lab text{display:block}
-.dot:hover .x,.dot:focus-visible .x{stroke:var(--brick)}
+.dot:hover .x,.dot:focus-visible .x{fill:var(--brick)}
 .dot:hover text,.dot:focus-visible text{display:block}
-.dot[aria-pressed=true] .x{stroke:var(--brick);stroke-width:3.2}
+.dot[aria-pressed=true] .x{display:none}
+.dot[aria-pressed=true] .sh{display:block}
 .dot[aria-pressed=true] circle.r{display:block}
-.dot[aria-pressed=true] text{display:block;fill:var(--brick);font-weight:700;font-size:15px}
+.dot[aria-pressed=true] text{display:block;transform:translateX(var(--sx));fill:var(--brick);font-weight:700;font-size:15px}
 .card{display:flex;flex-direction:column;gap:10px;border-top:3px double var(--ink);border-bottom:3px double var(--ink);padding:14px 0 16px;max-width:560px;margin-top:6px}
 .card .lab{font-family:'Miriam Libre',sans-serif;font-size:14px;letter-spacing:.06em;color:var(--brick)}
 .card h3{margin:0;font-weight:900;font-size:44px;line-height:1.05}
@@ -197,7 +199,7 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
    <h1>כל ילד היה בטוח שרק לו יש ספינה</h1>
   </div>
   <div class="mapbox">
-   <div class="chart-in"><svg id="map" role="group" aria-label="מפת ישראל בסגנון מפת אוצר, איקס לכל עיר שעמדה בה ספינה"></svg><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div>
+   <div class="chart-in"><svg id="map" role="group" aria-label="מפת ישראל בסגנון מפת אוצר, נקודה לכל עיר שעמדה בה ספינה"></svg><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div>
   </div>
   <div class="brief">
    <p>בסוף שנות השמונים נחתה ספינת פיראטים מעץ בגן הציבורי של יותר מעשרים ערים בישראל. שני תרנים, סלי תצפית, הגה, ובטן שאפשר לזחול בתוכה.</p>
@@ -336,7 +338,7 @@ el('path',{d:'M0,-42L7,0L0,42L-7,0Z','class':'deco',fill:'#f4ecd6'},cr);el('path
 el('path',{d:'M0,-42L7,0H0Z',fill:'#a8472e'},cr);txt(0,-48,'צ','ttl',22,cr);
 // title ribbon and legend
 txt(116,58,'מפת הספינות','ttl',36,svg,-5);
-var lg=el('g',{transform:'translate('+(W-30)+',610)'},svg);el('path',{d:'M-5,-5L5,5M5,-5L-5,5',stroke:'#2b2118','stroke-width':2.6,'stroke-linecap':'round'},lg);
+var lg=el('g',{transform:'translate('+(W-30)+',610)'},svg);el('circle',{r:4.6,fill:'#2b2118'},lg);
 var lt=el('text',{x:-12,y:5,direction:'rtl','text-anchor':'start','font-size':13.5,'font-family':"'Miriam Libre',sans-serif",fill:'#2b2118'},lg);lt.textContent='כאן עמדה ספינה';
 var land=el('g',{transform:'translate('+OX+','+OY+')'},svg);
 el('path',{d:MAP.isr,'class':'land'},land);el('path',{d:MAP.pal,'class':'land b'},land);
@@ -356,8 +358,8 @@ function pick(i){sel=i;dots.forEach(function(d,k){d.setAttribute('aria-pressed',
  card.innerHTML=h+'</div>'+ph+'</div>'}
 T.forEach(function(t,i){var p=xy(t),side=LAB[t.town]||SIDE[t.town]||'r';
  var g=el('g',{'class':'dot'+(LAB[t.town]?' lab':''),tabindex:0,role:'button','aria-label':t.town,'aria-pressed':false,transform:'translate('+p[0].toFixed(1)+','+p[1].toFixed(1)+')'},land);
- el('circle',{r:11,'class':'r'},g);el('path',{d:'M-4.5,-4.5L4.5,4.5M4.5,-4.5L-4.5,4.5','class':'x'},g);el('circle',{r:13,'class':'h'},g);
- var tx=el('text',{x:side=='l'?-10:10,y:4.5,direction:'rtl','text-anchor':side=='l'?'start':'end'},g);tx.textContent=t.town;
+ el('circle',{r:13,'class':'r'},g);el('circle',{r:4.6,'class':'x'},g);el('path',{d:'M-8,2h16l-3,5h-10zM0,2v-10M0,-8l6,5h-6z','class':'sh'},g);el('circle',{r:13,'class':'h'},g);
+ var tx=el('text',{x:side=='l'?-9:9,y:4.5,direction:'rtl','text-anchor':side=='l'?'start':'end'},g);tx.style.setProperty('--sx',side=='l'?'-7px':'7px');tx.textContent=t.town;
  g.addEventListener('click',function(){pick(i)});g.addEventListener('keydown',function(e){if(e.key=='Enter'||e.key==' '){e.preventDefault();pick(i)}});dots.push(g);
  var li=document.createElement('li'),b=document.createElement('button');b.type='button';b.textContent=t.town;b.setAttribute('aria-pressed',false);b.onclick=function(){pick(i);if(innerWidth<760)document.getElementById('card').scrollIntoView({behavior:'smooth',block:'center'})};li.appendChild(b);ul.appendChild(li);chips.push(b)});
 pick(Math.max(0,T.findIndex(function(t){return t.town=='גבעתיים'})));
