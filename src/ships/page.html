@@ -44,6 +44,9 @@ section{padding:44px 0}
 .dot .x{fill:var(--ink);stroke:#f4ecd6;stroke-width:1.2}
 .dot .sh{display:none;fill:var(--brick);stroke:var(--brick);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
 .dot circle.h{fill:transparent}
+.dot circle.p{fill:none;stroke:var(--ink);stroke-width:1.5;display:none}
+.dot.ph circle.p{display:block}
+.dot.ph[aria-pressed=true] circle.p{display:none}
 .dot circle.r{fill:none;stroke:var(--brick);stroke-width:2.2;display:none}
 .dot text{font-family:'Miriam Libre',sans-serif;font-size:13.5px;fill:var(--ink);paint-order:stroke;stroke:#f4ecd6;stroke-width:3.5px;stroke-linejoin:round;display:none;pointer-events:none}
 .dot.lab text{display:block}
@@ -59,35 +62,24 @@ section{padding:44px 0}
 .card .ship{border-top:1px solid rgba(43,33,24,.45);padding-top:8px;font-size:19px;line-height:1.45;display:flex;flex-direction:column;gap:4px}
 .card .ship b{font-weight:900}
 .card .ship a{font-family:'Miriam Libre',sans-serif;font-size:15px}
-.card .body{display:flex;gap:18px;align-items:flex-start}
-.card .body>div{flex:1;display:flex;flex-direction:column;gap:10px;min-width:0}
-.phs{display:flex;flex-direction:column;gap:14px;flex:none}
-.photo{position:relative;background:var(--white);padding:8px;width:230px;flex:none;transform:rotate(-1.6deg);box-shadow:0 5px 14px rgba(43,33,24,.22)}
+.card .body{display:flex;flex-direction:column;gap:16px}
+.card .body>div:first-child{display:flex;flex-direction:column;gap:10px;min-width:0}
+.phs{display:flex;gap:18px;align-items:flex-start;padding:2px 6px 4px}
+.photo{position:relative;background:var(--white);padding:8px;flex:1 1 0;max-width:400px;min-width:0;transform:rotate(-1.6deg);box-shadow:0 5px 14px rgba(43,33,24,.22)}
+.photo:nth-child(2){transform:rotate(1.3deg)}
+.photo.tall{max-width:250px}
 .photo img{display:block;width:100%;height:auto;filter:sepia(.28) saturate(.82) contrast(.96)}
 .photo small{display:block;font-family:'Miriam Libre',sans-serif;font-size:11px;padding-top:5px;line-height:1.3}
 .towns{border-top:1.5px solid var(--ink);padding:14px 0 0;display:flex;gap:28px;align-items:flex-start}
-.towns .hand{flex:none;width:170px}
+.towns .lead{flex:none;width:190px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.towns .pk{display:flex;align-items:center;gap:7px}
+.towns .pk i,.towns button.ph::after{content:'';display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 2px var(--paper),0 0 0 3.4px var(--ink)}
+.towns button.ph::after{margin-inline-start:9px;vertical-align:1px}
+.towns button.ph[aria-pressed=true]::after{background:var(--white);box-shadow:0 0 0 2px var(--brick),0 0 0 3.4px var(--white)}
 .towns ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:4px 6px;flex:1}
 .towns button{font-family:'Miriam Libre',sans-serif;font-size:17px;background:none;border:0;border-radius:4px;padding:6px 9px;min-height:40px}
 .towns button:hover{color:var(--brick)}
 .towns button[aria-pressed=true]{background:var(--brick);color:var(--white)}
-
-/* album */
-.album{background:var(--alb);color:var(--white);padding:46px 0 50px}
-.album .hd{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-.album .hand{color:var(--mus)}
-.album .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 44px;align-items:center;padding-top:30px}
-.album figure{margin:0;transform:rotate(-1.2deg)}
-.album figure:nth-child(even){transform:rotate(1.1deg)}
-.album figure:nth-child(3n){transform:rotate(-.4deg)}
-.album figure .in{position:relative;background:var(--white);padding:10px}
-.album figure img{display:block;width:100%;height:auto;filter:sepia(.28) saturate(.82) contrast(.96)}
-.album figcaption{font-family:'Amatic SC',cursive;font-weight:700;font-size:32px;line-height:1.1;text-align:center;padding-top:12px}
-.album figcaption small{display:block;font-family:'Miriam Libre',sans-serif;font-weight:400;font-size:13px;padding-top:4px;opacity:.85}
-.album figcaption a{color:var(--white)}
-.corner{position:absolute;width:34px;height:34px;background:var(--kraft)}
-.corner.a{top:-5px;right:-5px;clip-path:polygon(0 0,100% 0,100% 100%)}.corner.b{top:-5px;left:-5px;clip-path:polygon(0 0,100% 0,0 100%)}
-.corner.c{bottom:-5px;right:-5px;clip-path:polygon(100% 0,100% 100%,0 100%)}.corner.d{bottom:-5px;left:-5px;clip-path:polygon(0 0,100% 100%,0 100%)}
 
 /* tour */
 .tour{background:var(--teal);color:var(--white);padding:42px 0 46px}
@@ -120,16 +112,21 @@ section{padding:44px 0}
 [hidden]{display:none!important}
 
 /* story */
-.story{display:grid;grid-template-columns:560px 1fr;gap:52px;align-items:center}
-.clip{background:var(--white);padding:30px 34px 32px;transform:rotate(-1deg);box-shadow:0 8px 22px rgba(43,33,24,.18);display:flex;flex-direction:column;gap:12px}
-.clip .mast{display:flex;justify-content:space-between;border-bottom:3px double var(--ink);padding-bottom:8px;font-family:'Miriam Libre',sans-serif;font-size:15px;letter-spacing:.06em}
-.clip h3{margin:0;font-weight:900;font-size:42px;line-height:1.05}
-.clip .cols{columns:2;column-gap:24px;font-size:17px;line-height:1.55}
-.clip .note{font-family:'Miriam Libre',sans-serif;font-size:14px;color:var(--brick)}
-.story .txt{display:flex;flex-direction:column;gap:16px}
-.facts{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
-.facts li{display:grid;grid-template-columns:150px 1fr;gap:14px;border-top:1px solid rgba(43,33,24,.4);padding-top:9px;font-size:19px;line-height:1.45}
-.facts b{font-family:'Miriam Libre',sans-serif;font-weight:700;font-size:18px;color:var(--brick)}
+.story{display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:start}
+.story .txt{display:flex;flex-direction:column;gap:16px;max-width:640px}
+.story .txt h2{padding-bottom:6px}
+.story .txt p{font-size:21px;line-height:1.65}
+.snaps{background:var(--alb);padding:40px 34px 30px;display:flex;flex-direction:column;gap:30px;transform:rotate(1deg);margin-top:20px}
+.snaps figure{margin:0;transform:rotate(-1.6deg)}
+.snaps figure:nth-child(2){transform:rotate(1.4deg)}
+.snaps .in{position:relative;background:var(--white);padding:10px}
+.snaps img{display:block;width:100%;height:auto;filter:sepia(.28) saturate(.82) contrast(.96)}
+.snaps figcaption{font-family:'Amatic SC',cursive;font-weight:700;font-size:32px;line-height:1.1;text-align:center;color:var(--white);padding-top:10px}
+.snaps figcaption small{display:block;font-family:'Miriam Libre',sans-serif;font-weight:400;font-size:13px;padding-top:3px;opacity:.85}
+.snaps figcaption a{color:var(--white)}
+.corner{position:absolute;width:34px;height:34px;background:var(--kraft)}
+.corner.a{top:-5px;right:-5px;clip-path:polygon(0 0,100% 0,100% 100%)}.corner.b{top:-5px;left:-5px;clip-path:polygon(0 0,100% 0,0 100%)}
+.corner.c{bottom:-5px;right:-5px;clip-path:polygon(100% 0,100% 100%,0 100%)}.corner.d{bottom:-5px;left:-5px;clip-path:polygon(0 0,100% 100%,0 100%)}
 
 /* end */
 .end{border-top:1.5px solid var(--ink)}
@@ -155,10 +152,7 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
 @media(max-width:1100px){
  .hero{grid-template-columns:1fr 400px;gap:16px 34px}
  h1{font-size:60px}
- .photo{width:170px}
- .album .grid{grid-template-columns:1fr 1fr;gap:34px}
- .story{grid-template-columns:1fr}
- .clip{max-width:600px}
+ .story{grid-template-columns:1fr 320px;gap:36px}
 }
 @media(max-width:760px){
  body{font-size:18px}
@@ -171,16 +165,15 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
  .dot text{font-size:16px}.dot[aria-pressed=true] text{font-size:17px}
  .mapbox{padding:9px;transform:none}
  .card h3{font-size:34px}.card .ship{font-size:17px}
- .card .body{flex-direction:column}.photo{width:100%;max-width:300px}
+ .phs{flex-wrap:wrap}.photo{flex-basis:100%}
  .hero .brief p:first-child{font-size:20px}
- .towns{flex-direction:column;gap:6px}.towns .hand{width:auto}
+ .towns{flex-direction:column;gap:8px}.towns .lead{width:auto}
  .towns button{font-size:16px;padding:6px 7px}
- .album .grid{grid-template-columns:1fr;gap:30px}
  #stage{height:62vh}
  .panel .row{flex-wrap:wrap;gap:8px 10px}.nums{width:100%;justify-content:space-between}.cap{flex-basis:100%}.act{flex:1}
  .hint span:last-child{display:none}
- .clip{padding:22px 20px}.clip h3{font-size:32px}.clip .cols{columns:1}
- .facts li{grid-template-columns:1fr;gap:2px}
+ .story{grid-template-columns:1fr;gap:26px}.story .txt p{font-size:18.5px}
+ .snaps{padding:28px 22px 20px;transform:none;margin-top:0}
  .fates{gap:8px}.fates i{width:26px;height:26px}
  .chart h3{font-size:25px}
  .years{grid-template-columns:1fr;gap:18px}
@@ -206,17 +199,10 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
   <div class="card" id="card" aria-live="polite"></div>
  </header>
  <nav class="towns" aria-label="בחירת עיר">
-  <span class="hand">איפה היא עגנה</span>
+  <div class="lead"><span class="hand">איפה היא עגנה</span><span class="typ" id="count"></span><span class="typ pk"><i></i>יש תמונה</span></div>
   <ul id="towns"></ul>
  </nav>
 </div>
-
-<section class="album">
- <div class="wrap">
-  <div class="hd"><h2>האלבום</h2><span class="hand" id="count"></span></div>
-  <div class="grid" id="album"></div>
- </div>
-</section>
 
 <section class="tour">
  <div class="wrap">
@@ -249,21 +235,18 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
 
 <section>
  <div class="wrap story">
-  <div class="clip">
-   <div class="mast"><span>מעריב</span><span>20 בפברואר 1989</span></div>
-   <h3>האיש שרצה שילד יוכל גם לטפס וגם לדמיין</h3>
-   <div class="cols">יענקל׳ה פיינברג ייצר מתקני משחק בחברה בשם ג׳י.פי.איי. הרעיון לספינה בא לו בפורים. שנה וחצי הוא תכנן אותה, לפי שרטוטים של ספינותיו של פרנסיס דרייק, עד שהיא קיבלה צורה במפעל בנס ציונה. כך סיפר אז לעיתון.</div>
-   <span class="note">תקציר במילים שלי, לא ציטוט מהכתבה</span>
-  </div>
   <div class="txt">
    <span class="hand">הסיפור</span>
    <h2>איך ספינה אחת הגיעה לכל הארץ</h2>
-   <ul class="facts">
-    <li><b>1973, בערך</b><span>ג׳י.פי.איי מתחילה כיצרנית פיברגלס. בתחילת שנות השמונים היא עוברת לעץ.</span></li>
-    <li><b>יוני 1988</b><span>הספינות הראשונות עומדות בקריית שמונה, בנצרת עילית, בדימונה ובאילת. בסוף החודש נפתחת גם זאת של גבעתיים.</span></li>
-    <li><b>פברואר 1989</b><span>גם יבנה וראשון לציון קנו. המחיר: בערך 54,000 ש״ח ועוד מע״מ.</span></li>
-    <li><b>החומר</b><span>עץ אורן מפינלנד. בבטן מחילות לזחילה, למעלה חבלים ותרנים, בחרטום טלסקופ, ומאחור הגה.</span></li>
-   </ul>
+   <p>מאחורי הספינה עמד אדם אחד, יענקל׳ה פיינברג. החברה שלו, ג׳י.פי.איי, התחילה בתחילת שנות השבעים כיצרנית פיברגלס. בתחילת שנות השמונים היא עברה לעץ ולמתקני משחק.</p>
+   <p>הרעיון לספינה, כך סיפר פיינברג ל״מעריב״ בפברואר 1989, בא לו בפורים. התכנון נמשך שנה וחצי. הוא נשען על שרטוטים של ספינותיו של פרנסיס דרייק, יורד הים האנגלי מהמאה ה־16, ואת התוצאה רשם כמדגם.</p>
+   <p>הספינות נבנו במפעל בנס ציונה, מעץ אורן שהגיע מפינלנד. בבטן היו מחילות לזחילה. מעליהן סיפון, חבלים ושני תרנים. בחרטום חיכה טלסקופ, ומאחור הגה.</p>
+   <p>ביוני 1988 כבר עמדו ארבע: בקריית שמונה, בנצרת עילית, בדימונה ובאילת. בסוף אותו חודש הוזמנו גם ילדי גבעתיים לעלות על שלהם. עד פברואר 1989 קנו גם יבנה וראשון לציון. המחיר היה בערך 54,000 שקל, ועוד מע״מ.</p>
+   <p>מאז נזכרות ספינות דומות בעוד ועוד ערים, מנהריה ועד קריית מלאכי. לא מצאתי תיעוד שכולן יצאו מאותו מפעל. אבל מי שמסתכל בתצלומים מתקשה להבדיל ביניהן.</p>
+  </div>
+  <div class="snaps">
+   <figure><div class="in"><img src="photos/migdal-1.jpg" width="800" height="598" alt="ספינת הפיראטים במגדל העמק, צילום ישן, סלי תצפית בפסים אדומים" loading="lazy"><i class="corner a"></i><i class="corner b"></i><i class="corner c"></i><i class="corner d"></i></div><figcaption>מגדל העמק<small><a href="https://www.instagram.com/p/DfZZHLPMTap/">עיריית מגדל העמק, אינסטגרם</a></small></figcaption></figure>
+   <figure><div class="in"><img src="photos/kiryat-shmona.jpg" width="800" height="685" alt="ספינת הפיראטים בקריית שמונה, צילום ישן, בתי שיכון ברקע" loading="lazy"><i class="corner a"></i><i class="corner b"></i><i class="corner c"></i><i class="corner d"></i></div><figcaption>קריית שמונה<small><a href="https://www.facebook.com/groups/642840429168951/posts/7056274594492137/">פורסם בקבוצת פייסבוק</a></small></figcaption></figure>
   </div>
  </div>
 </section>
@@ -322,6 +305,8 @@ el('path',{d:'M0,-42L7,0H0Z',fill:'#a8472e'},cr);txt(0,-48,'צ','ttl',22,cr);
 txt(116,58,'מפת הספינות','ttl',36,svg,-5);
 var lg=el('g',{transform:'translate('+(W-30)+',610)'},svg);el('circle',{r:4.6,fill:'#2b2118'},lg);
 var lt=el('text',{x:-12,y:5,direction:'rtl','text-anchor':'start','font-size':13.5,'font-family':"'Miriam Libre',sans-serif",fill:'#2b2118'},lg);lt.textContent='כאן עמדה ספינה';
+var lg2=el('g',{transform:'translate('+(W-30)+',634)'},svg);el('circle',{r:4.6,fill:'#2b2118'},lg2);el('circle',{r:8.2,fill:'none',stroke:'#2b2118','stroke-width':1.5},lg2);
+var lt2=el('text',{x:-15,y:5,direction:'rtl','text-anchor':'start','font-size':13.5,'font-family':"'Miriam Libre',sans-serif",fill:'#2b2118'},lg2);lt2.textContent='ויש ממנה תמונה';
 var land=el('g',{transform:'translate('+OX+','+OY+')'},svg);
 el('path',{d:MAP.isr,'class':'land'},land);el('path',{d:MAP.pal,'class':'land b'},land);
 var T=DATA.towns,dots=[],chips=[],sel=-1,ul=document.getElementById('towns'),card=document.getElementById('card');
@@ -333,22 +318,20 @@ function pick(i){sel=i;dots.forEach(function(d,k){d.setAttribute('aria-pressed',
  var t=T[i],h='<span class="lab">'+(t.ships.length>1?t.ships.length+' ספינות':'ספינה אחת')+'</span><h3>'+esc(t.town)+'</h3><div class="body">',ph='';
  h+='<div>';
  t.ships.forEach(function(s){
-  s.photos.forEach(function(k){var f=DATA.photos[k];ph+='<div class="photo"><img src="photos/'+k+'.jpg" width="'+f.w+'" height="'+f.h+'" alt="'+esc(f.alt)+'"><small>'+esc(f.credit)+'</small></div>'});
+  s.photos.forEach(function(k){var f=DATA.photos[k];ph+='<div class="photo'+(f.h>f.w?' tall':'')+'"><img src="photos/'+k+'.jpg" width="'+f.w+'" height="'+f.h+'" alt="'+esc(f.alt)+'"><small>'+esc(f.credit)+'</small></div>'});
   h+='<div class="ship">'+(s.place?'<span>'+esc(s.place)+'</span>':'')+(s.when?'<span><b>מתי: </b>'+esc(s.when)+'</span>':'')+(s.fate?'<span><b>הסוף: </b>'+esc(s.fate)+'</span>':'')+
    (!s.place&&!s.when&&!s.fate?'<span>כל מה שיש עליה כרגע הוא זיכרון של מי שגדל שם.</span>':'')+'</div>'});
  if(ph)ph='<div class="phs">'+ph+'</div>';
  card.innerHTML=h+'</div>'+ph+'</div>'}
 T.forEach(function(t,i){var p=xy(t),side=LAB[t.town]||SIDE[t.town]||'r';
- var g=el('g',{'class':'dot'+(LAB[t.town]?' lab':''),tabindex:0,role:'button','aria-label':t.town,'aria-pressed':false,transform:'translate('+p[0].toFixed(1)+','+p[1].toFixed(1)+')'},land);
- el('circle',{r:13,'class':'r'},g);el('circle',{r:4.6,'class':'x'},g);el('path',{d:'M-8,2h16l-3,5h-10zM0,2v-10M0,-8l6,5h-6z','class':'sh'},g);el('circle',{r:13,'class':'h'},g);
- var tx=el('text',{x:side=='l'?-9:9,y:4.5,direction:'rtl','text-anchor':side=='l'?'start':'end'},g);tx.style.setProperty('--sx',side=='l'?'-7px':'7px');tx.textContent=t.town;
+ var hasPh=t.ships.some(function(s){return s.photos.length});
+ var g=el('g',{'class':'dot'+(LAB[t.town]?' lab':'')+(hasPh?' ph':''),tabindex:0,role:'button','aria-label':t.town,'aria-pressed':false,transform:'translate('+p[0].toFixed(1)+','+p[1].toFixed(1)+')'},land);
+ el('circle',{r:13,'class':'r'},g);el('circle',{r:4.6,'class':'x'},g);el('circle',{r:8.2,'class':'p'},g);el('path',{d:'M-8,2h16l-3,5h-10zM0,2v-10M0,-8l6,5h-6z','class':'sh'},g);el('circle',{r:13,'class':'h'},g);
+ var tx=el('text',{x:side=='l'?(hasPh?-12:-9):(hasPh?12:9),y:4.5,direction:'rtl','text-anchor':side=='l'?'start':'end'},g);tx.style.setProperty('--sx',side=='l'?'-7px':'7px');tx.textContent=t.town;
  g.addEventListener('click',function(){pick(i)});g.addEventListener('keydown',function(e){if(e.key=='Enter'||e.key==' '){e.preventDefault();pick(i)}});dots.push(g);
- var li=document.createElement('li'),b=document.createElement('button');b.type='button';b.textContent=t.town;b.setAttribute('aria-pressed',false);b.onclick=function(){pick(i);if(innerWidth<760)document.getElementById('card').scrollIntoView({behavior:'smooth',block:'center'})};li.appendChild(b);ul.appendChild(li);chips.push(b)});
+ var li=document.createElement('li'),b=document.createElement('button');b.type='button';b.textContent=t.town;if(hasPh)b.className='ph';b.setAttribute('aria-pressed',false);b.onclick=function(){pick(i);if(innerWidth<760)document.getElementById('card').scrollIntoView({behavior:'smooth',block:'center'})};li.appendChild(b);ul.appendChild(li);chips.push(b)});
 pick(Math.max(0,T.findIndex(function(t){return t.town=='גבעתיים'})));
-document.getElementById('count').textContent=DATA.n+' ספינות, '+T.length+' ערים';
-var al=document.getElementById('album');
-DATA.album.forEach(function(k){var f=DATA.photos[k],g=document.createElement('figure');
- g.innerHTML='<div class="in"><img src="photos/'+k+'.jpg" width="'+f.w+'" height="'+f.h+'" alt="'+esc(f.alt)+'" loading="lazy"><i class="corner a"></i><i class="corner b"></i><i class="corner c"></i><i class="corner d"></i></div><figcaption>'+esc(f.cap)+'<small><a href="'+f.url+'">'+esc(f.credit)+'</a></small></figcaption>';al.appendChild(g)});
+document.getElementById('count').textContent=DATA.n+' ספינות ב־'+T.length+' ערים';
 // fates
 var all=[];T.forEach(function(t){t.ships.forEach(function(s){all.push(s.end)})});
 var ord={fire:0,removed:1,unknown:2};all.sort(function(a,b){return ord[a]-ord[b]});
