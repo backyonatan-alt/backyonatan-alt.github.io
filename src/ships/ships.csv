@@ -26,5 +26,6 @@ id,town,location,confidence,built_clue,last_known_standing,fate,photo_found,main
 25,Emanuel,,memory-single,,'a few years ago',unknown,no,https://www.facebook.com/groups/642840429168951/posts/7056274594492137/,
 26,Oranit,,memory-single,,,unknown,no,https://www.facebook.com/groups/642840429168951/posts/7056274594492137/,
 27,Nahariya,,memory-single,,,unknown,no,https://www.facebook.com/groups/642840429168951/posts/7056274594492137/,
-28,Tzemach beach (Kinneret),,memory-few,,,unknown,no,https://www.facebook.com/groups/642840429168951/posts/7056274594492137/,
+28,Tzemach beach (Kinneret),,ruled-out,,,,no,Maariv 26 Aug 1987 (NLI),"Not a playground ship: Maariv describes a 'pirate ship' show at the beach"
 29,Kiryat Motzkin,,memory-single,,,unknown,no,https://www.facebook.com/groups/642840429168951/posts/7056274594492137/,
+30,Yavne,,confirmed-press,bought by Feb 1989,,unknown,no,Maariv 20 Feb 1989 (NLI),"Named in Maariv as one of the first five buyers"

@@ -58,3 +58,23 @@ Shlomi, Beit Shemesh ("Gan HaEtz"), Ness Ziona, Ramat Gan, Lod, Bat Yam, Kiryat 
 - https://kyair.localtimeline.com/ (Kokhav Yair timeline, 2007 fire)
 - https://www.mako.co.il/home-family-kids/education/Article-346691610d73641006.htm (playground history, Sarig quotes)
 - https://xnet.ynet.co.il/articles/0,7340,L-5521198,00.html (Sarig's first works)
+
+## Breakthrough, 19 Nov 2026: the maker (Maariv, 20 Feb 1989, by Roni Mandelbaum)
+
+Source: National Library newspaper archive, Maariv 20 Feb 1989, page 16. Read from a screenshot; get the full page PDF before quoting.
+
+- Designer and maker: Yankele (Yaakov) Feinberg, then 49. Called there the father of Israel's first pirate ship.
+- He based it on drawings of Francis Drake's ships from youth encyclopedias, and searched old books for illustrations.
+- Idea came at Purim. Planning took about a year and a half. Built in a factory in Ness Ziona.
+- The final ship differed a lot from the first plan because of safety problems found along the way.
+- Background: he started making play structures after the 1973 war, when his company bought fiberglass technology, and licensed Disney, Warner and King Features characters. Wooden structures came in the early 1980s.
+- Price: about 54,000 NIS plus VAT, and the buyer prepares the ground.
+- First buyers named: Nazareth Illit, Kiryat Shmona, Yavne, Rishon LeZion, Givatayim.
+- Layout: lower deck with a maze of crawl tunnels in the hull for small kids; ropes and masts for older ones; a telescope at the bow; a steering wheel.
+- Company name: not in the part read so far. Lead to check: the fiberglass play equipment maker mentioned on guyshachar.com for Gan PICA.
+
+Other dated press hits (NLI):
+- Hadashot, 8 Jul 1988: ship stands in Nazareth Illit opposite the southern neighborhood.
+- Ha'ir (Tel Aviv), 1 Sep 1989: Givatayim guide describes the ship, beams and chains, compares it to the Yarkon Adventure Garden.
+- Kol Ha'ir, 9 Mar 1990: snippet lists pirate ship, dragon, plane, castle. Not yet read.
+- Maariv, 26 Aug 1987: Tzemach beach "pirate ship" was a show. Ruled out.
