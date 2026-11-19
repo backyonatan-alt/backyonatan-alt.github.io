@@ -51,7 +51,7 @@ button{font:inherit;color:var(--ink);cursor:pointer}
 </style>
 </head>
 <body>
-<div id="stage">
+<div id="stage" data-ship>
  <canvas id="c"></canvas>
  <div id="scopeMask"></div>
  <div id="pins"></div>
@@ -75,7 +75,9 @@ button{font:inherit;color:var(--ink);cursor:pointer}
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-(function(){
+/*SHIP-START*/
+window.startShip=function(){
+if(window.__ship)return;
 if(!window.THREE){document.getElementById('err').style.display='flex';return}
 var stage=document.getElementById('stage'),canvas=document.getElementById('c');
 var renderer;
@@ -245,7 +247,9 @@ var OUT={t:'הספינה',s:'גוררים כדי להסתובב סביבה. לו
 var mode='out',zone='top',cur=-1,scoping=false;
 var orbit={az:0.75,pol:1.2,r:20,auto:true};
 var pos=V(0,0,0),yaw=0,pitch=0,eyeY=0;
-var tween=null,keys={},walking=false;
+var tween=null,keys={},walking=false,vis=true,focus=true;
+if(window.IntersectionObserver)new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(!vis){keys={};walking=false}}).observe(stage);
+addEventListener('pointerdown',function(e){focus=!!(e.target.closest&&e.target.closest('[data-ship]'))},true);
 var TARGET=V(0,3.3,0);
 function floorTop(x){return x<-4.35?AFT:x>4.35?FORE:MAIN}
 function orbitPose(){var r=orbit.r*(camera.aspect<1?Math.min(1.9,0.72/camera.aspect+0.35):1);
@@ -278,7 +282,7 @@ act.onclick=function(){if(near(0,1.6))wheelVel+=9;else if(near(2,1.3)){setScope(
 document.getElementById('mOut').onclick=goOut;document.getElementById('mKid').onclick=function(){if(mode!='kid')goStop(3)};
 function hold(el,set){el.addEventListener('pointerdown',function(e){e.preventDefault();set(true)});['pointerup','pointercancel','pointerleave'].forEach(function(n){el.addEventListener(n,function(){set(false)})})}
 hold(walkB,function(v){walking=v});
-addEventListener('keydown',function(e){keys[e.code]=true;if(mode=='kid'&&/^Arrow/.test(e.code))e.preventDefault()});addEventListener('keyup',function(e){keys[e.code]=false});
+addEventListener('keydown',function(e){if(!focus||!vis)return;keys[e.code]=true;if(mode=='kid'&&/^Arrow/.test(e.code))e.preventDefault()});addEventListener('keyup',function(e){keys[e.code]=false});
 
 // pointer: drag to orbit or look, pinch and wheel to zoom
 var ptr={},drag=0;
@@ -315,10 +319,12 @@ function targetEye(){if(zone=='nest')return NEST.main.y+0.04+1.4;if(zone=='top')
  var duck=PART.some(function(p){return Math.abs(pos.x-p.x)<0.55});return 0.05+(duck?0.6:1.0)}
 
 // ---------- loop
-function size(){var w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+var lastW=0,lastH=0;
+function size(){var w=stage.clientWidth,h=stage.clientHeight;lastW=w;lastH=h;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
 addEventListener('resize',size);size();
 var v3=new THREE.Vector3(),last=performance.now(),T=0;
-function frame(now){var dt=Math.min(0.05,(now-last)/1000);last=now;T+=dt;
+function frame(now){requestAnimationFrame(frame);var dt=Math.min(0.05,(now-last)/1000);last=now;if(!vis)return;T+=dt;
+ if(stage.clientWidth!=lastW||stage.clientHeight!=lastH)size();
  if(tween){tween.t=Math.min(1,tween.t+dt/1.0);var e=tween.t<0.5?2*tween.t*tween.t:1-Math.pow(-2*tween.t+2,2)/2;
   camera.position.lerpVectors(tween.p0,tween.p1,e);camera.quaternion.copy(tween.q0).slerp(tween.q1,e);if(tween.t>=1)tween=null}
  else if(mode=='out'){if(orbit.auto)orbit.az+=dt*0.12;var o=orbitPose();camera.position.copy(o.p);camera.quaternion.copy(o.q)}
@@ -327,11 +333,13 @@ function frame(now){var dt=Math.min(0.05,(now-last)/1000);last=now;T+=dt;
  flags.forEach(function(f,k){var a=f.geometry.attributes.position;for(var i=0;i<a.count;i++){var x=a.getX(i)+0.5;a.setZ(i,Math.sin(x*6-T*4+k)*0.09*x)}a.needsUpdate=true});
  if(mode=='out'){var w=stage.clientWidth,h=stage.clientHeight;STOPS.forEach(function(s,i){v3.set(s.pin[0],s.pin[1],s.pin[2]).project(camera);var el=pinEls[i];
   if(v3.z>1){el.style.display='none'}else{el.style.display='';el.style.left=((v3.x+1)/2*w)+'px';el.style.top=((1-v3.y)/2*h)+'px'}})}
- renderer.render(scene,camera);requestAnimationFrame(frame)}
+ renderer.render(scene,camera)}
 var o0=orbitPose();camera.position.copy(o0.p);camera.quaternion.copy(o0.q);ui();
 window.__ship={goStop:goStop,goOut:goOut,setScope:function(v){setScope(v);ui()},orbit:orbit};
 requestAnimationFrame(frame);
-})();
+};
+/*SHIP-END*/
+window.startShip();
 </script>
 </body>
 </html>

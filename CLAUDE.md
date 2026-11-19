@@ -14,8 +14,9 @@ Live at https://backyonatan-alt.github.io/
 | `/flyers/` | Frequent Flyers (NBA travel: animated route map, miles by team, does travel cost wins) | `src/flyers/` (`page.html`, `data.json`, `cost.json`, `map.json`) | `python3 src/flyers/build.py` |
 | `/windsurf/` | The Best Team Ever? Half of It. (Hebrew page, title הנבחרת הכי טובה שהייתה לנו? חצי ממנה., RTL: Israel's Olympic windsurfing team 1992-2026, women vs men, depth not just medals) | `src/windsurf/` (`page.html`, `data.json`; `data/*.csv` + `prep.py` make `data.json`) | `python3 src/windsurf/build.py` |
 | `/winter/` | One Day in Five (Hebrew page, title יום אחד מכל חמישה, RTL: how often a toddler in daycare gets sick in winter, a simulated gan of 16, Israeli RSV/flu weeks, US ages 0-4, study figures) | `src/winter/` (`page.html`, `data.json`; `data/*.csv` + `prep.py` make `data.json`) | `python3 src/winter/build.py` |
+| `/ships/` | Every Kid Thought the Ship Was Theirs (Hebrew page, title כל ילד היה בטוח שרק לו יש ספינה, RTL: the wooden pirate ship playgrounds of 1988, map of 29 ships, the maker, fates, 3D ship tour) | `src/ships/` (`page.html`, `ship3d.html`, `prep.py` makes `data.json`, `map.json`) | `python3 src/ships/build.py` |
 
-Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`, `windsurf/index.html` or the three sports `index.html` files. They are build output and get overwritten.
+Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`, `windsurf/index.html`, `winter/index.html`, `ships/index.html` or the three sports `index.html` files. They are build output and get overwritten.
 
 ## Rules for this site
 
@@ -65,6 +66,15 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`
 - Hero: a simulated gan of 16 (`simGan`). Model, not data: 7.7 episodes a year, median 9.7 days, season shape from US 0-4. Contagion buttons are an illustration; `KB` factors keep the winter average equal across levels (calibrated over 1,500 winters). Say so on the page, never present it as measured.
 - Israeli weekly data by age exists only as chart images in the MoH PDFs, so it is not used. Missing weeks show as a short gray dash, never filled.
 - Share images: `node src/winter/og.js` renders `winter/preview.png` (Hebrew) and `winter/card.png` (English home row). Reel: `src/social/reel/winter/reel.js`.
+
+## Ships notes
+
+- Hebrew page, `dir="rtl"`, light design: aged paper `#f1e8d4`, brick `#a8472e`, mustard `#d6a43a`, faded teal `#4f7a78`, dark album `#33291f`. Fonts Frank Ruhl Libre 900 (headlines), Miriam Libre (labels), Amatic SC (handwriting). The map opens the page; Yonatan asked for that.
+- Data: `ships.csv` is the research table (English, with sources). `prep.py` holds the Hebrew text per ship and writes `data.json`; keep the two in step. No certainty levels on the page. Dots mark the town, not the exact spot.
+- Photos: only the Givatayim Wikimedia photo (CC BY 2.5, credit ד״ר אבישי טייכר) may be shown. Every other photo is linked at its source until its owner gives permission. See `PHOTOS.md`.
+- 3D ship: `ship3d.html` runs on its own and is also the source of the 3D code (between `SHIP-START` and `SHIP-END`), which `build.py` copies into the page. three.js r128 from cdnjs. It is an illustration from photos: size and the spots of the wheel, telescope and belly doorway are guesses. Say so on the page. Hull panels are thin two-faced slabs; do not go back to DoubleSide materials, that caused blocky shadows.
+- `map.json` comes from `gen_map.js` (world-atlas 50m). Share images: `python3 src/ships/og.py <node_modules>` renders `ships/preview.png` (Hebrew) and `ships/card.png` (English) from the 3D model.
+- Facts from Maariv and Koteret Rashit were read from screenshots. Paraphrase only, no direct quotes, until the full pages are in hand.
 
 ## Adding a new article
 
