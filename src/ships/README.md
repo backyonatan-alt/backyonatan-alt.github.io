@@ -78,3 +78,17 @@ Other dated press hits (NLI):
 - Ha'ir (Tel Aviv), 1 Sep 1989: Givatayim guide describes the ship, beams and chains, compares it to the Yarkon Adventure Garden.
 - Kol Ha'ir, 9 Mar 1990: snippet lists pirate ship, dragon, plane, castle. Not yet read.
 - Maariv, 26 Aug 1987: Tzemach beach "pirate ship" was a show. Ruled out.
+
+## The company: GPI (Koteret Rashit, 29 Jun 1988)
+
+Source: National Library archive, Koteret Rashit 29 Jun 1988, the only hit for "יענקל'ה פיינברג". Read from a screenshot. The item sits in a product-news section and reads like promotional copy, so treat its claims as the company's own.
+
+- Company: ג'י.פי.אי (GPI). Feinberg is described as one of its people.
+- GPI was founded about 15 years earlier (about 1973), first as a fiberglass maker, then moved to wooden play equipment, garden toys and park furniture.
+- The ship is "launching" in June 1988. Children already play on it in Kiryat Shmona, Nazareth Illit, Dimona and Eilat. Givatayim's children were invited "from yesterday", so Givatayim opened about 28 June 1988.
+- Material: Finnish pine, treated against pests and weather.
+- The ship is a registered design of GPI, described as the only one of its kind in the world.
+- Sales method: sit the buyer next to a ship for a few minutes and let the kids do the selling.
+- The copy ends with a Captain Hook line, matching the hull sign in Dimona.
+
+Timeline so far: launch mid 1988 (5 towns) -> Feb 1989 adds Yavne and Rishon LeZion -> spreads through the 1990s -> fires and safety removals from the 2000s -> Kokhav Yair dismantled 2025.
