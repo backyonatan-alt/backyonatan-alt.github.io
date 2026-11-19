@@ -41,6 +41,8 @@ page = page.replace(old, '<a class="back" href="../">&larr; All stories</a>')
 page = page.replace('<footer><a href="/">→ All stories</a></footer>', '<footer><a href="../">&larr; All stories</a></footer>')
 assert 'prefers-color-scheme' not in page and '—' not in page and 'שדה' not in page
 os.makedirs('../../ships', exist_ok=True)
-shutil.copy('photos/givatayim_gan-rivka_2011_avishai-teicher_CC-BY-2.5.jpg', '../../ships/givatayim.jpg')
+os.makedirs('../../ships/photos', exist_ok=True)
+for k in json.loads(data)['photos']:
+    shutil.copy(f'photos/{k}.jpg', f'../../ships/photos/{k}.jpg')
 open('../../ships/index.html', 'w', encoding='utf8').write(page)
 print('wrote ships/index.html', len(page))

@@ -10,14 +10,16 @@
      "when": "עמדה כבר ביוני 1988",
      "fate": "נשרפה",
      "end": "fire",
-     "photo": "https://www.facebook.com/groups/642840429168951/posts/7056274594492137/"
+     "photos": [
+      "kiryat-shmona"
+     ]
     },
     {
      "place": "רחוב טרומפלדור",
      "when": "",
      "fate": "נשרפה",
      "end": "fire",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -31,7 +33,7 @@
      "when": "",
      "fate": "פורקה, ובמקומה נבנה גן משחקים",
      "end": "removed",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -45,7 +47,7 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -59,7 +61,7 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -73,7 +75,7 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -87,7 +89,7 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -101,7 +103,7 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -115,7 +117,9 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": "https://www.facebook.com/groups/524945757872717/posts/1501398343560782/"
+     "photos": [
+      "rekhasim"
+     ]
     }
    ]
   },
@@ -129,7 +133,7 @@
      "when": "עמדה כבר ביוני 1988",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -143,7 +147,10 @@
      "when": "תושבים זוכרים אותה מ־1988",
      "fate": "נשרפה, לפי זיכרונות תושבים",
      "end": "fire",
-     "photo": "https://www.instagram.com/p/DfZZHLPMTap/"
+     "photos": [
+      "migdal-1",
+      "migdal-2"
+     ]
     }
    ]
   },
@@ -157,7 +164,7 @@
      "when": "",
      "fate": "נשרפה",
      "end": "fire",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -171,7 +178,7 @@
      "when": "",
      "fate": "שרדה שריפה ב־2007. פורקה ב־2025, כי לא עמדה בתקן",
      "end": "removed",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -185,14 +192,14 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     },
     {
      "place": "״החורשה״",
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -206,7 +213,9 @@
      "when": "",
      "fate": "עמדה עוד ב־2018",
      "end": "unknown",
-     "photo": "https://www.emanuel.muni.il/galleries/26/"
+     "photos": [
+      "emanuel"
+     ]
     }
    ]
   },
@@ -220,7 +229,7 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -234,7 +243,7 @@
      "when": "",
      "fate": "נשרפה, ובמקומה נבנה גן משחקים",
      "end": "fire",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -248,7 +257,9 @@
      "when": "נפתחה בסוף יוני 1988",
      "fate": "גודרה בסביבות 2014 והוחלפה בספינה חדשה באביב 2016",
      "end": "removed",
-     "photo": "CC"
+     "photos": [
+      "givatayim"
+     ]
     }
    ]
   },
@@ -262,14 +273,14 @@
      "when": "נקנתה עד פברואר 1989",
      "fate": "לא ברור אם היא עוד עומדת",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     },
     {
      "place": "רמת אליהו",
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -283,7 +294,7 @@
      "when": "",
      "fate": "נשרפה. יש מי שזוכר שתי ספינות, השנייה אחרי שהראשונה נשרפה",
      "end": "fire",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -297,7 +308,7 @@
      "when": "לא לפני 1990",
      "fate": "פורקה בסביבות 2006, אחרי שלא עמדה בתקן הבטיחות",
      "end": "removed",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -311,7 +322,7 @@
      "when": "נקנתה עד פברואר 1989",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -325,7 +336,7 @@
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -339,7 +350,7 @@
      "when": "",
      "fate": "הוצתה כמה פעמים, ואז נעלמה",
      "end": "fire",
-     "photo": ""
+     "photos": []
     }
    ]
   },
@@ -353,7 +364,9 @@
      "when": "עמדה כבר ביוני 1988",
      "fate": "נשרפה",
      "end": "fire",
-     "photo": "https://www.instagram.com/p/C9l33TotwOf/"
+     "photos": [
+      "dimona"
+     ]
     }
    ]
   },
@@ -367,17 +380,84 @@
      "when": "עמדה כבר ביוני 1988",
      "fate": "נשרפה",
      "end": "fire",
-     "photo": ""
+     "photos": []
     },
     {
      "place": "רחוב לוס אנג׳לס. ספינה קטנה יותר",
      "when": "",
      "fate": "",
      "end": "unknown",
-     "photo": ""
+     "photos": []
     }
    ]
   }
  ],
- "n": 29
+ "n": 29,
+ "photos": {
+  "givatayim": {
+   "cap": "גבעתיים, גן רבקה, 2011",
+   "credit": "צילום: ד״ר אבישי טייכר, פיקיוויקי, CC BY 2.5",
+   "url": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_13983_Pirate_Ship_in_a_Givatayim_playground.JPG",
+   "alt": "ספינת פיראטים מעץ בגן רבקה בגבעתיים, שני תרנים עם סלי תצפית וכבש עלייה",
+   "w": 800,
+   "h": 598
+  },
+  "migdal-1": {
+   "cap": "מגדל העמק",
+   "credit": "עיריית מגדל העמק, אינסטגרם",
+   "url": "https://www.instagram.com/p/DfZZHLPMTap/",
+   "alt": "ספינת הפיראטים במגדל העמק, צילום ישן, סלי תצפית בפסים אדומים",
+   "w": 800,
+   "h": 598
+  },
+  "migdal-2": {
+   "cap": "מגדל העמק, מהצד השני",
+   "credit": "עיריית מגדל העמק, אינסטגרם",
+   "url": "https://www.instagram.com/p/DHdKl02sWW0/",
+   "alt": "ספינת הפיראטים במגדל העמק מזווית אחרת, אדם חולף לידה",
+   "w": 800,
+   "h": 447
+  },
+  "dimona": {
+   "cap": "דימונה, ״קפטיין הוק״",
+   "credit": "עיריית דימונה, אינסטגרם",
+   "url": "https://www.instagram.com/p/C9l33TotwOf/",
+   "alt": "ספינת הפיראטים בדימונה, על הגוף שלט קפטיין הוק",
+   "w": 652,
+   "h": 652
+  },
+  "kiryat-shmona": {
+   "cap": "קריית שמונה, רחוב האצ״ל",
+   "credit": "פורסם בקבוצת פייסבוק",
+   "url": "https://www.facebook.com/groups/642840429168951/posts/7056274594492137/",
+   "alt": "ספינת הפיראטים בקריית שמונה, צילום ישן, בתי שיכון ברקע",
+   "w": 800,
+   "h": 685
+  },
+  "rekhasim": {
+   "cap": "רכסים, גן האונייה",
+   "credit": "פורסם בקבוצת פייסבוק",
+   "url": "https://www.facebook.com/groups/524945757872717/posts/1501398343560782/",
+   "alt": "ספינת הפיראטים ברכסים בין עצי אורן",
+   "w": 800,
+   "h": 1026
+  },
+  "emanuel": {
+   "cap": "עמנואל, 2018",
+   "credit": "המועצה המקומית עמנואל",
+   "url": "https://www.emanuel.muni.il/galleries/26/",
+   "alt": "ספינת משחקים מעץ בעמנואל, עם מגלשות ורשתות חבלים",
+   "w": 800,
+   "h": 533
+  }
+ },
+ "album": [
+  "givatayim",
+  "migdal-1",
+  "dimona",
+  "kiryat-shmona",
+  "rekhasim",
+  "migdal-2",
+  "emanuel"
+ ]
 }

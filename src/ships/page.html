@@ -61,6 +61,7 @@ section{padding:44px 0}
 .card .ship a{font-family:'Miriam Libre',sans-serif;font-size:15px}
 .card .body{display:flex;gap:18px;align-items:flex-start}
 .card .body>div{flex:1;display:flex;flex-direction:column;gap:10px;min-width:0}
+.phs{display:flex;flex-direction:column;gap:14px;flex:none}
 .photo{position:relative;background:var(--white);padding:8px;width:230px;flex:none;transform:rotate(-1.6deg);box-shadow:0 5px 14px rgba(43,33,24,.22)}
 .photo img{display:block;width:100%;height:auto;filter:sepia(.28) saturate(.82) contrast(.96)}
 .photo small{display:block;font-family:'Miriam Libre',sans-serif;font-size:11px;padding-top:5px;line-height:1.3}
@@ -75,22 +76,18 @@ section{padding:44px 0}
 .album{background:var(--alb);color:var(--white);padding:46px 0 50px}
 .album .hd{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
 .album .hand{color:var(--mus)}
-.album .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;padding-top:26px}
-.album figure{margin:0;transform:rotate(-1.4deg)}
-.album figure .in{position:relative;background:var(--white);padding:12px}
+.album .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 44px;align-items:center;padding-top:30px}
+.album figure{margin:0;transform:rotate(-1.2deg)}
+.album figure:nth-child(even){transform:rotate(1.1deg)}
+.album figure:nth-child(3n){transform:rotate(-.4deg)}
+.album figure .in{position:relative;background:var(--white);padding:10px}
 .album figure img{display:block;width:100%;height:auto;filter:sepia(.28) saturate(.82) contrast(.96)}
-.album figcaption{font-family:'Amatic SC',cursive;font-weight:700;font-size:34px;line-height:1.1;text-align:center;padding-top:12px}
+.album figcaption{font-family:'Amatic SC',cursive;font-weight:700;font-size:32px;line-height:1.1;text-align:center;padding-top:12px}
 .album figcaption small{display:block;font-family:'Miriam Libre',sans-serif;font-weight:400;font-size:13px;padding-top:4px;opacity:.85}
 .album figcaption a{color:var(--white)}
 .corner{position:absolute;width:34px;height:34px;background:var(--kraft)}
 .corner.a{top:-5px;right:-5px;clip-path:polygon(0 0,100% 0,100% 100%)}.corner.b{top:-5px;left:-5px;clip-path:polygon(0 0,100% 0,0 100%)}
 .corner.c{bottom:-5px;right:-5px;clip-path:polygon(100% 0,100% 100%,0 100%)}.corner.d{bottom:-5px;left:-5px;clip-path:polygon(0 0,100% 100%,0 100%)}
-.album .more{display:flex;flex-direction:column;gap:14px}
-.album .more p{font-size:19px}
-.album .more ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.album .more li a{display:flex;flex-direction:column;justify-content:center;min-height:74px;border:2px dashed var(--mus);padding:8px 12px;color:var(--white);text-decoration:none;font-weight:900;font-size:22px;line-height:1.15}
-.album .more li a span{font-family:'Miriam Libre',sans-serif;font-weight:400;font-size:13px;color:var(--mus)}
-.album .more li a:hover{background:rgba(214,164,58,.14)}
 
 /* tour */
 .tour{background:var(--teal);color:var(--white);padding:42px 0 46px}
@@ -159,6 +156,7 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
  .hero{grid-template-columns:1fr 400px;gap:16px 34px}
  h1{font-size:60px}
  .photo{width:170px}
+ .album .grid{grid-template-columns:1fr 1fr;gap:34px}
  .story{grid-template-columns:1fr}
  .clip{max-width:600px}
 }
@@ -177,8 +175,7 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
  .hero .brief p:first-child{font-size:20px}
  .towns{flex-direction:column;gap:6px}.towns .hand{width:auto}
  .towns button{font-size:16px;padding:6px 7px}
- .album .grid{grid-template-columns:1fr;gap:26px}
- .album .more li a{font-size:19px}
+ .album .grid{grid-template-columns:1fr;gap:30px}
  #stage{height:62vh}
  .panel .row{flex-wrap:wrap;gap:8px 10px}.nums{width:100%;justify-content:space-between}.cap{flex-basis:100%}.act{flex:1}
  .hint span:last-child{display:none}
@@ -217,22 +214,7 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
 <section class="album">
  <div class="wrap">
   <div class="hd"><h2>האלבום</h2><span class="hand" id="count"></span></div>
-  <div class="grid">
-   <figure>
-    <div class="in"><img src="givatayim.jpg" width="800" height="598" alt="ספינת פיראטים מעץ בגן רבקה בגבעתיים, שני תרנים עם סלי תצפית וכבש עלייה" loading="lazy"><i class="corner a"></i><i class="corner b"></i><i class="corner c"></i><i class="corner d"></i></div>
-    <figcaption>גבעתיים, גן רבקה, 2011<small>צילום: ד״ר אבישי טייכר, <a href="https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_13983_Pirate_Ship_in_a_Givatayim_playground.JPG">פיקיוויקי</a>, CC BY 2.5</small></figcaption>
-   </figure>
-   <div class="more">
-    <p>זאת התמונה היחידה שמותר לי להציג כאן. תמונות של ספינות אחרות נמצאות אצל מי שפרסם אותן:</p>
-    <ul>
-     <li><a href="https://www.instagram.com/p/DfZZHLPMTap/">מגדל העמק<span>אינסטגרם של העירייה</span></a></li>
-     <li><a href="https://www.instagram.com/p/C9l33TotwOf/">דימונה<span>אינסטגרם של העירייה</span></a></li>
-     <li><a href="https://www.facebook.com/groups/642840429168951/posts/7056274594492137/">קריית שמונה<span>קבוצת פייסבוק</span></a></li>
-     <li><a href="https://www.facebook.com/groups/524945757872717/posts/1501398343560782/">רכסים<span>קבוצת פייסבוק</span></a></li>
-     <li><a href="https://www.emanuel.muni.il/galleries/26/">עמנואל<span>גלריית המועצה</span></a></li>
-    </ul>
-   </div>
-  </div>
+  <div class="grid" id="album"></div>
  </div>
 </section>
 
@@ -351,10 +333,10 @@ function pick(i){sel=i;dots.forEach(function(d,k){d.setAttribute('aria-pressed',
  var t=T[i],h='<span class="lab">'+(t.ships.length>1?t.ships.length+' ספינות':'ספינה אחת')+'</span><h3>'+esc(t.town)+'</h3><div class="body">',ph='';
  h+='<div>';
  t.ships.forEach(function(s){
-  if(s.photo=='CC')ph='<div class="photo"><img src="givatayim.jpg" width="800" height="598" alt="ספינת הפיראטים בגן רבקה בגבעתיים"><small>צילום: ד״ר אבישי טייכר, פיקיוויקי, CC BY 2.5</small></div>';
+  s.photos.forEach(function(k){var f=DATA.photos[k];ph+='<div class="photo"><img src="photos/'+k+'.jpg" width="'+f.w+'" height="'+f.h+'" alt="'+esc(f.alt)+'"><small>'+esc(f.credit)+'</small></div>'});
   h+='<div class="ship">'+(s.place?'<span>'+esc(s.place)+'</span>':'')+(s.when?'<span><b>מתי: </b>'+esc(s.when)+'</span>':'')+(s.fate?'<span><b>הסוף: </b>'+esc(s.fate)+'</span>':'')+
-   (!s.place&&!s.when&&!s.fate?'<span>כל מה שיש עליה כרגע הוא זיכרון של מי שגדל שם.</span>':'')+
-   (s.photo&&s.photo!='CC'?'<a href="'+s.photo+'">לתמונה, אצל מי שפרסם אותה ←</a>':'')+'</div>'});
+   (!s.place&&!s.when&&!s.fate?'<span>כל מה שיש עליה כרגע הוא זיכרון של מי שגדל שם.</span>':'')+'</div>'});
+ if(ph)ph='<div class="phs">'+ph+'</div>';
  card.innerHTML=h+'</div>'+ph+'</div>'}
 T.forEach(function(t,i){var p=xy(t),side=LAB[t.town]||SIDE[t.town]||'r';
  var g=el('g',{'class':'dot'+(LAB[t.town]?' lab':''),tabindex:0,role:'button','aria-label':t.town,'aria-pressed':false,transform:'translate('+p[0].toFixed(1)+','+p[1].toFixed(1)+')'},land);
@@ -364,6 +346,9 @@ T.forEach(function(t,i){var p=xy(t),side=LAB[t.town]||SIDE[t.town]||'r';
  var li=document.createElement('li'),b=document.createElement('button');b.type='button';b.textContent=t.town;b.setAttribute('aria-pressed',false);b.onclick=function(){pick(i);if(innerWidth<760)document.getElementById('card').scrollIntoView({behavior:'smooth',block:'center'})};li.appendChild(b);ul.appendChild(li);chips.push(b)});
 pick(Math.max(0,T.findIndex(function(t){return t.town=='גבעתיים'})));
 document.getElementById('count').textContent=DATA.n+' ספינות, '+T.length+' ערים';
+var al=document.getElementById('album');
+DATA.album.forEach(function(k){var f=DATA.photos[k],g=document.createElement('figure');
+ g.innerHTML='<div class="in"><img src="photos/'+k+'.jpg" width="'+f.w+'" height="'+f.h+'" alt="'+esc(f.alt)+'" loading="lazy"><i class="corner a"></i><i class="corner b"></i><i class="corner c"></i><i class="corner d"></i></div><figcaption>'+esc(f.cap)+'<small><a href="'+f.url+'">'+esc(f.credit)+'</a></small></figcaption>';al.appendChild(g)});
 // fates
 var all=[];T.forEach(function(t){t.ships.forEach(function(s){all.push(s.end)})});
 var ord={fire:0,removed:1,unknown:2};all.sort(function(a,b){return ord[a]-ord[b]});

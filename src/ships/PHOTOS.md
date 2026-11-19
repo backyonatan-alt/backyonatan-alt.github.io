@@ -2,7 +2,7 @@
 
 Collected 19 Nov 2026. Files are screen captures at about 800px wide, for research reference. They are not the originals.
 
-Only the Givatayim photo is free to publish. Everything else belongs to the poster and needs permission and a full-resolution original before it goes on the site. For that reason only the Givatayim file is committed to this repo; the rest stay out of the public repo.
+Update 19 Nov 2026: Yonatan checked the rights himself and cleared the photos for the site. Seven are on the page (`photos/*.jpg`): Givatayim, Migdal HaEmek x2, Dimona, Kiryat Shmona, Rekhasim, Emanuel, each with a credit linking to its source. Left out: the Eilat and Afula images (look AI-made) and the Ra'anana composite.
 
 | File | Ship | Source | Posted | Rights | Notes |
 |---|---|---|---|---|---|

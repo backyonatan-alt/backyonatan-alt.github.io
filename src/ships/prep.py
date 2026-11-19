@@ -1,15 +1,26 @@
 # Writes data.json for the ships page. Run: python3 src/ships/prep.py
 # One entry per ship. Hebrew text here follows ships.csv (the research table); keep the two in step.
+# Last field: photo keys from PH (space separated). Yonatan cleared the rights for these photos (19 Nov 2026).
 # end: fire / removed / unknown. Coordinates mark the town, not the exact spot in the park.
 import json, os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 FB='https://www.facebook.com/groups/642840429168951/posts/7056274594492137/'
+IG='אינסטגרם'
+PH={
+ 'givatayim':('גבעתיים, גן רבקה, 2011','צילום: ד״ר אבישי טייכר, פיקיוויקי, CC BY 2.5','https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_13983_Pirate_Ship_in_a_Givatayim_playground.JPG','ספינת פיראטים מעץ בגן רבקה בגבעתיים, שני תרנים עם סלי תצפית וכבש עלייה'),
+ 'migdal-1':('מגדל העמק','עיריית מגדל העמק, אינסטגרם','https://www.instagram.com/p/DfZZHLPMTap/','ספינת הפיראטים במגדל העמק, צילום ישן, סלי תצפית בפסים אדומים'),
+ 'migdal-2':('מגדל העמק, מהצד השני','עיריית מגדל העמק, אינסטגרם','https://www.instagram.com/p/DHdKl02sWW0/','ספינת הפיראטים במגדל העמק מזווית אחרת, אדם חולף לידה'),
+ 'dimona':('דימונה, ״קפטיין הוק״','עיריית דימונה, אינסטגרם','https://www.instagram.com/p/C9l33TotwOf/','ספינת הפיראטים בדימונה, על הגוף שלט קפטיין הוק'),
+ 'kiryat-shmona':('קריית שמונה, רחוב האצ״ל','פורסם בקבוצת פייסבוק','https://www.facebook.com/groups/642840429168951/posts/7056274594492137/','ספינת הפיראטים בקריית שמונה, צילום ישן, בתי שיכון ברקע'),
+ 'rekhasim':('רכסים, גן האונייה','פורסם בקבוצת פייסבוק','https://www.facebook.com/groups/524945757872717/posts/1501398343560782/','ספינת הפיראטים ברכסים בין עצי אורן'),
+ 'emanuel':('עמנואל, 2018','המועצה המקומית עמנואל','https://www.emanuel.muni.il/galleries/26/','ספינת משחקים מעץ בעמנואל, עם מגלשות ורשתות חבלים'),
+}
 S=[
- ('קריית שמונה',33.207,35.570,'רחוב האצ״ל','עמדה כבר ביוני 1988','נשרפה','fire',FB),
+ ('קריית שמונה',33.207,35.570,'רחוב האצ״ל','עמדה כבר ביוני 1988','נשרפה','fire','kiryat-shmona'),
  ('קריית שמונה',33.207,35.570,'רחוב טרומפלדור','','נשרפה','fire',''),
  ('מעלות',33.016,35.272,'פארק הספינה. השם נשאר עד היום','','פורקה, ובמקומה נבנה גן משחקים','removed',''),
- ('מגדל העמק',32.676,35.240,'הפארק שבכניסה לעיר, ליד מתקן הטבעות','תושבים זוכרים אותה מ־1988','נשרפה, לפי זיכרונות תושבים','fire','https://www.instagram.com/p/DfZZHLPMTap/'),
- ('גבעתיים',32.066,34.812,'גן רבקה, שנקרא אז גן הדרום','נפתחה בסוף יוני 1988','גודרה בסביבות 2014 והוחלפה בספינה חדשה באביב 2016','removed','CC'),
+ ('מגדל העמק',32.676,35.240,'הפארק שבכניסה לעיר, ליד מתקן הטבעות','תושבים זוכרים אותה מ־1988','נשרפה, לפי זיכרונות תושבים','fire','migdal-1 migdal-2'),
+ ('גבעתיים',32.066,34.812,'גן רבקה, שנקרא אז גן הדרום','נפתחה בסוף יוני 1988','גודרה בסביבות 2014 והוחלפה בספינה חדשה באביב 2016','removed','givatayim'),
  ('רעות',31.890,35.020,'פארק מעלה המור, ״פארק הפיראטים״, ליד מגדל המים','לא לפני 1990','פורקה בסביבות 2006, אחרי שלא עמדה בתקן הבטיחות','removed',''),
  ('רעננה',32.184,34.871,'גן עלייה, בקצה רחוב ההסתדרות','','','unknown',''),
  ('רעננה',32.184,34.871,'״החורשה״','','','unknown',''),
@@ -22,14 +33,14 @@ S=[
  ('קריית אתא',32.810,35.105,'פארק הרצל. יש מי שזוכר גם את גן כצנלסון','','','unknown',''),
  ('אילת',29.557,34.951,'הגן שמול מרכז מור','עמדה כבר ביוני 1988','נשרפה','fire',''),
  ('אילת',29.557,34.951,'רחוב לוס אנג׳לס. ספינה קטנה יותר','','','unknown',''),
- ('דימונה',31.069,35.033,'בין התחנה המרכזית הישנה למרכז דמרי. על הגוף נכתב ״קפטיין הוק״','עמדה כבר ביוני 1988','נשרפה','fire','https://www.instagram.com/p/C9l33TotwOf/'),
- ('רכסים',32.749,35.099,'פארק יונאי, ״גן האונייה״','','','unknown','https://www.facebook.com/groups/524945757872717/posts/1501398343560782/'),
+ ('דימונה',31.069,35.033,'בין התחנה המרכזית הישנה למרכז דמרי. על הגוף נכתב ״קפטיין הוק״','עמדה כבר ביוני 1988','נשרפה','fire','dimona'),
+ ('רכסים',32.749,35.099,'פארק יונאי, ״גן האונייה״','','','unknown','rekhasim'),
  ('ירושלים',31.752,35.196,'הקטמונים, ״גן האונייה״','','','unknown',''),
  ('חיפה',32.826,34.957,'שער העלייה, ״גן האונייה״','','','unknown',''),
  ('קריית חיים',32.828,35.057,'קריית חיים המערבית, ליד הים','','','unknown',''),
  ('קריית מלאכי',31.731,34.746,'הפארק העירוני','','הוצתה כמה פעמים, ואז נעלמה','fire',''),
  ('כוכב יאיר',32.222,34.996,'','','שרדה שריפה ב־2007. פורקה ב־2025, כי לא עמדה בתקן','removed',''),
- ('עמנואל',32.160,35.137,'','','עמדה עוד ב־2018','unknown','https://www.emanuel.muni.il/galleries/26/'),
+ ('עמנואל',32.160,35.137,'','','עמדה עוד ב־2018','unknown','emanuel'),
  ('אורנית',32.130,34.990,'','','','unknown',''),
  ('נהריה',33.006,35.095,'','','','unknown',''),
  ('קריית מוצקין',32.837,35.078,'','','','unknown',''),
@@ -38,7 +49,9 @@ S=[
 towns={}
 for t,la,lo,place,when,fate,end,photo in S:
     d=towns.setdefault(t,{'town':t,'lat':la,'lon':lo,'ships':[]})
-    d['ships'].append({'place':place,'when':when,'fate':fate,'end':end,'photo':photo})
-out={'towns':sorted(towns.values(),key=lambda d:-d['lat']),'n':len(S)}
+    d['ships'].append({'place':place,'when':when,'fate':fate,'end':end,'photos':photo.split()})
+from PIL import Image
+ph={k:{'cap':v[0],'credit':v[1],'url':v[2],'alt':v[3],'w':Image.open(f'photos/{k}.jpg').size[0],'h':Image.open(f'photos/{k}.jpg').size[1]} for k,v in PH.items()}
+out={'towns':sorted(towns.values(),key=lambda d:-d['lat']),'n':len(S),'photos':ph,'album':['givatayim','migdal-1','dimona','kiryat-shmona','rekhasim','migdal-2','emanuel']}
 json.dump(out,open('data.json','w',encoding='utf8'),ensure_ascii=False,indent=1)
 print(len(S),'ships in',len(towns),'towns', {e:sum(1 for s in S if s[6]==e) for e in ('fire','removed','unknown')})
