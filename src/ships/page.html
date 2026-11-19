@@ -23,30 +23,45 @@ p{margin:0}
 section{padding:44px 0}
 
 /* opening */
-.hero{display:grid;grid-template-columns:1fr 600px;gap:20px 48px;align-items:center;padding:14px 0 30px}
-.hero .head{grid-column:1;align-self:end;display:flex;flex-direction:column;gap:14px}
-.hero .brief{grid-column:1;align-self:start;display:flex;flex-direction:column;gap:14px;max-width:520px}
+.hero{display:grid;grid-template-columns:1fr 500px;gap:18px 52px;align-items:start;padding:14px 0 30px}
+.hero .head{grid-column:1;display:flex;flex-direction:column;gap:14px;padding-top:26px}
+.hero .brief{grid-column:1;display:flex;flex-direction:column;gap:14px;max-width:560px}
 .hero .brief p:first-child{font-size:23px}
-.mapbox{grid-column:2;grid-row:1/3;background:var(--mus);padding:26px 28px;display:flex;gap:26px;align-items:center}
-.mapbox svg{width:190px;flex:none;height:auto;display:block;direction:ltr;overflow:visible}
-.land{fill:#e7dab9;stroke:var(--ink);stroke-width:1.4;stroke-linejoin:round}
+.hero .card{grid-column:1}
+.mapbox{grid-column:2;grid-row:1/4;background:var(--mus);padding:14px;box-shadow:0 10px 26px rgba(43,33,24,.22);transform:rotate(.6deg)}
+.chart-in{position:relative;background:#e6d6aa;border:2px solid var(--ink);outline:1px solid var(--ink);outline-offset:-7px;box-shadow:inset 0 0 46px rgba(120,84,40,.38)}
+.chart-in i{position:absolute;width:22px;height:22px;border:2px solid var(--ink);background:var(--mus)}
+.chart-in i.a{top:-2px;right:-2px}.chart-in i.b{top:-2px;left:-2px}.chart-in i.c{bottom:-2px;right:-2px}.chart-in i.d{bottom:-2px;left:-2px}
+.mapbox svg{width:100%;height:auto;display:block;direction:ltr;overflow:hidden}
+.land{fill:#f4ecd6;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
 .land.b{stroke-dasharray:2 3;stroke-width:1}
+.wave{fill:none;stroke:var(--teal);stroke-width:1.3;stroke-linecap:round;opacity:.75}
+.deco{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.route{fill:none;stroke:var(--brick);stroke-width:1.5;stroke-dasharray:1 6;stroke-linecap:round}
+.sea{font-family:'Amatic SC',cursive;font-weight:700;fill:var(--teal)}
+.ttl{font-family:'Amatic SC',cursive;font-weight:700;fill:var(--ink)}
 .dot{cursor:pointer;outline:none}
-.dot circle.d{fill:var(--ink)}
+.dot .x{stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;fill:none}
 .dot circle.h{fill:transparent}
-.dot:hover circle.d,.dot:focus-visible circle.d{fill:var(--brick)}
-.dot[aria-pressed=true] circle.d{fill:var(--brick)}
-.dot circle.r{fill:none;stroke:var(--brick);stroke-width:2.5;display:none}
+.dot circle.r{fill:none;stroke:var(--brick);stroke-width:2.2;display:none}
+.dot text{font-family:'Miriam Libre',sans-serif;font-size:13.5px;fill:var(--ink);paint-order:stroke;stroke:#f4ecd6;stroke-width:3.5px;stroke-linejoin:round;display:none;pointer-events:none}
+.dot.lab text{display:block}
+.dot:hover .x,.dot:focus-visible .x{stroke:var(--brick)}
+.dot:hover text,.dot:focus-visible text{display:block}
+.dot[aria-pressed=true] .x{stroke:var(--brick);stroke-width:3.2}
 .dot[aria-pressed=true] circle.r{display:block}
-.card{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
-.card .lab{font-family:'Miriam Libre',sans-serif;font-size:14px;letter-spacing:.06em}
-.card h3{margin:0;font-weight:900;font-size:42px;line-height:1.05}
-.card .ship{border-top:1.5px solid var(--ink);padding-top:8px;font-size:18px;line-height:1.45;display:flex;flex-direction:column;gap:4px}
+.dot[aria-pressed=true] text{display:block;fill:var(--brick);font-weight:700;font-size:15px}
+.card{display:flex;flex-direction:column;gap:10px;border-top:3px double var(--ink);border-bottom:3px double var(--ink);padding:14px 0 16px;max-width:560px;margin-top:6px}
+.card .lab{font-family:'Miriam Libre',sans-serif;font-size:14px;letter-spacing:.06em;color:var(--brick)}
+.card h3{margin:0;font-weight:900;font-size:44px;line-height:1.05}
+.card .ship{border-top:1px solid rgba(43,33,24,.45);padding-top:8px;font-size:19px;line-height:1.45;display:flex;flex-direction:column;gap:4px}
 .card .ship b{font-weight:900}
 .card .ship a{font-family:'Miriam Libre',sans-serif;font-size:15px}
-.photo{position:relative;background:var(--white);padding:8px;margin:4px 6px 2px;transform:rotate(-1.2deg);box-shadow:0 5px 14px rgba(43,33,24,.22)}
+.card .body{display:flex;gap:18px;align-items:flex-start}
+.card .body>div{flex:1;display:flex;flex-direction:column;gap:10px;min-width:0}
+.photo{position:relative;background:var(--white);padding:8px;width:230px;flex:none;transform:rotate(-1.6deg);box-shadow:0 5px 14px rgba(43,33,24,.22)}
 .photo img{display:block;width:100%;height:auto;filter:sepia(.28) saturate(.82) contrast(.96)}
-.photo small{display:block;font-family:'Miriam Libre',sans-serif;font-size:12px;padding-top:5px;line-height:1.3}
+.photo small{display:block;font-family:'Miriam Libre',sans-serif;font-size:11px;padding-top:5px;line-height:1.3}
 .towns{border-top:1.5px solid var(--ink);padding:14px 0 0;display:flex;gap:28px;align-items:flex-start}
 .towns .hand{flex:none;width:170px}
 .towns ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:4px 6px;flex:1}
@@ -139,9 +154,9 @@ section{padding:44px 0}
 footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
 
 @media(max-width:1100px){
- .hero{grid-template-columns:1fr 1fr}
- h1{font-size:64px}
- .mapbox svg{width:150px}
+ .hero{grid-template-columns:1fr 400px;gap:16px 34px}
+ h1{font-size:60px}
+ .photo{width:170px}
  .story{grid-template-columns:1fr}
  .clip{max-width:600px}
 }
@@ -151,10 +166,12 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
  h1{font-size:44px}h2{font-size:40px}.hand{font-size:32px}
  section{padding:34px 0}
  .hero{grid-template-columns:1fr;gap:16px;padding-top:4px}
- .hero .head,.hero .brief,.mapbox{grid-column:1;grid-row:auto}
- .mapbox{padding:16px;gap:14px;align-items:flex-start}
- .mapbox svg{width:118px}
- .card h3{font-size:30px}.card .ship{font-size:16px}
+ .hero .head,.hero .brief,.hero .card,.mapbox{grid-column:1;grid-row:auto}
+ .hero .head{padding-top:0;order:1}.mapbox{order:2}.hero .card{order:3;margin-top:0}.hero .brief{order:4}
+ .dot text{font-size:16px}.dot[aria-pressed=true] text{font-size:17px}
+ .mapbox{padding:9px;transform:none}
+ .card h3{font-size:34px}.card .ship{font-size:17px}
+ .card .body{flex-direction:column}.photo{width:100%;max-width:300px}
  .hero .brief p:first-child{font-size:20px}
  .towns{flex-direction:column;gap:6px}.towns .hand{width:auto}
  .towns button{font-size:16px;padding:6px 7px}
@@ -180,14 +197,14 @@ footer{font-family:'Miriam Libre',sans-serif;font-size:14px;padding:10px 0 40px}
    <h1>כל ילד היה בטוח שרק לו יש ספינה</h1>
   </div>
   <div class="mapbox">
-   <svg id="map" role="group" aria-label="מפת ישראל, נקודה לכל עיר שעמדה בה ספינה"></svg>
-   <div class="card" id="card" aria-live="polite"></div>
+   <div class="chart-in"><svg id="map" role="group" aria-label="מפת ישראל בסגנון מפת אוצר, איקס לכל עיר שעמדה בה ספינה"></svg><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div>
   </div>
   <div class="brief">
    <p>בסוף שנות השמונים נחתה ספינת פיראטים מעץ בגן הציבורי של יותר מעשרים ערים בישראל. שני תרנים, סלי תצפית, הגה, ובטן שאפשר לזחול בתוכה.</p>
    <p>מי שגדל לידה קרא לה ״הספינה שלנו״. כמעט אף אחד לא ידע שספינה כמעט זהה עומדת גם בעיר השכנה, ושאת הראשונות בנה יצרן אחד מנס ציונה.</p>
    <p>אספתי כאן את מה שהצלחתי למצוא עליהן: איפה עמדו, מי בנה אותן, ומה עלה בגורלן. בהמשך אפשר גם לעלות על אחת.</p>
   </div>
+  <div class="card" id="card" aria-live="polite"></div>
  </header>
  <nav class="towns" aria-label="בחירת עיר">
   <span class="hand">איפה היא עגנה</span>
@@ -303,23 +320,46 @@ var DATA=/*DATA*/, MAP=/*MAP*/;
 (function(){
 var NS='http://www.w3.org/2000/svg',svg=document.getElementById('map'),P=MAP.P;
 function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
-svg.setAttribute('viewBox','0 0 '+MAP.w+' '+MAP.h);
-el('path',{d:MAP.isr,'class':'land'},svg);el('path',{d:MAP.pal,'class':'land b'},svg);
+var OX=112,OY=18,W=MAP.w+OX+62,H=MAP.h+OY+16;
+svg.setAttribute('viewBox','0 0 '+W+' '+H);
+function txt(x,y,str,cls,size,p,rot){var t=el('text',{x:x,y:y,'class':cls,'font-size':size,direction:'rtl','text-anchor':'middle'},p);if(rot)t.setAttribute('transform','rotate('+rot+' '+x+' '+y+')');t.textContent=str;return t}
+// sea: little waves, a ship and its dotted course (decoration only)
+[[24,96],[92,112],[22,180],[88,215],[40,300],[18,360],[64,395],[30,455],[150,84],[96,330]].forEach(function(w){el('path',{d:'M'+w[0]+','+w[1]+'q5,-6 10,0t10,0','class':'wave'},svg)});
+txt(52,258,'הים התיכון','sea',30,svg,-78);
+el('path',{d:'M58,150c-20,40 30,60 4,110c-14,30 20,50 40,58','class':'route'},svg);
+var bt=el('g',{transform:'translate(46,128)'},svg);
+el('path',{d:'M-15,6h30l-5,9h-20zM0,6v-26M0,-20l12,10h-12M0,-16l-10,10h10','class':'deco'},bt);el('path',{d:'M0,-20l7,-3l-7,-3z',fill:'#2b2118'},bt);
+// compass rose
+var cr=el('g',{transform:'translate(62,'+(H-150)+')'},svg);
+el('circle',{r:30,'class':'deco'},cr);el('circle',{r:24,'class':'deco','stroke-dasharray':'1 4'},cr);
+el('path',{d:'M0,-42L7,0L0,42L-7,0Z','class':'deco',fill:'#f4ecd6'},cr);el('path',{d:'M-42,0L0,-7L42,0L0,7Z','class':'deco',fill:'#f4ecd6'},cr);
+el('path',{d:'M0,-42L7,0H0Z',fill:'#a8472e'},cr);txt(0,-48,'צ','ttl',22,cr);
+// title ribbon and legend
+txt(116,58,'מפת הספינות','ttl',36,svg,-5);
+var lg=el('g',{transform:'translate('+(W-30)+',610)'},svg);el('path',{d:'M-5,-5L5,5M5,-5L-5,5',stroke:'#2b2118','stroke-width':2.6,'stroke-linecap':'round'},lg);
+var lt=el('text',{x:-12,y:5,direction:'rtl','text-anchor':'start','font-size':13.5,'font-family':"'Miriam Libre',sans-serif",fill:'#2b2118'},lg);lt.textContent='כאן עמדה ספינה';
+var land=el('g',{transform:'translate('+OX+','+OY+')'},svg);
+el('path',{d:MAP.isr,'class':'land'},land);el('path',{d:MAP.pal,'class':'land b'},land);
 var T=DATA.towns,dots=[],chips=[],sel=-1,ul=document.getElementById('towns'),card=document.getElementById('card');
+var LAB={'קריית שמונה':'l','נהריה':'l','מעלות':'r','חיפה':'l','נוף הגליל':'r','רעננה':'l','אריאל':'r','גבעתיים':'l','ראשון לציון':'l','ירושלים':'r','קריית מלאכי':'l','דימונה':'r','אילת':'r'};
+var SIDE={'יבנה':'l','קריית חיים':'l','קריית מוצקין':'l','רמלה':'l','כוכב יאיר':'l','אורנית':'l'};
 function xy(t){return[(t.lon-P.lon0)*P.k*P.S,(P.lat0-t.lat)*P.S]}
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
-function pick(i){sel=i;dots.forEach(function(d,k){d.setAttribute('aria-pressed',k==i)});chips.forEach(function(c,k){c.setAttribute('aria-pressed',k==i)});
- var t=T[i],h='<span class="lab">'+(t.ships.length>1?t.ships.length+' ספינות':'ספינה אחת')+'</span><h3>'+esc(t.town)+'</h3>';
+function pick(i){sel=i;dots.forEach(function(d,k){d.setAttribute('aria-pressed',k==i)});chips.forEach(function(c,k){c.setAttribute('aria-pressed',k==i)});land.appendChild(dots[i]);
+ var t=T[i],h='<span class="lab">'+(t.ships.length>1?t.ships.length+' ספינות':'ספינה אחת')+'</span><h3>'+esc(t.town)+'</h3><div class="body">',ph='';
+ h+='<div>';
  t.ships.forEach(function(s){
-  if(s.photo=='CC')h+='<div class="photo"><img src="givatayim.jpg" width="800" height="598" alt="ספינת הפיראטים בגן רבקה בגבעתיים"><small>צילום: ד״ר אבישי טייכר, פיקיוויקי, CC BY 2.5</small></div>';
+  if(s.photo=='CC')ph='<div class="photo"><img src="givatayim.jpg" width="800" height="598" alt="ספינת הפיראטים בגן רבקה בגבעתיים"><small>צילום: ד״ר אבישי טייכר, פיקיוויקי, CC BY 2.5</small></div>';
   h+='<div class="ship">'+(s.place?'<span>'+esc(s.place)+'</span>':'')+(s.when?'<span><b>מתי: </b>'+esc(s.when)+'</span>':'')+(s.fate?'<span><b>הסוף: </b>'+esc(s.fate)+'</span>':'')+
    (!s.place&&!s.when&&!s.fate?'<span>כל מה שיש עליה כרגע הוא זיכרון של מי שגדל שם.</span>':'')+
    (s.photo&&s.photo!='CC'?'<a href="'+s.photo+'">לתמונה, אצל מי שפרסם אותה ←</a>':'')+'</div>'});
- card.innerHTML=h}
-T.forEach(function(t,i){var p=xy(t),g=el('g',{'class':'dot',tabindex:0,role:'button','aria-label':t.town,'aria-pressed':false,transform:'translate('+p[0].toFixed(1)+','+p[1].toFixed(1)+')'},svg);
- el('circle',{r:11,'class':'r'},g);el('circle',{r:5.2,'class':'d'},g);el('circle',{r:13,'class':'h'},g);
+ card.innerHTML=h+'</div>'+ph+'</div>'}
+T.forEach(function(t,i){var p=xy(t),side=LAB[t.town]||SIDE[t.town]||'r';
+ var g=el('g',{'class':'dot'+(LAB[t.town]?' lab':''),tabindex:0,role:'button','aria-label':t.town,'aria-pressed':false,transform:'translate('+p[0].toFixed(1)+','+p[1].toFixed(1)+')'},land);
+ el('circle',{r:11,'class':'r'},g);el('path',{d:'M-4.5,-4.5L4.5,4.5M4.5,-4.5L-4.5,4.5','class':'x'},g);el('circle',{r:13,'class':'h'},g);
+ var tx=el('text',{x:side=='l'?-10:10,y:4.5,direction:'rtl','text-anchor':side=='l'?'start':'end'},g);tx.textContent=t.town;
  g.addEventListener('click',function(){pick(i)});g.addEventListener('keydown',function(e){if(e.key=='Enter'||e.key==' '){e.preventDefault();pick(i)}});dots.push(g);
- var li=document.createElement('li'),b=document.createElement('button');b.type='button';b.textContent=t.town;b.setAttribute('aria-pressed',false);b.onclick=function(){pick(i);if(innerWidth<760)document.querySelector('.mapbox').scrollIntoView({behavior:'smooth',block:'center'})};li.appendChild(b);ul.appendChild(li);chips.push(b)});
+ var li=document.createElement('li'),b=document.createElement('button');b.type='button';b.textContent=t.town;b.setAttribute('aria-pressed',false);b.onclick=function(){pick(i);if(innerWidth<760)document.getElementById('card').scrollIntoView({behavior:'smooth',block:'center'})};li.appendChild(b);ul.appendChild(li);chips.push(b)});
 pick(Math.max(0,T.findIndex(function(t){return t.town=='גבעתיים'})));
 document.getElementById('count').textContent=DATA.n+' ספינות, '+T.length+' ערים';
 // fates
