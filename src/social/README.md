@@ -19,3 +19,11 @@ Language: open question, Hebrew, English or both.
 Done so far: Flyers test reel (English, AI voice), Tonpit studio gnKMMosUHE6E6542urmH.
 Steps that worked: generate_voiceover -> read_voiceover (word timings) -> reel.js frames timed to words
 -> ffmpeg mp4 -> import to Tonpit via a public URL (jsDelivr from a temp branch) -> place both -> export.
+
+## Ships reel (Hebrew, done 19 Nov 2026)
+
+`reel/ships/reel.js` builds `ships-reel.mp4` (1080x1920, 27s, captions only, silent audio track) and `cover.png`.
+Scenes: personal opening over the real photos, the map filling with 29 ships, the burned ones turning red, end card with the link.
+Run: `node reel.js <node_modules>` (needs playwright matching the installed browser, plus @fontsource/frank-ruhl-libre and amatic-sc), then
+`ffmpeg -framerate 30 -i f/%04d.png -f lavfi -i anullsrc=r=44100:cl=stereo -shortest -c:v libx264 -pix_fmt yuv420p -crf 18 -c:a aac -movflags +faststart ships-reel.mp4`.
+Posts for all four platforms are in `launch/ships-posts.md`.
