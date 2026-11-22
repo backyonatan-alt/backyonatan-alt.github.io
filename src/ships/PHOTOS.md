@@ -30,3 +30,8 @@ The 435-comment Facebook thread has no photos in its comments.
 Givatayim, Migdal HaEmek, Dimona and Kiryat Shmona share one design: two masts with slatted crow's nests, a raised stern with skull panels, a side ramp and a name sign on the hull. Colors differ by town. This supports one design or one supplier. Still unconfirmed by any source.
 
 The 1:1 Landscape gallery also holds a photo of a public workshop with children and a photo of residents voting at a ballot box by the ship. Not saved here (identifiable people).
+
+
+## Reader photos
+
+- `photos/ariel.jpg`: Ariel, old print photographed on a phone. Sent to Yonatan by Mor Blau (מור בלו) on 22 Nov 2026 after the launch post; she agreed to its use. Credit on the page: צילום באדיבות מור בלו. Year and exact spot unknown.
