@@ -27,3 +27,9 @@ Scenes: personal opening over the real photos, the map filling with 29 ships, th
 Run: `node reel.js <node_modules>` (needs playwright matching the installed browser, plus @fontsource/frank-ruhl-libre and amatic-sc), then
 `ffmpeg -framerate 30 -i f/%04d.png -f lavfi -i anullsrc=r=44100:cl=stereo -shortest -c:v libx264 -pix_fmt yuv420p -crf 18 -c:a aac -movflags +faststart ships-reel.mp4`.
 Posts for all four platforms are in `launch/ships-posts.md`.
+
+## Ships photo reel (22 Nov 2026)
+
+`reel/ships/photos-reel.js` makes a photo-first reel with almost no text: title, the nine photos one after another, the map filling up, end card.
+Two sizes from the same script: `ships-photos-feed-4x5.mp4` (1080x1350, Facebook and LinkedIn feeds) and `ships-photos-vertical-9x16.mp4` (1080x1920, Instagram). 26s, silent.
+Run `node photos-reel.js <node_modules> 45` or `916`, then the same ffmpeg line as above with `f45/` or `f916/`.
