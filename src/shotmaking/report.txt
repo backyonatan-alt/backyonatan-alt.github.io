@@ -1,0 +1,164 @@
+== FIRST 20 GAMES vs REST OF SEASON ==
+all seasons      n=892  r=0.67 slope=0.55  quality r=0.81 | hottest 10% keep 0.59 (0.53 to 0.66)  coldest 10% keep 0.50 (0.43 to 0.57)  diff -0.00 to 0.19
+1996-2003        n=232  r=0.66 slope=0.56  quality r=0.79 | hottest 10% keep 0.54 (0.38 to 0.72)  coldest 10% keep 0.55 (0.43 to 0.68)  diff -0.22 to 0.21
+2004-2015        n=360  r=0.69 slope=0.53  quality r=0.83 | hottest 10% keep 0.63 (0.52 to 0.72)  coldest 10% keep 0.46 (0.35 to 0.58)  diff 0.00 to 0.31
+2016-2025        n=300  r=0.65 slope=0.55  quality r=0.81 | hottest 10% keep 0.61 (0.49 to 0.70)  coldest 10% keep 0.51 (0.39 to 0.65)  diff -0.08 to 0.25
+
+by fifths (early gap -> rest gap)
+         e_make  r_make
+q                      
+coldest  -0.062  -0.032
+cold     -0.025  -0.015
+middle   -0.001   0.000
+hot       0.025   0.012
+hottest   0.063   0.035
+
+gap of 0.05+ pts/shot after 20 games: 239 of 892 team-seasons; same side for the rest: 92%
+field-goal attempts per team game: 83.3
+
+coldest and hottest starts
+                                   team  e_make  r_make
+ts                                                     
+2009_1610612751         New Jersey Nets  -0.132  -0.074
+2024_1610612757  Portland Trail Blazers  -0.124  -0.050
+2014_1610612755      Philadelphia 76ers  -0.120  -0.099
+2021_1610612765         Detroit Pistons  -0.115  -0.079
+2011_1610612758        Sacramento Kings  -0.114  -0.028
+2012_1610612748              Miami Heat   0.118   0.093
+2018_1610612744   Golden State Warriors   0.124   0.094
+2016_1610612744   Golden State Warriors   0.131   0.079
+2017_1610612744   Golden State Warriors   0.135   0.105
+2015_1610612744   Golden State Warriors   0.146   0.088
+
+== PLACEBO: 20 random games vs the rest (300 draws) ==
+mean: {'r': 0.697, 'slope': 0.598, 'r_qual': 0.909, 'hot_keep': 0.604, 'cold_keep': 0.586}
+sd:   {'r': 0.014, 'slope': 0.018, 'r_qual': 0.004, 'hot_keep': 0.031, 'cold_keep': 0.029}
+actual hot-cold diff 0.096; share of placebo draws with a diff that large: 0.020
+
+== HOW FAST IT SETTLES: first N games vs the rest ==
+ N  make_slope make_r  qual_slope qual_r
+ 3       0.19   0.41        0.46   0.65
+ 5       0.27   0.48        0.56   0.72
+10       0.41   0.58        0.67   0.77
+15       0.49   0.63        0.73   0.79
+20       0.55   0.67        0.77   0.81
+30       0.63   0.69        0.81   0.83
+41       0.68   0.70        0.83   0.83
+
+team-games 71092, with final score 99.95% (missing: {2012: 32})
+
+== AFTER 10 GAMES: where the 30 champions ranked ==
+metric     median  #1 top3 top5 top10
+off_make      5.5   8   12   15    19
+off_qual     13.0   0    2    4     8
+def_make      5.0   4   10   17    20
+def_qual     11.5   1    4    9    14
+net_make      3.5   6   15   20    25
+net_qual     11.0   1    5   10    14
+net_pps       4.0   7   14   22    26
+fg_margin     3.0   7   17   19    27
+winpct        5.0   4   10   17    23
+ptdiff        3.5   7   15   20    25
+
+== AFTER 20 GAMES: where the 30 champions ranked ==
+metric     median  #1 top3 top5 top10
+off_make      5.0   4   13   16    22
+off_qual     13.0   0    2    3    11
+def_make      4.0   7   13   18    22
+def_qual      7.5   0    4   11    19
+net_make      3.5   6   15   21    27
+net_qual      9.0   1    3    8    17
+net_pps       3.0   8   16   23    26
+fg_margin     2.0  12   17   21    28
+winpct        3.0   7   19   23    26
+ptdiff        2.0  11   18   23    28
+  yr             TEAM_NAME  r_winpct  r_ptdiff  r_net_pps
+1996         Chicago Bulls         3         1          1
+1997         Chicago Bulls        13         8         12
+1998     San Antonio Spurs        12         5          6
+1999    Los Angeles Lakers         3         4          5
+2000    Los Angeles Lakers         5         7          2
+2001    Los Angeles Lakers         1         1          1
+2002     San Antonio Spurs        12         5          1
+2003       Detroit Pistons         4         4         11
+2004     San Antonio Spurs         3         2          2
+2005            Miami Heat        15        11          7
+2006     San Antonio Spurs         2         1          4
+2007        Boston Celtics         1         1          1
+2008    Los Angeles Lakers         3         2          5
+2009    Los Angeles Lakers         1         2          5
+2010      Dallas Mavericks         3         6          3
+2011            Miami Heat         3         3          4
+2012            Miami Heat         7         7          3
+2013     San Antonio Spurs         4         2          3
+2014 Golden State Warriors         1         1          1
+2015   Cleveland Cavaliers         3         6          7
+2016 Golden State Warriors         1         1          1
+2017 Golden State Warriors         3         1          1
+2018       Toronto Raptors         1         2          2
+2019    Los Angeles Lakers         2         3          4
+2020       Milwaukee Bucks         7         1          3
+2021 Golden State Warriors         1         1          1
+2022        Denver Nuggets         5        11         15
+2023        Boston Celtics         2         1          3
+2024 Oklahoma City Thunder         3         1          5
+2025       New York Knicks         9         4         19
+
+== AFTER 41 GAMES: where the 30 champions ranked ==
+metric     median  #1 top3 top5 top10
+off_make      5.0   6   10   18    23
+off_qual     14.5   0    1    2    10
+def_make      4.5   6   14   17    23
+def_qual      9.5   0    6   11    17
+net_make      3.0   8   17   22    28
+net_qual      8.0   2    6    8    18
+net_pps       2.5   7   20   23    28
+fg_margin     3.5  10   15   24    29
+winpct        3.0   9   19   25    30
+ptdiff        2.0  10   18   26    30
+
+== FULL SEASON: where the 30 champions ranked ==
+metric     median  #1 top3 top5 top10
+off_make      4.5   6   12   19    24
+off_qual     13.5   0    1    2    10
+def_make      4.0   6   13   19    25
+def_qual      7.5   0    5   11    19
+net_make      2.5   8   16   22    29
+net_qual      7.5   1    5    9    17
+net_pps       3.0  10   19   24    29
+fg_margin     3.0   8   18   24    30
+winpct        3.0   9   22   27    30
+ptdiff        2.5  11   20   26    30
+champions in the bottom half (rank 16+): off_qual 9, off_make 3, def_qual 7, def_make 2
+champions top 5 in both off_qual and off_make: 1; top 10 in both: 7
+  yr             TEAM_NAME  r_off_make  r_off_qual  r_def_make  r_def_qual  r_net_pps  r_winpct
+1996         Chicago Bulls           3          29           3           9          3         1
+1997         Chicago Bulls          17          21           2          18         11         2
+1998     San Antonio Spurs          11          10           1           6          1         2
+1999    Los Angeles Lakers          10          13           1           2          2         1
+2000    Los Angeles Lakers           5          11          16           6          3         3
+2001    Los Angeles Lakers           5          14           4           4          1         3
+2002     San Antonio Spurs          10           2           2           6          2         2
+2003       Detroit Pistons          22          13           1          14          5         6
+2004     San Antonio Spurs          12           7           2           3          3         3
+2005            Miami Heat           4           4          11           4          3         5
+2006     San Antonio Spurs           2          15           3           4          2         3
+2007        Boston Celtics           7           7           1           7          1         1
+2008    Los Angeles Lakers           5          16           4          30          8         2
+2009    Los Angeles Lakers          16          19           5          15          9         3
+2010      Dallas Mavericks           1          21          10           8          5         5
+2011            Miami Heat           5          15           7          18          5         4
+2012            Miami Heat           1           6           5          24          1         1
+2013     San Antonio Spurs           2          12           7           3          1         1
+2014 Golden State Warriors           1          13           2           4          1         1
+2015   Cleveland Cavaliers           4          10          15           5          6         3
+2016 Golden State Warriors           1          10           1          20          1         1
+2017 Golden State Warriors           1          25           4           9          1         3
+2018       Toronto Raptors           3          15           2          12          3         2
+2019    Los Angeles Lakers          13           8           6          19          5         3
+2020       Milwaukee Bucks           4          17          20           3          6         7
+2021 Golden State Warriors           2          15           7           4          1         4
+2022        Denver Nuggets           3           9          13          14          5         4
+2023        Boston Celtics           1          18           5           2          1         1
+2024 Oklahoma City Thunder           7          27           1           9          2         1
+2025       New York Knicks           9          14           9          20          9         7
