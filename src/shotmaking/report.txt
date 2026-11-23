@@ -162,3 +162,57 @@ champions top 5 in both off_qual and off_make: 1; top 10 in both: 7
 2023        Boston Celtics           1          18           5           2          1         1
 2024 Oklahoma City Thunder           7          27           1           9          2         1
 2025       New York Knicks           9          14           9          20          9         7
+
+######## defender.py ########
+team-seasons: 390
+
+== A: shot type only: 13 champions, rank among 30 ==
+metric    median top5 top10 bottom_half
+off_qual    16.0    0     1           7
+off_make     3.0   13    13           0
+def_qual    14.0    3     5           6
+def_make     4.0    7     9           1
+
+== B: defender distance only: 13 champions, rank among 30 ==
+metric    median top5 top10 bottom_half
+off_qual    19.0    2     5           8
+off_make     3.0   10    13           0
+def_qual    15.0    4     5           6
+def_make     5.0    8    10           1
+
+== C: shot type and defender distance: 13 champions, rank among 30 ==
+metric    median top5 top10 bottom_half
+off_qual    15.0    0     4           6
+off_make     3.0    9    13           0
+def_qual     7.0    5     7           5
+def_make     5.0    7     9           0
+ season                  team  off_qual  off_make  def_qual  def_make
+2013-14     San Antonio Spurs         9         3         1        10
+2014-15 Golden State Warriors         9         2         7         1
+2015-16   Cleveland Cavaliers         7         5        16        11
+2016-17 Golden State Warriors        12         1        26         1
+2017-18 Golden State Warriors        29         1        22         3
+2018-19       Toronto Raptors        16         3         5         8
+2019-20    Los Angeles Lakers        11        10        23         5
+2020-21       Milwaukee Bucks        16         4         4        14
+2021-22 Golden State Warriors        10         6         6         2
+2022-23        Denver Nuggets        20         2        22        12
+2023-24        Boston Celtics        21         1        14         2
+2024-25 Oklahoma City Thunder        15         7         1         1
+2025-26       New York Knicks        26         6         4        15
+
+== league 2025-26: points per shot and share of shots by type ==
+                    pps  share%
+defender_ft kind               
+0-2         far2   0.68     0.6
+            near2  1.01    11.3
+            three  1.16     0.5
+2-4         far2   0.80     6.2
+            near2  1.18    23.5
+            three  0.94     5.2
+4-6         far2   0.90     5.9
+            near2  1.44     6.3
+            three  1.03    16.2
+6+          far2   0.92     2.0
+            near2  1.56     2.5
+            three  1.15    19.9
