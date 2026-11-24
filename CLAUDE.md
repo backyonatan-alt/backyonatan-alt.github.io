@@ -25,6 +25,7 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`
 - Home page: one full-width row per article, all equal, no sections. Stacks image over text on phones.
 - Every page carries Google Analytics (`G-ZHETPL7EV5`). The build scripts add it. New pages need it too.
 - Every page needs Open Graph tags and a 1200x630 preview image (`preview.png` or `cousins-preview.png`) for link previews.
+- The home page has its own share image, `/preview.png` (a 3x3 grid of the home-row images). Re-render it whenever a story row is added: `NODE_PATH=$(npm root -g) node src/home/og.js`.
 - Light mode only. No dark-mode rules (`prefers-color-scheme`) in any article, so every reader sees the same colors. The dark map stage and dark home page are fixed designs, not a dark mode.
 - Phones matter. Check every change at about 390px wide for sideways overflow before pushing.
 - Copy style: short plain sentences, no em dashes.
