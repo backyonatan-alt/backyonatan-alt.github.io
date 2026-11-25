@@ -26,6 +26,9 @@ p{margin:0;max-width:60ch}
 .card span{color:var(--mut);font-size:15.5px}
 .card b{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .card:hover,.card:focus-visible{border-color:var(--on);outline:none}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:8px 12px;flex-wrap:wrap}
+.tl{font:600 11px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);text-decoration:none;white-space:nowrap}
+.tl:hover,.tl:focus-visible{color:var(--on);outline:none}
 .li{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1px solid var(--line);padding:20px 22px;color:inherit;text-decoration:none}
 .li span{color:var(--mut);font-size:15.5px}
 .li b{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
@@ -50,7 +53,7 @@ p{margin:0;max-width:60ch}
 <body>
 <main>
   <header>
-    <span class="k">Interactive pages by Yonatan</span>
+    <div class="top"><span class="k">Interactive pages by Yonatan</span><a class="tl" href="https://www.linkedin.com/in/yonatan-back/" target="_blank" rel="noopener">LinkedIn &#8599;</a></div>
     <h1>Data Stories</h1>
   </header>
   <p>Each page takes one subject and explains it through its numbers, with charts and maps you can play with.</p>
