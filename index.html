@@ -26,6 +26,10 @@ p{margin:0;max-width:60ch}
 .card span{color:var(--mut);font-size:15.5px}
 .card b{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .card:hover,.card:focus-visible{border-color:var(--on);outline:none}
+.li{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1px solid var(--line);padding:20px 22px;color:inherit;text-decoration:none}
+.li span{color:var(--mut);font-size:15.5px}
+.li b{font:600 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.li:hover,.li:focus-visible{border-color:var(--on);outline:none}
 .row{display:flex;flex-direction:column;gap:16px}
 .row .card{grid-template-columns:minmax(0,340px) minmax(0,1fr)}
 .row .card h2{font-size:38px}
@@ -36,6 +40,7 @@ p{margin:0;max-width:60ch}
   .card img{height:auto}
   .card div{padding:16px 16px 18px;gap:8px}
   .row .card h2{font-size:30px}
+  .li{flex-direction:column;align-items:flex-start;gap:10px;padding:16px}
 }
 </style>
 <!-- Google Analytics -->
@@ -87,6 +92,7 @@ p{margin:0;max-width:60ch}
       <div><h2>Every Kid Thought the Ship Was Theirs</h2><span>The wooden pirate ships that landed in Israeli playgrounds in 1988: a map of where they stood, who built them, how they ended, and a 3D ship to climb on. In Hebrew.</span><b>Open &rarr;</b></div>
     </a>
   </div>
+  <a class="li" href="https://www.linkedin.com/in/yonatan-back/" target="_blank" rel="noopener"><span>New stories go up on LinkedIn first.</span><b>Follow on LinkedIn &rarr;</b></a>
 </main>
 </body>
 </html>
