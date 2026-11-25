@@ -54,7 +54,7 @@ html{overflow:hidden}body{width:${W}px;height:${H}px;background:#f1e8d4;color:#2
  <div class="mapbox"><div class="in"><svg id="map"></svg></div></div>
  <div class="sub" id="sub">מקריית שמונה ועד אילת</div>
 </div>
-<div class="sc" id="end"><div class="k">איפה הייתה שלכם?</div><h1>כל ילד היה בטוח שרק לו יש ספינה</h1><div class="s">המפה, התמונות, וספינה בתלת־ממד שאפשר לעלות עליה שוב.</div><div class="u">backyonatan-alt.github.io/ships</div>
+<div class="sc" id="end"><div class="k">איפה הייתה שלכם?</div><h1>כל ילד היה בטוח שרק לו יש ספינה</h1><div class="s">המפה, התמונות, וספינה בתלת־ממד שאפשר לעלות עליה שוב.</div><div class="u">yonatanback.com/ships</div>
  <div class="row"><div><img src="${img('kiryat-shmona')}"></div><div><img src="${img('migdal-1')}"></div><div><img src="${img('dimona')}"></div></div></div>
 </div><script>
 const DATA=${JSON.stringify(DATA)},MAP=${JSON.stringify(MAP)},P=MAP.P,NS='http://www.w3.org/2000/svg',TALL=${TALL};

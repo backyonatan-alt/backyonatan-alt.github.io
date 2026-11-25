@@ -31,7 +31,7 @@ video{width:1080px;height:649px;object-fit:cover;transition:none}
 <div class="scene" data-a="18.0" data-b="20.5"><div class="h">What hurts is <em>no rest</em></div></div>
 <div class="scene" data-a="20.5" data-b="26.1"><div class="s" style="margin:0 0 20px">Road teams win</div><div class="big"><div><b style="color:#f5b942">40%</b><span>on a back-to-back</span></div><div id="d2"><b>46%</b><span>with a day off</span></div></div></div>
 <div class="scene" data-a="26.1" data-b="28.7"><div class="h">It's not the flight.</div><div class="h" id="cal" style="margin-top:16px"><em>It's the calendar.</em></div></div>
-<div class="scene" data-a="28.7" data-b="99"><div class="h">Full interactive map</div><div class="s" style="font-family:Mono;color:#f5b942;font-size:36px">backyonatan-alt.github.io/flyers</div><div class="s">Link in bio</div></div>
+<div class="scene" data-a="28.7" data-b="99"><div class="h">Full interactive map</div><div class="s" style="font-family:Mono;color:#f5b942;font-size:36px">yonatanback.com/flyers</div><div class="s">Link in bio</div></div>
 <div class="sub" id="sub"></div>
 <script>
 const W=${JSON.stringify(W)};

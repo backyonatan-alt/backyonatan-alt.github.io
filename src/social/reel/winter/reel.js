@@ -40,7 +40,7 @@ svg text{font-family:Heebo}
 <div class="cap" data-a="14.6" data-b="18.4">בממוצע: <em>כ-5 ילדים</em><br>חולים בכל יום</div>
 <div class="cap" data-a="18.4" data-b="21.4"><em>7-8 מחלות בשנה</em> לפעוט.<br>זה לא מזל רע. זה הממוצע.</div>
 <div class="foot">מודל מבוסס מחקר: 7.7 מחלות בשנה לפעוט, מחלה נמשכת כ-10 ימים, עונה לפי נתוני גילאי 0-4. "סימני מחלה" זה לא בהכרח יום בבית. מקורות בכתבה.</div>
-<div class="end" id="end"><div class="t2">יום אחד<br>מכל חמישה</div><div class="s">כמה פעוט בגן חולה בחורף, מתי זה מגיע, ומה זה אומר לשנים הבאות.</div><div class="u">backyonatan-alt.github.io/winter</div><div class="c">כתבה אינטראקטיבית. הקישור בתגובה.</div></div>
+<div class="end" id="end"><div class="t2">יום אחד<br>מכל חמישה</div><div class="s">כמה פעוט בגן חולה בחורף, מתי זה מגיע, ומה זה אומר לשנים הבאות.</div><div class="u">yonatanback.com/winter</div><div class="c">כתבה אינטראקטיבית. הקישור בתגובה.</div></div>
 <script>
 const G=${JSON.stringify(G)},NK=16,ND=151,START=new Date(2026,10,1);
 const NS='http://www.w3.org/2000/svg';

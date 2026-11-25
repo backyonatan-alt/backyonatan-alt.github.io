@@ -5,7 +5,7 @@ page=page.replace('{{APP}}',app)
 assert '{{' not in page and '\u2014' not in page
 # site version
 T="Dogfight Ground School"; D="A beginner's ground school for anyone who has tried a flight simulator: why the jet you are chasing keeps getting away, corner speed, and six classic maneuvers in 3D."
-U="https://backyonatan-alt.github.io/dogfight/"
+U="https://yonatanback.com/dogfight/"
 head=f'''<!doctype html>
 <html lang="en">
 <head>

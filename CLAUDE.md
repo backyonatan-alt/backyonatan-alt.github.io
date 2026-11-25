@@ -1,7 +1,7 @@
 # Data Stories site
 
 Yonatan's personal site of interactive data articles, served by GitHub Pages from the `main` branch.
-Live at https://backyonatan-alt.github.io/
+Live at https://yonatanback.com/
 
 ## Pages
 

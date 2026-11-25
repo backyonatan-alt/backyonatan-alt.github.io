@@ -1,6 +1,6 @@
 # Launch posts for A Nation of Cousins
 
-Link: https://backyonatan-alt.github.io/cousins/
+Link: https://yonatanback.com/cousins/
 Video to attach: `cousins-map.mp4`
 
 ## LinkedIn / X
@@ -18,7 +18,7 @@ Three things that surprised me:
 
 The numbers are estimates and the older ones are rough. If you know this field, I'd love corrections.
 
-https://backyonatan-alt.github.io/cousins/
+https://yonatanback.com/cousins/
 
 ## Reddit
 
@@ -26,7 +26,7 @@ Title (r/dataisbeautiful): [OC] 3,000 years of the Jewish population by region a
 
 First comment:
 
-Interactive version (play, zoom, change speed): https://backyonatan-alt.github.io/cousins/
+Interactive version (play, zoom, change speed): https://yonatanback.com/cousins/
 
 Sources: world totals from DellaPergola / American Jewish Year Book (1880 onward) and Botticini & Eckstein, The Chosen Few (65 to 1490). Genetics from Carmi et al. 2014, Waldman et al. 2022, Atzmon et al. 2010, Behar et al. 2006. Full list on the page.
 
@@ -48,4 +48,4 @@ Title (r/MapPorn or r/Judaism): I made an animated map of where Jews lived from 
 
 האתר באנגלית בינתיים. המספרים הם הערכות, והעתיקים שבהם גסים. תיקונים יתקבלו בשמחה.
 
-https://backyonatan-alt.github.io/cousins/
+https://yonatanback.com/cousins/

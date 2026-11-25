@@ -8,7 +8,7 @@ page=open('page.html',encoding='utf8').read()
 page=page.replace('{{MAP}}',open('map.json').read()).replace('{{DATA}}',open('data.json').read()).replace('{{COST}}',open('cost.json').read())
 assert '{{' not in page
 T="Frequent Flyers"; D="An NBA team flies 45,000 miles a season. Watch all 30 teams do it on one animated map, then see what the miles actually cost. Four seasons, 4,920 road games."
-U="https://backyonatan-alt.github.io/flyers/"
+U="https://yonatanback.com/flyers/"
 head=f'''<!doctype html>
 <html lang="en">
 <head>

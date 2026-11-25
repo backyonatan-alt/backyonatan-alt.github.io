@@ -1,6 +1,6 @@
 # Launch posts for the ships article (Hebrew)
 
-Link: https://backyonatan-alt.github.io/ships/ (works only after the page is merged to main)
+Link: https://yonatanback.com/ships/ (works only after the page is merged to main)
 Video to attach: `src/social/reel/ships/ships-reel.mp4` (1080x1920, 27s, captions only, no sound). Cover: `cover.png`.
 
 ## LinkedIn
@@ -21,7 +21,7 @@ Video to attach: `src/social/reel/ships/ships-reel.mp4` (1080x1920, 27s, caption
 
 אם גדלתם ליד אחת כזאת, אשמח לשמוע איפה. ואם יש לכם תמונה, עוד יותר.
 
-https://backyonatan-alt.github.io/ships/
+https://yonatanback.com/ships/
 
 ## Facebook
 
@@ -37,7 +37,7 @@ https://backyonatan-alt.github.io/ships/
 
 איפה הייתה שלכם? ואם יש לכם תמונה עליה, תעלו בתגובות.
 
-https://backyonatan-alt.github.io/ships/
+https://yonatanback.com/ships/
 
 ## Instagram (caption for the reel)
 
@@ -60,4 +60,4 @@ https://backyonatan-alt.github.io/ships/
 מיפיתי את כולן, ובניתי אחת בתלת־ממד שאפשר לעלות עליה שוב.
 
 איפה הייתה שלכם?
-https://backyonatan-alt.github.io/ships/
+https://yonatanback.com/ships/

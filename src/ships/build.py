@@ -13,7 +13,7 @@ for k, v in (('/*DATA*/', data), ('/*MAP*/', mp), ('/*SHIP*/', ship)):
 
 T = "כל ילד היה בטוח שרק לו יש ספינה"
 D = "ספינות הפיראטים מעץ שעמדו בגנים הציבוריים בישראל משנת 1988: איפה עמדו, מי בנה אותן, מה עלה בגורלן, ודגם תלת־ממדי שאפשר לעלות עליו."
-U = "https://backyonatan-alt.github.io/ships/"
+U = "https://yonatanback.com/ships/"
 meta = f'''<meta name="description" content="{D}">
 <link rel="canonical" href="{U}">
 <meta property="og:type" content="article">

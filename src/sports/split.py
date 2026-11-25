@@ -2,7 +2,7 @@ import re,html,os,sys
 HERE=os.path.dirname(os.path.abspath(__file__))
 src=open(os.path.join(HERE,'sports-analytics-by-the-numbers.html'),encoding='utf8').read()
 REPO=os.path.normpath(os.path.join(HERE,'..','..'))
-BASE='https://backyonatan-alt.github.io/'
+BASE='https://yonatanback.com/'
 si=src.find('<style>');se=src.find('</style>');sc=src.find('<script>');sce=src.rfind('</script>')
 fonts=re.search(r'<link rel="stylesheet" href="https://fonts[^>]+>',src).group(0)
 style=src[si:se]+'\n.nextup a{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;padding:12px 18px;background:var(--ink);color:var(--bg);text-decoration:none}\n.nextup a.home{background:transparent;color:var(--ink);border:2px solid var(--ink);padding:10px 16px}\n[hidden]{display:none!important}\n@media (max-width:520px){.hero{padding-block:22px 26px}.hero .lede{font-size:17px}.board table{min-width:0}.board th,.board td{padding:8px 7px}.board td{font-size:15px}.board th{font-size:9.5px;letter-spacing:.05em}.series{margin-bottom:18px}.innings{font-size:12px}}\n</style>'

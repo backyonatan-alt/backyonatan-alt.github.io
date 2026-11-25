@@ -52,7 +52,7 @@ body{width:1080px;height:1920px;background:#f1e8d4;color:#2b2118;font-family:FR;
  <div class="sub" id="sub"></div>
  <div class="mapbox"><div class="in"><svg id="map"></svg></div></div>
 </div>
-<div class="end" id="end"><div class="k2">סיפור בנתונים</div><div class="t2">כל ילד היה בטוח שרק לו יש ספינה</div><div class="s">המפה, התמונות, וספינה בתלת־ממד שאפשר לעלות עליה שוב.</div><div class="u">backyonatan-alt.github.io/ships</div><div class="c">הקישור בביו</div><img src="${img('migdal-1')}"></div>
+<div class="end" id="end"><div class="k2">סיפור בנתונים</div><div class="t2">כל ילד היה בטוח שרק לו יש ספינה</div><div class="s">המפה, התמונות, וספינה בתלת־ממד שאפשר לעלות עליה שוב.</div><div class="u">yonatanback.com/ships</div><div class="c">הקישור בביו</div><img src="${img('migdal-1')}"></div>
 <script>
 const DATA=${JSON.stringify(DATA)},MAP=${JSON.stringify(MAP)},P=MAP.P,NS='http://www.w3.org/2000/svg';
 function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}

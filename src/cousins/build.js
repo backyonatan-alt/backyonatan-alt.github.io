@@ -7,7 +7,7 @@ h=h.replace('/*DATA*/',()=>data).replace('/*MAP*/',()=>fs.readFileSync(here('map
 // 2) wrap it as a standalone page for the site
 const cut=h.indexOf('<div class="night">');
 let head=h.slice(0,cut),body=h.slice(cut);
-const SITE='https://backyonatan-alt.github.io/cousins/';
+const SITE='https://yonatanback.com/cousins/';
 const desc='An animated map of the Jewish people from 1000 BCE to today: where they lived, how many they were, and why any two Ashkenazi Jews are about fourth cousins.';
 const icon="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="#0e1730"/><circle cx="12" cy="18" r="8" fill="#3987e5"/><circle cx="22" cy="12" r="5" fill="#e8b93e"/></svg>');
 const meta=`<meta charset="utf-8">

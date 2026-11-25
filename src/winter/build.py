@@ -10,7 +10,7 @@ assert '/*DATA*/' not in page
 
 T = "יום אחד מכל חמישה"
 D = "כמה פעמים פעוט בגן יהיה חולה החורף, מתי זה יקרה, ומה זה אומר לשנים הבאות. גן מדומה של 16 פעוטות, נתוני משרד הבריאות ומחקרים שעקבו אחרי אלפי ילדים."
-U = "https://backyonatan-alt.github.io/winter/"
+U = "https://yonatanback.com/winter/"
 meta = f'''<meta name="description" content="{D}">
 <link rel="canonical" href="{U}">
 <meta property="og:type" content="article">
