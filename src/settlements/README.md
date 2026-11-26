@@ -32,9 +32,19 @@ Not a page on the site yet. No row on the home page.
 
 ## Page structure (draft, 26 Nov 2026)
 - Opening: starts from the first one (Mikveh Israel, 1870), then 1949 with 123 localities in one year. Yonatan asked to mention the first year at the start.
-- Headline is not chosen yet. He rejected "כך התמלאה המפה". Five options sit as buttons at the top of the draft.
+- Headline: "מתי קם היישוב שלכם?" (Yonatan picked it from five options; he rejected "כך התמלאה המפה").
 - "Two waves" section: names the waves (1948-1951, 1977-1989) and shows them as two small maps above the live map. He asked for that.
 - Live map, then the eight period maps with four short paragraphs of numbers.
 - Last chart: scatter of founding year by latitude, in an earth ramp (`EARTH` in `page.html`, oldest darkest), no map beside or behind it. He tried and rejected: a line chart of the southern edge, a district grid, three other scatter variants, four maps, one annotated map, a faint map in the background, and other colour sets. Do not bring those back.
 - The earth colours are for the last chart only. The maps keep the eight period colours.
 - All numbers in the text are computed from `data.json`. Type of locality is today's type.
+
+## Site plumbing (prepared, not published)
+- `python3 build.py site` writes `/settlements/index.html` with the GA tag, share tags, `../` back link and no draft badge.
+- `NODE_PATH=$(npm root -g) node og.js` renders `settlements/preview.png` (Hebrew) and `settlements/card.png` (English). Fonts: `npm i @fontsource/heebo @fontsource/ibm-plex-sans-hebrew` in `/home/claude/fonts`.
+- Still to do on publish: home page row, README line, CLAUDE.md table row, re-render the home share image.
+- Search box under the headline answers the headline question and jumps to the map.
+- Localities beyond the Green Line: three display options are in the draft as buttons (same as all, hollow ring, marked area). Waiting for Yonatan's pick. The Golan has no outline in the map data, so it can only be named, not shaded.
+
+## Missing places research
+- `data/gone_research.csv`: first pass for Sinai (1982) and 1948. Names and sources are in, most founding years and coordinates are not. Nothing from it is on the map. Rule: a row goes on the map only with a sourced founding year and position, after Yonatan sees the table.
