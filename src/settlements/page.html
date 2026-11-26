@@ -51,6 +51,7 @@ button,input{font-family:inherit}button{cursor:pointer}
 .find{display:flex;gap:6px;align-items:center}
 .find input{flex:1;min-width:0;border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:15px;background:var(--card);color:var(--ink)}
 .card{font-size:14.5px;line-height:1.5;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:9px 11px;margin-top:8px;display:none}
+.keyline{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mut);margin-top:8px}
 .ctrl{display:flex;align-items:center;gap:12px;margin:16px 0 4px}
 #play{flex:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);color:var(--paper);font-size:17px;line-height:1}
 .tl{flex:1;min-width:0;position:relative;direction:ltr;touch-action:none;cursor:pointer;padding-top:14px}
@@ -113,11 +114,12 @@ button,input{font-family:inherit}button{cursor:pointer}
 </div>
 <div class="lbl">תקופות. לחיצה מבודדת תקופה אחת</div>
 <div class="row legend"></div>
+<div class="keyline"><svg width="12" height="12"><circle cx="6" cy="6" r="4" fill="none" stroke="var(--mut)" stroke-width="1.4"/></svg>יישוב שפונה ב-2005. נשאר על המפה כעיגול ריק</div>
 </div>
 
 <div class="sect">
  <h2 class="vtitle">כל גל התיישב במקום אחר</h2>
- <p class="vsub">בצבע: היישובים שנוסדו בתקופה. באפור: מה שכבר היה על המפה. לחיצה על מפה מציגה את התקופה במפה הגדולה.</p>
+ <p class="vsub">בצבע: היישובים שנוסדו בתקופה. באפור: מה שכבר היה על המפה. עיגול ריק: יישוב שפונה ב-2005. לחיצה על מפה מציגה את התקופה במפה הגדולה.</p>
  <div class="minis" id="minis"></div>
 </div>
 
@@ -125,7 +127,9 @@ button,input{font-family:inherit}button{cursor:pointer}
  <h3>מה חשוב לדעת על הנתונים</h3>
  <ul>
   <li>המקור: קובץ היישובים של הלשכה המרכזית לסטטיסטיקה, 2023. 1,088 יישובים יהודיים ומעורבים עם שנת ייסוד.</li>
-  <li>רק יישובים שקיימים היום. יישובים שנחרבו, ננטשו או פונו (גוש קטיף, ימית, היישובים שנפלו ב-1948) לא מופיעים עדיין.</li>
+  <li>נוספו 7 יישובים שאוחדו עם יישוב שכן אחרי 2004 ולכן אינם בקובץ של היום, למשל רמת אפעל ושערי תקווה. הנתונים שלהם מקובץ 2004.</li>
+  <li>20 היישובים שפונו ב-2005 (16 ברצועת עזה ו-4 בצפון השומרון) נוספו מקובץ היישובים של 2004. הם נעלמים מהספירה ב-2005.</li>
+  <li>עדיין חסרים: יישובי סיני שפונו ב-1982, היישובים שנפלו ב-1948, וכמה יישובים קטנים ברצועת עזה שאין להם שנת ייסוד בלמ"ס.</li>
   <li>שנת הייסוד היא זו שרשומה בלמ"ס. לוד, רמלה, עכו ובאר שבע רשומות כ-1948. כפר עציון רשום כ-1967, שנת ההקמה מחדש.</li>
   <li>ירושלים, חיפה, טבריה וצפת רשומות כ"ותיק" בלי שנה, ולכן מוצגות מההתחלה.</li>
  </ul>
@@ -167,7 +171,7 @@ function base(svg){svg.setAttribute('viewBox',`0 0 ${MAP.w} ${MAP.h}`);
  el('path',{d:MAP.pal,fill:'var(--wb)',stroke:'var(--edge)','stroke-width':.9,'stroke-dasharray':'3 3'},svg)}
 function tag(g,x,y,name,side){const t=el('text',{x:side=='l'?x-6:x+6,y:y+3.5,'font-size':10,'font-weight':700,'text-anchor':side=='l'?'start':'end',direction:'rtl',fill:'var(--lab)','font-family':'Heebo,Arial',stroke:'var(--land)','stroke-width':2.6,'paint-order':'stroke','stroke-linejoin':'round'},g);t.textContent=name;return t}
 
-const pts=DATA.pts.map((p,i)=>{const[x,y]=px(p[3],p[2]);return{i,n:p[0],yr:p[1],lat:p[2],t:p[4],e:eraOf(p[1]),x,y}});
+const pts=DATA.pts.map((p,i)=>{const[x,y]=px(p[3],p[2]);return{i,n:p[0],yr:p[1],lat:p[2],t:p[4],e:eraOf(p[1]),end:p[6]||0,x,y}});
 const perYear={};pts.forEach(p=>perYear[p.yr]=(perYear[p.yr]||0)+1);
 let year=Y0,timer=null,iso=-1,typeF='all',sel=null;
 const col=e=>PAL[e];
@@ -198,7 +202,7 @@ const tchips={};TYPES.forEach(([k,l])=>{const b=document.createElement('button')
 $('names').innerHTML=pts.map(p=>`<option value="${p.n.replace(/"/g,'&quot;')}">`).join('');
 function find(){const v=$('q').value.trim();const p=pts.find(p=>p.n==v)||(v.length>1&&pts.find(p=>p.n.startsWith(v)));if(!p)return;stop();iso=-1;typeF='all';sel=p;year=p.yr;render();
  const same=perYear[p.yr]-1,before=pts.filter(q=>q.yr<p.yr).length;
- $('card').style.display='block';$('card').innerHTML=`<b>${p.n}</b> נוסד ב-${p.yr}, בתקופת ${ERAS[p.e][2]}. ${same?`באותה שנה נוסדו עוד ${same} יישובים.`:'זה היישוב היחיד שנוסד באותה שנה.'} לפניו כבר היו על המפה ${before} יישובים.`}
+ $('card').style.display='block';$('card').innerHTML=`<b>${p.n}</b> נוסד ב-${p.yr}, בתקופת ${ERAS[p.e][2]}. ${same?`באותה שנה נוסדו עוד ${same} יישובים.`:'זה היישוב היחיד שנוסד באותה שנה.'} לפניו כבר היו על המפה ${before} יישובים.${p.end?` היישוב פונה ב-${p.end}.`:''}`}
 $('q').addEventListener('change',find);$('q').addEventListener('input',()=>{if(pts.some(p=>p.n==$('q').value.trim()))find()});
 // designs
 const thChips=THEMES.map(([k,l,pal],i)=>{const b=document.createElement('button');b.className='chip';b.innerHTML=pal.map(c=>`<i class="sw" style="background:${c};width:8px;height:8px;margin-inline-end:-4px"></i>`).join('')+'<span style="margin-inline-start:6px">'+l+'</span>';b.onclick=()=>setTheme(i);return b});
@@ -213,6 +217,8 @@ function render(){
   const show=vis&&(typeF=='all'||p.t==typeF);
   if(p.tag)p.tag.style.display=vis?'':'none';
   if(!show){if(p.on){p.c.setAttribute('r',0);p.on=0}return}
+  const gone=p.end&&year>=p.end;
+  if(gone){p.on=1;p.c.setAttribute('r',2.1);p.c.setAttribute('fill','none');p.c.setAttribute('stroke','var(--mut)');p.c.setAttribute('stroke-width',.9);p.c.setAttribute('stroke-opacity',iso>=0&&p.e!=iso?.35:1);cnt.all--;cnt[p.t]--;return}
   const faded=iso>=0&&p.e!=iso,isNew=p.yr==year&&!faded;
   if(!faded)tot++;
   p.on=1;p.c.setAttribute('r',isNew?4.4:faded?1.5:2.3);p.c.setAttribute('fill',faded?'var(--fade)':col(p.e));p.c.setAttribute('fill-opacity',faded?.45:.92);
@@ -238,7 +244,7 @@ tlBox.addEventListener('pointermove',ev=>{if(drag)scrub(ev)});tlBox.addEventList
 const tip=$('tip'),box=$('mapbox');
 function near(ev){const r=svg.getBoundingClientRect(),s=MAP.w/r.width,mx=(ev.clientX-r.left)*s,my=(ev.clientY-r.top)*s;let b=null,bd=64;pts.forEach(p=>{if(!p.on)return;const d=(p.x-mx)**2+(p.y-my)**2;if(d<bd){bd=d;b=p}});
  if(!b){tip.style.display='none';return}
- tip.textContent=b.n+' · '+b.yr+' · '+TN[b.t];tip.style.display='block';tip.style.left=Math.max(80,Math.min(r.width-80,b.x/s))+'px';tip.style.top=(b.y/s)+'px'}
+ tip.textContent=b.n+' · '+b.yr+' · '+TN[b.t]+(b.end?' · פונה ב-'+b.end:'');tip.style.display='block';tip.style.left=Math.max(80,Math.min(r.width-80,b.x/s))+'px';tip.style.top=(b.y/s)+'px'}
 box.addEventListener('pointermove',near);box.addEventListener('pointerdown',near);box.addEventListener('pointerleave',()=>tip.style.display='none');
 
 // eight small maps, one per period
@@ -246,7 +252,7 @@ ERAS.forEach((e,i)=>{const b=document.createElement('button');b.className='mini'
  const n=pts.filter(p=>p.e==i).length,cum=pts.filter(p=>p.yr<=e[1]).length;
  b.innerHTML=`<h4><i class="sw" style="background:${PAL[i]}"></i>${e[2]}</h4><p><span style="direction:ltr;display:inline-block">${yrs(e)}</span> · <b>+${n}</b> יישובים · סה"כ ${cum.toLocaleString('en')}</p><div class="mapbox"><svg></svg></div>`;
  const s=b.querySelector('svg');base(s);const g1=el('g',{},s),g2=el('g',{},s);
- pts.forEach(p=>{if(p.e<i)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:1.7,fill:'var(--fade)','fill-opacity':.75},g1);else if(p.e==i)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:3,fill:PAL[i],'fill-opacity':.92},g2)});
+ pts.forEach(p=>{if(p.e<i)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:1.7,fill:'var(--fade)','fill-opacity':.75},g1);else if(p.e==i)el('circle',p.end&&p.end<=e[1]?{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:2.6,fill:'none',stroke:PAL[i],'stroke-width':1.1}:{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:3,fill:PAL[i],'fill-opacity':.92},g2)});
  b.onclick=()=>{stop();iso=i;year=e[1];sel=null;render();$('v1').scrollIntoView({behavior:'smooth'})};
  $('minis').appendChild(b)});
 if(window.innerWidth<=760)$('v1').appendChild($('side'));
