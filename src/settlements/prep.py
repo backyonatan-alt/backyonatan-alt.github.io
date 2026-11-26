@@ -18,7 +18,7 @@ for r in rows:
     s = str(int(coord)); lon, lat = itm.transform(int(s[:6]), int(s[6:]))   # 6 digits east + 6 digits north, metres
     t = TYPE.get(form, 'u' if 100 <= form < 200 else 'o')          # u = town/city/moshava, o = other rural
     reg = 'w' if r['שם נפה'] in WB else 'g' if r['שם נפה'] == 'גולן' else 'i'
-    rec = [r['שם יישוב'].strip().replace(' -', '-'), None, round(lat, 4), round(lon, 4), t, reg]
+    rec = [r['שם יישוב'].strip().replace(' -', '-'), None, round(lat, 4), round(lon, 4), t, reg, int(r['סמל מחוז'])]
     f = r['שנת ייסוד']
     if isinstance(f, (int, float)):
         rec[1] = int(f); out.append(rec)
@@ -28,7 +28,8 @@ for r in rows:
         skipped.append(rec[0])
 # Localities evacuated in 2005 (Gaza Strip and northern Samaria). They are gone from the 2023 file,
 # so name, founding year and position come from the CBS file for 2004 (data/bycode2004.xls).
-# Record gets a 7th value: the year it ended. Coordinates there are 4+4 digits, units of 100 m.
+# Record: name, year, lat, lon, type, region, CBS district code (1 Jerusalem, 2 North, 3 Haifa, 4 Center, 5 Tel Aviv,
+# 6 South, 7 Judea and Samaria, 8 Gaza), and for evacuated ones an 8th value: the year it ended. Coordinates there are 4+4 digits, units of 100 m.
 EVAC_2005 = {5432, 5425, 5436, 5433, 5428, 5435, 5408, 5429, 5431, 5424, 5407, 5427, 5410, 5423, 5426, 5405,  # Gaza
              3758, 3729, 3711, 3642}                                                                          # Samaria
 # Localities merged into a neighbour after 2004 (Kfar Azar, Neve Efal, Ramat Pinkas, Ramat Efal, Ma'ale Shomron,
@@ -46,10 +47,10 @@ for i in range(1, sh.nrows):
     form = int(r['צורת יישוב שוטפת'])
     reg = 'z' if int(r['נפה']) >= 80 else 'w' if int(r['נפה']) >= 70 else 'i'   # z = Gaza Strip
     out.append([r['שם יישוב מלא'].strip(), int(r['שנת ייסוד']), round(lat, 4), round(lon, 4),
-                OLDTYPE.get(form, 'u' if form < 30 else 'o'), reg] + ([2005] if code in EVAC_2005 else []))
+                OLDTYPE.get(form, 'u' if form < 30 else 'o'), reg, int(r['נפה']) // 10] + ([2005] if code in EVAC_2005 else []))
     EVAC_2005.discard(code); MERGED.discard(code)
 assert not EVAC_2005 and not MERGED, (EVAC_2005, MERGED)
 out.sort(key=lambda x: (x[1], x[0]))
 json.dump({'pts': out, 'old': old}, open(D + '/data.json', 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-print(len(out), 'dated (', sum(1 for x in out if len(x) > 6), 'of them ended ),', len(old), 'old cities, skipped (no year):', skipped)
+print(len(out), 'dated (', sum(1 for x in out if len(x) > 7), 'of them ended ),', len(old), 'old cities, skipped (no year):', skipped)
 print(sorted(collections.Counter(x[4] for x in out).items()), sorted(collections.Counter(x[5] for x in out).items()))

@@ -23,6 +23,14 @@ button,input{font-family:inherit}button{cursor:pointer}
 .tab.on{background:var(--ink);color:#fff}
 .tab small{display:block;font-weight:400;font-size:12px}
 .view{display:none}.view.on{display:block}
+.back{display:block;width:fit-content;font-size:14px;color:var(--mut);text-decoration:none;margin-bottom:12px}
+.prose{max-width:660px;font-size:17px;line-height:1.65}
+.prose p{margin:0 0 12px}
+.prose .hook{font-family:var(--hf);font-weight:var(--hw);font-size:clamp(20px,2.6vw,25px);line-height:1.35}
+.prose.brief{margin-bottom:34px}
+.prose.after{margin-top:22px}
+.prose .small{font-size:14px;color:var(--mut)}
+.vtitle.first{border-top:2px solid var(--ink);padding-top:18px}
 .sect{margin-top:44px;border-top:2px solid var(--ink);padding-top:18px}
 .vtitle{font-family:var(--hf);font-weight:var(--hw);font-size:clamp(21px,3vw,28px);line-height:1.2;margin:0 0 4px}
 .vsub{font-size:15px;color:var(--ink);opacity:.8;margin:0 0 14px;max-width:640px;line-height:1.5}
@@ -51,12 +59,14 @@ button,input{font-family:inherit}button{cursor:pointer}
 .find{display:flex;gap:6px;align-items:center}
 .find input{flex:1;min-width:0;border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:15px;background:var(--card);color:var(--ink)}
 .card{font-size:14.5px;line-height:1.5;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:9px 11px;margin-top:8px;display:none}
-.keyline{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mut);margin-top:8px}
+.keyline span{display:inline-flex;align-items:center;gap:6px}
+.keyline{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--mut);margin-top:8px}
 .ctrl{display:flex;align-items:center;gap:12px;margin:16px 0 4px}
 #play{flex:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);color:var(--paper);font-size:17px;line-height:1}
 .tl{flex:1;min-width:0;position:relative;direction:ltr;touch-action:none;cursor:pointer;padding-top:14px}
 .tl svg{display:block;width:100%;height:84px}
 
+.waves{display:grid;grid-template-columns:repeat(2,minmax(0,250px));gap:18px}
 .minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .mini{border:0;background:none;padding:0;text-align:right;color:var(--ink)}
 .mini h4{margin:0 0 1px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:6px}
@@ -64,7 +74,7 @@ button,input{font-family:inherit}button{cursor:pointer}
 .mini p b{color:var(--ink);font-size:14px}
 .mini .mapbox{transition:box-shadow .15s}.mini:hover .mapbox{box-shadow:0 0 0 2px var(--ink)}
 
-.latbox{position:relative;background:#fffdf8;border:1px solid var(--line);border-radius:6px;overflow:hidden;touch-action:pan-y}
+.latbox{position:relative;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;touch-action:pan-y}
 .latbox svg{display:block;width:100%;height:auto;direction:ltr}
 
 .notes{margin-top:26px;border-top:1px solid var(--line);padding-top:14px;font-size:14px;line-height:1.6;color:var(--mut);max-width:720px}
@@ -86,10 +96,22 @@ button,input{font-family:inherit}button{cursor:pointer}
 </head>
 <body>
 <div class="wrap">
+<a class="back" href="/">→ All stories</a>
 <div class="draft">טיוטה, לא לפרסום</div>
-<h1>כך התמלאה המפה</h1>
-<p class="sub">כל יישוב יהודי שקיים היום, לפי שנת הייסוד שלו, משנת 1870 ועד היום.</p>
-
+<div class="lbl" style="margin-top:6px">כותרת, לבחירה</div>
+<div class="row" id="heads" style="margin-bottom:14px"></div>
+<h1 id="h1">1,115 יישובים, 153 שנים</h1>
+<p class="sub" style="margin-bottom:18px">איפה ומתי קמו היישובים היהודיים בארץ, מ-1870 ועד היום. מפה שאפשר לנגן.</p>
+<div class="prose brief">
+ <p class="hook">הראשון קם ב-1870: בית הספר החקלאי מקווה ישראל, ליד יפו. ב-1949 כבר נוסדו 123 יישובים בשנה אחת, יישוב חדש כל שלושה ימים.</p>
+ <p>ההתחלה הייתה איטית. פתח תקווה קמה ב-1878, ראשון לציון, זכרון יעקב וראש פינה ב-1882. עד קום המדינה, 78 שנים אחרי מקווה ישראל, קמו 284 יישובים שקיימים עד היום. בארבע השנים שאחרי, 1948 עד 1951, קמו 308.</p>
+ <p>כל גל התיישב במקום אחר ובצורה אחרת. המושבות הראשונות קמו במישור החוף ובגליל. הקיבוצים של שנות השלושים נדחפו אל הקצוות. מושבי העולים נפרסו לאורך הגבולות החדשים. אחרי 1967 המפה חצתה את הקו הירוק.</p>
+ <p>בעמוד: מפה של כל היישובים לפי שנת הייסוד, שמונה מפות של שמונה תקופות, ותרשים שמראה איך ההתיישבות ירדה דרומה. הנתונים הם של הלשכה המרכזית לסטטיסטיקה.</p>
+</div>
+<h2 class="vtitle first">כמעט חצי מהיישובים קמו בשני גלים קצרים</h2>
+<p class="vsub">הגל הראשון הוא העלייה ההמונית שאחרי קום המדינה. השני הוא גל ההתנחלויות והמצפים. יחד: 532 מתוך 1,115 יישובים, ב-17 שנים.</p>
+<div class="waves" id="waves"></div>
+<p class="vsub" style="margin-top:26px">וזו המפה כולה, שנה אחרי שנה. לחצו על הפעל, או גררו את ציר הזמן.</p>
 <div id="v1">
 <div class="stage">
  <div class="mapbox main" id="mapbox"><svg id="map"></svg><div class="tip" id="tip"></div></div>
@@ -121,6 +143,25 @@ button,input{font-family:inherit}button{cursor:pointer}
  <h2 class="vtitle">כל גל התיישב במקום אחר</h2>
  <p class="vsub">בצבע: היישובים שנוסדו בתקופה. באפור: מה שכבר היה על המפה. עיגול ריק: יישוב שפונה ב-2005. לחיצה על מפה מציגה את התקופה במפה הגדולה.</p>
  <div class="minis" id="minis"></div>
+ <div class="prose after">
+  <p><b>חומה ומגדל וערב המדינה.</b> 138 יישובים בשתים עשרה שנים, 87 מהם קיבוצים. הם קמו בעמק בית שאן, בגליל המערבי, באצבע הגליל ובצפון הנגב, במקומות שעד אז כמעט לא היה בהם יישוב יהודי.</p>
+  <p><b>העלייה ההמונית.</b> 183 מתוך 308 היישובים הם מושבים. רבים מהם נפרסו לאורך הגבולות החדשים ובפרוזדור ירושלים.</p>
+  <p><b>אחרי ששת הימים.</b> 49 מתוך 78 היישובים של העשור הראשון קמו מעבר לקו הירוק: 21 ברמת הגולן, 24 ביהודה, בשומרון ובבקעת הירדן, ו-4 ברצועת עזה.</p>
+  <p><b>מ-1977.</b> 107 יישובים קהילתיים, צורת יישוב שכמעט לא הייתה קודם. הקיבוץ האחרון ברשימה קם ב-1987.</p>
+  <p class="small">סוג היישוב הוא הסוג שרשום היום. קיבוץ שהפך ליישוב קהילתי נספר כיישוב קהילתי.</p>
+ </div>
+</div>
+
+<div class="sect">
+ <h2 class="vtitle">עד 1939 ההתיישבות כמעט לא ירדה דרומה מגדרה. אז נפתח הנגב</h2>
+ <p class="vsub">כל נקודה היא יישוב. משמאל לימין: שנת הייסוד. מלמעלה למטה: מצפון לדרום. מעבר על נקודה מראה את היישוב.</p>
+ <div class="latbox" id="latbox"><svg id="lat"></svg><div class="tip" id="tip3"></div></div>
+ <div id="latleg"><div class="lbl">תקופות. לחיצה מבודדת תקופה אחת</div>
+ <div class="row legend"></div></div>
+ <div class="prose after">
+  <p>גדרה קמה ב-1884. במשך 55 שנים כמעט שום יישוב לא קם דרומית ממנה. ב-1939 קמה נגבה, ב-1943 רביבים, וב-1946 הנקודות בנגב. אילת נוסדה ב-1951.</p>
+  <p>בצפון התמונה הפוכה. מטולה קמה כבר ב-1896, והקצה הצפוני של המפה כמעט לא זז מאז.</p>
+ </div>
 </div>
 
 <div class="notes">
@@ -143,7 +184,7 @@ const ERAS=[
  [1919,1935,'העמקים והשרון','עמק יזרעאל, עמק חפר והשרון מתמלאים בקיבוצים ובמושבים. המושב הראשון, נהלל, קם ב-1921.'],
  [1936,1939,'חומה ומגדל','בתוך ארבע שנים קמים עשרות יישובים, כל אחד מהם בתוך יום אחד. הנקודות נדחפות אל הקצוות: עמק בית שאן, הגליל המערבי, אצבע הגליל.'],
  [1940,1947,'ערב המדינה','ההתיישבות יורדת דרומה. ב-1946 קמות בלילה אחד 11 נקודות בנגב.'],
- [1948,1951,'העלייה ההמונית','הגל הגדול ביותר. יותר מ-300 יישובים בארבע שנים, רובם מושבי עולים לאורך הגבולות החדשים ובפרוזדור ירושלים.'],
+ [1948,1951,'העלייה ההמונית','הגל הגדול ביותר. 308 יישובים בארבע שנים, רובם מושבים, רבים מהם לאורך הגבולות החדשים ובפרוזדור ירושלים.'],
  [1952,1966,'עיירות הפיתוח וחבל לכיש','עיירות הפיתוח קמות בנגב ובגליל. חבל לכיש מתוכנן כאזור שלם.'],
  [1967,1976,'אחרי ששת הימים','יישובים ראשונים ברמת הגולן, בבקעת הירדן ובגוש עציון.'],
  [1977,2023,'ההתנחלויות והמצפים','הגל השני בגודלו, רובו עד סוף שנות השמונים: יישובים קהילתיים ביהודה ושומרון ומצפים בגליל. אחרי 1990 קמים מעט יישובים חדשים.']
@@ -171,7 +212,8 @@ function base(svg){svg.setAttribute('viewBox',`0 0 ${MAP.w} ${MAP.h}`);
  el('path',{d:MAP.pal,fill:'var(--wb)',stroke:'var(--edge)','stroke-width':.9,'stroke-dasharray':'3 3'},svg)}
 function tag(g,x,y,name,side){const t=el('text',{x:side=='l'?x-6:x+6,y:y+3.5,'font-size':10,'font-weight':700,'text-anchor':side=='l'?'start':'end',direction:'rtl',fill:'var(--lab)','font-family':'Heebo,Arial',stroke:'var(--land)','stroke-width':2.6,'paint-order':'stroke','stroke-linejoin':'round'},g);t.textContent=name;return t}
 
-const pts=DATA.pts.map((p,i)=>{const[x,y]=px(p[3],p[2]);return{i,n:p[0],yr:p[1],lat:p[2],t:p[4],e:eraOf(p[1]),end:p[6]||0,x,y}});
+const pts=DATA.pts.map((p,i)=>{const[x,y]=px(p[3],p[2]);return{i,n:p[0],yr:p[1],lat:p[2],t:p[4],reg:p[5],e:eraOf(p[1]),d:p[6],end:p[7]||0,x,y}});
+const nameN={};pts.forEach(p=>nameN[p.n]=(nameN[p.n]||0)+1);pts.forEach(p=>p.lab=nameN[p.n]>1?p.n+' ('+p.yr+')':p.n);
 const perYear={};pts.forEach(p=>perYear[p.yr]=(perYear[p.yr]||0)+1);
 let year=Y0,timer=null,iso=-1,typeF='all',sel=null;
 const col=e=>PAL[e];
@@ -195,22 +237,22 @@ const peak=document.createElement('div');peak.textContent='1949: '+perYear[1949]
 
 // legends (shared by options 1 and 3)
 const legChips=[];
-document.querySelectorAll('.legend').forEach(box=>ERAS.forEach((e,i)=>{const b=document.createElement('button');b.className='chip';b.innerHTML=`<i class="sw"></i>${e[2]} <small>${yrs(e)}</small>`;b.onclick=()=>{stop();iso=iso==i?-1:i;if(iso>=0)year=e[1];sel=null;render()};box.appendChild(b);legChips.push([b,i])}));
+document.querySelectorAll('.legend').forEach(box=>ERAS.forEach((e,i)=>{const b=document.createElement('button');b.className='chip';b.innerHTML=`<i class="sw"></i>${e[2]} <small>${yrs(e)}</small>`;b.onclick=()=>{stop();iso=iso==i?-1:i;if(iso>=0)year=e[1];sel=null;render();drawLat()};box.appendChild(b);legChips.push([b,i])}));
 // type filter
 const tchips={};TYPES.forEach(([k,l])=>{const b=document.createElement('button');b.className='chip';b.onclick=()=>{typeF=k;sel=null;render()};$('types').appendChild(b);tchips[k]=[b,l]});
 // search
-$('names').innerHTML=pts.map(p=>`<option value="${p.n.replace(/"/g,'&quot;')}">`).join('');
-function find(){const v=$('q').value.trim();const p=pts.find(p=>p.n==v)||(v.length>1&&pts.find(p=>p.n.startsWith(v)));if(!p)return;stop();iso=-1;typeF='all';sel=p;year=p.yr;render();
+$('names').innerHTML=pts.map(p=>`<option value="${p.lab.replace(/"/g,'&quot;')}">`).join('');
+function find(){const v=$('q').value.trim();const p=pts.find(p=>p.lab==v)||(v.length>1&&pts.find(p=>p.lab.startsWith(v)));if(!p)return;stop();iso=-1;typeF='all';sel=p;year=p.yr;render();
  const same=perYear[p.yr]-1,before=pts.filter(q=>q.yr<p.yr).length;
  $('card').style.display='block';$('card').innerHTML=`<b>${p.n}</b> נוסד ב-${p.yr}, בתקופת ${ERAS[p.e][2]}. ${same?`באותה שנה נוסדו עוד ${same} יישובים.`:'זה היישוב היחיד שנוסד באותה שנה.'} לפניו כבר היו על המפה ${before} יישובים.${p.end?` היישוב פונה ב-${p.end}.`:''}`}
-$('q').addEventListener('change',find);$('q').addEventListener('input',()=>{if(pts.some(p=>p.n==$('q').value.trim()))find()});
+$('q').addEventListener('change',find);$('q').addEventListener('input',()=>{if(pts.some(p=>p.lab==$('q').value.trim()))find()});
 // designs
 const thChips=THEMES.map(([k,l,pal],i)=>{const b=document.createElement('button');b.className='chip';b.innerHTML=pal.map(c=>`<i class="sw" style="background:${c};width:8px;height:8px;margin-inline-end:-4px"></i>`).join('')+'<span style="margin-inline-start:6px">'+l+'</span>';b.onclick=()=>setTheme(i);return b});
 function setTheme(i){document.body.dataset.t=THEMES[i][0];PAL=THEMES[i][2];thChips.forEach((b,j)=>b.classList.toggle('on',i==j));render()}
 function render(){
  const ei=eraOf(year),e=ERAS[ei];
  $('year').textContent=year;$('era').innerHTML=`<i class="sw" style="background:${col(ei)}"></i>${e[2]}`;$('eratxt').textContent=e[3];
- legChips.forEach(([b,i])=>{b.firstChild.style.background=col(i);b.classList.toggle('on',iso==i);b.classList.toggle('dim',iso>=0&&iso!=i)});
+ legChips.forEach(([b,i])=>{b.firstChild.style.background=b.closest('#latleg')?latCol(i):col(i);b.classList.toggle('on',iso==i);b.classList.toggle('dim',iso>=0&&iso!=i)});
  const cnt={all:0,m:0,k:0,u:0,c:0,o:0};let tot=0;const now=[];
  pts.forEach(p=>{
   const vis=p.yr<=year;if(vis){cnt.all++;cnt[p.t]++}
@@ -255,8 +297,59 @@ ERAS.forEach((e,i)=>{const b=document.createElement('button');b.className='mini'
  pts.forEach(p=>{if(p.e<i)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:1.7,fill:'var(--fade)','fill-opacity':.75},g1);else if(p.e==i)el('circle',p.end&&p.end<=e[1]?{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:2.6,fill:'none',stroke:PAL[i],'stroke-width':1.1}:{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:3,fill:PAL[i],'fill-opacity':.92},g2)});
  b.onclick=()=>{stop();iso=i;year=e[1];sel=null;render();$('v1').scrollIntoView({behavior:'smooth'})};
  $('minis').appendChild(b)});
+// north-south chart: founding year by latitude, dots in period colours, map alongside on wide screens
+const lat=$('lat'),tip3=$('tip3');let L=null;
+// This chart has its own colours: one earth ramp, oldest period darkest (Yonatan's pick). Passes the dataviz ordinal check.
+const EARTH=['#48190d','#6a2a14','#8a3718','#a8461d','#c35923','#d8702c','#e48b40','#e9a763'];
+const latCol=i=>EARTH[i];
+function drawLat(){
+ const wide=window.innerWidth>760,W=wide?1000:360,top=wide?26:22,ph=wide?600:520,H=top+ph+30;
+ const LAT0=33.42,LAT1=29.42,s2=ph/(LAT0-LAT1),yy=la=>top+(LAT0-la)*s2;
+ const mw=0,x0=wide?86:14,x1=W-(wide?16:10);
+ const xx=y=>x0+(y-Y0)/(Y1-Y0)*(x1-x0);
+ lat.innerHTML='';lat.setAttribute('viewBox',`0 0 ${W} ${H}`);
+ const g=el('g',{style:'--edge:#c3c9d1'},lat);
+ // era colour strip + year ticks
+ ERAS.forEach((e,i)=>el('rect',{x:xx(e[0]-.5),y:top-14,width:xx(e[1]+.5)-xx(e[0]-.5)-1,height:5,fill:latCol(i),'fill-opacity':iso>=0&&iso!=i?.25:1},g));
+ for(let y=1880;y<=2020;y+=wide?20:40){el('line',{x1:xx(y),x2:xx(y),y1:top,y2:top+ph,stroke:'#eef0f3'},g);const t=el('text',{x:xx(y),y:top+ph+18,'font-size':wide?12:11,'text-anchor':'middle',fill:'#6b7280','font-family':'Heebo,Arial'},g);t.textContent=y}
+ // city guide lines
+ [['מטולה',33.278],['חיפה',32.803],['תל אביב',32.076],['ירושלים',31.783],['באר שבע',31.253],['אילת',29.553]].forEach(([n,la])=>{el('line',{x1:x0,x2:x1,y1:yy(la),y2:yy(la),stroke:'#9ca3af','stroke-width':.8,'stroke-dasharray':'2 4'},g);
+  const t=el('text',{x:x0-6+(wide?0:6),y:yy(la)-4,'font-size':wide?12:11,'font-weight':700,'text-anchor':wide?'start':'end',direction:'rtl',fill:'#111827','font-family':'Heebo,Arial',stroke:'#ffffff','stroke-width':3,'paint-order':'stroke'},g);t.textContent=n});
+ // dots
+ const gd=el('g',{},g);
+ pts.forEach(p=>{p.lx=xx(p.yr+((p.i*7919)%100/100-.5)*.8);p.ly=yy(p.lat);const f=iso>=0&&p.e!=iso;
+  p.lc=el('circle',{cx:p.lx.toFixed(1),cy:p.ly.toFixed(1),r:wide?3:2.3,fill:f?'#c9ced6':latCol(p.e),'fill-opacity':f?.3:.85},gd)});
+ const hl=el('circle',{r:7,fill:'none',stroke:'#111827','stroke-width':1.8,display:'none'},g),hm=el('circle',{r:5,fill:'none',stroke:'#111827','stroke-width':1.8,display:'none'},g);
+ // annotations on the data
+ const ann=(yr,la,txt,dx,dy,anchor)=>{const x=xx(yr),y=yy(la);el('line',{x1:x,y1:y,x2:x+dx*.82,y2:y+dy*.82,stroke:'#111827','stroke-width':.9},g);
+  const t=el('text',{x:x+dx,y:y+dy+4,'font-size':wide?13:11.5,'font-weight':700,'text-anchor':anchor,direction:'rtl',fill:'#111827','font-family':'Heebo,Arial',stroke:'#ffffff','stroke-width':3.5,'paint-order':'stroke'},g);t.textContent=txt};
+ if(wide){ann(1896,33.278,'מטולה, 1896. הקצה הצפוני נקבע מוקדם',22,30,'end');
+  ann(1943,31.044,'רביבים, 1943. הנקודה הדרומית ביותר עד 1949',-40,40,'start');
+  ann(1949,31.15,'1949: '+perYear[1949]+' יישובים בשנה אחת',75,48,'end');
+  ann(1951,29.553,'אילת, 1951',50,-22,'end')}
+ else{ann(1949,30.55,'1949: '+perYear[1949]+' יישובים',40,26,'end');ann(1951,29.553,'אילת, 1951',40,-20,'end')}
+ L={W,mw,k:wide?s2/P.S:0,top,LAT0,s2,hl,hm};
+}
+function near3(ev){if(!L)return;const r=lat.getBoundingClientRect(),s=L.W/r.width,mx=(ev.clientX-r.left)*s,my=(ev.clientY-r.top)*s;let b=null,bd=200;
+ const onMap=mx<L.mw;
+ pts.forEach(p=>{if(iso>=0&&p.e!=iso)return;const X=onMap?p.x*L.k:p.lx,Y=onMap?L.top-(P.lat0-L.LAT0)*L.s2+p.y*L.k:p.ly,d=(X-mx)**2+(Y-my)**2;if(d<bd){bd=d;b=p}});
+ if(!b){tip3.style.display='none';L.hl.setAttribute('display','none');L.hm.setAttribute('display','none');return}
+ L.hl.setAttribute('cx',b.lx);L.hl.setAttribute('cy',b.ly);L.hl.setAttribute('display','');
+ if(L.mw){L.hm.setAttribute('cx',b.x*L.k);L.hm.setAttribute('cy',b.ly);L.hm.setAttribute('display','')}
+ tip3.textContent=b.n+' · '+b.yr+' · '+TN[b.t];tip3.style.display='block';tip3.style.left=Math.max(90,Math.min(r.width-90,b.lx/s))+'px';tip3.style.top=(b.ly/s)+'px'}
+$('latbox').addEventListener('pointermove',near3);$('latbox').addEventListener('pointerdown',near3);$('latbox').addEventListener('pointerleave',()=>{tip3.style.display='none';if(L){L.hl.setAttribute('display','none');L.hm.setAttribute('display','none')}});
+let rw=window.innerWidth>760;window.addEventListener('resize',()=>{const w=window.innerWidth>760;if(w!=rw){rw=w;drawLat()}});
+
+// the two big waves, as two small maps above the live map
+[[1948,1951,4,'העלייה ההמונית'],[1977,1989,7,'ההתנחלויות והמצפים']].forEach(([a,b2,ei,name])=>{const b=document.createElement('button');b.className='mini';
+ const n=pts.filter(p=>p.yr>=a&&p.yr<=b2).length;
+ b.innerHTML=`<h4><i class="sw" style="background:${PAL[ei]}"></i>${name}</h4><p><span style="direction:ltr;display:inline-block">${a}-${b2}</span> · <b>${n}</b> יישובים</p><div class="mapbox"><svg></svg></div>`;
+ const sv=b.querySelector('svg');base(sv);const g1=el('g',{},sv),g2=el('g',{},sv);
+ pts.forEach(p=>{if(p.yr<a)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:1.7,fill:'var(--fade)','fill-opacity':.75},g1);else if(p.yr<=b2)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:3,fill:PAL[ei],'fill-opacity':.92},g2)});
+ b.onclick=()=>{stop();iso=ei;year=b2;sel=null;render();$('v1').scrollIntoView({behavior:'smooth'})};$('waves').appendChild(b)});
+['1,115 יישובים, 153 שנים','מתי קם היישוב שלכם?','יישוב אחרי יישוב','איפה התיישבנו, ומתי','המפה, שנה אחרי שנה'].forEach((t,i,a)=>{const b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=t;b.onclick=()=>{$('h1').textContent=t;[...$('heads').children].forEach(c=>c.classList.toggle('on',c==b))};$('heads').appendChild(b)});
 if(window.innerWidth<=760)$('v1').appendChild($('side'));
-setTheme(0);
+setTheme(0);drawLat();
 </script>
 </body>
 </html>
