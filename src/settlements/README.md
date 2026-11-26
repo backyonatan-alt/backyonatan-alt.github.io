@@ -4,8 +4,8 @@ Hebrew article: when and where Jewish localities were founded, 1870 to today. Wo
 Not a page on the site yet. No row on the home page.
 
 ## Files
-- `data/cbs_localities_2023.csv`: CBS localities file 2023 (data.gov.il), taken from the GitHub mirror khodossss/israeli-localities. To be replaced by the official download.
-- `prep.py` makes `data.json`: 1,088 Jewish and mixed localities with a founding year, plus 4 old cities with no year (Jerusalem, Haifa, Tiberias, Tzfat).
+- `data/bycode2023.xlsx`: the official CBS localities file for 2023 (קובץ היישובים), downloaded by Yonatan. Checked against the earlier GitHub mirror: founding year, type, religion code and names match on all 1,484 rows.
+- `prep.py` (needs openpyxl, pyproj) makes `data.json`: 1,088 Jewish and mixed localities with a founding year, plus 4 old cities with no year (Jerusalem, Haifa, Tiberias, Tzfat).
 - `gen_map.js` makes `map.json` (needs `npm i world-atlas topojson-client`).
 - `page.html` is the source. `python3 build.py` writes `draft.html` (self-contained, git-ignored).
 - `options-v2.html`: earlier draft with three views (live map, eight maps, year by latitude chart) and other themes. Kept for the north-south chart.
