@@ -1,6 +1,6 @@
 # python3 prep.py -> data.json   (needs: pip install openpyxl xlrd pyproj)
 # Source: data/bycode2023.xlsx, the CBS localities file for 2023 (קובץ היישובים, bycode2023.xlsx), downloaded by Yonatan.
-import json, os, collections
+import json, os, collections, csv
 import openpyxl, xlrd
 from pyproj import Transformer
 D = os.path.dirname(os.path.abspath(__file__))
@@ -50,6 +50,13 @@ for i in range(1, sh.nrows):
                 OLDTYPE.get(form, 'u' if form < 30 else 'o'), reg, int(r['נפה']) // 10] + ([2005] if code in EVAC_2005 else []))
     EVAC_2005.discard(code); MERGED.discard(code)
 assert not EVAC_2005 and not MERGED, (EVAC_2005, MERGED)
+# Sinai localities evacuated in 1982. CBS files do not cover them, so they come from the hand-made research table
+# (data/gone_research.csv, a source per row). Only rows marked 'ready' go in: sourced founding year and position.
+SINAI_TYPE = {'ימית': 'u', 'סופה': 'k', 'פריאל': 'm', 'חצר אדר': 'm'}
+for r in csv.DictReader(open(D + '/data/gone_research.csv', encoding='utf-8')):
+    if r['group'] == 'Sinai 1982' and r['status'].startswith('ready'):
+        out.append([r['name_he'], int(r['founded']), round(float(r['lat']), 4), round(float(r['lon']), 4),
+                    SINAI_TYPE[r['name_he']], 's', 9, int(r['ended'])])
 out.sort(key=lambda x: (x[1], x[0]))
 json.dump({'pts': out, 'old': old}, open(D + '/data.json', 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 print(len(out), 'dated (', sum(1 for x in out if len(x) > 7), 'of them ended ),', len(old), 'old cities, skipped (no year):', skipped)

@@ -44,7 +44,13 @@ Not a page on the site yet. No row on the home page.
 - `NODE_PATH=$(npm root -g) node og.js` renders `settlements/preview.png` (Hebrew) and `settlements/card.png` (English). Fonts: `npm i @fontsource/heebo @fontsource/ibm-plex-sans-hebrew` in `/home/claude/fonts`.
 - Still to do on publish: home page row, README line, CLAUDE.md table row, re-render the home share image.
 - Search box under the headline answers the headline question and jumps to the map.
-- Localities beyond the Green Line: three display options are in the draft as buttons (same as all, hollow ring, marked area). Waiting for Yonatan's pick. The Golan has no outline in the map data, so it can only be named, not shaded.
+- Localities beyond the Green Line: Yonatan picked 'marked area' (hatch over the West Bank and Gaza outline plus area names, dots unchanged). The Golan has no outline in the map data, so it is named, not shaded. Live map only.
 
 ## Missing places research
 - `data/gone_research.csv`: first pass for Sinai (1982) and 1948. Names and sources are in, most founding years and coordinates are not. Nothing from it is on the map. Rule: a row goes on the map only with a sourced founding year and position, after Yonatan sees the table.
+
+## Sinai (27 Nov 2026)
+- Four Yamit-region localities are on the map from `gone_research.csv` (rows marked ready): Yamit 1975, Sufa 1974, Pri'el 1978, Hatzer Adar 1981, all ending 1982. Yonatan chose to add these four and list the rest by name in the page notes.
+- 12 more Yamit-region localities have no sourced position and 5 southern Sinai ones are south of the map frame. They are named in the notes, not drawn.
+- Totals in the text are now 1,119 dated localities (1,095 exist today, 24 ended). If rows are added, recheck every number in the prose, `DESC` in `build.py`, and re-render the share images.
+- 1948 losses: Yonatan chose not to draw them. They are named in the page notes. `gone_research.csv` keeps the rows for later.
