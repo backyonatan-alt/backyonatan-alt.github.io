@@ -59,17 +59,21 @@ button,input{font-family:inherit}button{cursor:pointer}
 .chip small{color:var(--mut);direction:ltr}.chip.on small{color:var(--paper);opacity:.7}
 .find{display:flex;gap:6px;align-items:center}
 .find input{flex:1;min-width:0;border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:15px;background:var(--card);color:var(--ink)}
-.topfind{max-width:660px;margin:0 0 26px}
+.topfind{max-width:660px;margin:0 0 14px}
 .topfind input{font-size:17px;padding:12px 14px;border-width:2px;border-color:var(--ink)}
 .topfind .card{font-size:16px}
 .card button{margin-top:8px;border:0;background:var(--ink);color:var(--paper);border-radius:16px;padding:6px 14px;font-size:14px}
 .card{font-size:14.5px;line-height:1.5;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:9px 11px;margin-top:8px;display:none}
 .keyline span{display:inline-flex;align-items:center;gap:6px}
 .keyline{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--mut);margin-top:8px}
+.speed{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--mut);margin:20px 0 2px}
+.speed .chip{padding:3px 10px;font-weight:400}
 .ctrl{display:flex;align-items:center;gap:12px;margin:16px 0 4px}
 #play{flex:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);color:var(--paper);font-size:17px;line-height:1}
 .tl{flex:1;min-width:0;position:relative;direction:ltr;touch-action:none;cursor:pointer;padding-top:14px}
 .tl svg{display:block;width:100%;height:84px}
+.cur{position:absolute;top:14px;height:62px;width:2px;background:var(--ink);transform:translateX(-50%);pointer-events:none;border-radius:1px}
+.cur::after{content:'';position:absolute;bottom:-7px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--ink);border:2px solid var(--paper);transform:translateX(-50%)}
 
 .waves{display:grid;grid-template-columns:repeat(2,minmax(0,250px));gap:18px}
 .minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
@@ -89,9 +93,11 @@ button,input{font-family:inherit}button{cursor:pointer}
  .tab{padding:8px 10px;font-size:14px}.tab small{display:none}
  .stage{display:flex;flex-direction:column;gap:8px}
  .panel{display:contents}
- .year{font-size:54px;order:1}.era{order:2;margin:0;min-height:0}
- .eratxt{order:3;min-height:112px;font-size:14px;margin:0}
- .mapbox.main{order:4;width:100%}
+ .year{font-size:44px;order:1}
+ .ctrl{margin:0}
+ .ctrlwrap{margin:0 0 14px}.era{order:2;margin:0;min-height:0}
+ .mapbox.main{order:3;width:100%}
+ .eratxt{order:4;min-height:112px;font-size:14px;margin:0}
  .big{order:5;border:0;padding:0}.big b{font-size:24px}
  .new{display:none}.side{order:6}
  #play{width:42px;height:42px}
@@ -109,16 +115,7 @@ button,input{font-family:inherit}button{cursor:pointer}
  <div class="find"><input id="q0" list="names" placeholder="הקלידו שם של יישוב, למשל נהלל" autocomplete="off"></div>
  <div class="card" id="card0"></div>
 </div>
-<div class="prose brief">
- <p class="hook">הראשון קם ב-1870: בית הספר החקלאי מקווה ישראל, ליד יפו. ב-1949 כבר נוסדו 123 יישובים בשנה אחת, יישוב חדש כל שלושה ימים.</p>
- <p>ההתחלה הייתה איטית. פתח תקווה קמה ב-1878, ראשון לציון, זכרון יעקב וראש פינה ב-1882. עד קום המדינה, 78 שנים אחרי מקווה ישראל, קמו 284 יישובים שקיימים עד היום. בארבע השנים שאחרי, 1948 עד 1951, קמו 308.</p>
- <p>כל גל התיישב במקום אחר ובצורה אחרת. המושבות הראשונות קמו במישור החוף ובגליל. הקיבוצים של שנות השלושים נדחפו אל הקצוות. מושבי העולים נפרסו לאורך הגבולות החדשים. אחרי 1967 המפה חצתה את הקו הירוק.</p>
- <p>בעמוד: מפה של כל היישובים לפי שנת הייסוד, שמונה מפות של שמונה תקופות, ותרשים שמראה איך ההתיישבות ירדה דרומה. הנתונים הם של הלשכה המרכזית לסטטיסטיקה.</p>
-</div>
-<h2 class="vtitle first">כמעט חצי מהיישובים קמו בשני גלים קצרים</h2>
-<p class="vsub">הגל הראשון הוא העלייה ההמונית שאחרי קום המדינה. השני הוא גל ההתנחלויות והמצפים. יחד: 534 מתוך 1,119 יישובים, ב-17 שנים.</p>
-<div class="waves" id="waves"></div>
-<p class="vsub" style="margin-top:26px">וזו המפה כולה, שנה אחרי שנה. לחצו על הפעל, או גררו את ציר הזמן.</p>
+<p class="vsub" style="margin-bottom:16px">לחצו על הפעל, או גררו את ציר הזמן. כל נקודה היא יישוב, בצבע של התקופה שבה נוסד.</p>
 <div id="v1">
 <div class="stage">
  <div class="mapbox main" id="mapbox"><svg id="map"></svg><div class="tip" id="tip"></div></div>
@@ -138,14 +135,30 @@ button,input{font-family:inherit}button{cursor:pointer}
   </div>
  </div>
 </div>
+<div class="ctrlwrap">
 <div class="ctrl">
  <button id="play" aria-label="הפעל">▶</button>
  <div class="tl" id="tl"><svg id="tlsvg" preserveAspectRatio="none"></svg></div>
+</div>
+<div class="speed"><span>מהירות</span><span class="row" id="speeds"></span></div>
 </div>
 <div class="lbl">תקופות. לחיצה מבודדת תקופה אחת</div>
 <div class="row legend"></div>
 <div class="keyline"><svg width="14" height="12"><rect width="14" height="12" fill="url(#hatch)" stroke="#c3c9d1"/></svg>שטח מעבר לקו הירוק: יהודה ושומרון ורצועת עזה. רמת הגולן מסומנת בשם בלבד</div>
 <div class="keyline"><svg width="12" height="12"><circle cx="6" cy="6" r="4" fill="none" stroke="var(--mut)" stroke-width="1.4"/></svg>יישוב שפונה: צפון סיני ב-1982, רצועת עזה וצפון השומרון ב-2005. נשאר על המפה כעיגול ריק</div>
+</div>
+
+
+<div class="prose brief" style="margin-top:40px">
+ <p class="hook">הראשון קם ב-1870: בית הספר החקלאי מקווה ישראל, ליד יפו. ב-1949 כבר נוסדו 123 יישובים בשנה אחת, יישוב חדש כל שלושה ימים.</p>
+ <p>ההתחלה הייתה איטית. פתח תקווה קמה ב-1878, ראשון לציון, זכרון יעקב וראש פינה ב-1882. עד קום המדינה, 78 שנים אחרי מקווה ישראל, קמו 284 יישובים שקיימים עד היום. בארבע השנים שאחרי, 1948 עד 1951, קמו 308.</p>
+ <p>כל גל התיישב במקום אחר ובצורה אחרת. המושבות הראשונות קמו במישור החוף ובגליל. הקיבוצים של שנות השלושים נדחפו אל הקצוות. מושבי העולים נפרסו לאורך הגבולות החדשים. אחרי 1967 המפה חצתה את הקו הירוק.</p>
+ <p>בעמוד: מפה של כל היישובים לפי שנת הייסוד, שמונה מפות של שמונה תקופות, ותרשים שמראה איך ההתיישבות ירדה דרומה. הנתונים הם של הלשכה המרכזית לסטטיסטיקה.</p>
+</div>
+<div class="sect" style="margin-top:10px">
+<h2 class="vtitle">כמעט חצי מהיישובים קמו בשני גלים קצרים</h2>
+<p class="vsub">הגל הראשון הוא העלייה ההמונית שאחרי קום המדינה. השני הוא גל ההתנחלויות והמצפים. יחד: 534 מתוך 1,119 יישובים, ב-17 שנים.</p>
+<div class="waves" id="waves"></div>
 </div>
 
 <div class="sect">
@@ -247,8 +260,8 @@ const TW=1000,tl=$('tlsvg');tl.setAttribute('viewBox',`0 0 ${TW} 84`);
 const tx=y=>(y-Y0)/(Y1-Y0+1)*TW,bw=TW/(Y1-Y0+1),bars={};
 for(let y=Y0;y<=Y1;y++){const n=perYear[y]||0,h=n?Math.max(2,n/maxN*58):0;bars[y]=el('rect',{x:tx(y)+.6,y:62-h,width:bw-1.2,height:h},tl)}
 el('line',{x1:0,x2:TW,y1:62.5,y2:62.5,stroke:'var(--edge)','stroke-width':1,'vector-effect':'non-scaling-stroke'},tl);
-const cur=el('rect',{x:0,y:0,width:bw,height:64,fill:'none',stroke:'var(--ink)','stroke-width':1.2,'vector-effect':'non-scaling-stroke'},tl);
-const tlBox=$('tl');[1880,1900,1920,1940,1960,1980,2000,2020].forEach(y=>{const d=document.createElement('div');d.textContent=y;d.style.cssText=`position:absolute;top:80px;left:${(tx(y)+bw/2)/TW*100}%;transform:translateX(-50%);font-size:11px;color:var(--mut)`;tlBox.appendChild(d)});
+
+const tlBox=$('tl');const cur=document.createElement('div');cur.className='cur';tlBox.appendChild(cur);[1880,1900,1920,1940,1960,1980,2000,2020].forEach(y=>{const d=document.createElement('div');d.textContent=y;d.style.cssText=`position:absolute;top:86px;left:${(tx(y)+bw/2)/TW*100}%;transform:translateX(-50%);font-size:11px;color:var(--mut)`;tlBox.appendChild(d)});
 const peak=document.createElement('div');peak.textContent='1949: '+perYear[1949]+' יישובים בשנה אחת';peak.style.cssText=`position:absolute;top:8px;left:${(tx(1949)+bw*2)/TW*100}%;font-size:12px;font-weight:700;color:var(--ink);direction:rtl;white-space:nowrap`;tlBox.appendChild(peak);
 
 // legends (shared by options 1 and 3)
@@ -292,12 +305,15 @@ function render(){
  $('newh').textContent='נוסדו ב-'+year+(now.length?' ('+now.length+')':'');
  $('newl').textContent=now.length?now.slice(0,9).join(', ')+(now.length>9?' ועוד '+(now.length-9):''):'אין יישובים חדשים';
  for(let y=Y0;y<=Y1;y++){const be=eraOf(y);bars[y].setAttribute('fill',y>year?'var(--fut)':(iso>=0&&be!=iso)?'var(--fade)':col(be))}
- cur.setAttribute('x',tx(year));
+ cur.style.left=((tx(year)+bw/2)/TW*100)+'%';
  if(sel&&sel.on){ring.setAttribute('cx',sel.x);ring.setAttribute('cy',sel.y);ring.setAttribute('display','')}else{ring.setAttribute('display','none');if(!sel)$('card').style.display='none'}
 }
 function setYear(y){year=Math.max(Y0,Math.min(Y1,y));render()}
 function stop(){clearInterval(timer);timer=null;$('play').textContent='▶'}
-function play(){if(timer)return stop();iso=-1;sel=null;if(year>=Y1)year=Y0;$('play').textContent='❚❚';render();timer=setInterval(()=>{if(year>=Y1)return stop();setYear(year+1)},170)}
+let SPEED=170;const tick=()=>{if(year>=Y1)return stop();setYear(year+1)};
+function play(){if(timer)return stop();iso=-1;sel=null;if(year>=Y1)year=Y0;$('play').textContent='❚❚';render();timer=setInterval(tick,SPEED)}
+// play speed: milliseconds per year
+const spChips=[['איטי',450],['רגיל',170],['מהיר',60]].map(([t,ms])=>{const b=document.createElement('button');b.className='chip'+(ms==SPEED?' on':'');b.textContent=t;b.onclick=()=>{SPEED=ms;spChips.forEach(c=>c.classList.toggle('on',c==b));if(timer){clearInterval(timer);timer=setInterval(tick,SPEED)}};$('speeds').appendChild(b);return b});
 $('play').onclick=play;
 let drag=false;const scrub=ev=>{const r=tlBox.getBoundingClientRect();sel=null;setYear(Y0+Math.floor((ev.clientX-r.left)/r.width*(Y1-Y0+1)))};
 tlBox.addEventListener('pointerdown',ev=>{stop();drag=true;tlBox.setPointerCapture(ev.pointerId);scrub(ev)});
@@ -366,7 +382,7 @@ let rw=window.innerWidth>760;window.addEventListener('resize',()=>{const w=windo
  const sv=b.querySelector('svg');base(sv);const g1=el('g',{},sv),g2=el('g',{},sv);
  pts.forEach(p=>{if(p.yr<a)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:1.7,fill:'var(--fade)','fill-opacity':.75},g1);else if(p.yr<=b2)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:3,fill:PAL[ei],'fill-opacity':.92},g2)});
  b.onclick=()=>{stop();iso=ei;year=b2;sel=null;render();$('v1').scrollIntoView({behavior:'smooth'})};$('waves').appendChild(b)});
-if(window.innerWidth<=760)$('v1').appendChild($('side'));
+if(window.innerWidth<=760){$('v1').appendChild($('side'));$('v1').insertBefore(document.querySelector('.ctrlwrap'),document.querySelector('.stage'))}
 setTheme(0);drawLat();
 </script>
 </body>

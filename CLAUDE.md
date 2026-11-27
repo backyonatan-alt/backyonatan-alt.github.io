@@ -15,8 +15,9 @@ Live at https://yonatanback.com/
 | `/windsurf/` | The Best Team Ever? Half of It. (Hebrew page, title הנבחרת הכי טובה שהייתה לנו? חצי ממנה., RTL: Israel's Olympic windsurfing team 1992-2026, women vs men, depth not just medals) | `src/windsurf/` (`page.html`, `data.json`; `data/*.csv` + `prep.py` make `data.json`) | `python3 src/windsurf/build.py` |
 | `/winter/` | One Day in Five (Hebrew page, title יום אחד מכל חמישה, RTL: how often a toddler in daycare gets sick in winter, a simulated gan of 16, Israeli RSV/flu weeks, US ages 0-4, study figures) | `src/winter/` (`page.html`, `data.json`; `data/*.csv` + `prep.py` make `data.json`) | `python3 src/winter/build.py` |
 | `/ships/` | Every Kid Thought the Ship Was Theirs (Hebrew page, title כל ילד היה בטוח שרק לו יש ספינה, RTL: the wooden pirate ship playgrounds of 1988, map of 29 ships, the maker, fates, 3D ship tour) | `src/ships/` (`page.html`, `ship3d.html`, `prep.py` makes `data.json`, `map.json`) | `python3 src/ships/build.py` |
+| `/settlements/` | When Was Your Town Founded? (Hebrew page, title מתי קם היישוב שלכם?, RTL: every Jewish locality by founding year 1870-2023, playable map, eight period maps, north-south scatter) | `src/settlements/` (`page.html`; `data/` + `prep.py` make `data.json`, `map.json`) | `python3 src/settlements/build.py site` |
 
-Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`, `windsurf/index.html`, `winter/index.html`, `ships/index.html` or the three sports `index.html` files. They are build output and get overwritten.
+Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`, `windsurf/index.html`, `winter/index.html`, `ships/index.html`, `settlements/index.html` or the three sports `index.html` files. They are build output and get overwritten.
 
 ## Rules for this site
 
@@ -77,6 +78,15 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`
 - 3D ship: `ship3d.html` runs on its own and is also the source of the 3D code (between `SHIP-START` and `SHIP-END`), which `build.py` copies into the page. three.js r128 from cdnjs. It is an illustration from photos: size and the spots of the wheel, telescope and belly doorway are guesses. Say so on the page. Hull panels are thin two-faced slabs; do not go back to DoubleSide materials, that caused blocky shadows.
 - `map.json` comes from `gen_map.js` (world-atlas 50m). Share images: `python3 src/ships/og.py <node_modules>` renders `ships/preview.png` (Hebrew) and `ships/card.png` (English) from the 3D model.
 - Facts from Maariv and Koteret Rashit were read from screenshots. Paraphrase only, no direct quotes, until the full pages are in hand.
+
+## Settlements notes
+
+- Hebrew page, `dir="rtl"`, light clean design: white page, cool gray map, headline font IBM Plex Sans Hebrew 700, body Heebo. The playable map is the first thing on the page, right after the headline and the search box; the opening text comes after it. Yonatan asked for that.
+- Data: CBS localities file 2023 (`data/bycode2023.xlsx`) for everything that exists today, the 2004 file (`data/bycode2004.xls`) for the 20 localities evacuated in 2005 and 7 merged since, and `data/gone_research.csv` (hand-made, a source per row) for four Sinai localities. `prep.py` writes `data.json`. Founding years are the CBS years, odd ones included (Lod 1948, Kfar Etzion 1967). Type of locality is today's type.
+- Never draw a locality without a sourced founding year and position. The other Sinai localities and the 1948 losses are named in the page notes, not drawn. If rows are added, recheck every number in the prose and `DESC` in `build.py`, and re-render the share images.
+- Eight periods, one color each (`THEMES` in `page.html`), on the big map, the two wave maps and the eight period maps. The north-south scatter has its own earth ramp (`EARTH`). All palettes were checked with the dataviz validator.
+- Yonatan's picks, do not undo: no black outline on new dots (soft halo instead), a thin line with a knob as the timeline marker (not a box), three play speeds, the eight period maps stay, areas beyond the Green Line get a hatch and a name (the Golan a name only, there is no outline for it in the map data), evacuated localities stay as hollow rings. For the last chart he tried and rejected a line chart, a district grid, other scatter variants, four maps, one annotated map and a faint background map. See `src/settlements/README.md`.
+- Share images: `NODE_PATH=$(npm root -g) node src/settlements/og.js` renders `settlements/preview.png` (Hebrew) and `settlements/card.png` (English home row). `python3 src/settlements/build.py` with no argument writes a local `draft.html` preview.
 
 ## Adding a new article
 

@@ -54,3 +54,6 @@ Not a page on the site yet. No row on the home page.
 - 12 more Yamit-region localities have no sourced position and 5 southern Sinai ones are south of the map frame. They are named in the notes, not drawn.
 - Totals in the text are now 1,119 dated localities (1,095 exist today, 24 ended). If rows are added, recheck every number in the prose, `DESC` in `build.py`, and re-render the share images.
 - 1948 losses: Yonatan chose not to draw them. They are named in the page notes. `gone_research.csv` keeps the rows for later.
+- Page order (27 Nov): headline, one line, search box, then the playable map first. The opening text comes after the map. Yonatan asked for the map to be the first thing, as on the ships page.
+- Play speed: three buttons under the timeline (slow 450 ms a year, normal 170, fast 60). Yonatan asked for it.
+- Timeline marker: a thin line with a round knob on the baseline. Yonatan disliked the outlined box that used to mark the current year.

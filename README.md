@@ -11,3 +11,4 @@ Interactive data stories.
 - [The Best Team Ever? Half of It.](https://yonatanback.com/windsurf/): Israel's Olympic windsurfing team since 1992, in Hebrew. Best ever for the women, not for the men.
 - [One Day in Five](https://yonatanback.com/winter/): how often a toddler in daycare gets sick in winter, in Hebrew. A simulated class of 16, Israeli RSV and flu weeks, and the studies behind it.
 - [Every Kid Thought the Ship Was Theirs](https://yonatanback.com/ships/): the wooden pirate ship playgrounds of 1988 Israel, in Hebrew. A map of 29 ships, the maker, how they ended, and a 3D ship to walk on.
+- [When Was Your Town Founded?](https://yonatanback.com/settlements/): every Jewish locality in Israel by founding year, 1870 to today, in Hebrew. A map you can play and search, eight period maps, and how settlement moved south.
