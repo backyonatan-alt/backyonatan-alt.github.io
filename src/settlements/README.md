@@ -57,3 +57,4 @@ Not a page on the site yet. No row on the home page.
 - Page order (27 Nov): headline, one line, search box, then the playable map first. The opening text comes after the map. Yonatan asked for the map to be the first thing, as on the ships page.
 - Play speed: three buttons under the timeline (slow 450 ms a year, normal 170, fast 60). Yonatan asked for it.
 - Timeline marker: a thin line with a round knob on the baseline. Yonatan disliked the outlined box that used to mark the current year.
+- 27 Nov, after going live: the play button, timeline and speed buttons moved above the map so they are on the first screen on desktop too. The search box under the headline was removed (Yonatan: search is less important); the search in the map's side panel stays.

@@ -23,10 +23,10 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`
 
 - Every article has a "← All stories" link back to `/`. Articles do not link to each other.
 - Every article opens with an abstract and a hook: a question or surprising fact, two or three short paragraphs of background for a reader who knows nothing about the subject, and what the page covers. The sports pages use the `.brief` block for this. New pages need one too.
-- Home page: one full-width row per article, all equal, no sections. Stacks image over text on phones.
+- Home page: one full-width row per article, all equal, no sections. Newest story first: add a new row at the top of the list. Stacks image over text on phones.
 - Every page carries Google Analytics (`G-ZHETPL7EV5`). The build scripts add it. New pages need it too.
 - Every page needs Open Graph tags and a 1200x630 preview image (`preview.png` or `cousins-preview.png`) for link previews.
-- The home page has its own share image, `/preview.png` (a 3x3 grid of the home-row images). Re-render it whenever a story row is added: `NODE_PATH=$(npm root -g) node src/home/og.js`.
+- The home page has its own share image, `/preview.png` (a 3x3 grid of the first nine home-row images, so the newest nine). Re-render it whenever a story row is added: `NODE_PATH=$(npm root -g) node src/home/og.js`.
 - Light mode only. No dark-mode rules (`prefers-color-scheme`) in any article, so every reader sees the same colors. The dark map stage and dark home page are fixed designs, not a dark mode.
 - Phones matter. Check every change at about 390px wide for sideways overflow before pushing.
 - Copy style: short plain sentences, no em dashes.
@@ -81,7 +81,7 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`
 
 ## Settlements notes
 
-- Hebrew page, `dir="rtl"`, light clean design: white page, cool gray map, headline font IBM Plex Sans Hebrew 700, body Heebo. The playable map is the first thing on the page, right after the headline and the search box; the opening text comes after it. Yonatan asked for that.
+- Hebrew page, `dir="rtl"`, light clean design: white page, cool gray map, headline font IBM Plex Sans Hebrew 700, body Heebo. The play button and timeline come right under the headline so they are on the first screen, then the map; the opening text comes after it. No search box at the top: the search lives in the map's side panel. Yonatan asked for all of that.
 - Data: CBS localities file 2023 (`data/bycode2023.xlsx`) for everything that exists today, the 2004 file (`data/bycode2004.xls`) for the 20 localities evacuated in 2005 and 7 merged since, and `data/gone_research.csv` (hand-made, a source per row) for four Sinai localities. `prep.py` writes `data.json`. Founding years are the CBS years, odd ones included (Lod 1948, Kfar Etzion 1967). Type of locality is today's type.
 - Never draw a locality without a sourced founding year and position. The other Sinai localities and the 1948 losses are named in the page notes, not drawn. If rows are added, recheck every number in the prose and `DESC` in `build.py`, and re-render the share images.
 - Eight periods, one color each (`THEMES` in `page.html`), on the big map, the two wave maps and the eight period maps. The north-south scatter has its own earth ramp (`EARTH`). All palettes were checked with the dataviz validator.
@@ -92,7 +92,7 @@ Never hand-edit `cousins/index.html`, `dogfight/index.html`, `flyers/index.html`
 
 1. Make a folder at the root (`/name/`) with `index.html` and a `preview.png`.
 2. Add the GA tag, OG tags, and the "← All stories" link.
-3. Add a row to `index.html` and a line to `README.md`.
+3. Add a row at the top of the list in `index.html` (newest first) and a line to `README.md`. Re-render the home share image.
 
 ## Launch material
 

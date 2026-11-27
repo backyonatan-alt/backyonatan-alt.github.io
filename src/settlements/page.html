@@ -68,7 +68,8 @@ button,input{font-family:inherit}button{cursor:pointer}
 .keyline{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--mut);margin-top:8px}
 .speed{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--mut);margin:20px 0 2px}
 .speed .chip{padding:3px 10px;font-weight:400}
-.ctrl{display:flex;align-items:center;gap:12px;margin:16px 0 4px}
+.ctrl{display:flex;align-items:center;gap:12px;margin:0 0 4px}
+.ctrlwrap{margin:0 0 22px}
 #play{flex:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);color:var(--paper);font-size:17px;line-height:1}
 .tl{flex:1;min-width:0;position:relative;direction:ltr;touch-action:none;cursor:pointer;padding-top:14px}
 .tl svg{display:block;width:100%;height:84px}
@@ -110,13 +111,16 @@ button,input{font-family:inherit}button{cursor:pointer}
 <a class="back" href="/">→ All stories</a>
 <div class="draft">טיוטה, לא לפרסום</div>
 <h1 id="h1">מתי קם היישוב שלכם?</h1>
-<p class="sub" style="margin-bottom:18px">1,119 יישובים, 153 שנים. איפה ומתי קמו היישובים היהודיים בארץ, במפה שאפשר לנגן ולחפש בה.</p>
-<div class="topfind">
- <div class="find"><input id="q0" list="names" placeholder="הקלידו שם של יישוב, למשל נהלל" autocomplete="off"></div>
- <div class="card" id="card0"></div>
-</div>
-<p class="vsub" style="margin-bottom:16px">לחצו על הפעל, או גררו את ציר הזמן. כל נקודה היא יישוב, בצבע של התקופה שבה נוסד.</p>
+<p class="sub" style="margin-bottom:10px">1,119 יישובים, 153 שנים. איפה ומתי קמו היישובים היהודיים בארץ, במפה שאפשר לנגן ולחפש בה.</p>
+<p class="vsub" style="margin-bottom:6px">לחצו על הפעל, או גררו את ציר הזמן. כל נקודה היא יישוב, בצבע של התקופה שבה נוסד.</p>
 <div id="v1">
+<div class="ctrlwrap">
+<div class="ctrl">
+ <button id="play" aria-label="הפעל">▶</button>
+ <div class="tl" id="tl"><svg id="tlsvg" preserveAspectRatio="none"></svg></div>
+</div>
+<div class="speed"><span>מהירות</span><span class="row" id="speeds"></span></div>
+</div>
 <div class="stage">
  <div class="mapbox main" id="mapbox"><svg id="map"></svg><div class="tip" id="tip"></div></div>
  <div class="panel">
@@ -134,13 +138,6 @@ button,input{font-family:inherit}button{cursor:pointer}
    <div class="row" id="types"></div>
   </div>
  </div>
-</div>
-<div class="ctrlwrap">
-<div class="ctrl">
- <button id="play" aria-label="הפעל">▶</button>
- <div class="tl" id="tl"><svg id="tlsvg" preserveAspectRatio="none"></svg></div>
-</div>
-<div class="speed"><span>מהירות</span><span class="row" id="speeds"></span></div>
 </div>
 <div class="lbl">תקופות. לחיצה מבודדת תקופה אחת</div>
 <div class="row legend"></div>
@@ -276,7 +273,6 @@ function find(src){const v=(src||$('q')).value.trim();const p=pts.find(p=>p.lab=
  $('card').style.display='block';$('card').innerHTML=`<b>${p.n}</b> נוסד ב-${p.yr}, בתקופת ${ERAS[p.e][2]}. ${same?`באותה שנה נוסדו עוד ${same} יישובים.`:'זה היישוב היחיד שנוסד באותה שנה.'} לפניו כבר היו על המפה ${before} יישובים.${p.end?` היישוב פונה ב-${p.end}.`:''}`;
  if(src){$('q').value=p.lab;$('card0').style.display='block';$('card0').innerHTML=$('card').innerHTML+'<br><button id="go0">הראו לי על המפה</button>';$('go0').onclick=()=>$('mapbox').scrollIntoView({behavior:'smooth',block:'center'})}}
 $('q').addEventListener('change',()=>find());$('q').addEventListener('input',()=>{if(pts.some(p=>p.lab==$('q').value.trim()))find()});
-$('q0').addEventListener('change',()=>find($('q0')));$('q0').addEventListener('input',()=>{if(pts.some(p=>p.lab==$('q0').value.trim()))find($('q0'))});
 // designs
 const thChips=THEMES.map(([k,l,pal],i)=>{const b=document.createElement('button');b.className='chip';b.innerHTML=pal.map(c=>`<i class="sw" style="background:${c};width:8px;height:8px;margin-inline-end:-4px"></i>`).join('')+'<span style="margin-inline-start:6px">'+l+'</span>';b.onclick=()=>setTheme(i);return b});
 function setTheme(i){document.body.dataset.t=THEMES[i][0];PAL=THEMES[i][2];thChips.forEach((b,j)=>b.classList.toggle('on',i==j));render()}
@@ -382,7 +378,7 @@ let rw=window.innerWidth>760;window.addEventListener('resize',()=>{const w=windo
  const sv=b.querySelector('svg');base(sv);const g1=el('g',{},sv),g2=el('g',{},sv);
  pts.forEach(p=>{if(p.yr<a)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:1.7,fill:'var(--fade)','fill-opacity':.75},g1);else if(p.yr<=b2)el('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:3,fill:PAL[ei],'fill-opacity':.92},g2)});
  b.onclick=()=>{stop();iso=ei;year=b2;sel=null;render();$('v1').scrollIntoView({behavior:'smooth'})};$('waves').appendChild(b)});
-if(window.innerWidth<=760){$('v1').appendChild($('side'));$('v1').insertBefore(document.querySelector('.ctrlwrap'),document.querySelector('.stage'))}
+if(window.innerWidth<=760)$('v1').appendChild($('side'));
 setTheme(0);drawLat();
 </script>
 </body>
